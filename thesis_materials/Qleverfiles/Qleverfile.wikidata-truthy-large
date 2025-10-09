@@ -1,0 +1,32 @@
+# Qleverfile for Wikidata-truthy with ~8 billion triples
+
+[data]
+NAME         = wikidata-truthy-large
+GET_DATA_URL = https://dumps.wikimedia.org/wikidatawiki/entities
+GET_DATA_CMD = curl -LRC - -O wikidata-truthy.nt.gz ${GET_DATA_URL}/latest-truthy.nt.gz
+DATE         = $$(date -r wikidata-truthy.nt.gz +%d.%m.%Y || echo "NO_DATE")
+DESCRIPTION  = Wikidata "Truthy" dump from ${GET_DATA_URL} (version ${DATE})
+# Optionally, preprocess the data by removing all geo:wktLiteral instances. This is done in order to avoid subtle result size and rounding errors because of 8 byte internal representation of geo wkt Literals. Also split the dataset into multiple parts with each part consisting of 100M triples. Don't forget to delete the wikidata-truthy.nt.gz afterwards! 
+# zcat wikidata-truthy.nt.gz | grep -v '\^\^<http://www.opengis.net/ont/geosparql#wktLiteral>' | split -a 3 -l 100000000 --numeric-suffixes=1 --additional-suffix=.nt --filter='gzip > $FILE.gz' - wiki_truthy-
+
+[index]
+INPUT_FILES      = *.nt.gz 
+CAT_INPUT_FILES  = zcat ${INPUT_FILES} 
+SETTINGS_JSON    = { "num-triples-per-batch": 5000000 }
+STXXL_MEMORY     = 10G
+VOCABULARY_TYPE  = in-memory-compressed
+
+[server]
+PORT                        = 1270
+ACCESS_TOKEN                = ${data:NAME}_8zHMcXXhb2ix
+MEMORY_FOR_QUERIES          = 52G
+CACHE_MAX_SIZE              = 12G
+CACHE_MAX_SIZE_SINGLE_ENTRY = 5G
+TIMEOUT                     = 300s
+
+[runtime]
+SYSTEM = docker
+IMAGE  = adfreiburg/qlever
+
+[ui]
+UI_CONFIG = wikidata

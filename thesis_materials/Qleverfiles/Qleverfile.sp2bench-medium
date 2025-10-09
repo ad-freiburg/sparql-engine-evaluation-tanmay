@@ -1,0 +1,24 @@
+# Qleverfile for SP2Bench benchmark with 500 million triples
+
+[data]
+NAME              = sp2bench-medium
+CONTAINER_SYSTEM  = docker 
+GET_DATA_CMD      = ${CONTAINER_SYSTEM} run -v $$(pwd):/opt/sp2bench/output sp2bench:1.01 -t 500000000 -o sp2bench_500m.ttl && gzip sp2bench_500m.ttl
+DESCRIPTION       = SP2Bench benchmark v1.1 - synthetic dataset with ~500 million triples. SP2Bench at https://dbis.informatik.uni-freiburg.de/forschung/projekte/SP2B/
+
+[index]
+INPUT_FILES     = sp2bench_500m.ttl.gz
+CAT_INPUT_FILES = zcat ${INPUT_FILES}
+SETTINGS_JSON   = { "ascii-prefixes-only": false, "num-triples-per-batch": 1000000 }
+
+[server]
+PORT               = 1241 
+ACCESS_TOKEN       = ${data:NAME}_7643543846_j2GiZdrvNKg2
+MEMORY_FOR_QUERIES = 26G
+CACHE_MAX_SIZE     = 6G
+TIMEOUT            = 180s
+
+[runtime]
+SYSTEM = docker
+IMAGE  = docker.io/adfreiburg/qlever:latest
+

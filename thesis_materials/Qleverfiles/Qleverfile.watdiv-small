@@ -1,0 +1,24 @@
+# Qleverfile for Watdiv v0.6 benchmark with 55 million triples
+
+[data]
+NAME              = watdiv-small
+CONTAINER_SYSTEM  = docker 
+GET_DATA_CMD      = ${CONTAINER_SYSTEM} run --user $$(id -u):$$(id -g) -v $$(pwd):/opt/output --entrypoint bash docker.io/comunica/watdiv:latest -c "./watdiv -d /opt/watdiv/model/wsdbm-data-model.txt 500 > /opt/output/watdiv_50m.nt"
+DESCRIPTION       = Waterloo SPARQL Diversity Test Suite (WatDiv) v0.6 - synthetic data with ~55 million triples. Watdiv at https://dsg.uwaterloo.ca/watdiv/
+
+[index]
+INPUT_FILES     = watdiv_50m.nt
+CAT_INPUT_FILES = cat ${INPUT_FILES}
+SETTINGS_JSON   = { "ascii-prefixes-only": false, "num-triples-per-batch": 100000 }
+
+[server]
+PORT               = 1250 
+ACCESS_TOKEN       = ${data:NAME}_7643543846_j2GiZdrvNKg2
+MEMORY_FOR_QUERIES = 13G
+CACHE_MAX_SIZE     = 3G
+TIMEOUT            = 60s
+
+[runtime]
+SYSTEM = docker
+IMAGE  = docker.io/adfreiburg/qlever:latest
+

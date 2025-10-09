@@ -1,0 +1,28 @@
+# Qleverfile for DBLP
+
+[data]
+NAME         = dblp-medium
+GET_DATA_URL = https://dblp.org/rdf/dblp.ttl.gz
+GET_DATA_CMD = wget -nc ${GET_DATA_URL}
+VERSION      = $$(date -r dblp.ttl.gz +"%d.%m.%Y %H:%M" || echo "NO_DATE")
+DESCRIPTION  = DBLP computer science bibliography, data from ${GET_DATA_URL} (version ${VERSION})
+FORMAT       = ttl
+
+[index]
+INPUT_FILES      = *.gz
+MULTI_INPUT_JSON = { "cmd": "zcat {}", "for-each": "*.gz" }
+SETTINGS_JSON    = { "ascii-prefixes-only": false, "num-triples-per-batch": 5000000, "prefixes-external": [""] }
+
+[server]
+PORT               = 1260
+ACCESS_TOKEN       = ${data:NAME}_NeBufLlaE4Ek
+MEMORY_FOR_QUERIES = 26G
+CACHE_MAX_SIZE     = 6G
+TIMEOUT            = 180s
+
+[runtime]
+SYSTEM = docker
+IMAGE  = docker.io/adfreiburg/qlever:latest
+
+[ui]
+UI_CONFIG = dblp
