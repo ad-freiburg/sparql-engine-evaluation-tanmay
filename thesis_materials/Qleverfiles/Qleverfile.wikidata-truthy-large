@@ -25,7 +25,7 @@ CACHE_MAX_SIZE_SINGLE_ENTRY = 5G
 TIMEOUT                     = 300s
 
 [runtime]
-SYSTEM = docker
+SYSTEM = native
 IMAGE  = adfreiburg/qlever
 
 [ui]

@@ -19,6 +19,6 @@ CACHE_MAX_SIZE     = 3G
 TIMEOUT            = 60s
 
 [runtime]
-SYSTEM = docker
+SYSTEM = native
 IMAGE  = docker.io/adfreiburg/qlever:latest
 
