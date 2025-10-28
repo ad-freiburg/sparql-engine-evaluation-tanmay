@@ -1,0 +1,985 @@
+name: Sparqloscope DBLP (~525M triples)
+description: Sparqloscope benchmark for DBLP computer science bibliography, data from https://dblp.org/rdf (01.09.2025), ~525 million triples. Sparqloscope at https://github.com/ad-freiburg/sparqloscope 
+scale: 525000000
+queries:
+- name: join-2-small-large
+  description: JOIN of a small and a large predicate
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:formerStreamTitle ?o1 .
+      ?s rdf:type ?o2 .
+    }
+- name: join-2-large-small
+  description: JOIN of a large and a small predicate
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdf:type ?o1 .
+      ?s dblp:formerStreamTitle ?o2 .
+    }
+- name: join-2-large-large
+  description: JOIN of two large predicates
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdf:type ?o1 .
+      ?s dblp:hasSignature ?o2 .
+    }
+- name: join-2-largest-result
+  description: JOIN of two predicates with the largest possible result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:hasSignature ?o1 .
+      ?s dblp:createdBy ?o2 .
+    }
+- name: join-2-large-large-with-large-result
+  description: JOIN of two large predicates with a reasonably large result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:hasSignature ?o1 .
+      ?s dblp:createdBy ?o2 .
+    }
+- name: join-2-large-large-with-small-result
+  description: JOIN of two large predicates with a small result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:publishedAsPartOf ?o1 .
+      ?s dblp:publishedInJournalVolume ?o2 .
+    }
+- name: join-3-star-largest-sum-of-join-sizes
+  description: JOIN star of three large predicates with the largest sum of join sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:signatureOrdinal ?o1 .
+      ?s rdf:type ?o2 .
+      ?s dblp:signatureDblpName ?o3 .
+    }
+- name: join-3-chain-largest-sum-of-join-sizes
+  description: JOIN chain of three large predicates with the largest sum of join sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?a dblp:signaturePublication ?b .
+      ?b rdf:type ?c .
+      ?c rdfs:subClassOf ?d .
+    }
+- name: join-xlarge-star-on-small-predicates
+  description: JOIN star of many small predicates
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:formerStreamTitle ?o0 .
+      ?s dblp:awardWebpage ?o1 .
+      ?s dblp:successorStream ?o2 .
+      ?s dblp:predeccessorStream ?o3 .
+      ?s rdfs:comment ?o4 .
+      ?s rdfs:domain ?o5 .
+      ?s rdfs:range ?o6 .
+      ?s rdfs:subPropertyOf ?o7 .
+      ?s owl:equivalentProperty ?o8 .
+      ?s rdfs:subClassOf ?o9 .
+      ?s owl:equivalentClass ?o10 .
+      ?s owl:inverseOf ?o11 .
+      ?s dblp:publishersAddress ?o12 .
+      ?s dblp:publishedInBookChapter ?o13 .
+      ?s terms:creator ?o14 .
+      ?s terms:abstract ?o15 .
+      ?s terms:title ?o16 .
+      ?s owl:priorVersion ?o17 .
+      ?s owl:versionInfo ?o18 .
+      ?s owl:versionIRI ?o19 .
+      ?s terms:modified ?o20 .
+      ?s terms:license ?o21 .
+      ?s terms:description ?o22 .
+    }
+- name: join-xlarge-chain-on-small-predicates
+  description: JOIN chain of many small predicates
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?v0 dblp:formerStreamTitle ?v1 .
+      ?v1 dblp:awardWebpage ?v2 .
+      ?v2 dblp:successorStream ?v3 .
+      ?v3 dblp:predeccessorStream ?v4 .
+      ?v4 rdfs:comment ?v5 .
+      ?v5 rdfs:domain ?v6 .
+      ?v6 rdfs:range ?v7 .
+      ?v7 rdfs:subPropertyOf ?v8 .
+      ?v8 owl:equivalentProperty ?v9 .
+      ?v9 rdfs:subClassOf ?v10 .
+      ?v10 owl:equivalentClass ?v11 .
+      ?v11 owl:inverseOf ?v12 .
+      ?v12 dblp:publishersAddress ?v13 .
+      ?v13 dblp:publishedInBookChapter ?v14 .
+      ?v14 terms:creator ?v15 .
+      ?v15 terms:abstract ?v16 .
+      ?v16 terms:title ?v17 .
+      ?v17 owl:priorVersion ?v18 .
+      ?v18 owl:versionInfo ?v19 .
+      ?v19 owl:versionIRI ?v20 .
+      ?v20 terms:modified ?v21 .
+      ?v21 terms:license ?v22 .
+      ?v22 terms:description ?v23 .
+    }
+- name: optional-join-small-large
+  description: OPTIONAL JOIN of a small and a large predicate
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:formerStreamTitle ?o1 .
+      OPTIONAL {
+        ?s rdf:type ?o2 .
+      }
+    }
+- name: optional-join-large-small
+  description: OPTIONAL JOIN of a large and a small predicate
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdf:type ?o1 .
+      OPTIONAL {
+        ?s dblp:formerStreamTitle ?o2 .
+      }
+    }
+- name: optional-join-large-large
+  description: OPTIONAL JOIN of two large predicates
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdf:type ?o1 .
+      OPTIONAL {
+        ?s dblp:hasSignature ?o2 .
+      }
+    }
+- name: optional-join-2-large-large-with-large-result
+  description: OPTIONAL JOIN of two large predicates with a reasonably large join
+    result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:hasSignature ?o1 .
+      OPTIONAL {
+        ?s dblp:createdBy ?o2 .
+      }
+    }
+- name: optional-join-2-large-large-with-small-join-result-1
+  description: OPTIONAL JOIN of two large predicates with a small join result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:publishedAsPartOf ?o1 .
+      OPTIONAL {
+        ?s dblp:publishedInJournalVolume ?o2 .
+      }
+    }
+- name: optional-join-2-large-large-with-small-join-result-2
+  description: OPTIONAL JOIN of two large predicates with a small join result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:publishedInJournalVolume ?o1 .
+      OPTIONAL {
+        ?s dblp:publishedAsPartOf ?o2 .
+      }
+    }
+- name: optional-join-3-star-1
+  description: OPTIONAL JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:signatureOrdinal ?o1 .
+      ?s rdf:type ?o2 .
+      OPTIONAL {
+        ?s dblp:signatureDblpName ?o3 .
+      }
+    }
+- name: optional-join-3-star-2
+  description: OPTIONAL JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:signatureOrdinal ?o1 .
+      OPTIONAL {
+        ?s rdf:type ?o2 .
+        ?s dblp:signatureDblpName ?o3 .
+      }
+    }
+- name: optional-join-3-chain-1
+  description: OPTIONAL JOIN chain of three large predicates with the largest sum
+    of join sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?a dblp:signaturePublication ?b .
+      ?b rdf:type ?c .
+      OPTIONAL {
+        ?c rdfs:subClassOf ?d .
+      }
+    }
+- name: optional-join-3-chain-2
+  description: OPTIONAL JOIN chain of three large predicates with the largest sum
+    of join sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?a dblp:signaturePublication ?b .
+      OPTIONAL {
+        ?b rdf:type ?c .
+        ?c rdfs:subClassOf ?d .
+      }
+    }
+- name: minus-join-small-large
+  description: MINUS JOIN of a small and a large predicate
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:formerStreamTitle ?o1 .
+      MINUS {
+        ?s rdf:type ?o2 .
+      }
+    }
+- name: minus-join-large-small
+  description: MINUS JOIN of a large and a small predicate
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdf:type ?o1 .
+      MINUS {
+        ?s dblp:formerStreamTitle ?o2 .
+      }
+    }
+- name: minus-join-large-large
+  description: MINUS JOIN of two large predicates
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdf:type ?o1 .
+      MINUS {
+        ?s dblp:hasSignature ?o2 .
+      }
+    }
+- name: minus-join-2-large-large-with-large-result
+  description: MINUS JOIN of two large predicates with a reasonably large join result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:hasSignature ?o1 .
+      MINUS {
+        ?s dblp:createdBy ?o2 .
+      }
+    }
+- name: minus-join-2-large-large-with-small-join-result-1
+  description: MINUS JOIN of two large predicates with a small join result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:publishedAsPartOf ?o1 .
+      MINUS {
+        ?s dblp:publishedInJournalVolume ?o2 .
+      }
+    }
+- name: minus-join-2-large-large-with-small-join-result-2
+  description: MINUS JOIN of two large predicates with a small join result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:publishedInJournalVolume ?o1 .
+      MINUS {
+        ?s dblp:publishedAsPartOf ?o2 .
+      }
+    }
+- name: minus-join-3-star-1
+  description: MINUS JOIN star of three large predicates with the largest sum of join
+    sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:signatureOrdinal ?o1 .
+      ?s rdf:type ?o2 .
+      MINUS {
+        ?s dblp:signatureDblpName ?o3 .
+      }
+    }
+- name: minus-join-3-star-2
+  description: MINUS JOIN star of three large predicates with the largest sum of join
+    sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:signatureOrdinal ?o1 .
+      MINUS {
+        ?s rdf:type ?o2 .
+        ?s dblp:signatureDblpName ?o3 .
+      }
+    }
+- name: minus-join-3-chain-1
+  description: MINUS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?a dblp:signaturePublication ?b .
+      ?b rdf:type ?c .
+      MINUS {
+        ?c rdfs:subClassOf ?d .
+      }
+    }
+- name: minus-join-3-chain-2
+  description: MINUS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?a dblp:signaturePublication ?b .
+      MINUS {
+        ?b rdf:type ?c .
+        ?c rdfs:subClassOf ?d .
+      }
+    }
+- name: exists-join-small-large
+  description: EXISTS JOIN of a small and a large predicate
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:formerStreamTitle ?o1 .
+      FILTER EXISTS {
+        ?s rdf:type ?o2 .
+      }
+    }
+- name: exists-join-large-small
+  description: EXISTS JOIN of a large and a small predicate
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdf:type ?o1 .
+      FILTER EXISTS {
+        ?s dblp:formerStreamTitle ?o2 .
+      }
+    }
+- name: exists-join-large-large
+  description: EXISTS JOIN of two large predicates
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdf:type ?o1 .
+      FILTER EXISTS {
+        ?s dblp:hasSignature ?o2 .
+      }
+    }
+- name: exists-join-2-large-large-with-large-result
+  description: EXISTS JOIN of two large predicates with a reasonably large join result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:hasSignature ?o1 .
+      FILTER EXISTS {
+        ?s dblp:createdBy ?o2 .
+      }
+    }
+- name: exists-join-2-large-large-with-small-join-result-1
+  description: EXISTS JOIN of two large predicates with a small join result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:publishedAsPartOf ?o1 .
+      FILTER EXISTS {
+        ?s dblp:publishedInJournalVolume ?o2 .
+      }
+    }
+- name: exists-join-2-large-large-with-small-join-result-2
+  description: EXISTS JOIN of two large predicates with a small join result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:publishedInJournalVolume ?o1 .
+      FILTER EXISTS {
+        ?s dblp:publishedAsPartOf ?o2 .
+      }
+    }
+- name: exists-join-3-star-1
+  description: EXISTS JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:signatureOrdinal ?o1 .
+      ?s rdf:type ?o2 .
+      FILTER EXISTS {
+        ?s dblp:signatureDblpName ?o3 .
+      }
+    }
+- name: exists-join-3-star-2
+  description: EXISTS JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:signatureOrdinal ?o1 .
+      FILTER EXISTS {
+        ?s rdf:type ?o2 .
+        ?s dblp:signatureDblpName ?o3 .
+      }
+    }
+- name: exists-join-3-chain-1
+  description: EXISTS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?a dblp:signaturePublication ?b .
+      ?b rdf:type ?c .
+      FILTER EXISTS {
+        ?c rdfs:subClassOf ?d .
+      }
+    }
+- name: exists-join-3-chain-2
+  description: EXISTS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?a dblp:signaturePublication ?b .
+      FILTER EXISTS {
+        ?b rdf:type ?c .
+        ?c rdfs:subClassOf ?d .
+      }
+    }
+- name: union-no-constraint
+  description: UNION of two large predicates, no constraint
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      {
+        ?s rdf:type ?o .
+      }
+      UNION
+      {
+        ?s dblp:hasSignature ?o .
+      }
+    }
+- name: union-constraint-from-star
+  description: UNION of two large predicates, constrained by a large predicate known
+    to have join partners
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      {
+        ?s dblp:signatureOrdinal ?o1 .
+      }
+      UNION
+      {
+        ?s rdf:type ?o1 .
+      }
+      ?s dblp:signatureDblpName ?o2 .
+    }
+- name: union-constraint-small-join
+  description: UNION of two large predicates, constrained by a join with a small result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      {
+        ?s dblp:publishedAsPartOf ?o1 .
+      }
+      UNION
+      {
+        ?s dblp:publishedInStream ?o1 .
+      }
+      ?s dblp:publishedInJournalVolume ?o2 .
+    }
+- name: union-constraint-large-join
+  description: UNION of two large predicates, constrained by a join with a large result
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      {
+        ?s dblp:hasSignature ?o1 .
+      }
+      UNION
+      {
+        ?s rdf:type ?o1 .
+      }
+      ?s dblp:createdBy ?o2 .
+    }
+- name: union-constraint-filter-restrictive
+  description: UNION of two large predicates, constraint by restrictive FILTER
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      {
+        ?s rdf:type ?o .
+      }
+      UNION
+      {
+        ?s dblp:hasSignature ?o .
+      }
+      FILTER (?s = ?o)
+    }
+- name: multicolumn-join-small
+  description: Multicolumn JOIN small
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:subStream ?o .
+      ?s dblp:relatedStream ?o .
+    }
+- name: multicolumn-join-large
+  description: Multicolumn JOIN large
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:createdBy ?o .
+      ?s dblp:authoredBy ?o .
+    }
+- name: group-by-count-object-high-multiplicity
+  description: GROUP BY with COUNT, for object with high multiplicity
+  query: |-
+    SELECT ?object (COUNT(?subject) AS ?count)
+    WHERE {
+      ?subject rdf:type ?object .
+    }
+    GROUP BY ?object
+    ORDER BY DESC(?count)
+    LIMIT 10
+- name: group-by-count-object-low-multiplicity
+  description: GROUP BY with COUNT, for object with low multiplicity
+  query: |-
+    SELECT ?object (COUNT(?subject) AS ?count)
+    WHERE {
+      ?subject dblp:hasSignature ?object .
+    }
+    GROUP BY ?object
+    ORDER BY DESC(?count)
+    LIMIT 10
+- name: group-by-count-object-wrong-sort-order
+  description: GROUP BY with COUNT, for object but not sorted by object
+  query: |-
+    SELECT ?o1 (COUNT(?s) AS ?count)
+    WHERE {
+      ?s dblp:bibtexType ?o1 .
+      ?s dblp:hasSignature ?o2 .
+    }
+    GROUP BY ?o1
+    ORDER BY DESC(?count)
+    LIMIT 10
+- name: group-by-complex-aggregate
+  description: GROUP BY with COUNT and MIN and MAX and SAMPLE
+  query: |-
+    SELECT ?o1 (COUNT(?s) AS ?count) (MIN(?s) AS ?min) (MAX(?s) AS ?max) (SAMPLE(?s) AS ?sample)
+    WHERE {
+      ?s dblp:bibtexType ?o1 .
+      ?s dblp:hasSignature ?o2 .
+    }
+    GROUP BY ?o1
+    ORDER BY DESC(?count)
+    LIMIT 10
+- name: group-by-implicit-numeric-baseline
+  description: Implicit GROUP BY with COUNT on numeric predicate as baseline
+  query: |-
+    SELECT (COUNT(?o) AS ?count)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+    }
+- name: group-by-implicit-numeric-sum
+  description: Implicit GROUP BY with SUM on numeric predicate
+  query: |-
+    SELECT (sum(?o) AS ?sum)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+    }
+- name: group-by-implicit-numeric-min
+  description: Implicit GROUP BY with MIN on numeric predicate
+  query: |-
+    SELECT (MIN(?o) AS ?min)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+    }
+- name: group-by-implicit-numeric-max
+  description: Implicit GROUP BY with MAX on numeric predicate
+  query: |-
+    SELECT (MAX(?o) AS ?max)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+    }
+- name: group-by-implicit-numeric-avg
+  description: Implicit GROUP BY with AVG on numeric predicate
+  query: |-
+    SELECT (AVG(?o) AS ?avg)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+    }
+- name: group-by-implicit-string-baseline
+  description: Implicit GROUP BY with COUNT on string predicate as baseline
+  query: |-
+    SELECT (COUNT(?o) AS ?count)
+    WHERE {
+      ?s dblp:signatureDblpName ?o .
+    }
+- name: group-by-implicit-string-min
+  description: Implicit GROUP BY with MIN on string predicate
+  query: |-
+    SELECT (MIN(?o) AS ?min)
+    WHERE {
+      ?s dblp:signatureDblpName ?o .
+    }
+- name: group-by-implicit-string-max
+  description: Implicit GROUP BY with MAX on string predicate
+  query: |-
+    SELECT (MAX(?o) AS ?max)
+    WHERE {
+      ?s dblp:signatureDblpName ?o .
+    }
+- name: group-by-string-groupconcat
+  description: GROUP BY with GROUP_CONCAT on string predicate with high subject multiplicity
+  query: |-
+    SELECT (sum(STRLEN(?cat)) AS ?sum)
+    WHERE {
+      {
+        SELECT (GROUP_CONCAT(?o; SEPARATOR = " ") AS ?cat)
+        WHERE {
+          ?s dblp:signatureDblpName ?o .
+        }
+        GROUP BY ?s
+      }
+    }
+- name: distinct-count-object-high-multiplicity
+  description: COUNT DISTINCT, for object with high multiplicity
+  query: |-
+    SELECT (COUNT(DISTINCT ?object) AS ?count)
+    WHERE {
+      ?subject rdf:type ?object .
+    }
+- name: distinct-count-object-low-multiplicity
+  description: COUNT DISTINCT, for object with low multiplicity
+  query: |-
+    SELECT (COUNT(DISTINCT ?object) AS ?count)
+    WHERE {
+      ?subject dblp:hasSignature ?object .
+    }
+- name: distinct-count-object-wrong-sort-order
+  description: COUNT DISTINCT, for object but not sorted by object
+  query: |-
+    SELECT (COUNT(DISTINCT ?o1) AS ?count)
+    WHERE {
+      ?s dblp:bibtexType ?o1 .
+      ?s dblp:hasSignature ?o2 .
+    }
+- name: transitive-path-plus
+  description: Transitive path with plus
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:relatedStream+ ?o .
+    }
+- name: transitive-path-plus-fixed-subject
+  description: Transitive path with plus and a fixed subject
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      <https://dblp.org/streams/conf/damp> dblp:relatedStream+ ?o .
+    }
+- name: transitive-path-large-join-and-plus
+  description: Transitive path with a large join and plus
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:publishedInStream/dblp:relatedStream+ ?o .
+    }
+- name: transitive-path-small-join-and-plus
+  description: Transitive path with a small join and plus
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s dblp:subStream/dblp:relatedStream+ ?o .
+    }
+- name: regex-3-contains
+  description: CONTAINS filter with fixed string of length 3
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdfs:label ?o .
+      FILTER CONTAINS(?o, "com")
+    }
+- name: regex-3-fixed
+  description: REGEX filter with fixed string of length 3
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdfs:label ?o .
+      FILTER regex(?o, "com")
+    }
+- name: regex-3
+  description: REGEX filter with expression of length 3
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdfs:label ?o .
+      FILTER regex(?o, "c.m")
+    }
+- name: regex-prefix-1
+  description: REGEX filter with prefix of length 1
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdfs:label ?o .
+      FILTER regex(?o, "^C")
+    }
+- name: regex-prefix-2
+  description: REGEX filter with prefix of length 2
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdfs:label ?object .
+      FILTER regex(?object, "^Co")
+    }
+- name: regex-prefix-3
+  description: REGEX filter with prefix of length 3
+  query: |-
+    SELECT (COUNT(*) AS ?count)
+    WHERE {
+      ?s rdfs:label ?object .
+      FILTER regex(?object, "^Com")
+    }
+- name: strlen
+  description: String length for large string predicate
+  query: |-
+    SELECT (sum(STRLEN(?o)) AS ?checksum)
+    WHERE {
+      ?s rdfs:label ?o .
+    }
+- name: strbefore
+  description: STRBEFORE string function
+  query: |-
+    SELECT (sum(STRLEN(STRBEFORE(?o, "a"))) AS ?checksum)
+    WHERE {
+      ?s rdfs:label ?o .
+    }
+- name: strafter
+  description: STRAFTER string function
+  query: |-
+    SELECT (sum(STRLEN(STRAFTER(?o, "a"))) AS ?checksum)
+    WHERE {
+      ?s rdfs:label ?o .
+    }
+- name: strstarts
+  description: STRSTARTS string function
+  query: |-
+    SELECT (sum(xsd:integer(STRSTARTS(?o, "a"))) AS ?count)
+    WHERE {
+      ?s rdfs:label ?o .
+    }
+- name: strends
+  description: STRENDS string function
+  query: |-
+    SELECT (sum(xsd:integer(STRENDS(?o, "a"))) AS ?count)
+    WHERE {
+      ?s rdfs:label ?o .
+    }
+- name: result-size-tiny
+  description: Export 10 tuples
+  query: |-
+    SELECT ?s ?o
+    WHERE {
+      ?s rdf:type ?o .
+    }
+    LIMIT 10
+- name: result-size-small
+  description: Export 1000 tuples
+  query: |-
+    SELECT ?s ?o
+    WHERE {
+      ?s rdf:type ?o .
+    }
+    LIMIT 1000
+- name: result-size-medium
+  description: Export 100K tuples
+  query: |-
+    SELECT ?s ?o
+    WHERE {
+      ?s rdf:type ?o .
+    }
+    LIMIT 100000
+- name: result-size-large
+  description: Export 1M tuples
+  query: |-
+    SELECT ?s ?o
+    WHERE {
+      ?s rdf:type ?o .
+    }
+    LIMIT 1000000
+- name: result-size-xlarge
+  description: Export 10M tuples
+  query: |-
+    SELECT ?s ?o
+    WHERE {
+      ?s rdf:type ?o .
+    }
+    LIMIT 10000000
+- name: numeric-baseline
+  description: Baseline for numeric queries
+  query: |-
+    SELECT (sum(?o) AS ?sum)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+    }
+- name: numeric-abs
+  description: ABS function
+  query: |-
+    SELECT (sum(abs(?o)) AS ?sum)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+    }
+- name: numeric-ceil
+  description: CEIL function
+  query: |-
+    SELECT (sum(ceil(?o)) AS ?sum)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+    }
+- name: numeric-floor
+  description: FLOOR function
+  query: |-
+    SELECT (sum(floor(?o)) AS ?sum)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+    }
+- name: numeric-round
+  description: ROUND function
+  query: |-
+    SELECT (sum(round(?o)) AS ?sum)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+    }
+- name: numeric-add
+  description: Addition
+  query: |-
+    SELECT (sum(?o + ?o) AS ?sum)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+    }
+- name: numeric-greater
+  description: Greater than
+  query: |-
+    SELECT (sum(?o > 0) AS ?sum)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+    }
+- name: numeric-filter-bin-search-fifty-fifty
+  description: Numeric FILTER that filters out 50 percent of the values
+  query: |-
+    SELECT (COUNT(?s) AS ?count)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+      FILTER (?o >= 2)
+    }
+- name: numeric-filter-bin-search-seventy-thirty
+  description: Numeric FILTER that filters out 70 percent of the values
+  query: |-
+    SELECT (COUNT(?s) AS ?count)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+      FILTER (?o >= 3)
+    }
+- name: numeric-filter-bin-search-ninetyfive-five
+  description: Numeric FILTER that filters out 95 percent of the values
+  query: |-
+    SELECT (COUNT(?s) AS ?count)
+    WHERE {
+      ?s dblp:numberOfCreators ?o .
+      FILTER (?o >= 7)
+    }
+- name: filter-few-results
+  description: FILTER that filters out most rows and has few results
+  query: |-
+    SELECT (COUNT(?s) AS ?count)
+    WHERE {
+      ?s rdf:type ?o .
+      FILTER (?s = ?o)
+    }
+- name: filter-many-results
+  description: FILTER that filters out few rows and has many results
+  query: |-
+    SELECT (COUNT(?s) AS ?count)
+    WHERE {
+      ?s rdf:type ?o .
+      FILTER (?s != ?o)
+    }
+- name: filter-language-en
+  description: FILTER on string predicate for only English literals
+  query: |-
+    SELECT (COUNT(?s) AS ?count)
+    WHERE {
+      ?s dblp:signatureDblpName ?o .
+      FILTER (lang(?o) = "en")
+    }
+- name: date-year
+  description: YEAR function
+  query: |-
+    SELECT (sum(year(?o)) AS ?sum)
+    WHERE {
+      ?s dblp:yearOfPublication ?o .
+    }
+- name: date-month
+  description: MONTH function
+  query: |-
+    SELECT (sum(month(?o)) AS ?sum)
+    WHERE {
+      ?s dblp:yearOfPublication ?o .
+    }
+- name: date-day
+  description: DAY function
+  query: |-
+    SELECT (sum(day(?o)) AS ?sum)
+    WHERE {
+      ?s dblp:yearOfPublication ?o .
+    }
+- name: number-of-triples
+  description: Total number of triples
+  query: |-
+    SELECT (COUNT(?s) AS ?count)
+    WHERE {
+      ?s ?p ?o .
+    }
+- name: number-of-subjects
+  description: Total number of distinct subjects
+  query: |-
+    SELECT (COUNT(DISTINCT ?s) AS ?count)
+    WHERE {
+      ?s ?p ?o .
+    }
+- name: number-of-predicates
+  description: Total number of distinct predicates
+  query: |-
+    SELECT (COUNT(DISTINCT ?p) AS ?count)
+    WHERE {
+      ?s ?p ?o .
+    }
+- name: number-of-objects
+  description: Total number of distinct objects
+  query: |-
+    SELECT (COUNT(DISTINCT ?o) AS ?count)
+    WHERE {
+      ?s ?p ?o .
+    }
+- name: number-of-literals
+  description: Total number of literals
+  query: |-
+    SELECT (COUNT(?o) AS ?count)
+    WHERE {
+      ?s ?p ?o .
+      FILTER isLiteral(?o)
+    }
+- name: number-of-blank-nodes
+  description: Total number of blank nodes
+  query: |-
+    SELECT (COUNT(?s) AS ?count)
+    WHERE {
+      ?s ?p ?o .
+      FILTER isBlank(?s)
+    }

@@ -1,0 +1,955 @@
+name: WDBench Wikidata-truthy Evaluation (~8B triples)
+description: WDBench Benchmark for Wikidata-truthy RDF dump, data from https://dumps.wikimedia.org/wikidatawiki/entities/ (13.06.2025), ~8 billion triples. WDBench at https://github.com/MillenniumDB/WDBench 
+scale: 8000000000
+queries:
+- name: c2rpqs_query_12
+  description: WDBench/Queries/c2rpqs.txt Query 12
+  query: |-
+    SELECT *
+    WHERE {
+      <http://www.wikidata.org/entity/Q142> <http://www.wikidata.org/prop/direct/P35> ?x1 .
+      ?x1 (<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q35120> .
+    }
+- name: c2rpqs_query_106
+  description: WDBench/Queries/c2rpqs.txt Query 106
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q35409> .
+      ?x1 <http://www.wikidata.org/prop/direct/P171> ?x2 .
+      ?x2 (<http://www.wikidata.org/prop/direct/P171>)* <http://www.wikidata.org/entity/Q28319> .
+    }
+- name: c2rpqs_query_107
+  description: WDBench/Queries/c2rpqs.txt Query 107
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> .
+      ?x1 (<http://www.wikidata.org/prop/direct/P171>)* <http://www.wikidata.org/entity/Q1390> .
+    }
+- name: c2rpqs_query_129
+  description: WDBench/Queries/c2rpqs.txt Query 129
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P105> ?x2 .
+      ?x3 <http://www.wikidata.org/prop/direct/P105> ?x4 .
+      ?x1 <http://www.wikidata.org/prop/direct/P171> ?x3 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> .
+      ?x3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> .
+      ?x4 (<http://www.wikidata.org/prop/direct/P361>)+ ?x2 .
+    }
+- name: c2rpqs_query_132
+  description: WDBench/Queries/c2rpqs.txt Query 132
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P105> ?x2 .
+      ?x3 <http://www.wikidata.org/prop/direct/P105> ?x4 .
+      ?x1 <http://www.wikidata.org/prop/direct/P171> ?x3 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> .
+      ?x4 (<http://www.wikidata.org/prop/direct/P361>)+ ?x2 .
+    }
+- name: c2rpqs_query_285
+  description: WDBench/Queries/c2rpqs.txt Query 285
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P17> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P18> ?x3 .
+      ?x2 <http://www.wikidata.org/prop/direct/P297> ?x4 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> ?x5 .
+      ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q2095> .
+      ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*) ?x6 .
+    }
+- name: c2rpqs_query_286
+  description: WDBench/Queries/c2rpqs.txt Query 286
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P17> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> ?x3 .
+      ?x3 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)* <http://www.wikidata.org/entity/Q39715> .
+      ?x2 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)* <http://www.wikidata.org/entity/Q142> .
+    }
+- name: c2rpqs_query_287
+  description: WDBench/Queries/c2rpqs.txt Query 287
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P17> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> ?x3 .
+      ?x3 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)* <http://www.wikidata.org/entity/Q476028> .
+      ?x2 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)* <http://www.wikidata.org/entity/Q36> .
+    }
+- name: c2rpqs_query_289
+  description: WDBench/Queries/c2rpqs.txt Query 289
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P17> ?x2 .
+      ?x2 (<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q35120> .
+    }
+- name: c2rpqs_query_290
+  description: WDBench/Queries/c2rpqs.txt Query 290
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P17> ?x2 .
+      ?x2 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q35120> .
+    }
+- name: c2rpqs_query_329
+  description: WDBench/Queries/c2rpqs.txt Query 329
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P21> ?x2 .
+      ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q6671777> .
+    }
+- name: c2rpqs_query_334
+  description: WDBench/Queries/c2rpqs.txt Query 334
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P2579> ?x2 .
+      ?x1 (<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q488383> .
+      ?x2 ((<http://www.wikidata.org/prop/direct/P31>)?/(<http://www.wikidata.org/prop/direct/P279>)+) <http://www.wikidata.org/entity/Q11862829> .
+    }
+- name: c2rpqs_query_337
+  description: WDBench/Queries/c2rpqs.txt Query 337
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P276> ?x2 .
+      ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q5> .
+    }
+- name: c2rpqs_query_427
+  description: WDBench/Queries/c2rpqs.txt Query 427
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P3096> ?x2 .
+      ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q5> .
+    }
+- name: c2rpqs_query_471
+  description: WDBench/Queries/c2rpqs.txt Query 471
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P31> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P625> ?x3 .
+      ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q486972> .
+      ?x1 (<http://www.wikidata.org/prop/direct/P131>)* <http://www.wikidata.org/entity/Q1356> .
+    }
+- name: c2rpqs_query_474
+  description: WDBench/Queries/c2rpqs.txt Query 474
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P31> ?x2 .
+      ?x2 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)* <http://www.wikidata.org/entity/Q215627> .
+    }
+- name: c2rpqs_query_475
+  description: WDBench/Queries/c2rpqs.txt Query 475
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P31> ?x2 .
+      ?x2 (<http://www.wikidata.org/prop/direct/P279>)* <http://www.wikidata.org/entity/Q1190554> .
+    }
+- name: c2rpqs_query_490
+  description: WDBench/Queries/c2rpqs.txt Query 490
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P361> ?x2 .
+      ?x2 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q43229> .
+      ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q43229> .
+    }
+- name: c2rpqs_query_499
+  description: WDBench/Queries/c2rpqs.txt Query 499
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P462> <http://www.wikidata.org/entity/Q943> .
+      ?x1 (((<http://www.wikidata.org/prop/direct/P106>|<http://www.wikidata.org/prop/direct/P39>)|<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q488383> .
+    }
+- name: single_bgps_query_100
+  description: WDBench/Queries/single_bgps.txt Query 100
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P2048> ?x2 .
+    }
+- name: single_bgps_query_101
+  description: WDBench/Queries/single_bgps.txt Query 101
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P2067> ?x2 .
+    }
+- name: single_bgps_query_102
+  description: WDBench/Queries/single_bgps.txt Query 102
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P2093> ?x2 .
+    }
+- name: single_bgps_query_103
+  description: WDBench/Queries/single_bgps.txt Query 103
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P213> ?x2 .
+    }
+- name: single_bgps_query_104
+  description: WDBench/Queries/single_bgps.txt Query 104
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P214> ?x2 .
+    }
+- name: single_bgps_query_106
+  description: WDBench/Queries/single_bgps.txt Query 106
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P225> ?x2 .
+    }
+- name: single_bgps_query_108
+  description: WDBench/Queries/single_bgps.txt Query 108
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P2456> ?x2 .
+    }
+- name: single_bgps_query_109
+  description: WDBench/Queries/single_bgps.txt Query 109
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P268> ?x2 .
+    }
+- name: single_bgps_query_118
+  description: WDBench/Queries/single_bgps.txt Query 118
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P279> ?x2 .
+    }
+- name: single_bgps_query_119
+  description: WDBench/Queries/single_bgps.txt Query 119
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q30> .
+    }
+- name: single_bgps_query_121
+  description: WDBench/Queries/single_bgps.txt Query 121
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P27> ?x2 .
+    }
+- name: multiple_bgps_query_10
+  description: WDBench/Queries/multiple_bgps.txt Query 10
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> .
+      ?x1 <http://www.wikidata.org/prop/direct/P141> <http://www.wikidata.org/entity/Q219127> .
+    }
+- name: multiple_bgps_query_12
+  description: WDBench/Queries/multiple_bgps.txt Query 12
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> .
+      ?x1 <http://www.wikidata.org/prop/direct/P141> <http://www.wikidata.org/entity/Q278113> .
+    }
+- name: multiple_bgps_query_13
+  description: WDBench/Queries/multiple_bgps.txt Query 13
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> .
+      ?x1 <http://www.wikidata.org/prop/direct/P1843> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P627> ?x3 .
+    }
+- name: multiple_bgps_query_14
+  description: WDBench/Queries/multiple_bgps.txt Query 14
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> .
+      ?x1 <http://www.wikidata.org/prop/direct/P225> ?x2 .
+    }
+- name: multiple_bgps_query_15
+  description: WDBench/Queries/multiple_bgps.txt Query 15
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> .
+      ?x1 <http://www.wikidata.org/prop/direct/P225> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P627> ?x3 .
+    }
+- name: multiple_bgps_query_16
+  description: WDBench/Queries/multiple_bgps.txt Query 16
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432> .
+      ?x2 <http://www.wikidata.org/prop/direct/P171> ?x3 .
+      ?x2 <http://www.wikidata.org/prop/direct/P1843> ?x4 .
+      ?x2 <http://www.wikidata.org/prop/direct/P225> ?x5 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> .
+    }
+- name: multiple_bgps_query_17
+  description: WDBench/Queries/multiple_bgps.txt Query 17
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P105> ?x2 .
+      ?x3 <http://www.wikidata.org/prop/direct/P105> ?x4 .
+      ?x1 <http://www.wikidata.org/prop/direct/P171> ?x3 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> .
+      ?x3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521> .
+      ?x4 <http://www.wikidata.org/prop/direct/P361> ?x2 .
+    }
+- name: multiple_bgps_query_20
+  description: WDBench/Queries/multiple_bgps.txt Query 20
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q1028181> .
+      ?x1 <http://www.wikidata.org/prop/direct/P19> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> .
+    }
+- name: multiple_bgps_query_35
+  description: WDBench/Queries/multiple_bgps.txt Query 35
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q12299841> .
+      ?x2 <http://www.wikidata.org/prop/direct/P17> ?x3 .
+      ?x1 <http://www.wikidata.org/prop/direct/P19> ?x2 .
+      ?x4 <http://www.wikidata.org/prop/direct/P569> ?x4 .
+    }
+- name: multiple_bgps_query_77
+  description: WDBench/Queries/multiple_bgps.txt Query 77
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999> .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> .
+      ?x1 <http://www.wikidata.org/prop/direct/P345> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P569> ?x3 .
+    }
+- name: multiple_bgps_query_139
+  description: WDBench/Queries/multiple_bgps.txt Query 139
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q937857> .
+      ?x2 <http://www.wikidata.org/prop/direct/P19> ?x2 .
+      ?x2 <http://www.wikidata.org/prop/direct/P20> ?x3 .
+      ?x1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097> .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> .
+    }
+- name: multiple_bgps_query_143
+  description: WDBench/Queries/multiple_bgps.txt Query 143
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P106> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P19> ?x3 .
+      ?x1 <http://www.wikidata.org/prop/direct/P21> ?x4 .
+      ?x1 <http://www.wikidata.org/prop/direct/P27> ?x5 .
+      ?x1 <http://www.wikidata.org/prop/direct/P569> ?x6 .
+    }
+- name: multiple_bgps_query_149
+  description: WDBench/Queries/multiple_bgps.txt Query 149
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P106> ?x2 .
+      ?x2 <http://www.wikidata.org/prop/direct/P279> ?x3 .
+      ?x2 <http://www.wikidata.org/prop/direct/P279> ?x4 .
+      ?x2 <http://www.wikidata.org/prop/direct/P31> ?x5 .
+      ?x2 <http://www.wikidata.org/prop/direct/P31> ?x6 .
+    }
+- name: multiple_bgps_query_163
+  description: WDBench/Queries/multiple_bgps.txt Query 163
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1082> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P1448> ?x3 .
+      ?x4 <http://www.wikidata.org/prop/direct/P1448> ?x5 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> .
+      ?x1 <http://www.wikidata.org/prop/direct/P36> ?x6 .
+    }
+- name: multiple_bgps_query_168
+  description: WDBench/Queries/multiple_bgps.txt Query 168
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1082> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P17> ?x3 .
+      ?x3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> .
+      ?x3 <http://www.wikidata.org/prop/direct/P463> ?x4 .
+    }
+- name: multiple_bgps_query_171
+  description: WDBench/Queries/multiple_bgps.txt Query 171
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1082> ?x2 .
+      ?x3 <http://www.wikidata.org/prop/direct/P1082> ?x4 .
+      ?x1 <http://www.wikidata.org/prop/direct/P1448> ?x5 .
+      ?x6 <http://www.wikidata.org/prop/direct/P1448> ?x3 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256> .
+      ?x1 <http://www.wikidata.org/prop/direct/P36> ?x7 .
+    }
+- name: multiple_bgps_query_183
+  description: WDBench/Queries/multiple_bgps.txt Query 183
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P115> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q476028> .
+      ?x3 <http://www.wikidata.org/prop/direct/P625> ?x3 .
+      ?x2 <http://www.wikidata.org/prop/direct/P625> ?x4 .
+    }
+- name: multiple_bgps_query_209
+  description: WDBench/Queries/multiple_bgps.txt Query 209
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P131> <http://www.wikidata.org/entity/Q9899> .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q79007> .
+      ?x2 <http://www.wikidata.org/prop/direct/P625> ?x2 .
+    }
+- name: multiple_bgps_query_212
+  description: WDBench/Queries/multiple_bgps.txt Query 212
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P131> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P138> ?x3 .
+      ?x3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q79007> .
+    }
+- name: multiple_bgps_query_256
+  description: WDBench/Queries/multiple_bgps.txt Query 256
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1433> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 .
+      ?x1 <http://www.wikidata.org/prop/direct/P478> ?x4 .
+    }
+- name: multiple_bgps_query_272
+  description: WDBench/Queries/multiple_bgps.txt Query 272
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1533> ?x2 .
+      ?x3 <http://www.wikidata.org/prop/direct/P1533> ?x4 .
+      ?x5 <http://www.wikidata.org/prop/direct/P1533> ?x6 .
+      ?x7 <http://www.wikidata.org/prop/direct/P734> ?x2 .
+      ?x8 <http://www.wikidata.org/prop/direct/P734> ?x4 .
+      ?x9 <http://www.wikidata.org/prop/direct/P734> ?x6 .
+      ?x8 <http://www.wikidata.org/prop/direct/P735> ?x1 .
+      ?x9 <http://www.wikidata.org/prop/direct/P735> ?x3 .
+      ?x9 <http://www.wikidata.org/prop/direct/P735> ?x5 .
+    }
+- name: multiple_bgps_query_273
+  description: WDBench/Queries/multiple_bgps.txt Query 273
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1533> ?x2 .
+      ?x3 <http://www.wikidata.org/prop/direct/P1533> ?x4 .
+      ?x5 <http://www.wikidata.org/prop/direct/P1533> ?x6 .
+      ?x7 <http://www.wikidata.org/prop/direct/P734> ?x2 .
+      ?x8 <http://www.wikidata.org/prop/direct/P734> ?x4 .
+      ?x9 <http://www.wikidata.org/prop/direct/P734> ?x6 .
+      ?x9 <http://www.wikidata.org/prop/direct/P734> ?x10 .
+      ?x8 <http://www.wikidata.org/prop/direct/P735> ?x1 .
+      ?x9 <http://www.wikidata.org/prop/direct/P735> ?x3 .
+      ?x9 <http://www.wikidata.org/prop/direct/P735> ?x5 .
+    }
+- name: multiple_bgps_query_303
+  description: WDBench/Queries/multiple_bgps.txt Query 303
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P176> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P179> ?x3 .
+      ?x4 <http://www.wikidata.org/prop/direct/P17> ?x4 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3231690> .
+    }
+- name: multiple_bgps_query_309
+  description: WDBench/Queries/multiple_bgps.txt Query 309
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q142> .
+      ?x2 <http://www.wikidata.org/prop/direct/P279> ?x3 .
+      ?x1 <http://www.wikidata.org/prop/direct/P279> ?x4 .
+      ?x2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q43229> .
+    }
+- name: multiple_bgps_query_633
+  description: WDBench/Queries/multiple_bgps.txt Query 633
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P31> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P698> ?x3 .
+    }
+- name: multiple_bgps_query_637
+  description: WDBench/Queries/multiple_bgps.txt Query 637
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P31> ?x2 .
+      ?x3 <http://www.wikidata.org/prop/direct/P31> ?x1 .
+      ?x4 <http://www.wikidata.org/prop/direct/P31> ?x3 .
+      ?x5 <http://www.wikidata.org/prop/direct/P31> ?x4 .
+    }
+- name: opts_query_3
+  description: WDBench/Queries/opts.txt Query 3
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P102> <http://www.wikidata.org/entity/Q6721203> .
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P569> ?x2 .
+      }
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P19> ?x3 .
+      }
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P21> ?x4 .
+      }
+      OPTIONAL {
+        ?x3 <http://www.wikidata.org/prop/direct/P625> ?x5 .
+      }
+    }
+- name: opts_query_11
+  description: WDBench/Queries/opts.txt Query 11
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q170790> .
+      ?x1 <http://www.wikidata.org/prop/direct/P27> <http://www.wikidata.org/entity/Q70972> .
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P27> ?x2 .
+      }
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P569> ?x3 .
+      }
+    }
+- name: opts_query_51
+  description: WDBench/Queries/opts.txt Query 51
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P106> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> .
+      OPTIONAL {
+        ?x3 <http://www.wikidata.org/prop/direct/P39> ?x3 .
+      }
+    }
+- name: opts_query_54
+  description: WDBench/Queries/opts.txt Query 54
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1083> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P131> ?x3 .
+      ?x4 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q476028> .
+      ?x1 <http://www.wikidata.org/prop/direct/P625> ?x5 .
+      OPTIONAL {
+        ?x4 <http://www.wikidata.org/prop/direct/P115> ?x1 .
+        ?x4 <http://www.wikidata.org/prop/direct/P154> ?x6 .
+        ?x4 <http://www.wikidata.org/prop/direct/P17> ?x7 .
+      }
+    }
+- name: opts_query_60
+  description: WDBench/Queries/opts.txt Query 60
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1184> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P361> <http://www.wikidata.org/entity/Q21542493> .
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P170> ?x3 .
+        ?x4 <http://www.wikidata.org/prop/direct/P214> ?x5 .
+      }
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P571> ?x6 .
+      }
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P180> ?x7 .
+        ?x7 <http://www.wikidata.org/prop/direct/P625> ?x8 .
+      }
+    }
+- name: opts_query_102
+  description: WDBench/Queries/opts.txt Query 102
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P136> ?x2 .
+      ?x2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q201658> .
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P345> ?x3 .
+      }
+    }
+- name: opts_query_106
+  description: WDBench/Queries/opts.txt Query 106
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1433> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 .
+      ?x1 <http://www.wikidata.org/prop/direct/P478> ?x4 .
+      OPTIONAL {
+        ?x2 <http://www.wikidata.org/prop/direct/P236> ?x5 .
+      }
+    }
+- name: opts_query_107
+  description: WDBench/Queries/opts.txt Query 107
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1433> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 .
+      ?x1 <http://www.wikidata.org/prop/direct/P478> ?x4 .
+      OPTIONAL {
+        ?x2 <http://www.wikidata.org/prop/direct/P236> ?x5 .
+      }
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P304> ?x6 .
+      }
+    }
+- name: opts_query_110
+  description: WDBench/Queries/opts.txt Query 110
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1435> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P625> ?x3 .
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P17> ?x4 .
+      }
+    }
+- name: opts_query_113
+  description: WDBench/Queries/opts.txt Query 113
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1476> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> .
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P18> ?x3 .
+      }
+    }
+- name: opts_query_117
+  description: WDBench/Queries/opts.txt Query 117
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1566> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q668> .
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P131> ?x3 .
+      }
+    }
+- name: opts_query_132
+  description: WDBench/Queries/opts.txt Query 132
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P171> ?x2 .
+      ?x3 <http://www.wikidata.org/prop/direct/P171> ?x4 .
+      ?x2 <http://www.wikidata.org/prop/direct/P171> <http://www.wikidata.org/entity/Q25401> .
+      ?x2 <http://www.wikidata.org/prop/direct/P18> ?x5 .
+      ?x1 <http://www.wikidata.org/prop/direct/P18> ?x6 .
+      ?x3 <http://www.wikidata.org/prop/direct/P18> ?x7 .
+      OPTIONAL {
+        ?x4 <http://www.wikidata.org/prop/direct/P171> ?x1 .
+        ?x4 <http://www.wikidata.org/prop/direct/P18> ?x8 .
+      }
+    }
+- name: opts_query_135
+  description: WDBench/Queries/opts.txt Query 135
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1741> ?x2 .
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P166> ?x3 .
+      }
+      OPTIONAL {
+        ?x3 <http://www.wikidata.org/prop/direct/P585> ?x4 .
+      }
+    }
+- name: opts_query_138
+  description: WDBench/Queries/opts.txt Query 138
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P1788> ?x2 .
+      ?x3 <http://www.wikidata.org/prop/direct/P625> ?x4 .
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P19> ?x3 .
+      }
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P569> ?x5 .
+      }
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P18> ?x6 .
+      }
+    }
+- name: opts_query_152
+  description: WDBench/Queries/opts.txt Query 152
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q159> .
+      ?x2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q486972> .
+      OPTIONAL {
+        ?x2 <http://www.wikidata.org/prop/direct/P625> ?x3 .
+      }
+      OPTIONAL {
+        ?x4 <http://www.wikidata.org/prop/direct/P1082> ?x4 .
+      }
+    }
+- name: opts_query_207
+  description: WDBench/Queries/opts.txt Query 207
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P19> ?x2 .
+      ?x1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072> .
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5> .
+      ?x1 <http://www.wikidata.org/prop/direct/P569> ?x3 .
+      ?x2 <http://www.wikidata.org/prop/direct/P625> ?x4 .
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P18> ?x5 .
+      }
+    }
+- name: opts_query_293
+  description: WDBench/Queries/opts.txt Query 293
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814> .
+      ?x1 <http://www.wikidata.org/prop/direct/P50> ?x2 .
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P50> ?x2 .
+      }
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P1476> ?x3 .
+      }
+      OPTIONAL {
+        ?x1 <http://www.wikidata.org/prop/direct/P577> ?x4 .
+      }
+    }
+- name: opts_query_318
+  description: WDBench/Queries/opts.txt Query 318
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3231690> .
+      OPTIONAL {
+        ?x2 <http://www.wikidata.org/prop/direct/P17> ?x2 .
+      }
+    }
+- name: opts_query_480
+  description: WDBench/Queries/opts.txt Query 480
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 <http://www.wikidata.org/prop/direct/P39> <http://www.wikidata.org/entity/Q3044918> .
+      OPTIONAL {
+        ?x2 <http://www.wikidata.org/prop/direct/P569> ?x2 .
+      }
+    }
+- name: paths_query_62
+  description: WDBench/Queries/paths.txt Query 62
+  query: |-
+    SELECT *
+    WHERE {
+      <http://www.wikidata.org/entity/Q3044> (<http://www.wikidata.org/prop/direct/P40>)* ?x1 .
+    }
+- name: paths_query_67
+  description: WDBench/Queries/paths.txt Query 67
+  query: |-
+    SELECT *
+    WHERE {
+      <http://www.wikidata.org/entity/Q3454165> (^<http://www.wikidata.org/prop/direct/P161>/<http://www.wikidata.org/prop/direct/P161>)+ ?x1 .
+    }
+- name: paths_query_104
+  description: WDBench/Queries/paths.txt Query 104
+  query: |-
+    SELECT *
+    WHERE {
+      <http://www.wikidata.org/entity/Q80484> ((<http://www.wikidata.org/prop/direct/P131>)+/(<http://www.wikidata.org/prop/direct/P17>)*) <http://www.wikidata.org/entity/Q145> .
+    }
+- name: paths_query_114
+  description: WDBench/Queries/paths.txt Query 114
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 ()* ?x2 .
+    }
+- name: paths_query_116
+  description: WDBench/Queries/paths.txt Query 116
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 ((((((((<http://www.wikidata.org/prop/direct/P171>|<http://www.wikidata.org/prop/direct/P273>)|<http://www.wikidata.org/prop/direct/P75>)|<http://www.wikidata.org/prop/direct/P76>)|<http://www.wikidata.org/prop/direct/P77>)|<http://www.wikidata.org/prop/direct/P70>)|<http://www.wikidata.org/prop/direct/P71>)|<http://www.wikidata.org/prop/direct/P74>)|<http://www.wikidata.org/prop/direct/P89>)* <http://www.wikidata.org/entity/Q729> .
+    }
+- name: paths_query_117
+  description: WDBench/Queries/paths.txt Query 117
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (((((<http://www.wikidata.org/prop/direct/P279>/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>) ?x1 .
+    }
+- name: paths_query_118
+  description: WDBench/Queries/paths.txt Query 118
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (((((<http://www.wikidata.org/prop/direct/P31>/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>) ?x1 .
+    }
+- name: paths_query_122
+  description: WDBench/Queries/paths.txt Query 122
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 ((((<http://www.wikidata.org/prop/direct/P279>/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>) ?x1 .
+    }
+- name: paths_query_124
+  description: WDBench/Queries/paths.txt Query 124
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (((<http://www.wikidata.org/prop/direct/P106>|<http://www.wikidata.org/prop/direct/P39>)|<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q488383> .
+    }
+- name: paths_query_132
+  description: WDBench/Queries/paths.txt Query 132
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)+ <http://www.wikidata.org/entity/Q268592> .
+    }
+- name: paths_query_133
+  description: WDBench/Queries/paths.txt Query 133
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (((<http://www.wikidata.org/prop/direct/P31>)*|(<http://www.wikidata.org/prop/direct/P131>)*)/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q618123> .
+    }
+- name: paths_query_157
+  description: WDBench/Queries/paths.txt Query 157
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (<http://www.wikidata.org/prop/direct/P279>/(<http://www.wikidata.org/prop/direct/P31>)*)+ <http://www.wikidata.org/entity/Q12737077> .
+    }
+- name: paths_query_169
+  description: WDBench/Queries/paths.txt Query 169
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)* <http://www.wikidata.org/entity/Q35120> .
+    }
+- name: paths_query_183
+  description: WDBench/Queries/paths.txt Query 183
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q486972> .
+    }
+- name: paths_query_185
+  description: WDBench/Queries/paths.txt Query 185
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*) <http://www.wikidata.org/entity/Q5> .
+    }
+- name: paths_query_201
+  description: WDBench/Queries/paths.txt Query 201
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 ((<http://www.wikidata.org/prop/direct/P31>/<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P31>)+) ?x1 .
+    }
+- name: paths_query_205
+  description: WDBench/Queries/paths.txt Query 205
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)* <http://www.wikidata.org/entity/Q215627> .
+    }
+- name: paths_query_206
+  description: WDBench/Queries/paths.txt Query 206
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q12737077> .
+    }
+- name: paths_query_207
+  description: WDBench/Queries/paths.txt Query 207
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q21146257> .
+    }
+- name: paths_query_213
+  description: WDBench/Queries/paths.txt Query 213
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 ((<http://www.wikidata.org/prop/direct/P50>/<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)+) <http://www.wikidata.org/entity/Q386724> .
+    }
+- name: paths_query_217
+  description: WDBench/Queries/paths.txt Query 217
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (<http://www.wikidata.org/prop/direct/P105>)* <http://www.wikidata.org/entity/Q7432> .
+    }
+- name: paths_query_392
+  description: WDBench/Queries/paths.txt Query 392
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (<http://www.wikidata.org/prop/direct/P279>)* <http://www.wikidata.org/entity/Q35120> .
+    }
+- name: paths_query_428
+  description: WDBench/Queries/paths.txt Query 428
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (<http://www.wikidata.org/prop/direct/P31>)* <http://www.wikidata.org/entity/Q16521> .
+    }
+- name: paths_query_443
+  description: WDBench/Queries/paths.txt Query 443
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (<http://www.wikidata.org/prop/direct/P31>)* <http://www.wikidata.org/entity/Q5> .
+    }
+- name: paths_query_609
+  description: WDBench/Queries/paths.txt Query 609
+  query: |-
+    SELECT *
+    WHERE {
+      ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P31>)*) <http://www.wikidata.org/entity/Q16521> .
+    }
