@@ -5,827 +5,413 @@ scale: 50000000
 queries:
 - name: join-2-small-large
   description: JOIN of a small and a large predicate
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s swrc:chapter ?o1 .
-      ?s dc:creator ?o2 .
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s swrc:chapter ?o1 . ?s dc:creator ?o2 }'
 - name: join-2-large-small
   description: JOIN of a large and a small predicate
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:creator ?o1 .
-      ?s swrc:chapter ?o2 .
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 . ?s swrc:chapter ?o2 }'
 - name: join-2-large-large
   description: JOIN of two large predicates
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:creator ?o1 .
-      ?s rdf:type ?o2 .
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 . ?s rdf:type ?o2 }'
 - name: join-2-largest-result
   description: JOIN of two predicates with the largest possible result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s rdf:type ?o1 .
-      ?s dc:creator ?o2 .
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s dc:creator ?o2 }'
 - name: join-2-large-large-with-large-result
   description: JOIN of two large predicates with a reasonably large result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s rdf:type ?o1 .
-      ?s dc:creator ?o2 .
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s dc:creator ?o2 }'
 - name: join-2-large-large-with-small-result
   description: JOIN of two large predicates with a small result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:publisher ?o1 .
-      ?s dc:creator ?o2 .
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:publisher ?o1 . ?s dc:creator ?o2 }'
 - name: join-3-star-largest-sum-of-join-sizes
   description: JOIN star of three large predicates with the largest sum of join sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:title ?o1 .
-      ?s dc:creator ?o2 .
-      ?s rdf:type ?o3 .
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . ?s dc:creator ?o2 . ?s rdf:type
+    ?o3 . }'
 - name: join-3-chain-largest-sum-of-join-sizes
   description: JOIN chain of three large predicates with the largest sum of join sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?a dc:creator ?b .
-      ?b rdf:type ?c .
-      ?c rdfs:subClassOf ?d .
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . ?b rdf:type ?c . ?c rdfs:subClassOf ?d . }'
 - name: optional-join-small-large
   description: OPTIONAL JOIN of a small and a large predicate
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s swrc:chapter ?o1 .
-      OPTIONAL {
-        ?s dc:creator ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s swrc:chapter ?o1 OPTIONAL { ?s dc:creator
+    ?o2 } }'
 - name: optional-join-large-small
   description: OPTIONAL JOIN of a large and a small predicate
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:creator ?o1 .
-      OPTIONAL {
-        ?s swrc:chapter ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 OPTIONAL { ?s swrc:chapter
+    ?o2 } }'
 - name: optional-join-large-large
   description: OPTIONAL JOIN of two large predicates
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:creator ?o1 .
-      OPTIONAL {
-        ?s rdf:type ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 OPTIONAL { ?s rdf:type ?o2
+    } }'
 - name: optional-join-2-large-large-with-large-result
   description: OPTIONAL JOIN of two large predicates with a reasonably large join
     result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s rdf:type ?o1 .
-      OPTIONAL {
-        ?s dc:creator ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . OPTIONAL { ?s dc:creator
+    ?o2 } }'
 - name: optional-join-2-large-large-with-small-join-result-1
   description: OPTIONAL JOIN of two large predicates with a small join result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:publisher ?o1 .
-      OPTIONAL {
-        ?s dc:creator ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:publisher ?o1 . OPTIONAL { ?s dc:creator ?o2 } }'
 - name: optional-join-2-large-large-with-small-join-result-2
   description: OPTIONAL JOIN of two large predicates with a small join result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:creator ?o1 .
-      OPTIONAL {
-        ?s dc:publisher ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:creator ?o1 . OPTIONAL { ?s dc:publisher ?o2 } }'
 - name: optional-join-3-star-1
   description: OPTIONAL JOIN star of three large predicates with the largest sum of
     join sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:title ?o1 .
-      ?s dc:creator ?o2 .
-      OPTIONAL {
-        ?s rdf:type ?o3 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . ?s dc:creator ?o2 . OPTIONAL
+    { ?s rdf:type ?o3 . } }'
 - name: optional-join-3-star-2
   description: OPTIONAL JOIN star of three large predicates with the largest sum of
     join sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:title ?o1 .
-      OPTIONAL {
-        ?s dc:creator ?o2 .
-        ?s rdf:type ?o3 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . OPTIONAL { ?s dc:creator
+    ?o2 . ?s rdf:type ?o3 . } }'
 - name: optional-join-3-chain-1
   description: OPTIONAL JOIN chain of three large predicates with the largest sum
     of join sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?a dc:creator ?b .
-      ?b rdf:type ?c .
-      OPTIONAL {
-        ?c rdfs:subClassOf ?d .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . ?b rdf:type ?c . OPTIONAL { ?c rdfs:subClassOf
+    ?d . } }'
 - name: optional-join-3-chain-2
   description: OPTIONAL JOIN chain of three large predicates with the largest sum
     of join sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?a dc:creator ?b .
-      OPTIONAL {
-        ?b rdf:type ?c .
-        ?c rdfs:subClassOf ?d .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . OPTIONAL { ?b rdf:type ?c . ?c rdfs:subClassOf
+    ?d . } }'
 - name: minus-join-small-large
   description: MINUS JOIN of a small and a large predicate
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s swrc:chapter ?o1 .
-      MINUS {
-        ?s dc:creator ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s swrc:chapter ?o1 MINUS { ?s dc:creator
+    ?o2 } }'
 - name: minus-join-large-small
   description: MINUS JOIN of a large and a small predicate
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:creator ?o1 .
-      MINUS {
-        ?s swrc:chapter ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 MINUS { ?s swrc:chapter
+    ?o2 } }'
 - name: minus-join-large-large
   description: MINUS JOIN of two large predicates
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:creator ?o1 .
-      MINUS {
-        ?s rdf:type ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 MINUS { ?s rdf:type ?o2
+    } }'
 - name: minus-join-2-large-large-with-large-result
   description: MINUS JOIN of two large predicates with a reasonably large join result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s rdf:type ?o1 .
-      MINUS {
-        ?s dc:creator ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . MINUS { ?s dc:creator ?o2
+    } }'
 - name: minus-join-2-large-large-with-small-join-result-1
   description: MINUS JOIN of two large predicates with a small join result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:publisher ?o1 .
-      MINUS {
-        ?s dc:creator ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:publisher ?o1 . MINUS { ?s dc:creator ?o2 } }'
 - name: minus-join-2-large-large-with-small-join-result-2
   description: MINUS JOIN of two large predicates with a small join result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:creator ?o1 .
-      MINUS {
-        ?s dc:publisher ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:creator ?o1 . MINUS { ?s dc:publisher ?o2 } }'
 - name: minus-join-3-star-1
   description: MINUS JOIN star of three large predicates with the largest sum of join
     sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:title ?o1 .
-      ?s dc:creator ?o2 .
-      MINUS {
-        ?s rdf:type ?o3 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . ?s dc:creator ?o2 . MINUS
+    { ?s rdf:type ?o3 . } }'
 - name: minus-join-3-star-2
   description: MINUS JOIN star of three large predicates with the largest sum of join
     sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:title ?o1 .
-      MINUS {
-        ?s dc:creator ?o2 .
-        ?s rdf:type ?o3 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . MINUS { ?s dc:creator ?o2
+    . ?s rdf:type ?o3 . } }'
 - name: minus-join-3-chain-1
   description: MINUS JOIN chain of three large predicates with the largest sum of
     join sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?a dc:creator ?b .
-      ?b rdf:type ?c .
-      MINUS {
-        ?c rdfs:subClassOf ?d .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . ?b rdf:type ?c . MINUS { ?c rdfs:subClassOf
+    ?d . } }'
 - name: minus-join-3-chain-2
   description: MINUS JOIN chain of three large predicates with the largest sum of
     join sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?a dc:creator ?b .
-      MINUS {
-        ?b rdf:type ?c .
-        ?c rdfs:subClassOf ?d .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . MINUS { ?b rdf:type ?c . ?c rdfs:subClassOf
+    ?d . } }'
 - name: exists-join-small-large
   description: EXISTS JOIN of a small and a large predicate
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s swrc:chapter ?o1 .
-      FILTER EXISTS {
-        ?s dc:creator ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s swrc:chapter ?o1 FILTER EXISTS { ?s dc:creator
+    ?o2 } }'
 - name: exists-join-large-small
   description: EXISTS JOIN of a large and a small predicate
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:creator ?o1 .
-      FILTER EXISTS {
-        ?s swrc:chapter ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 FILTER EXISTS { ?s swrc:chapter
+    ?o2 } }'
 - name: exists-join-large-large
   description: EXISTS JOIN of two large predicates
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:creator ?o1 .
-      FILTER EXISTS {
-        ?s rdf:type ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 FILTER EXISTS { ?s rdf:type
+    ?o2 } }'
 - name: exists-join-2-large-large-with-large-result
   description: EXISTS JOIN of two large predicates with a reasonably large join result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s rdf:type ?o1 .
-      FILTER EXISTS {
-        ?s dc:creator ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . FILTER EXISTS { ?s dc:creator
+    ?o2 } }'
 - name: exists-join-2-large-large-with-small-join-result-1
   description: EXISTS JOIN of two large predicates with a small join result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:publisher ?o1 .
-      FILTER EXISTS {
-        ?s dc:creator ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:publisher ?o1 . FILTER EXISTS { ?s dc:creator ?o2 } }'
 - name: exists-join-2-large-large-with-small-join-result-2
   description: EXISTS JOIN of two large predicates with a small join result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:creator ?o1 .
-      FILTER EXISTS {
-        ?s dc:publisher ?o2 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:creator ?o1 . FILTER EXISTS { ?s dc:publisher ?o2 } }'
 - name: exists-join-3-star-1
   description: EXISTS JOIN star of three large predicates with the largest sum of
     join sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:title ?o1 .
-      ?s dc:creator ?o2 .
-      FILTER EXISTS {
-        ?s rdf:type ?o3 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . ?s dc:creator ?o2 . FILTER
+    EXISTS { ?s rdf:type ?o3 . } }'
 - name: exists-join-3-star-2
   description: EXISTS JOIN star of three large predicates with the largest sum of
     join sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s dc:title ?o1 .
-      FILTER EXISTS {
-        ?s dc:creator ?o2 .
-        ?s rdf:type ?o3 .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . FILTER EXISTS { ?s dc:creator
+    ?o2 . ?s rdf:type ?o3 . } }'
 - name: exists-join-3-chain-1
   description: EXISTS JOIN chain of three large predicates with the largest sum of
     join sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?a dc:creator ?b .
-      ?b rdf:type ?c .
-      FILTER EXISTS {
-        ?c rdfs:subClassOf ?d .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . ?b rdf:type ?c . FILTER EXISTS { ?c rdfs:subClassOf
+    ?d . } }'
 - name: exists-join-3-chain-2
   description: EXISTS JOIN chain of three large predicates with the largest sum of
     join sizes
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?a dc:creator ?b .
-      FILTER EXISTS {
-        ?b rdf:type ?c .
-        ?c rdfs:subClassOf ?d .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . FILTER EXISTS { ?b rdf:type ?c . ?c rdfs:subClassOf
+    ?d . } }'
 - name: union-no-constraint
   description: UNION of two large predicates, no constraint
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      {
-        ?s dc:creator ?o .
-      }
-      UNION
-      {
-        ?s rdf:type ?o .
-      }
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s dc:creator ?o } UNION { ?s rdf:type ?o
+    } }'
 - name: union-constraint-from-star
   description: UNION of two large predicates, constrained by a large predicate known
     to have join partners
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      {
-        ?s dc:title ?o1 .
-      }
-      UNION
-      {
-        ?s dc:creator ?o1 .
-      }
-      ?s rdf:type ?o2 .
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s dc:title ?o1 } UNION { ?s dc:creator
+    ?o1 } ?s rdf:type ?o2 }'
 - name: union-constraint-small-join
   description: UNION of two large predicates, constrained by a join with a small result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      {
-        ?s dc:publisher ?o1 .
-      }
-      UNION
-      {
-        ?s dcterms:references ?o1 .
-      }
-      ?s dc:creator ?o2 .
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX dcterms: <http://purl.org/dc/terms/>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s dc:publisher ?o1 } UNION { ?s dcterms:references
+    ?o1 } ?s dc:creator ?o2 }'
 - name: union-constraint-large-join
   description: UNION of two large predicates, constrained by a join with a large result
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      {
-        ?s dc:creator ?o1 .
-      }
-      UNION
-      {
-        ?s rdf:type ?o1 .
-      }
-      ?s dc:title ?o2 .
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s dc:creator ?o1 } UNION { ?s rdf:type
+    ?o1 } ?s dc:title ?o2 }'
 - name: union-constraint-filter-restrictive
   description: UNION of two large predicates, constraint by restrictive FILTER
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      {
-        ?s dc:creator ?o .
-      }
-      UNION
-      {
-        ?s rdf:type ?o .
-      }
-      FILTER (?s = ?o)
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s dc:creator ?o } UNION { ?s rdf:type ?o
+    } FILTER (?s = ?o) }'
 - name: multicolumn-join-small
   description: Multicolumn JOIN small
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s rdf:_27 ?o .
-      ?s rdf:_17 ?o .
-    }
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*)
+    AS ?count) WHERE { ?s rdf:_27 ?o . ?s rdf:_17 ?o }'
 - name: multicolumn-join-large
   description: Multicolumn JOIN large
-  query: |-
-    SELECT (COUNT(*) AS ?count)
-    WHERE {
-      ?s rdf:_2 ?o .
-      ?s rdf:_1 ?o .
-    }
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*)
+    AS ?count) WHERE { ?s rdf:_2 ?o . ?s rdf:_1 ?o }'
 - name: group-by-count-object-high-multiplicity
   description: GROUP BY with COUNT, for object with high multiplicity
-  query: |-
-    SELECT ?object (COUNT(?subject) AS ?count)
-    WHERE {
-      ?subject rdf:type ?object .
-    }
-    GROUP BY ?object
-    ORDER BY DESC(?count)
-    LIMIT 10
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?object
+    (COUNT(?subject) AS ?count) { ?subject rdf:type ?object . } GROUP BY ?object ORDER
+    BY DESC(?count) LIMIT 10'
 - name: group-by-count-object-low-multiplicity
   description: GROUP BY with COUNT, for object with low multiplicity
-  query: |-
-    SELECT ?object (COUNT(?subject) AS ?count)
-    WHERE {
-      ?subject foaf:name ?object .
-    }
-    GROUP BY ?object
-    ORDER BY DESC(?count)
-    LIMIT 10
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?object (COUNT(?subject)
+    AS ?count) { ?subject foaf:name ?object . } GROUP BY ?object ORDER BY DESC(?count)
+    LIMIT 10'
 - name: group-by-count-object-wrong-sort-order
   description: GROUP BY with COUNT, for object but not sorted by object
-  query: |-
-    SELECT ?o1 (COUNT(?s) AS ?count)
-    WHERE {
-      ?s rdf:type ?o1 .
-      ?s dc:creator ?o2 .
-    }
-    GROUP BY ?o1
-    ORDER BY DESC(?count)
-    LIMIT 10
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT ?o1 (COUNT(?s) AS ?count) { ?s rdf:type ?o1 . ?s dc:creator ?o2 . } GROUP
+    BY ?o1 ORDER BY DESC(?count) LIMIT 10'
 - name: group-by-complex-aggregate
   description: GROUP BY with COUNT and MIN and MAX and SAMPLE
-  query: |-
-    SELECT ?o1 (COUNT(?s) AS ?count) (MIN(?s) AS ?min) (MAX(?s) AS ?max) (SAMPLE(?s) AS ?sample)
-    WHERE {
-      ?s rdf:type ?o1 .
-      ?s dc:creator ?o2 .
-    }
-    GROUP BY ?o1
-    ORDER BY DESC(?count)
-    LIMIT 10
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT ?o1 (COUNT(?s) AS ?count) (MIN(?s) AS ?min) (MAX(?s) AS ?max) (SAMPLE(?s)
+    AS ?sample) { ?s rdf:type ?o1 . ?s dc:creator ?o2 . } GROUP BY ?o1 ORDER BY DESC(?count)
+    LIMIT 10'
 - name: group-by-implicit-numeric-baseline
   description: Implicit GROUP BY with COUNT on numeric predicate as baseline
-  query: |-
-    SELECT (COUNT(?o) AS ?count)
-    WHERE {
-      ?s dcterms:issued ?o .
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(?o) AS ?count)
+    { ?s dcterms:issued ?o. }'
 - name: group-by-implicit-numeric-sum
   description: Implicit GROUP BY with SUM on numeric predicate
-  query: |-
-    SELECT (sum(?o) AS ?sum)
-    WHERE {
-      ?s dcterms:issued ?o .
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(?o) AS ?sum) { ?s
+    dcterms:issued ?o. }'
 - name: group-by-implicit-numeric-min
   description: Implicit GROUP BY with MIN on numeric predicate
-  query: |-
-    SELECT (MIN(?o) AS ?min)
-    WHERE {
-      ?s dcterms:issued ?o .
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (MIN(?o) AS ?min) { ?s
+    dcterms:issued ?o. }'
 - name: group-by-implicit-numeric-max
   description: Implicit GROUP BY with MAX on numeric predicate
-  query: |-
-    SELECT (MAX(?o) AS ?max)
-    WHERE {
-      ?s dcterms:issued ?o .
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (MAX(?o) AS ?max) { ?s
+    dcterms:issued ?o. }'
 - name: group-by-implicit-numeric-avg
   description: Implicit GROUP BY with AVG on numeric predicate
-  query: |-
-    SELECT (AVG(?o) AS ?avg)
-    WHERE {
-      ?s dcterms:issued ?o .
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (AVG(?o) AS ?avg) { ?s
+    dcterms:issued ?o. }'
 - name: group-by-implicit-string-baseline
   description: Implicit GROUP BY with COUNT on string predicate as baseline
-  query: |-
-    SELECT (COUNT(?o) AS ?count)
-    WHERE {
-      ?s foaf:name ?o .
-    }
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT (COUNT(?o) AS ?count) {
+    ?s foaf:name ?o. }'
 - name: group-by-implicit-string-min
   description: Implicit GROUP BY with MIN on string predicate
-  query: |-
-    SELECT (MIN(?o) AS ?min)
-    WHERE {
-      ?s foaf:name ?o .
-    }
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT (MIN(?o) AS ?min) { ?s
+    foaf:name ?o. }'
 - name: group-by-implicit-string-max
   description: Implicit GROUP BY with MAX on string predicate
-  query: |-
-    SELECT (MAX(?o) AS ?max)
-    WHERE {
-      ?s foaf:name ?o .
-    }
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT (MAX(?o) AS ?max) { ?s
+    foaf:name ?o. }'
 - name: group-by-string-groupconcat
   description: GROUP BY with GROUP_CONCAT on string predicate with high subject multiplicity
-  query: |-
-    SELECT (sum(STRLEN(?cat)) AS ?sum)
-    WHERE {
-      {
-        SELECT (GROUP_CONCAT(?o; SEPARATOR = " ") AS ?cat)
-        WHERE {
-          ?s foaf:name ?o .
-        }
-        GROUP BY ?s
-      }
-    }
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT (SUM(STRLEN(?cat)) AS ?sum)
+    { { SELECT (GROUP_CONCAT(?o; SEPARATOR=" ") AS ?cat) { ?s foaf:name ?o. } GROUP
+    BY ?s } }'
 - name: distinct-count-object-high-multiplicity
   description: COUNT DISTINCT, for object with high multiplicity
-  query: |-
-    SELECT (COUNT(DISTINCT ?object) AS ?count)
-    WHERE {
-      ?subject rdf:type ?object .
-    }
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(DISTINCT
+    ?object) AS ?count) { ?subject rdf:type ?object . }'
 - name: distinct-count-object-low-multiplicity
   description: COUNT DISTINCT, for object with low multiplicity
-  query: |-
-    SELECT (COUNT(DISTINCT ?object) AS ?count)
-    WHERE {
-      ?subject foaf:name ?object .
-    }
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT (COUNT(DISTINCT ?object)
+    AS ?count) { ?subject foaf:name ?object . }'
 - name: distinct-count-object-wrong-sort-order
   description: COUNT DISTINCT, for object but not sorted by object
-  query: |-
-    SELECT (COUNT(DISTINCT ?o1) AS ?count)
-    WHERE {
-      ?s rdf:type ?o1 .
-      ?s dc:creator ?o2 .
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(DISTINCT ?o1) AS ?count) { ?s rdf:type ?o1 . ?s dc:creator ?o2 .
+    }'
 - name: strlen
   description: String length for large string predicate
-  query: |-
-    SELECT (sum(STRLEN(?o)) AS ?checksum)
-    WHERE {
-      ?s rdfs:label ?o .
-    }
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(?o))
+    AS ?checksum) { ?s rdfs:label ?o . }'
 - name: strbefore
   description: STRBEFORE string function
-  query: |-
-    SELECT (sum(STRLEN(STRBEFORE(?o, "a"))) AS ?checksum)
-    WHERE {
-      ?s rdfs:label ?o .
-    }
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(STRBEFORE(?o,
+    "a"))) AS ?checksum) { ?s rdfs:label ?o . }'
 - name: strafter
   description: STRAFTER string function
-  query: |-
-    SELECT (sum(STRLEN(STRAFTER(?o, "a"))) AS ?checksum)
-    WHERE {
-      ?s rdfs:label ?o .
-    }
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(STRAFTER(?o,
+    "a"))) AS ?checksum) { ?s rdfs:label ?o . }'
 - name: strstarts
   description: STRSTARTS string function
-  query: |-
-    SELECT (sum(xsd:integer(STRSTARTS(?o, "a"))) AS ?count)
-    WHERE {
-      ?s rdfs:label ?o .
-    }
+  query: 'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    SELECT (SUM(xsd:integer(STRSTARTS(?o, "a"))) AS ?count) { ?s rdfs:label ?o . }'
 - name: strends
   description: STRENDS string function
-  query: |-
-    SELECT (sum(xsd:integer(STRENDS(?o, "a"))) AS ?count)
-    WHERE {
-      ?s rdfs:label ?o .
-    }
+  query: 'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    SELECT (SUM(xsd:integer(STRENDS(?o, "a"))) AS ?count) { ?s rdfs:label ?o . }'
 - name: result-size-tiny
   description: Export 10 tuples
-  query: |-
-    SELECT ?s ?o
-    WHERE {
-      ?s dc:creator ?o .
-    }
-    LIMIT 10
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?s ?o WHERE { ?s dc:creator
+    ?o } LIMIT 10'
 - name: result-size-small
   description: Export 1000 tuples
-  query: |-
-    SELECT ?s ?o
-    WHERE {
-      ?s dc:creator ?o .
-    }
-    LIMIT 1000
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?s ?o WHERE { ?s dc:creator
+    ?o } LIMIT 1000'
 - name: result-size-medium
   description: Export 100K tuples
-  query: |-
-    SELECT ?s ?o
-    WHERE {
-      ?s dc:creator ?o .
-    }
-    LIMIT 100000
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?s ?o WHERE { ?s dc:creator
+    ?o } LIMIT 100000'
 - name: result-size-large
   description: Export 1M tuples
-  query: |-
-    SELECT ?s ?o
-    WHERE {
-      ?s dc:creator ?o .
-    }
-    LIMIT 1000000
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?s ?o WHERE { ?s dc:creator
+    ?o } LIMIT 1000000'
 - name: result-size-xlarge
   description: Export 10M tuples
-  query: |-
-    SELECT ?s ?o
-    WHERE {
-      ?s dc:creator ?o .
-    }
-    LIMIT 10000000
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?s ?o WHERE { ?s dc:creator
+    ?o } LIMIT 10000000'
 - name: numeric-baseline
   description: Baseline for numeric queries
-  query: |-
-    SELECT (sum(?o) AS ?sum)
-    WHERE {
-      ?s dcterms:issued ?o .
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(?o) AS ?sum) WHERE
+    { ?s dcterms:issued ?o }'
 - name: numeric-abs
   description: ABS function
-  query: |-
-    SELECT (sum(abs(?o)) AS ?sum)
-    WHERE {
-      ?s dcterms:issued ?o .
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(ABS(?o)) AS ?sum)
+    WHERE { ?s dcterms:issued ?o }'
 - name: numeric-ceil
   description: CEIL function
-  query: |-
-    SELECT (sum(ceil(?o)) AS ?sum)
-    WHERE {
-      ?s dcterms:issued ?o .
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(CEIL(?o)) AS ?sum)
+    WHERE { ?s dcterms:issued ?o }'
 - name: numeric-floor
   description: FLOOR function
-  query: |-
-    SELECT (sum(floor(?o)) AS ?sum)
-    WHERE {
-      ?s dcterms:issued ?o .
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(FLOOR(?o)) AS ?sum)
+    WHERE { ?s dcterms:issued ?o }'
 - name: numeric-round
   description: ROUND function
-  query: |-
-    SELECT (sum(round(?o)) AS ?sum)
-    WHERE {
-      ?s dcterms:issued ?o .
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(ROUND(?o)) AS ?sum)
+    WHERE { ?s dcterms:issued ?o }'
 - name: numeric-add
   description: Addition
-  query: |-
-    SELECT (sum(?o + ?o) AS ?sum)
-    WHERE {
-      ?s dcterms:issued ?o .
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(?o + ?o) AS ?sum)
+    WHERE { ?s dcterms:issued ?o }'
 - name: numeric-greater
   description: Greater than
-  query: |-
-    SELECT (sum(?o > 0) AS ?sum)
-    WHERE {
-      ?s dcterms:issued ?o .
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(?o > 0) AS ?sum)
+    WHERE { ?s dcterms:issued ?o }'
 - name: numeric-filter-bin-search-fifty-fifty
   description: Numeric FILTER that filters out 50 percent of the values
-  query: |-
-    SELECT (COUNT(?s) AS ?count)
-    WHERE {
-      ?s dcterms:issued ?o .
-      FILTER (?o >= 2015)
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(?s) AS ?count)
+    { ?s dcterms:issued ?o . FILTER (?o >= 2015) }'
 - name: numeric-filter-bin-search-seventy-thirty
   description: Numeric FILTER that filters out 70 percent of the values
-  query: |-
-    SELECT (COUNT(?s) AS ?count)
-    WHERE {
-      ?s dcterms:issued ?o .
-      FILTER (?o >= 2018)
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(?s) AS ?count)
+    { ?s dcterms:issued ?o . FILTER (?o >= 2018) }'
 - name: numeric-filter-bin-search-ninetyfive-five
   description: Numeric FILTER that filters out 95 percent of the values
-  query: |-
-    SELECT (COUNT(?s) AS ?count)
-    WHERE {
-      ?s dcterms:issued ?o .
-      FILTER (?o >= 2022)
-    }
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(?s) AS ?count)
+    { ?s dcterms:issued ?o . FILTER (?o >= 2022) }'
 - name: filter-few-results
   description: FILTER that filters out most rows and has few results
-  query: |-
-    SELECT (COUNT(?s) AS ?count)
-    WHERE {
-      ?s dc:creator ?o .
-      FILTER (?s = ?o)
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(?s) AS ?count)
+    { ?s dc:creator ?o . FILTER (?s = ?o) }'
 - name: filter-many-results
   description: FILTER that filters out few rows and has many results
-  query: |-
-    SELECT (COUNT(?s) AS ?count)
-    WHERE {
-      ?s dc:creator ?o .
-      FILTER (?s != ?o)
-    }
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(?s) AS ?count)
+    { ?s dc:creator ?o . FILTER (?s != ?o) }'
 - name: filter-language-en
   description: FILTER on string predicate for only English literals
-  query: |-
-    SELECT (COUNT(?s) AS ?count)
-    WHERE {
-      ?s foaf:name ?o .
-      FILTER (lang(?o) = "en")
-    }
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT (COUNT(?s) AS ?count) {
+    ?s foaf:name ?o . FILTER(LANG(?o) = "en") }'
 - name: number-of-triples
   description: Total number of triples
-  query: |-
-    SELECT (COUNT(?s) AS ?count)
-    WHERE {
-      ?s ?p ?o .
-    }
+  query: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o }
 - name: number-of-subjects
   description: Total number of distinct subjects
-  query: |-
-    SELECT (COUNT(DISTINCT ?s) AS ?count)
-    WHERE {
-      ?s ?p ?o .
-    }
+  query: SELECT (COUNT(DISTINCT ?s) AS ?count) WHERE { ?s ?p ?o }
 - name: number-of-predicates
   description: Total number of distinct predicates
-  query: |-
-    SELECT (COUNT(DISTINCT ?p) AS ?count)
-    WHERE {
-      ?s ?p ?o .
-    }
+  query: SELECT (COUNT(DISTINCT ?p) AS ?count) WHERE { ?s ?p ?o }
 - name: number-of-objects
   description: Total number of distinct objects
-  query: |-
-    SELECT (COUNT(DISTINCT ?o) AS ?count)
-    WHERE {
-      ?s ?p ?o .
-    }
+  query: SELECT (COUNT(DISTINCT ?o) AS ?count) WHERE { ?s ?p ?o }
 - name: number-of-literals
   description: Total number of literals
-  query: |-
-    SELECT (COUNT(?o) AS ?count)
-    WHERE {
-      ?s ?p ?o .
-      FILTER isLiteral(?o)
-    }
+  query: SELECT (COUNT(?o) AS ?count) WHERE { ?s ?p ?o FILTER ISLITERAL(?o) }
 - name: number-of-blank-nodes
   description: Total number of blank nodes
-  query: |-
-    SELECT (COUNT(?s) AS ?count)
-    WHERE {
-      ?s ?p ?o .
-      FILTER isBlank(?s)
-    }
+  query: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o FILTER ISBLANK(?s) }
