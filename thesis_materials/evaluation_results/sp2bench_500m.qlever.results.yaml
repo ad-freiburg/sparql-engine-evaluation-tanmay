@@ -1,0 +1,1033 @@
+queries:
+- name: Q1 year of journal
+  description: Return the year of publication of 'Journal 1 (1940)'.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX dcterms: <http://purl.org/dc/terms/> PREFIX bench: <http://localhost/vocabulary/bench/>
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT ?yr WHERE { ?journal rdf:type bench:Journal . ?journal dc:title
+    "Journal 1 (1940)"^^xsd:string . ?journal dcterms:issued ?yr } }'
+  runtime_info:
+    client_time: 0.022535085678100586
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: Q2 inproceedings with properties
+  description: Extract all inproceedings with multiple properties including optional
+    abstract.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX swrc: <http://swrc.ontoware.org/ontology#> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX bench: <http://localhost/vocabulary/bench/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT ?inproc ?author ?booktitle ?title ?proc ?ee ?page ?url ?yr ?abstract
+    WHERE { ?inproc rdf:type bench:Inproceedings . ?inproc dc:creator ?author . ?inproc
+    bench:booktitle ?booktitle . ?inproc dc:title ?title . ?inproc dcterms:partOf
+    ?proc . ?inproc rdfs:seeAlso ?ee . ?inproc swrc:pages ?page . ?inproc foaf:homepage
+    ?url . ?inproc dcterms:issued ?yr OPTIONAL { ?inproc bench:abstract ?abstract
+    } } ORDER BY ?yr }'
+  runtime_info:
+    client_time: 34.46343731880188
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"47577507"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: Q3a articles with pages
+  description: Select all articles with property 'swrc:pages'.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bench:
+    <http://localhost/vocabulary/bench/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT ?article WHERE { ?article rdf:type
+    bench:Article . ?article ?property ?value FILTER (?property=swrc:pages) } }'
+  runtime_info:
+    client_time: 3.2712786197662354
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5348506"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: Q3b articles with month
+  description: Select all articles with property 'swrc:month'.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bench:
+    <http://localhost/vocabulary/bench/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT ?article WHERE { ?article rdf:type
+    bench:Article . ?article ?property ?value FILTER (?property=swrc:month) } }'
+  runtime_info:
+    client_time: 0.04048442840576172
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"37178"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: Q3c articles with isbn
+  description: Select all articles with property 'swrc:isbn'.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    PREFIX bench: <http://localhost/vocabulary/bench/> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT ?article WHERE { ?article rdf:type bench:Article . ?article ?property
+    ?value FILTER (?property=swrc:isbn) } }'
+  runtime_info:
+    client_time: 0.06570649147033691
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: Q4 author pairs same journal
+  description: Select all distinct pairs of article author names for authors that
+    published in the same journal.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bench:
+    <http://localhost/vocabulary/bench/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX dcterms: <http://purl.org/dc/terms/> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX swrc: <http://swrc.ontoware.org/ontology#> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT DISTINCT ?name1 ?name2 WHERE { ?article1 rdf:type bench:Article
+    . ?article2 rdf:type bench:Article . ?article1 dc:creator ?author1 . ?author1
+    foaf:name ?name1 . ?article2 dc:creator ?author2 . ?author2 foaf:name ?name2 .
+    ?article1 swrc:journal ?journal . ?article2 swrc:journal ?journal FILTER (?name1<?name2)
+    } }'
+  runtime_info:
+    client_time: 33.46200704574585
+  headers: []
+  results: 'HTTP code: 500: { "exception": "Tried to allocate 6.6 GB, but only 2.5
+    GB were available", "query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX bench: <http://localhost/vocabulary/bench/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX dcterms: <http://purl.org/dc/terms/> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX swrc: <http://swrc.ontoware.org/ontology#> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT DISTINCT ?name1 ?name2 WHERE { ?article1 rdf:type bench:Article
+    . ?article2 rdf:type bench:Article . ?article1 dc:creator ?author1 . ?author1
+    foaf:name ?name1 . ?article2 dc:creator ?author2 . ?author2 foaf:name ?name2 .
+    ?article1 swrc:journal ?journal . ?article2 swrc:journal ?journal FILTER (?name1<?name2)
+    } }", "resultsize": 0, "runtimeInformation": { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [], "column_names": [ "?article1" ], "description": "IndexScan ?article1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://localhost/vocabulary/bench/Article>", "details": { "num-blocks-all": 185,
+    "num-blocks-read": 185, "num-elements-read": 5781250 }, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 5756250, "estimated_size": 5756250, "estimated_total_cost":
+    5756250, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 5775219, "status": "lazily materialized",
+    "total_time": 0 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?article1", "?journal" ], "description": "IndexScan ?article1 <http://swrc.ontoware.org/ontology#journal>
+    ?journal", "details": { "num-blocks-all": 185, "num-blocks-read": 185, "num-elements-read":
+    5775219 }, "estimated_column_multiplicities": [ 1.0, 75.15119171142578 ], "estimated_operation_cost":
+    5775219, "estimated_size": 5775219, "estimated_total_cost": 5775219, "operation_time":
+    1, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    5775219, "status": "lazily materialized", "total_time": 1 } ], "column_names":
+    [ "?article1", "?journal" ], "description": "Join on ?article1", "details": {
+    "time-for-filtering-blocks": 5 }, "estimated_column_multiplicities": [ 1.0, 74.90433502197266
+    ], "estimated_operation_cost": 15560843, "estimated_size": 4029374, "estimated_total_cost":
+    27092312, "operation_time": 220, "original_operation_time": 220, "original_total_time":
+    221, "result_cols": 2, "result_rows": 5775219, "status": "lazily materialized",
+    "total_time": 221 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?article1", "?author1" ], "description": "IndexScan ?article1 <http://purl.org/dc/elements/1.1/creator>
+    ?author1", "details": { "num-blocks-all": 3677, "num-blocks-read": 575, "num-elements-read":
+    17968750 }, "estimated_column_multiplicities": [ 3.161564588546753, 2.0395848751068115
+    ], "estimated_operation_cost": 114876276, "estimated_size": 114876276, "estimated_total_cost":
+    114876276, "operation_time": 36, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 17968750, "status": "lazily materialized",
+    "total_time": 36 } ], "column_names": [ "?article1", "?journal", "?author1" ],
+    "description": "Join on ?article1", "details": null, "estimated_column_multiplicities":
+    [ 2.213095188140869, 165.7704315185547, 0.9999999403953552 ], "estimated_operation_cost":
+    127823038, "estimated_size": 8917388, "estimated_total_cost": 269791626, "operation_time":
+    971, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3,
+    "result_rows": 17958075, "status": "fully materialized", "total_time": 1229 }
+    ], "column_names": [ "?article1", "?journal", "?author1" ], "description": "Sort
+    (internal order) on ?author1", "details": { "time-cloning": 199 }, "estimated_column_multiplicities":
+    [ 2.213095188140869, 165.7704315185547, 0.9999999403953552 ], "estimated_operation_cost":
+    205099924, "estimated_size": 8917388, "estimated_total_cost": 474891550, "operation_time":
+    2316, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3,
+    "result_rows": 17958075, "status": "fully materialized", "total_time": 3545 },
+    { "cache_status": "computed", "children": [], "column_names": [ "?author1", "?name1"
+    ], "description": "IndexScan ?author1 <http://xmlns.com/foaf/0.1/name> ?name1",
+    "details": { "num-blocks-all": 1820, "num-blocks-read": 1820, "num-elements-read":
+    56844932 }, "estimated_column_multiplicities": [ 1.0, 1.0 ], "estimated_operation_cost":
+    56844932, "estimated_size": 56844932, "estimated_total_cost": 56844932, "operation_time":
+    4, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    56844932, "status": "lazily materialized", "total_time": 4 } ], "column_names":
+    [ "?article1", "?journal", "?author1", "?name1" ], "description": "Join on ?author1",
+    "details": { "time-for-filtering-blocks": 165 }, "estimated_column_multiplicities":
+    [ 1.5491666793823242, 116.03929901123047, 1.0, 0.9999998211860657 ], "estimated_operation_cost":
+    72004491, "estimated_size": 6242171, "estimated_total_cost": 603740973, "operation_time":
+    1279, "original_operation_time": 0, "original_total_time": 0, "result_cols": 4,
+    "result_rows": 17958075, "status": "fully materialized", "total_time": 4828 }
+    ], "column_names": [ "?article1", "?journal", "?author1", "?name1" ], "description":
+    "Sort (internal order) on ?journal", "details": { "time-cloning": 266 }, "estimated_column_multiplicities":
+    [ 1.5491666793823242, 116.03929901123047, 1.0, 0.9999998211860657 ], "estimated_operation_cost":
+    137327762, "estimated_size": 6242171, "estimated_total_cost": 741068735, "operation_time":
+    2250, "original_operation_time": 0, "original_total_time": 0, "result_cols": 4,
+    "result_rows": 17958075, "status": "fully materialized", "total_time": 7078 },
+    { "cache_status": "cached_not_pinned", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [], "column_names": [ "?article1" ], "description": "IndexScan ?article1
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://localhost/vocabulary/bench/Article>",
+    "details": { "num-blocks-all": 185, "num-blocks-read": 185, "num-elements-read":
+    5781250 }, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost":
+    5756250, "estimated_size": 5756250, "estimated_total_cost": 5756250, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    5775219, "status": "lazily materialized", "total_time": 0 }, { "cache_status":
+    "computed", "children": [], "column_names": [ "?article1", "?journal" ], "description":
+    "IndexScan ?article1 <http://swrc.ontoware.org/ontology#journal> ?journal", "details":
+    { "num-blocks-all": 185, "num-blocks-read": 185, "num-elements-read": 5775219
+    }, "estimated_column_multiplicities": [ 1.0, 75.15119171142578 ], "estimated_operation_cost":
+    5775219, "estimated_size": 5775219, "estimated_total_cost": 5775219, "operation_time":
+    1, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    5775219, "status": "lazily materialized", "total_time": 1 } ], "column_names":
+    [ "?article1", "?journal" ], "description": "Join on ?article1", "details": {
+    "time-for-filtering-blocks": 5 }, "estimated_column_multiplicities": [ 1.0, 74.90433502197266
+    ], "estimated_operation_cost": 15560843, "estimated_size": 4029374, "estimated_total_cost":
+    27092312, "operation_time": 220, "original_operation_time": 220, "original_total_time":
+    221, "result_cols": 2, "result_rows": 5775219, "status": "lazily materialized",
+    "total_time": 221 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?article1", "?author1" ], "description": "IndexScan ?article1 <http://purl.org/dc/elements/1.1/creator>
+    ?author1", "details": { "num-blocks-all": 3677, "num-blocks-read": 575, "num-elements-read":
+    17968750 }, "estimated_column_multiplicities": [ 3.161564588546753, 2.0395848751068115
+    ], "estimated_operation_cost": 114876276, "estimated_size": 114876276, "estimated_total_cost":
+    114876276, "operation_time": 36, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 17968750, "status": "lazily materialized",
+    "total_time": 36 } ], "column_names": [ "?article1", "?journal", "?author1" ],
+    "description": "Join on ?article1", "details": null, "estimated_column_multiplicities":
+    [ 2.213095188140869, 165.7704315185547, 0.9999999403953552 ], "estimated_operation_cost":
+    127823038, "estimated_size": 8917388, "estimated_total_cost": 269791626, "operation_time":
+    971, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3,
+    "result_rows": 17958075, "status": "fully materialized", "total_time": 1229 }
+    ], "column_names": [ "?article1", "?journal", "?author1" ], "description": "Sort
+    (internal order) on ?author1", "details": { "time-cloning": 199 }, "estimated_column_multiplicities":
+    [ 2.213095188140869, 165.7704315185547, 0.9999999403953552 ], "estimated_operation_cost":
+    205099924, "estimated_size": 8917388, "estimated_total_cost": 474891550, "operation_time":
+    2316, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3,
+    "result_rows": 17958075, "status": "fully materialized", "total_time": 3545 },
+    { "cache_status": "computed", "children": [], "column_names": [ "?author1", "?name1"
+    ], "description": "IndexScan ?author1 <http://xmlns.com/foaf/0.1/name> ?name1",
+    "details": { "num-blocks-all": 1820, "num-blocks-read": 1820, "num-elements-read":
+    56844932 }, "estimated_column_multiplicities": [ 1.0, 1.0 ], "estimated_operation_cost":
+    56844932, "estimated_size": 56844932, "estimated_total_cost": 56844932, "operation_time":
+    4, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    56844932, "status": "lazily materialized", "total_time": 4 } ], "column_names":
+    [ "?article1", "?journal", "?author1", "?name1" ], "description": "Join on ?author1",
+    "details": { "time-for-filtering-blocks": 165 }, "estimated_column_multiplicities":
+    [ 1.5491666793823242, 116.03929901123047, 1.0, 0.9999998211860657 ], "estimated_operation_cost":
+    72004491, "estimated_size": 6242171, "estimated_total_cost": 603740973, "operation_time":
+    1279, "original_operation_time": 0, "original_total_time": 0, "result_cols": 4,
+    "result_rows": 17958075, "status": "fully materialized", "total_time": 4828 }
+    ], "column_names": [ "?article2", "?journal", "?author2", "?name2" ], "description":
+    "Sort (internal order) on ?journal", "details": { "time-cloning": 266 }, "estimated_column_multiplicities":
+    [ 1.5491666793823242, 116.03929901123047, 1.0, 0.9999998211860657 ], "estimated_operation_cost":
+    137327762, "estimated_size": 6242171, "estimated_total_cost": 741068735, "operation_time":
+    0, "original_operation_time": 2249, "original_total_time": 7077, "result_cols":
+    4, "result_rows": 17958075, "status": "fully materialized", "total_time": 0 }
+    ], "column_names": [ "?article1", "?journal", "?author1", "?name1", "?article2",
+    "?author2", "?name2" ], "description": "Join on ?journal", "details": null, "estimated_column_multiplicities":
+    [ 125.83495330810547, 9425.5830078125, 81.22750854492188, 81.22749328613281, 125.83495330810547,
+    81.22750854492188, 81.22749328613281 ], "estimated_operation_cost": 519514749,
+    "estimated_size": 507030407, "estimated_total_cost": 2001652219, "operation_time":
+    26364, "original_operation_time": 0, "original_total_time": 0, "result_cols":
+    7, "result_rows": 0, "status": "failed", "total_time": 33442 } ], "column_names":
+    [ "?article1", "?journal", "?author1", "?name1", "?article2", "?author2", "?name2"
+    ], "description": "Filter (?name1<?name2)", "details": null, "estimated_column_multiplicities":
+    [ 125.83495330810547, 9425.5830078125, 81.22750854492188, 81.22749328613281, 125.83495330810547,
+    81.22750854492188, 81.22749328613281 ], "estimated_operation_cost": 517171015,
+    "estimated_size": 10140608, "estimated_total_cost": 2518823234, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 7, "result_rows":
+    0, "status": "failed because child failed", "total_time": 33442 } ], "column_names":
+    [ "?article1", "?journal", "?author1", "?name1", "?article2", "?author2", "?name2"
+    ], "description": "Sort (internal order) on ?name1 ?name2", "details": null, "estimated_column_multiplicities":
+    [ 125.83495330810547, 9425.5830078125, 81.22750854492188, 81.22749328613281, 125.83495330810547,
+    81.22750854492188, 81.22749328613281 ], "estimated_operation_cost": 233233984,
+    "estimated_size": 10140608, "estimated_total_cost": 2752057218, "operation_time":
+    2, "original_operation_time": 0, "original_total_time": 0, "result_cols": 7, "result_rows":
+    0, "status": "failed because child failed", "total_time": 33444 } ], "column_names":
+    [ "?article1", "?journal", "?author1", "?name1", "?article2", "?author2", "?name2"
+    ], "description": "Distinct", "details": null, "estimated_column_multiplicities":
+    [ 125.83495330810547, 9425.5830078125, 81.22750854492188, 81.22749328613281, 125.83495330810547,
+    81.22750854492188, 81.22749328613281 ], "estimated_operation_cost": 10140608,
+    "estimated_size": 10140608, "estimated_total_cost": 2762197826, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 7, "result_rows":
+    0, "status": "failed because child failed", "total_time": 33444 } ], "column_names":
+    [ "?name1", "?name2" ], "description": "Strip Columns", "details": null, "estimated_column_multiplicities":
+    [ 81.22749328613281, 81.22749328613281 ], "estimated_operation_cost": 0, "estimated_size":
+    10140608, "estimated_total_cost": 2762197826, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "failed
+    because child failed", "total_time": 33444 } ], "column_names": [], "description":
+    "Strip Columns", "details": null, "estimated_column_multiplicities": [], "estimated_operation_cost":
+    0, "estimated_size": 10140608, "estimated_total_cost": 2762197826, "operation_time":
+    1, "original_operation_time": 0, "original_total_time": 0, "result_cols": 0, "result_rows":
+    0, "status": "failed because child failed", "total_time": 33445 } ], "column_names":
+    [ "?qlever_count_ (U)" ], "description": "GroupBy (implicit)", "details": null,
+    "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost": 0, "estimated_size":
+    1, "estimated_total_cost": 2762197826, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 1, "result_rows": 0, "status": "failed
+    because child failed", "total_time": 33445 }, "status": "ERROR", "time": { "computeResult":
+    33454, "total": 33454 } }'
+- name: Q5a authors inproceedings and articles
+  description: Return names of persons that occur as author of at least one inproceeding
+    and one article.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX bench: <http://localhost/vocabulary/bench/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT DISTINCT ?person ?name WHERE
+    { ?article rdf:type bench:Article . ?article dc:creator ?person . ?inproc rdf:type
+    bench:Inproceedings . ?inproc dc:creator ?person2 . ?person foaf:name ?name .
+    ?person2 foaf:name ?name2 FILTER (?name=?name2) } }'
+  runtime_info:
+    client_time: 180.14431405067444
+  headers: []
+  results: 'HTTP code: 429: { "exception": "Operation timed out. Last operation: Filter
+    (?name=?name2)", "query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX bench: <http://localhost/vocabulary/bench/>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT DISTINCT ?person ?name WHERE { ?article rdf:type bench:Article
+    . ?article dc:creator ?person . ?inproc rdf:type bench:Inproceedings . ?inproc
+    dc:creator ?person2 . ?person foaf:name ?name . ?person2 foaf:name ?name2 FILTER
+    (?name=?name2) } }", "resultsize": 0, "runtimeInformation": { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [], "column_names": [ "?article" ], "description": "IndexScan
+    ?article <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://localhost/vocabulary/bench/Article>",
+    "details": { "num-blocks-all": 185, "num-blocks-read": 185, "num-elements-read":
+    5781250 }, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost":
+    5756250, "estimated_size": 5756250, "estimated_total_cost": 5756250, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    5775219, "status": "lazily materialized", "total_time": 0 }, { "cache_status":
+    "computed", "children": [], "column_names": [ "?article", "?person" ], "description":
+    "IndexScan ?article <http://purl.org/dc/elements/1.1/creator> ?person", "details":
+    { "num-blocks-all": 3677, "num-blocks-read": 575, "num-elements-read": 17968750
+    }, "estimated_column_multiplicities": [ 3.161564588546753, 2.0395848751068115
+    ], "estimated_operation_cost": 114876276, "estimated_size": 114876276, "estimated_total_cost":
+    114876276, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 17968750, "status": "lazily materialized",
+    "total_time": 1 } ], "column_names": [ "?article", "?person" ], "description":
+    "Join on ?article", "details": { "time-for-filtering-blocks": 7 }, "estimated_column_multiplicities":
+    [ 2.213095188140869, 0.9999999403953552 ], "estimated_operation_cost": 133371655,
+    "estimated_size": 12739129, "estimated_total_cost": 254004181, "operation_time":
+    637, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2,
+    "result_rows": 17958075, "status": "fully materialized", "total_time": 638 } ],
+    "column_names": [ "?article", "?person" ], "description": "Sort (internal order)
+    on ?person", "details": { "time-cloning": 134 }, "estimated_column_multiplicities":
+    [ 2.213095188140869, 0.9999999403953552 ], "estimated_operation_cost": 292999967,
+    "estimated_size": 12739129, "estimated_total_cost": 547004148, "operation_time":
+    2269, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2,
+    "result_rows": 17958075, "status": "fully materialized", "total_time": 2907 },
+    { "cache_status": "computed", "children": [], "column_names": [ "?person", "?name"
+    ], "description": "IndexScan ?person <http://xmlns.com/foaf/0.1/name> ?name",
+    "details": { "num-blocks-all": 1820, "num-blocks-read": 1820, "num-elements-read":
+    56844932 }, "estimated_column_multiplicities": [ 1.0, 1.0 ], "estimated_operation_cost":
+    56844932, "estimated_size": 56844932, "estimated_total_cost": 56844932, "operation_time":
+    3, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    56844932, "status": "lazily materialized", "total_time": 3 } ], "column_names":
+    [ "?article", "?person", "?name" ], "description": "Join on ?person", "details":
+    { "time-for-filtering-blocks": 171 }, "estimated_column_multiplicities": [ 1.5491666793823242,
+    1.0, 0.9999998807907104 ], "estimated_operation_cost": 78501451, "estimated_size":
+    8917390, "estimated_total_cost": 682350531, "operation_time": 1153, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 17958075, "status":
+    "fully materialized", "total_time": 4063 }, { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [], "column_names": [ "?inproc" ],
+    "description": "IndexScan ?inproc <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://localhost/vocabulary/bench/Inproceedings>", "details": { "num-blocks-all":
+    971, "num-blocks-read": 971, "num-elements-read": 30343750 }, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 30293750, "estimated_size": 30293750, "estimated_total_cost":
+    30293750, "operation_time": 2, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 30310565, "status": "lazily materialized",
+    "total_time": 2 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?inproc", "?person2" ], "description": "IndexScan ?inproc <http://purl.org/dc/elements/1.1/creator>
+    ?person2", "details": { "num-blocks-all": 3677, "num-blocks-read": 3077, "num-elements-read":
+    96156250 }, "estimated_column_multiplicities": [ 3.161564588546753, 2.0395848751068115
+    ], "estimated_operation_cost": 114876276, "estimated_size": 114876276, "estimated_total_cost":
+    114876276, "operation_time": 5, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 96156250, "status": "lazily materialized",
+    "total_time": 5 } ], "column_names": [ "?inproc", "?person2" ], "description":
+    "Join on ?inproc", "details": { "time-for-filtering-blocks": 7 }, "estimated_column_multiplicities":
+    [ 2.213095188140869, 1.700460433959961 ], "estimated_operation_cost": 212212979,
+    "estimated_size": 67042953, "estimated_total_cost": 357383005, "operation_time":
+    2931, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2,
+    "result_rows": 96122185, "status": "fully materialized", "total_time": 2938 }
+    ], "column_names": [ "?inproc", "?person2" ], "description": "Sort (internal order)
+    on ?person2", "details": { "time-cloning": 685 }, "estimated_column_multiplicities":
+    [ 2.213095188140869, 1.700460433959961 ], "estimated_operation_cost": 1676073825,
+    "estimated_size": 67042953, "estimated_total_cost": 2033456830, "operation_time":
+    12722, "original_operation_time": 0, "original_total_time": 0, "result_cols":
+    2, "result_rows": 96122185, "status": "fully materialized", "total_time": 15660
+    }, { "cache_status": "computed", "children": [], "column_names": [ "?person2",
+    "?name2" ], "description": "IndexScan ?person2 <http://xmlns.com/foaf/0.1/name>
+    ?name2", "details": null, "estimated_column_multiplicities": [ 1.0, 1.0 ], "estimated_operation_cost":
+    56844932, "estimated_size": 56844932, "estimated_total_cost": 56844932, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    0, "status": "not started", "total_time": 0 } ], "column_names": [ "?inproc",
+    "?person2", "?name2" ], "description": "Join on ?person2", "details": { "time-for-filtering-blocks":
+    911 }, "estimated_column_multiplicities": [ 1.5491666793823242, 1.1903222799301147,
+    1.700460433959961 ], "estimated_operation_cost": 170817951, "estimated_size":
+    46930066, "estimated_total_cost": 2261119713, "operation_time": 917, "original_operation_time":
+    917, "original_total_time": 16577, "result_cols": 3, "result_rows": 106894, "status":
+    "lazily materialized", "total_time": 16577 } ], "column_names": [ "?article",
+    "?person", "?name", "?inproc", "?person2", "?name2" ], "description": "Cartesian
+    Product Join", "details": null, "estimated_column_multiplicities": [ 1.0, 1.0,
+    1.0, 1.0, 1.0, 1.0 ], "estimated_operation_cost": 418493701247740, "estimated_size":
+    418493701247740, "estimated_total_cost": 418496644717984, "operation_time": 98183,
+    "original_operation_time": 98183, "original_total_time": 118823, "result_cols":
+    6, "result_rows": 4672000000, "status": "failed", "total_time": 118823 } ], "column_names":
+    [ "?article", "?person", "?name", "?inproc", "?person2", "?name2" ], "description":
+    "Filter (?name=?name2)", "details": null, "estimated_column_multiplicities": [
+    1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ], "estimated_operation_cost": 418912194948987, "estimated_size":
+    418493701247, "estimated_total_cost": 837408839666971, "operation_time": 61306,
+    "original_operation_time": 0, "original_total_time": 0, "result_cols": 6, "result_rows":
+    0, "status": "cancelled", "total_time": 180130 } ], "column_names": [ "?article",
+    "?person", "?name", "?inproc", "?person2", "?name2" ], "description": "Sort (internal
+    order) on ?person ?name", "details": null, "estimated_column_multiplicities":
+    [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ], "estimated_operation_cost": 15902760647386,
+    "estimated_size": 418493701247, "estimated_total_cost": 853311600314357, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 6, "result_rows":
+    0, "status": "cancelled", "total_time": 180130 } ], "column_names": [ "?article",
+    "?person", "?name", "?inproc", "?person2", "?name2" ], "description": "Distinct",
+    "details": null, "estimated_column_multiplicities": [ 1.0, 1.0, 1.0, 1.0, 1.0,
+    1.0 ], "estimated_operation_cost": 418493701247, "estimated_size": 418493701247,
+    "estimated_total_cost": 853730094015604, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 6, "result_rows": 0, "status": "cancelled",
+    "total_time": 180130 } ], "column_names": [ "?name", "?person" ], "description":
+    "Strip Columns", "details": null, "estimated_column_multiplicities": [ 1.0, 1.0
+    ], "estimated_operation_cost": 0, "estimated_size": 418493701247, "estimated_total_cost":
+    853730094015604, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 0, "status": "cancelled", "total_time": 180131
+    } ], "column_names": [], "description": "Strip Columns", "details": null, "estimated_column_multiplicities":
+    [], "estimated_operation_cost": 0, "estimated_size": 418493701247, "estimated_total_cost":
+    853730094015604, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 0, "result_rows": 0, "status": "cancelled", "total_time": 180131
+    } ], "column_names": [ "?qlever_count_ (U)" ], "description": "GroupBy (implicit)",
+    "details": null, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost":
+    0, "estimated_size": 1, "estimated_total_cost": 853730094015604, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    0, "status": "cancelled", "total_time": 180131 }, "status": "ERROR", "time": {
+    "computeResult": 180134, "total": 180134 } }'
+- name: Q5b authors inproceedings and articles alt
+  description: Return names of persons that occur as author of at least one inproceeding
+    and one article (same as Q5a).
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX bench: <http://localhost/vocabulary/bench/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT DISTINCT ?person ?name WHERE
+    { ?article rdf:type bench:Article . ?article dc:creator ?person . ?inproc rdf:type
+    bench:Inproceedings . ?inproc dc:creator ?person . ?person foaf:name ?name } }'
+  runtime_info:
+    client_time: 15.212880611419678
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5388977"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: Q6 first publications by year
+  description: Return publications per year authored by persons with no earlier publications.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT ?yr ?name ?document WHERE { ?class rdfs:subClassOf foaf:Document
+    . ?document rdf:type ?class . ?document dcterms:issued ?yr . ?document dc:creator
+    ?author . ?author foaf:name ?name OPTIONAL { ?class2 rdfs:subClassOf foaf:Document
+    . ?document2 rdf:type ?class2 . ?document2 dcterms:issued ?yr2 . ?document2 dc:creator
+    ?author2 FILTER (?author=?author2 && ?yr2<?yr) } FILTER (!bound(?author2)) } }'
+  runtime_info:
+    client_time: 43.05441498756409
+  headers: []
+  results: 'Exception: curl command failed with exit code 52, stderr is empty'
+  server_restarted: true
+- name: Q7 cited papers not uncited
+  description: Return titles of papers cited at least once, but not by uncited papers.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT DISTINCT ?title WHERE { ?class rdfs:subClassOf foaf:Document .
+    ?doc rdf:type ?class . ?doc dc:title ?title . ?bag2 ?member2 ?doc . ?doc2 dcterms:references
+    ?bag2 OPTIONAL { ?class3 rdfs:subClassOf foaf:Document . ?doc3 rdf:type ?class3
+    . ?doc3 dcterms:references ?bag3 . ?bag3 ?member3 ?doc OPTIONAL { ?class4 rdfs:subClassOf
+    foaf:Document . ?doc4 rdf:type ?class4 . ?doc4 dcterms:references ?bag4 . ?bag4
+    ?member4 ?doc3 } FILTER (!bound(?doc4)) } FILTER (!bound(?doc3)) } }'
+  runtime_info:
+    client_time: 14.975507736206055
+  headers: []
+  results: 'HTTP code: 500: { "exception": "Tried to allocate 4.2 GB, but only 3.7
+    GB were available", "query": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX dcterms: <http://purl.org/dc/terms/>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT DISTINCT ?title WHERE { ?class
+    rdfs:subClassOf foaf:Document . ?doc rdf:type ?class . ?doc dc:title ?title .
+    ?bag2 ?member2 ?doc . ?doc2 dcterms:references ?bag2 OPTIONAL { ?class3 rdfs:subClassOf
+    foaf:Document . ?doc3 rdf:type ?class3 . ?doc3 dcterms:references ?bag3 . ?bag3
+    ?member3 ?doc OPTIONAL { ?class4 rdfs:subClassOf foaf:Document . ?doc4 rdf:type
+    ?class4 . ?doc4 dcterms:references ?bag4 . ?bag4 ?member4 ?doc3 } FILTER (!bound(?doc4))
+    } FILTER (!bound(?doc3)) } }", "resultsize": 0, "runtimeInformation": { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [], "column_names": [ "?bag2", "?member2", "?doc" ], "description":
+    "IndexScan ?bag2 ?member2 ?doc", "details": { "num-blocks-all": 10668, "num-blocks-read":
+    139, "num-elements-read": 6514054 }, "estimated_column_multiplicities": [ 5.314114093780518,
+    6410268.0, 2.0413053035736084 ], "estimated_operation_cost": 500000912, "estimated_size":
+    500000912, "estimated_total_cost": 500000912, "operation_time": 1, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 6514054, "status":
+    "lazily materialized", "total_time": 1 }, { "cache_status": "computed", "children":
+    [], "column_names": [ "?bag2", "?doc2" ], "description": "IndexScan ?doc2 <http://purl.org/dc/terms/references>
+    ?bag2", "details": null, "estimated_column_multiplicities": [ 1.0, 1.0 ], "estimated_operation_cost":
+    340155, "estimated_size": 340155, "estimated_total_cost": 340155, "operation_time":
+    7, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    340155, "status": "fully materialized", "total_time": 7 } ], "column_names": [
+    "?bag2", "?member2", "?doc", "?doc2" ], "description": "Join on ?bag2", "details":
+    { "time-for-filtering-blocks": 3 }, "estimated_column_multiplicities": [ 3.7198798656463623,
+    23174.6328125, 0.9999994039535522, 3.7198798656463623 ], "estimated_operation_cost":
+    501606402, "estimated_size": 1265335, "estimated_total_cost": 1001947469, "operation_time":
+    340, "original_operation_time": 0, "original_total_time": 0, "result_cols": 4,
+    "result_rows": 6439878, "status": "fully materialized", "total_time": 348 } ],
+    "column_names": [ "?bag2", "?member2", "?doc", "?doc2" ], "description": "Sort
+    (internal order) on ?doc", "details": { "time-cloning": 93 }, "estimated_column_multiplicities":
+    [ 3.7198798656463623, 23174.6328125, 0.9999994039535522, 3.7198798656463623 ],
+    "estimated_operation_cost": 25306700, "estimated_size": 1265335, "estimated_total_cost":
+    1027254169, "operation_time": 612, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 4, "result_rows": 6439878, "status": "fully materialized", "total_time":
+    960 }, { "cache_status": "computed", "children": [], "column_names": [ "?doc",
+    "?title" ], "description": "IndexScan ?doc <http://purl.org/dc/elements/1.1/title>
+    ?title", "details": { "num-blocks-all": 1181, "num-blocks-read": 158, "num-elements-read":
+    4937500 }, "estimated_column_multiplicities": [ 1.0, 1.0 ], "estimated_operation_cost":
+    36904136, "estimated_size": 36904136, "estimated_total_cost": 36904136, "operation_time":
+    1, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    4937500, "status": "lazily materialized", "total_time": 1 } ], "column_names":
+    [ "?bag2", "?member2", "?doc", "?doc2", "?title" ], "description": "Join on ?doc",
+    "details": { "time-for-filtering-blocks": 58 }, "estimated_column_multiplicities":
+    [ 2.6039159297943115, 16222.2431640625, 1.0, 2.6039159297943115, 0.9999983310699463
+    ], "estimated_operation_cost": 39055204, "estimated_size": 885733, "estimated_total_cost":
+    1103213509, "operation_time": 264, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 5, "result_rows": 4094305, "status": "fully materialized", "total_time":
+    1225 }, { "cache_status": "computed", "children": [], "column_names": [ "?doc",
+    "?class" ], "description": "IndexScan ?doc <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?class", "details": { "num-blocks-all": 3011, "num-blocks-read": 158, "num-elements-read":
+    4937500 }, "estimated_column_multiplicities": [ 1.0, 7840768.5 ], "estimated_operation_cost":
+    94089224, "estimated_size": 94089224, "estimated_total_cost": 94089224, "operation_time":
+    1, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    4937500, "status": "lazily materialized", "total_time": 1 } ], "column_names":
+    [ "?bag2", "?member2", "?doc", "?doc2", "?title", "?class" ], "description": "Join
+    on ?doc", "details": { "time-for-filtering-blocks": 39 }, "estimated_column_multiplicities":
+    [ 1.822741150856018, 11355.5703125, 1.0, 1.822741150856018, 1.0, 73811.0703125
+    ], "estimated_operation_cost": 95594970, "estimated_size": 620013, "estimated_total_cost":
+    1292897703, "operation_time": 274, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 6, "result_rows": 4094305, "status": "fully materialized", "total_time":
+    1500 } ], "column_names": [ "?bag2", "?member2", "?doc", "?doc2", "?title", "?class"
+    ], "description": "Sort (internal order) on ?class", "details": { "time-cloning":
+    93 }, "estimated_column_multiplicities": [ 1.822741150856018, 11355.5703125, 1.0,
+    1.822741150856018, 1.0, 73811.0703125 ], "estimated_operation_cost": 11780247,
+    "estimated_size": 620013, "estimated_total_cost": 1304677950, "operation_time":
+    462, "original_operation_time": 0, "original_total_time": 0, "result_cols": 6,
+    "result_rows": 4094305, "status": "fully materialized", "total_time": 1962 },
+    { "cache_status": "computed", "children": [], "column_names": [ "?class" ], "description":
+    "IndexScan ?class <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Document>",
+    "details": null, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost":
+    9, "estimated_size": 9, "estimated_total_cost": 9, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 1, "result_rows": 9, "status": "fully
+    materialized", "total_time": 0 } ], "column_names": [ "?bag2", "?member2", "?doc",
+    "?doc2", "?title", "?class" ], "description": "Join on ?class", "details": null,
+    "estimated_column_multiplicities": [ 1.2759188413619995, 7948.8994140625, 1.0,
+    1.2759188413619995, 1.0, 51667.75 ], "estimated_operation_cost": 1033363, "estimated_size":
+    413341, "estimated_total_cost": 1305711322, "operation_time": 281, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 6, "result_rows": 4094305, "status":
+    "fully materialized", "total_time": 2243 } ], "column_names": [ "?bag2", "?member2",
+    "?doc", "?doc2", "?title", "?class" ], "description": "Sort (internal order) on
+    ?doc", "details": { "time-cloning": 93 }, "estimated_column_multiplicities": [
+    1.2759188413619995, 7948.8994140625, 1.0, 1.2759188413619995, 1.0, 51667.75 ],
+    "estimated_operation_cost": 7440138, "estimated_size": 413341, "estimated_total_cost":
+    1313151460, "operation_time": 439, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 6, "result_rows": 4094305, "status": "fully materialized", "total_time":
+    2682 }, { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [], "column_names": [ "?doc3", "?bag3" ], "description": "IndexScan
+    ?doc3 <http://purl.org/dc/terms/references> ?bag3", "details": null, "estimated_column_multiplicities":
+    [ 1.0, 1.0 ], "estimated_operation_cost": 340155, "estimated_size": 340155, "estimated_total_cost":
+    340155, "operation_time": 4, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 340155, "status": "fully materialized", "total_time":
+    4 }, { "cache_status": "computed", "children": [], "column_names": [ "?doc3",
+    "?class3" ], "description": "IndexScan ?doc3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?class3", "details": { "num-blocks-all": 3011, "num-blocks-read": 1163, "num-elements-read":
+    36343750 }, "estimated_column_multiplicities": [ 1.0, 7840768.5 ], "estimated_operation_cost":
+    94089224, "estimated_size": 94089224, "estimated_total_cost": 94089224, "operation_time":
+    38, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2,
+    "result_rows": 36343750, "status": "lazily materialized", "total_time": 38 } ],
+    "column_names": [ "?doc3", "?bag3", "?class3" ], "description": "Join on ?doc3",
+    "details": { "time-for-filtering-blocks": 4 }, "estimated_column_multiplicities":
+    [ 1.0, 1.0, 28346.189453125 ], "estimated_operation_cost": 94667487, "estimated_size":
+    238108, "estimated_total_cost": 189096866, "operation_time": 71, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 340155, "status":
+    "fully materialized", "total_time": 113 } ], "column_names": [ "?doc3", "?bag3",
+    "?class3" ], "description": "Sort (internal order) on ?class3", "details": { "time-cloning":
+    0 }, "estimated_column_multiplicities": [ 1.0, 1.0, 28346.189453125 ], "estimated_operation_cost":
+    4047836, "estimated_size": 238108, "estimated_total_cost": 193144702, "operation_time":
+    14, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3,
+    "result_rows": 340155, "status": "fully materialized", "total_time": 127 }, {
+    "cache_status": "cached_not_pinned", "children": [], "column_names": [ "?class3"
+    ], "description": "IndexScan ?class3 <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+    <http://xmlns.com/foaf/0.1/Document>", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 9, "estimated_size": 9, "estimated_total_cost":
+    9, "operation_time": 0, "original_operation_time": 0, "original_total_time": 0,
+    "result_cols": 1, "result_rows": 9, "status": "fully materialized", "total_time":
+    0 } ], "column_names": [ "?doc3", "?bag3", "?class3" ], "description": "Join on
+    ?class3", "details": null, "estimated_column_multiplicities": [ 1.0, 1.0, 19842.33203125
+    ], "estimated_operation_cost": 396855, "estimated_size": 158738, "estimated_total_cost":
+    193541566, "operation_time": 7, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 3, "result_rows": 340155, "status": "fully materialized", "total_time":
+    134 } ], "column_names": [ "?doc3", "?bag3", "?class3" ], "description": "Sort
+    (internal order) on ?bag3", "details": { "time-cloning": 3 }, "estimated_column_multiplicities":
+    [ 1.0, 1.0, 19842.33203125 ], "estimated_operation_cost": 2698546, "estimated_size":
+    158738, "estimated_total_cost": 196240112, "operation_time": 33, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 340155, "status":
+    "fully materialized", "total_time": 167 }, { "cache_status": "computed", "children":
+    [], "column_names": [ "?bag3", "?member3", "?doc" ], "description": "IndexScan
+    ?bag3 ?member3 ?doc", "details": { "num-blocks-all": 10668, "num-blocks-read":
+    139, "num-elements-read": 6514054 }, "estimated_column_multiplicities": [ 5.314114093780518,
+    6410268.0, 2.0413053035736084 ], "estimated_operation_cost": 500000912, "estimated_size":
+    500000912, "estimated_total_cost": 500000912, "operation_time": 1, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 6514054, "status":
+    "lazily materialized", "total_time": 1 } ], "column_names": [ "?doc3", "?bag3",
+    "?class3", "?member3", "?doc" ], "description": "Join on ?bag3", "details": {
+    "time-for-filtering-blocks": 3 }, "estimated_column_multiplicities": [ 3.7198798656463623,
+    3.7198798656463623, 73811.09375, 10814.76171875, 0.9999995231628418 ], "estimated_operation_cost":
+    500750136, "estimated_size": 590486, "estimated_total_cost": 1196991160, "operation_time":
+    424, "original_operation_time": 0, "original_total_time": 0, "result_cols": 5,
+    "result_rows": 6439878, "status": "fully materialized", "total_time": 592 } ],
+    "column_names": [ "?doc3", "?bag3", "?class3", "?member3", "?doc" ], "description":
+    "Sort (internal order) on ?doc3", "details": { "time-cloning": 120 }, "estimated_column_multiplicities":
+    [ 3.7198798656463623, 3.7198798656463623, 73811.09375, 10814.76171875, 0.9999995231628418
+    ], "estimated_operation_cost": 11219234, "estimated_size": 590486, "estimated_total_cost":
+    1208210394, "operation_time": 545, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 5, "result_rows": 6439878, "status": "fully materialized", "total_time":
+    1137 }, { "cache_status": "computed", "children": [ { "cache_status": "cached_not_pinned",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [], "column_names": [
+    "?doc3", "?bag3" ], "description": "IndexScan ?doc3 <http://purl.org/dc/terms/references>
+    ?bag3", "details": null, "estimated_column_multiplicities": [ 1.0, 1.0 ], "estimated_operation_cost":
+    340155, "estimated_size": 340155, "estimated_total_cost": 340155, "operation_time":
+    4, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    340155, "status": "fully materialized", "total_time": 4 }, { "cache_status": "computed",
+    "children": [], "column_names": [ "?doc3", "?class3" ], "description": "IndexScan
+    ?doc3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?class3", "details": {
+    "num-blocks-all": 3011, "num-blocks-read": 1163, "num-elements-read": 36343750
+    }, "estimated_column_multiplicities": [ 1.0, 7840768.5 ], "estimated_operation_cost":
+    94089224, "estimated_size": 94089224, "estimated_total_cost": 94089224, "operation_time":
+    38, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2,
+    "result_rows": 36343750, "status": "lazily materialized", "total_time": 38 } ],
+    "column_names": [ "?doc3", "?bag3", "?class3" ], "description": "Join on ?doc3",
+    "details": { "time-for-filtering-blocks": 4 }, "estimated_column_multiplicities":
+    [ 1.0, 1.0, 28346.189453125 ], "estimated_operation_cost": 94667487, "estimated_size":
+    238108, "estimated_total_cost": 189096866, "operation_time": 71, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 340155, "status":
+    "fully materialized", "total_time": 113 } ], "column_names": [ "?doc3", "?bag3",
+    "?class3" ], "description": "Sort (internal order) on ?class3", "details": { "time-cloning":
+    0 }, "estimated_column_multiplicities": [ 1.0, 1.0, 28346.189453125 ], "estimated_operation_cost":
+    4047836, "estimated_size": 238108, "estimated_total_cost": 193144702, "operation_time":
+    14, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3,
+    "result_rows": 340155, "status": "fully materialized", "total_time": 127 }, {
+    "cache_status": "cached_not_pinned", "children": [], "column_names": [ "?class3"
+    ], "description": "IndexScan ?class3 <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+    <http://xmlns.com/foaf/0.1/Document>", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 9, "estimated_size": 9, "estimated_total_cost":
+    9, "operation_time": 0, "original_operation_time": 0, "original_total_time": 0,
+    "result_cols": 1, "result_rows": 9, "status": "fully materialized", "total_time":
+    0 } ], "column_names": [ "?doc3", "?bag3", "?class3" ], "description": "Join on
+    ?class3", "details": null, "estimated_column_multiplicities": [ 1.0, 1.0, 19842.33203125
+    ], "estimated_operation_cost": 396855, "estimated_size": 158738, "estimated_total_cost":
+    193541566, "operation_time": 7, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 3, "result_rows": 340155, "status": "fully materialized", "total_time":
+    134 } ], "column_names": [ "?doc3", "?bag3", "?class3" ], "description": "Sort
+    (internal order) on ?bag3", "details": { "time-cloning": 3 }, "estimated_column_multiplicities":
+    [ 1.0, 1.0, 19842.33203125 ], "estimated_operation_cost": 2698546, "estimated_size":
+    158738, "estimated_total_cost": 196240112, "operation_time": 33, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 340155, "status":
+    "fully materialized", "total_time": 167 }, { "cache_status": "computed", "children":
+    [], "column_names": [ "?bag3", "?member3", "?doc" ], "description": "IndexScan
+    ?bag3 ?member3 ?doc", "details": { "num-blocks-all": 10668, "num-blocks-read":
+    139, "num-elements-read": 6514054 }, "estimated_column_multiplicities": [ 5.314114093780518,
+    6410268.0, 2.0413053035736084 ], "estimated_operation_cost": 500000912, "estimated_size":
+    500000912, "estimated_total_cost": 500000912, "operation_time": 1, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 6514054, "status":
+    "lazily materialized", "total_time": 1 } ], "column_names": [ "?doc4", "?bag4",
+    "?class4", "?member4", "?doc3" ], "description": "Join on ?bag4", "details": {
+    "time-for-filtering-blocks": 3 }, "estimated_column_multiplicities": [ 3.7198798656463623,
+    3.7198798656463623, 73811.09375, 10814.76171875, 0.9999995231628418 ], "estimated_operation_cost":
+    500750136, "estimated_size": 590486, "estimated_total_cost": 1196991160, "operation_time":
+    0, "original_operation_time": 424, "original_total_time": 592, "result_cols":
+    5, "result_rows": 6439878, "status": "fully materialized", "total_time": 0 } ],
+    "column_names": [ "?doc4", "?bag4", "?class4", "?member4", "?doc3" ], "description":
+    "Sort (internal order) on ?doc3", "details": null, "estimated_column_multiplicities":
+    [ 3.7198798656463623, 3.7198798656463623, 73811.09375, 10814.76171875, 0.9999995231628418
+    ], "estimated_operation_cost": 11219234, "estimated_size": 590486, "estimated_total_cost":
+    1208210394, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 5, "result_rows": 0, "status": "optimized out", "total_time":
+    0 } ], "column_names": [ "?doc3", "?bag3", "?class3", "?member3", "?doc", "?doc4
+    (U)", "?bag4 (U)", "?class4 (U)", "?member4 (U)" ], "description": "OptionalJoin
+    on ?doc3 ", "details": null, "estimated_column_multiplicities": [ 3.7198781967163086,
+    3.7198781967163086, 73811.0546875, 10814.7568359375, 0.9999990463256836, 13.837506294250488,
+    13.837506294250488, 274568.40625, 40229.61328125 ], "estimated_operation_cost":
+    13510036, "estimated_size": 2196537, "estimated_total_cost": 2429930824, "operation_time":
+    478, "original_operation_time": 478, "original_total_time": 1615, "result_cols":
+    9, "result_rows": 7117655, "status": "lazily materialized", "total_time": 1615
+    } ], "column_names": [ "?doc3", "?bag3", "?class3", "?member3", "?doc", "?doc4
+    (U)", "?bag4 (U)", "?class4 (U)", "?member4 (U)" ], "description": "Filter (!bound(?doc4))",
+    "details": null, "estimated_column_multiplicities": [ 3.7198781967163086, 3.7198781967163086,
+    73811.0546875, 10814.7568359375, 0.9999990463256836, 13.837506294250488, 13.837506294250488,
+    274568.40625, 40229.61328125 ], "estimated_operation_cost": 2196537, "estimated_size":
+    2196537, "estimated_total_cost": 2432127361, "operation_time": 741, "original_operation_time":
+    741, "original_total_time": 2356, "result_cols": 9, "result_rows": 6368815, "status":
+    "lazily materialized", "total_time": 2356 } ], "column_names": [ "?doc3", "?bag3",
+    "?class3", "?member3", "?doc", "?doc4 (U)", "?bag4 (U)", "?class4 (U)", "?member4
+    (U)" ], "description": "Sort (internal order) on ?doc", "details": null, "estimated_column_multiplicities":
+    [ 3.7198781967163086, 3.7198781967163086, 73811.0546875, 10814.7568359375, 0.9999990463256836,
+    13.837506294250488, 13.837506294250488, 274568.40625, 40229.61328125 ], "estimated_operation_cost":
+    46127277, "estimated_size": 2196537, "estimated_total_cost": 2478254638, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 9, "result_rows":
+    0, "status": "optimized out", "total_time": 0 } ], "column_names": [ "?bag2",
+    "?member2", "?doc", "?doc2", "?title", "?class", "?doc3 (U)", "?bag3 (U)", "?class3
+    (U)", "?member3 (U)", "?doc4 (U)", "?bag4 (U)", "?class4 (U)", "?member4 (U)"
+    ], "description": "OptionalJoin on ?doc ", "details": null, "estimated_column_multiplicities":
+    [ 1.275917649269104, 7948.8916015625, 0.9999990463256836, 1.275917649269104, 0.9999990463256836,
+    51667.69921875, 3.7198781967163086, 3.7198781967163086, 73811.0546875, 10814.7568359375,
+    13.837506294250488, 13.837506294250488, 274568.40625, 40229.61328125 ], "estimated_operation_cost":
+    12092876, "estimated_size": 413341, "estimated_total_cost": 3803498974, "operation_time":
+    1616, "original_operation_time": 1616, "original_total_time": 4298, "result_cols":
+    14, "result_rows": 0, "status": "failed", "total_time": 4298 } ], "column_names":
+    [ "?bag2", "?member2", "?doc", "?doc2", "?title", "?class", "?doc3 (U)", "?bag3
+    (U)", "?class3 (U)", "?member3 (U)", "?doc4 (U)", "?bag4 (U)", "?class4 (U)",
+    "?member4 (U)" ], "description": "Filter (!bound(?doc3))", "details": null, "estimated_column_multiplicities":
+    [ 1.275917649269104, 7948.8916015625, 0.9999990463256836, 1.275917649269104, 0.9999990463256836,
+    51667.69921875, 3.7198781967163086, 3.7198781967163086, 73811.0546875, 10814.7568359375,
+    13.837506294250488, 13.837506294250488, 274568.40625, 40229.61328125 ], "estimated_operation_cost":
+    413341, "estimated_size": 413341, "estimated_total_cost": 3803912315, "operation_time":
+    10644, "original_operation_time": 0, "original_total_time": 0, "result_cols":
+    14, "result_rows": 0, "status": "failed", "total_time": 14942 } ], "column_names":
+    [ "?bag2", "?member2", "?doc", "?doc2", "?title", "?class", "?doc3 (U)", "?bag3
+    (U)", "?class3 (U)", "?member3 (U)", "?doc4 (U)", "?bag4 (U)", "?class4 (U)",
+    "?member4 (U)" ], "description": "Sort (internal order) on ?title", "details":
+    null, "estimated_column_multiplicities": [ 1.275917649269104, 7948.8916015625,
+    0.9999990463256836, 1.275917649269104, 0.9999990463256836, 51667.69921875, 3.7198781967163086,
+    3.7198781967163086, 73811.0546875, 10814.7568359375, 13.837506294250488, 13.837506294250488,
+    274568.40625, 40229.61328125 ], "estimated_operation_cost": 7440138, "estimated_size":
+    413341, "estimated_total_cost": 3811352453, "operation_time": 1, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 14, "result_rows": 0, "status": "failed
+    because child failed", "total_time": 14943 } ], "column_names": [ "?bag2", "?member2",
+    "?doc", "?doc2", "?title", "?class", "?doc3 (U)", "?bag3 (U)", "?class3 (U)",
+    "?member3 (U)", "?doc4 (U)", "?bag4 (U)", "?class4 (U)", "?member4 (U)" ], "description":
+    "Distinct", "details": null, "estimated_column_multiplicities": [ 1.275917649269104,
+    7948.8916015625, 0.9999990463256836, 1.275917649269104, 0.9999990463256836, 51667.69921875,
+    3.7198781967163086, 3.7198781967163086, 73811.0546875, 10814.7568359375, 13.837506294250488,
+    13.837506294250488, 274568.40625, 40229.61328125 ], "estimated_operation_cost":
+    413341, "estimated_size": 413341, "estimated_total_cost": 3811765794, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 14,
+    "result_rows": 0, "status": "failed because child failed", "total_time": 14943
+    } ], "column_names": [ "?title" ], "description": "Strip Columns", "details":
+    null, "estimated_column_multiplicities": [ 0.9999990463256836 ], "estimated_operation_cost":
+    0, "estimated_size": 413341, "estimated_total_cost": 3811765794, "operation_time":
+    1, "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    0, "status": "failed because child failed", "total_time": 14944 } ], "column_names":
+    [], "description": "Strip Columns", "details": null, "estimated_column_multiplicities":
+    [], "estimated_operation_cost": 0, "estimated_size": 413341, "estimated_total_cost":
+    3811765794, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 0, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 14944 } ], "column_names": [ "?qlever_count_ (U)" ], "description":
+    "GroupBy (implicit)", "details": null, "estimated_column_multiplicities": [ 1.0
+    ], "estimated_operation_cost": 0, "estimated_size": 1, "estimated_total_cost":
+    3811765794, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 14945 }, "status": "ERROR", "time": { "computeResult": 14965, "total":
+    14965 } }'
+- name: Q8 coauthors of Paul Erdoes
+  description: Compute authors who have published with 'Paul Erdoes' or with coauthors
+    of 'Paul Erdoes'.
+  query: 'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT DISTINCT ?name WHERE { ?erdoes
+    rdf:type foaf:Person . ?erdoes foaf:name "Paul Erdoes"^^xsd:string . { ?document
+    dc:creator ?erdoes . ?document dc:creator ?author . ?document2 dc:creator ?author
+    . ?document2 dc:creator ?author2 . ?author2 foaf:name ?name FILTER (?author!=?erdoes
+    && ?document2!=?document && ?author2!=?erdoes && ?author2!=?author) } UNION {
+    ?document dc:creator ?erdoes. ?document dc:creator ?author. ?author foaf:name
+    ?name FILTER (?author!=?erdoes) } } }'
+  runtime_info:
+    client_time: 43.99873995780945
+  headers: []
+  results: 'HTTP code: 500: { "exception": "Tried to allocate 11.9 GB, but only 5.4
+    GB were available", "query": "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT DISTINCT ?name WHERE { ?erdoes rdf:type foaf:Person . ?erdoes foaf:name
+    \"Paul Erdoes\"^^xsd:string . { ?document dc:creator ?erdoes . ?document dc:creator
+    ?author . ?document2 dc:creator ?author . ?document2 dc:creator ?author2 . ?author2
+    foaf:name ?name FILTER (?author!=?erdoes && ?document2!=?document && ?author2!=?erdoes
+    && ?author2!=?author) } UNION { ?document dc:creator ?erdoes. ?document dc:creator
+    ?author. ?author foaf:name ?name FILTER (?author!=?erdoes) } } }", "resultsize":
+    0, "runtimeInformation": { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [], "column_names": [ "?author2", "?document2" ], "description":
+    "IndexScan ?document2 <http://purl.org/dc/elements/1.1/creator> ?author2", "details":
+    { "num-blocks-all": 3677, "num-blocks-read": 3677, "num-elements-read": 114876276
+    }, "estimated_column_multiplicities": [ 2.0395848751068115, 3.161564588546753
+    ], "estimated_operation_cost": 114876276, "estimated_size": 114876276, "estimated_total_cost":
+    114876276, "operation_time": 6, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 114876276, "status": "lazily materialized",
+    "total_time": 6 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?author2", "?name" ], "description": "IndexScan ?author2 <http://xmlns.com/foaf/0.1/name>
+    ?name", "details": { "num-blocks-all": 1820, "num-blocks-read": 1820, "num-elements-read":
+    56844932 }, "estimated_column_multiplicities": [ 1.0, 1.0 ], "estimated_operation_cost":
+    56844932, "estimated_size": 56844932, "estimated_total_cost": 56844932, "operation_time":
+    4, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    56844932, "status": "lazily materialized", "total_time": 4 } ], "column_names":
+    [ "?author2", "?document2", "?name" ], "description": "Join on ?author2", "details":
+    { "time-for-filtering-blocks": 17 }, "estimated_column_multiplicities": [ 1.4277094602584839,
+    2.213095188140869, 2.0395848751068115 ], "estimated_operation_cost": 252134599,
+    "estimated_size": 80413391, "estimated_total_cost": 423855807, "operation_time":
+    5018, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3,
+    "result_rows": 114876276, "status": "fully materialized", "total_time": 5028 }
+    ], "column_names": [ "?author2", "?document2", "?name" ], "description": "Sort
+    (internal order) on ?document2", "details": { "time-cloning": 1275 }, "estimated_column_multiplicities":
+    [ 1.4277094602584839, 2.213095188140869, 2.0395848751068115 ], "estimated_operation_cost":
+    2090748166, "estimated_size": 80413391, "estimated_total_cost": 2514603973, "operation_time":
+    16121, "original_operation_time": 0, "original_total_time": 0, "result_cols":
+    3, "result_rows": 114876276, "status": "fully materialized", "total_time": 21149
+    }, { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [], "column_names": [ "?author", "?document"
+    ], "description": "IndexScan ?document <http://purl.org/dc/elements/1.1/creator>
+    ?author", "details": null, "estimated_column_multiplicities": [ 2.0395848751068115,
+    3.161564588546753 ], "estimated_operation_cost": 114876276, "estimated_size":
+    114876276, "estimated_total_cost": 114876276, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "not
+    started", "total_time": 0 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?author", "?document2" ], "description": "IndexScan ?document2 <http://purl.org/dc/elements/1.1/creator>
+    ?author", "details": null, "estimated_column_multiplicities": [ 2.0395848751068115,
+    3.161564588546753 ], "estimated_operation_cost": 114876276, "estimated_size":
+    114876276, "estimated_total_cost": 114876276, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "not
+    started", "total_time": 0 } ], "column_names": [ "?author", "?document", "?document2"
+    ], "description": "Join on ?author", "details": { "time-for-filtering-blocks":
+    18 }, "estimated_column_multiplicities": [ 2.9119346141815186, 4.513795375823975,
+    4.513795375823975 ], "estimated_operation_cost": 393762485, "estimated_size":
+    164009933, "estimated_total_cost": 623515037, "operation_time": 22606, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 0, "status": "failed",
+    "total_time": 22606 } ], "column_names": [ "?author", "?document", "?document2"
+    ], "description": "Sort (internal order) on ?document2", "details": null, "estimated_column_multiplicities":
+    [ 2.9119346141815186, 4.513795375823975, 4.513795375823975 ], "estimated_operation_cost":
+    4428268191, "estimated_size": 164009933, "estimated_total_cost": 5051783228, "operation_time":
+    1, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3, "result_rows":
+    0, "status": "failed because child failed", "total_time": 22607 } ], "column_names":
+    [ "?author2", "?document2", "?name", "?author", "?document" ], "description":
+    "Join on ?document2", "details": null, "estimated_column_multiplicities": [ 4.511071681976318,
+    6.992620944976807, 6.444387912750244, 4.511072158813477, 6.992620944976807 ],
+    "estimated_operation_cost": 498502037, "estimated_size": 254078713, "estimated_total_cost":
+    8064889238, "operation_time": 221, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 5, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 43977 } ], "column_names": [ "?author2", "?document2", "?name",
+    "?author", "?document" ], "description": "Sort (internal order) on ?document",
+    "details": null, "estimated_column_multiplicities": [ 4.511071681976318, 6.992620944976807,
+    6.444387912750244, 4.511072158813477, 6.992620944976807 ], "estimated_operation_cost":
+    6860125251, "estimated_size": 254078713, "estimated_total_cost": 14925014489,
+    "operation_time": 1, "original_operation_time": 0, "original_total_time": 0, "result_cols":
+    5, "result_rows": 0, "status": "failed because child failed", "total_time": 43978
+    }, { "cache_status": "computed", "children": [], "column_names": [ "?document",
+    "?erdoes" ], "description": "IndexScan ?document <http://purl.org/dc/elements/1.1/creator>
+    ?erdoes", "details": null, "estimated_column_multiplicities": [ 3.161564588546753,
+    2.0395848751068115 ], "estimated_operation_cost": 114876276, "estimated_size":
+    114876276, "estimated_total_cost": 114876276, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "not
+    started", "total_time": 0 } ], "column_names": [ "?author2", "?document2", "?name",
+    "?author", "?document", "?erdoes" ], "description": "Join on ?document", "details":
+    null, "estimated_column_multiplicities": [ 14.262042999267578, 22.107620239257813,
+    20.374347686767578, 14.262044906616211, 15.475336074829102, 9.983430862426758
+    ], "estimated_operation_cost": 931255328, "estimated_size": 562300339, "estimated_total_cost":
+    15971146093, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 6, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 43978 } ], "column_names": [ "?author2", "?document2", "?name",
+    "?author", "?document", "?erdoes" ], "description": "Filter (?author!=?erdoes
+    && ?document2!=?document && ?author2!=?erdoes && ?author2!=?author)", "details":
+    null, "estimated_column_multiplicities": [ 14.262042999267578, 22.107620239257813,
+    20.374347686767578, 14.262044906616211, 15.475336074829102, 9.983430862426758
+    ], "estimated_operation_cost": 562300339, "estimated_size": 562300339, "estimated_total_cost":
+    16533446432, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 6, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 43978 } ], "column_names": [ "?author2", "?document2", "?name",
+    "?author", "?document", "?erdoes" ], "description": "Sort (internal order) on
+    ?erdoes", "details": null, "estimated_column_multiplicities": [ 14.262042999267578,
+    22.107620239257813, 20.374347686767578, 14.262044906616211, 15.475336074829102,
+    9.983430862426758 ], "estimated_operation_cost": 16306709831, "estimated_size":
+    562300339, "estimated_total_cost": 32840156263, "operation_time": 1, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 6, "result_rows": 0, "status": "failed
+    because child failed", "total_time": 43979 }, { "cache_status": "computed", "children":
+    [], "column_names": [ "?erdoes" ], "description": "IndexScan ?erdoes <http://xmlns.com/foaf/0.1/name>
+    \"Paul Erdoes\"^^<http://www.w3.org/2001/XMLSchema#string>", "details": null,
+    "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost": 6250,
+    "estimated_size": 6250, "estimated_total_cost": 6250, "operation_time": 1, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 1, "result_rows": 1, "status": "fully
+    materialized", "total_time": 1 } ], "column_names": [ "?author2", "?document2",
+    "?name", "?author", "?document", "?erdoes" ], "description": "Join on ?erdoes",
+    "details": null, "estimated_column_multiplicities": [ 0.9999883770942688, 0.9999883770942688,
+    0.9999883770942688, 0.9999883770942688, 0.9999883770942688, 6.988401412963867
+    ], "estimated_operation_cost": 562350266, "estimated_size": 43677, "estimated_total_cost":
+    33402512779, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 6, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 43981 }, { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [], "column_names":
+    [ "?author", "?document" ], "description": "IndexScan ?document <http://purl.org/dc/elements/1.1/creator>
+    ?author", "details": null, "estimated_column_multiplicities": [ 2.0395848751068115,
+    3.161564588546753 ], "estimated_operation_cost": 114876276, "estimated_size":
+    114876276, "estimated_total_cost": 114876276, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "not
+    started", "total_time": 0 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?author", "?name" ], "description": "IndexScan ?author <http://xmlns.com/foaf/0.1/name>
+    ?name", "details": null, "estimated_column_multiplicities": [ 1.0, 1.0 ], "estimated_operation_cost":
+    56844932, "estimated_size": 56844932, "estimated_total_cost": 56844932, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    0, "status": "not started", "total_time": 0 } ], "column_names": [ "?author",
+    "?document", "?name" ], "description": "Join on ?author", "details": null, "estimated_column_multiplicities":
+    [ 1.4277094602584839, 2.213095188140869, 2.0395848751068115 ], "estimated_operation_cost":
+    252134599, "estimated_size": 80413391, "estimated_total_cost": 423855807, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3, "result_rows":
+    0, "status": "not started", "total_time": 0 } ], "column_names": [ "?author",
+    "?document", "?name" ], "description": "Sort (internal order) on ?document", "details":
+    null, "estimated_column_multiplicities": [ 1.4277094602584839, 2.213095188140869,
+    2.0395848751068115 ], "estimated_operation_cost": 2090748166, "estimated_size":
+    80413391, "estimated_total_cost": 2514603973, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 0, "status": "not
+    started", "total_time": 0 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?document", "?erdoes" ], "description": "IndexScan ?document <http://purl.org/dc/elements/1.1/creator>
+    ?erdoes", "details": null, "estimated_column_multiplicities": [ 3.161564588546753,
+    2.0395848751068115 ], "estimated_operation_cost": 114876276, "estimated_size":
+    114876276, "estimated_total_cost": 114876276, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "not
+    started", "total_time": 0 } ], "column_names": [ "?author", "?document", "?name",
+    "?erdoes" ], "description": "Join on ?document", "details": null, "estimated_column_multiplicities":
+    [ 3.1596570014953613, 4.897790431976318, 4.513795375823975, 3.1596567630767822
+    ], "estimated_operation_cost": 373252152, "estimated_size": 177962485, "estimated_total_cost":
+    3002732401, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 4, "result_rows": 0, "status": "not started", "total_time":
+    0 } ], "column_names": [ "?author", "?document", "?name", "?erdoes" ], "description":
+    "Filter (?author!=?erdoes)", "details": null, "estimated_column_multiplicities":
+    [ 3.1596570014953613, 4.897790431976318, 4.513795375823975, 3.1596567630767822
+    ], "estimated_operation_cost": 355924970, "estimated_size": 177962485, "estimated_total_cost":
+    3358657371, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 4, "result_rows": 0, "status": "not started", "total_time":
+    0 } ], "column_names": [ "?author", "?document", "?name", "?erdoes" ], "description":
+    "Sort (internal order) on ?erdoes", "details": null, "estimated_column_multiplicities":
+    [ 3.1596570014953613, 4.897790431976318, 4.513795375823975, 3.1596567630767822
+    ], "estimated_operation_cost": 4804987095, "estimated_size": 177962485, "estimated_total_cost":
+    8163644466, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 4, "result_rows": 0, "status": "not started", "total_time":
+    0 }, { "cache_status": "computed", "children": [], "column_names": [ "?erdoes"
+    ], "description": "IndexScan ?erdoes <http://xmlns.com/foaf/0.1/name> \"Paul Erdoes\"^^<http://www.w3.org/2001/XMLSchema#string>",
+    "details": null, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost":
+    6250, "estimated_size": 6250, "estimated_total_cost": 6250, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    0, "status": "not started", "total_time": 0 } ], "column_names": [ "?author",
+    "?document", "?name", "?erdoes" ], "description": "Join on ?erdoes", "details":
+    null, "estimated_column_multiplicities": [ 0.9999639391899109, 0.9999639391899109,
+    0.9999639391899109, 2.2117598056793213 ], "estimated_operation_cost": 177982558,
+    "estimated_size": 13823, "estimated_total_cost": 8341633274, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 4, "result_rows":
+    0, "status": "not started", "total_time": 0 } ], "column_names": [ "?author2 (U)",
+    "?document2 (U)", "?name", "?author", "?document", "?erdoes" ], "description":
+    "Union", "details": null, "estimated_column_multiplicities": [ 1.3164368867874146,
+    1.3164368867874146, 0.9999761581420898, 0.9999761581420898, 0.9999761581420898,
+    4.600080490112305 ], "estimated_operation_cost": 172500, "estimated_size": 57500,
+    "estimated_total_cost": 41744318553, "operation_time": 1, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 6, "result_rows": 0, "status": "failed
+    because child failed", "total_time": 43982 }, { "cache_status": "computed", "children":
+    [], "column_names": [ "?erdoes" ], "description": "IndexScan ?erdoes <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://xmlns.com/foaf/0.1/Person>", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 56845474, "estimated_size": 56845474, "estimated_total_cost":
+    56845474, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "not started", "total_time":
+    0 } ], "column_names": [ "?author2 (U)", "?document2 (U)", "?name", "?author",
+    "?document", "?erdoes" ], "description": "Join on ?erdoes", "details": null, "estimated_column_multiplicities":
+    [ 1.0, 1.0, 1.0, 1.0, 1.0, 3.2200562953948975 ], "estimated_operation_cost": 56943221,
+    "estimated_size": 40247, "estimated_total_cost": 41858107248, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 6, "result_rows":
+    0, "status": "failed because child failed", "total_time": 43982 } ], "column_names":
+    [ "?author2 (U)", "?document2 (U)", "?name", "?author", "?document", "?erdoes"
+    ], "description": "Sort (internal order) on ?name", "details": null, "estimated_column_multiplicities":
+    [ 1.0, 1.0, 1.0, 1.0, 1.0, 3.2200562953948975 ], "estimated_operation_cost": 603705,
+    "estimated_size": 40247, "estimated_total_cost": 41858710953, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 6, "result_rows":
+    0, "status": "failed because child failed", "total_time": 43982 } ], "column_names":
+    [ "?author2 (U)", "?document2 (U)", "?name", "?author", "?document", "?erdoes"
+    ], "description": "Distinct", "details": null, "estimated_column_multiplicities":
+    [ 1.0, 1.0, 1.0, 1.0, 1.0, 3.2200562953948975 ], "estimated_operation_cost": 40247,
+    "estimated_size": 40247, "estimated_total_cost": 41858751200, "operation_time":
+    1, "original_operation_time": 0, "original_total_time": 0, "result_cols": 6, "result_rows":
+    0, "status": "failed because child failed", "total_time": 43983 } ], "column_names":
+    [ "?name" ], "description": "Strip Columns", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 0, "estimated_size": 40247, "estimated_total_cost":
+    41858751200, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 43983 } ], "column_names": [], "description": "Strip Columns", "details":
+    null, "estimated_column_multiplicities": [], "estimated_operation_cost": 0, "estimated_size":
+    40247, "estimated_total_cost": 41858751200, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 0, "result_rows": 0, "status": "failed
+    because child failed", "total_time": 43983 } ], "column_names": [ "?qlever_count_
+    (U)" ], "description": "GroupBy (implicit)", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 0, "estimated_size": 1, "estimated_total_cost":
+    41858751200, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 43984 }, "status": "ERROR", "time": { "computeResult": 43990, "total":
+    43990 } }'
+- name: Q9 properties of persons
+  description: Return incoming and outgoing properties of persons.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT DISTINCT ?predicate WHERE {
+    { ?person rdf:type foaf:Person . ?subject ?predicate ?person } UNION { ?person
+    rdf:type foaf:Person . ?person ?predicate ?object } } }'
+  runtime_info:
+    client_time: 34.985984802246094
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"4"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: Q10 relations of Paul Erdoes
+  description: Return all subjects related to 'Paul Erdoes' (publications or venues).
+  query: 'PREFIX person: <http://localhost/persons/> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT ?subject ?predicate WHERE { ?subject ?predicate person:Paul_Erdoes
+    } }'
+  runtime_info:
+    client_time: 0.02695441246032715
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"656"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: Q11 ee urls pagination
+  description: Return 10 electronic edition URLs starting from the 51st publication
+    in lexicographic order.
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS
+    ?qlever_count_) WHERE { SELECT ?ee WHERE { ?publication rdfs:seeAlso ?ee } ORDER
+    BY ?ee LIMIT 10 OFFSET 50 }'
+  runtime_info:
+    client_time: 6.218828439712524
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"10"^^<http://www.w3.org/2001/XMLSchema#int>'
+title: SP2Bench v1.1 Evaluation (~500M triples)
+description: SP2Bench benchmark v1.1 - synthetic dataset with ~500 million triples.
+  SP2Bench at https://dbis.informatik.uni-freiburg.de/forschung/projekte/SP2B/
+timeout: 180
+name: SP2Bench v1.1 (~500M triples)
+scale: 500000000

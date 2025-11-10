@@ -1,0 +1,1929 @@
+queries:
+- name: c2rpqs_query_12
+  description: WDBench/Queries/c2rpqs.txt Query 12
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q142>
+    <http://www.wikidata.org/prop/direct/P35> ?x1 . ?x1 (<http://www.wikidata.org/prop/direct/P279>)+
+    <http://www.wikidata.org/entity/Q35120> } }
+  runtime_info:
+    client_time: 4.237225532531738
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_106
+  description: WDBench/Queries/c2rpqs.txt Query 106
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q35409> . ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P171>)* <http://www.wikidata.org/entity/Q28319>
+    } }
+  runtime_info:
+    client_time: 0.28101229667663574
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"193"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_107
+  description: WDBench/Queries/c2rpqs.txt Query 107
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 (<http://www.wikidata.org/prop/direct/P171>)*
+    <http://www.wikidata.org/entity/Q1390> } }
+  runtime_info:
+    client_time: 1.200256109237671
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1246839"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_129
+  description: WDBench/Queries/c2rpqs.txt Query 129
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P105> ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x4 (<http://www.wikidata.org/prop/direct/P361>)+ ?x2 } }
+  runtime_info:
+    client_time: 19.61244297027588
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"258"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_132
+  description: WDBench/Queries/c2rpqs.txt Query 132
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P105> ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x4 (<http://www.wikidata.org/prop/direct/P361>)+ ?x2 } }
+  runtime_info:
+    client_time: 11.729061365127563
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"267"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_285
+  description: WDBench/Queries/c2rpqs.txt Query 285
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P18> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P297>
+    ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P31> ?x5 . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q2095> . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    ?x6 } }
+  runtime_info:
+    client_time: 0.9050188064575195
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"321290"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_286
+  description: WDBench/Queries/c2rpqs.txt Query 286
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> ?x3 . ?x3 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q39715> . ?x2 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q142> } }
+  runtime_info:
+    client_time: 4.870507478713989
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"319"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_287
+  description: WDBench/Queries/c2rpqs.txt Query 287
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> ?x3 . ?x3 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q476028> . ?x2 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q36> } }
+  runtime_info:
+    client_time: 0.37596678733825684
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"524"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_289
+  description: WDBench/Queries/c2rpqs.txt Query 289
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q35120>
+    } }
+  runtime_info:
+    client_time: 0.08210563659667969
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"9213"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_290
+  description: WDBench/Queries/c2rpqs.txt Query 290
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q35120> } }
+  runtime_info:
+    client_time: 15.112690687179565
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"71092296"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_329
+  description: WDBench/Queries/c2rpqs.txt Query 329
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P21>
+    ?x2 . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q6671777> } }
+  runtime_info:
+    client_time: 2.125565528869629
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"330"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_334
+  description: WDBench/Queries/c2rpqs.txt Query 334
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2579>
+    ?x2 . ?x1 (<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q488383>
+    . ?x2 ((<http://www.wikidata.org/prop/direct/P31>)?/(<http://www.wikidata.org/prop/direct/P279>)+)
+    <http://www.wikidata.org/entity/Q11862829> } }
+  runtime_info:
+    client_time: 5.080431938171387
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3670"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_337
+  description: WDBench/Queries/c2rpqs.txt Query 337
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P276>
+    ?x2 . ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 17.860437631607056
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1123"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_427
+  description: WDBench/Queries/c2rpqs.txt Query 427
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P3096>
+    ?x2 . ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 0.09569883346557617
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_471
+  description: WDBench/Queries/c2rpqs.txt Query 471
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P625> ?x3 . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q486972> . ?x1 (<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q1356> } }
+  runtime_info:
+    client_time: 0.383678674697876
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_474
+  description: WDBench/Queries/c2rpqs.txt Query 474
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)*
+    <http://www.wikidata.org/entity/Q215627> } }
+  runtime_info:
+    client_time: 40.57476496696472
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"12434468"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_475
+  description: WDBench/Queries/c2rpqs.txt Query 475
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P279>)* <http://www.wikidata.org/entity/Q1190554>
+    } }
+  runtime_info:
+    client_time: 0.2717716693878174
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"49193577"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_490
+  description: WDBench/Queries/c2rpqs.txt Query 490
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P361>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q43229> . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q43229> } }
+  runtime_info:
+    client_time: 1.3169400691986084
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"412813"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: c2rpqs_query_499
+  description: WDBench/Queries/c2rpqs.txt Query 499
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P462>
+    <http://www.wikidata.org/entity/Q943> . ?x1 (((<http://www.wikidata.org/prop/direct/P106>|<http://www.wikidata.org/prop/direct/P39>)|<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q488383> } }
+  runtime_info:
+    client_time: 4.5442869663238525
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2586"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: single_bgps_query_100
+  description: WDBench/Queries/single_bgps.txt Query 100
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2048>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.024556875228881836
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1348163"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: single_bgps_query_101
+  description: WDBench/Queries/single_bgps.txt Query 101
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2067>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.027074337005615234
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1592136"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: single_bgps_query_102
+  description: WDBench/Queries/single_bgps.txt Query 102
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2093>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.5922906398773193
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"149084204"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: single_bgps_query_103
+  description: WDBench/Queries/single_bgps.txt Query 103
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P213>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.03302764892578125
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2229403"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: single_bgps_query_104
+  description: WDBench/Queries/single_bgps.txt Query 104
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P214>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.041588544845581055
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3699644"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: single_bgps_query_106
+  description: WDBench/Queries/single_bgps.txt Query 106
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P225>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.042977094650268555
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3905073"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: single_bgps_query_108
+  description: WDBench/Queries/single_bgps.txt Query 108
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2456>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.017314910888671875
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"97170"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: single_bgps_query_109
+  description: WDBench/Queries/single_bgps.txt Query 109
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P268>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.022287368774414062
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"727793"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: single_bgps_query_118
+  description: WDBench/Queries/single_bgps.txt Query 118
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P279>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.023875713348388672
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"4970907"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: single_bgps_query_119
+  description: WDBench/Queries/single_bgps.txt Query 119
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P27>
+    <http://www.wikidata.org/entity/Q30> } }
+  runtime_info:
+    client_time: 0.015941381454467773
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"615512"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: single_bgps_query_121
+  description: WDBench/Queries/single_bgps.txt Query 121
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P27>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.050400495529174805
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5629534"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_10
+  description: WDBench/Queries/multiple_bgps.txt Query 10
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P141>
+    <http://www.wikidata.org/entity/Q219127> } }
+  runtime_info:
+    client_time: 0.03137493133544922
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"9166"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_12
+  description: WDBench/Queries/multiple_bgps.txt Query 12
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P141>
+    <http://www.wikidata.org/entity/Q278113> } }
+  runtime_info:
+    client_time: 0.029046058654785156
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"16430"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_13
+  description: WDBench/Queries/multiple_bgps.txt Query 13
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P1843>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P627> ?x3 } }
+  runtime_info:
+    client_time: 0.06013011932373047
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"397168"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_14
+  description: WDBench/Queries/multiple_bgps.txt Query 14
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P225>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.08982253074645996
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3218008"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_15
+  description: WDBench/Queries/multiple_bgps.txt Query 15
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P225>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P627> ?x3 } }
+  runtime_info:
+    client_time: 0.04450416564941406
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"149882"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_16
+  description: WDBench/Queries/multiple_bgps.txt Query 16
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x2 <http://www.wikidata.org/prop/direct/P171>
+    ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P1843> ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P225>
+    ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    } }
+  runtime_info:
+    client_time: 300.0106370449066
+  headers: []
+  results: 'HTTP code: 429: { "exception": "Operation timed out. Last operation: GroupBy
+    (implicit)", "query": "SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE
+    { ?x1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432>
+    . ?x2 <http://www.wikidata.org/prop/direct/P171> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P1843>
+    ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P225> ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q16521> } }", "resultsize": 0, "runtimeInformation":
+    { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [], "column_names": [ "?x2", "?x4"
+    ], "description": "IndexScan ?x2 <http://www.wikidata.org/prop/direct/P1843> ?x4",
+    "details": null, "estimated_column_multiplicities": [ 3.5397121906280518, 1.0730854272842407
+    ], "estimated_operation_cost": 762277, "estimated_size": 762277, "estimated_total_cost":
+    762277, "operation_time": 10, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 762277, "status": "fully materialized", "total_time":
+    10 }, { "cache_status": "computed", "children": [], "column_names": [ "?x2", "?x5"
+    ], "description": "IndexScan ?x2 <http://www.wikidata.org/prop/direct/P225> ?x5",
+    "details": { "num-blocks-all": 125, "num-blocks-read": 125, "num-elements-read":
+    3905073 }, "estimated_column_multiplicities": [ 1.000163197517395, 1.0029265880584717
+    ], "estimated_operation_cost": 3905073, "estimated_size": 3905073, "estimated_total_cost":
+    3905073, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 3905073, "status": "lazily materialized",
+    "total_time": 1 } ], "column_names": [ "?x2", "?x4", "?x5" ], "description": "Join
+    on ?x2", "details": { "time-for-filtering-blocks": 14 }, "estimated_column_multiplicities":
+    [ 2.4782028198242188, 1.0, 3.5397047996520996 ], "estimated_operation_cost": 5201030,
+    "estimated_size": 533680, "estimated_total_cost": 9868380, "operation_time": 70,
+    "original_operation_time": 0, "original_total_time": 0, "result_cols": 3, "result_rows":
+    763017, "status": "fully materialized", "total_time": 81 }, { "cache_status":
+    "computed", "children": [], "column_names": [ "?x2", "?x3" ], "description": "IndexScan
+    ?x2 <http://www.wikidata.org/prop/direct/P171> ?x3", "details": { "num-blocks-all":
+    126, "num-blocks-read": 126, "num-elements-read": 3909588 }, "estimated_column_multiplicities":
+    [ 1.0030914545059204, 10.048701286315918 ], "estimated_operation_cost": 3909588,
+    "estimated_size": 3909588, "estimated_total_cost": 3909588, "operation_time":
+    1, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    3909588, "status": "lazily materialized", "total_time": 1 } ], "column_names":
+    [ "?x2", "?x4", "?x5", "?x3" ], "description": "Join on ?x2", "details": { "time-for-filtering-blocks":
+    7 }, "estimated_column_multiplicities": [ 1.7401047945022583, 1.0, 2.4854533672332764,
+    2.4781973361968994 ], "estimated_operation_cost": 4817997, "estimated_size": 374729,
+    "estimated_total_cost": 18595965, "operation_time": 45, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 4, "result_rows": 771125, "status":
+    "fully materialized", "total_time": 127 }, { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [], "column_names": [ "?x1" ], "description":
+    "IndexScan ?x1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432>",
+    "details": null, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost":
+    3200000, "estimated_size": 3200000, "estimated_total_cost": 3200000, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    0, "status": "not started", "total_time": 0 }, { "cache_status": "computed", "children":
+    [], "column_names": [ "?x1" ], "description": "IndexScan ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q16521>", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 3762500, "estimated_size": 3762500, "estimated_total_cost":
+    3762500, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "not started", "total_time":
+    0 } ], "column_names": [ "?x1" ], "description": "Join on ?x1", "details": { "time-for-filtering-blocks":
+    4 }, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost": 9202500,
+    "estimated_size": 2240000, "estimated_total_cost": 16165000, "operation_time":
+    12, "original_operation_time": 12, "original_total_time": 12, "result_cols": 1,
+    "result_rows": 109662, "status": "lazily materialized", "total_time": 12 } ],
+    "column_names": [ "?x2", "?x4", "?x5", "?x3", "?x1" ], "description": "Cartesian
+    Product Join", "details": null, "estimated_column_multiplicities": [ 1.0, 1.0,
+    1.0, 1.0, 1.0 ], "estimated_operation_cost": 839392960000, "estimated_size": 839392960000,
+    "estimated_total_cost": 839427720965, "operation_time": 272043, "original_operation_time":
+    272043, "original_total_time": 272183, "result_cols": 5, "result_rows": 14615000000,
+    "status": "failed", "total_time": 272183 } ], "column_names": [ "?x1", "?x2",
+    "?x3", "?x4", "?x5" ], "description": "Strip Columns", "details": null, "estimated_column_multiplicities":
+    [ 1.0, 1.0, 1.0, 1.0, 1.0 ], "estimated_operation_cost": 0, "estimated_size":
+    839392960000, "estimated_total_cost": 839427720965, "operation_time": 446, "original_operation_time":
+    446, "original_total_time": 272629, "result_cols": 5, "result_rows": 14615000000,
+    "status": "failed", "total_time": 272629 } ], "column_names": [], "description":
+    "Strip Columns", "details": null, "estimated_column_multiplicities": [], "estimated_operation_cost":
+    0, "estimated_size": 839392960000, "estimated_total_cost": 839427720965, "operation_time":
+    26986, "original_operation_time": 26986, "original_total_time": 299616, "result_cols":
+    0, "result_rows": 14615000000, "status": "failed", "total_time": 299616 } ], "column_names":
+    [ "?qlever_count_ (U)" ], "description": "GroupBy (implicit)", "details": null,
+    "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost": 0, "estimated_size":
+    1, "estimated_total_cost": 839427720965, "operation_time": 355, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 1, "result_rows": 0, "status": "cancelled",
+    "total_time": 299972 }, "status": "ERROR", "time": { "computeResult": 300003,
+    "total": 300003 } }'
+- name: multiple_bgps_query_17
+  description: WDBench/Queries/multiple_bgps.txt Query 17
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P105> ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x4 <http://www.wikidata.org/prop/direct/P361> ?x2 } }
+  runtime_info:
+    client_time: 2.0691568851470947
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"110"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_20
+  description: WDBench/Queries/multiple_bgps.txt Query 20
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q1028181> . ?x1 <http://www.wikidata.org/prop/direct/P19>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+    } }
+  runtime_info:
+    client_time: 0.10124969482421875
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"142733"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_35
+  description: WDBench/Queries/multiple_bgps.txt Query 35
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q12299841> . ?x2 <http://www.wikidata.org/prop/direct/P17>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P19> ?x2 . ?x4 <http://www.wikidata.org/prop/direct/P569>
+    ?x4 } }
+  runtime_info:
+    client_time: 0.15517735481262207
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_77
+  description: WDBench/Queries/multiple_bgps.txt Query 77
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q33999> . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q5> . ?x1 <http://www.wikidata.org/prop/direct/P345>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P569> ?x3 } }
+  runtime_info:
+    client_time: 0.17638945579528809
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"186270"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_139
+  description: WDBench/Queries/multiple_bgps.txt Query 139
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q937857> . ?x2 <http://www.wikidata.org/prop/direct/P19>
+    ?x2 . ?x2 <http://www.wikidata.org/prop/direct/P20> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P21>
+    <http://www.wikidata.org/entity/Q6581097> . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 0.08411335945129395
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_143
+  description: WDBench/Queries/multiple_bgps.txt Query 143
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P19> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P21>
+    ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P27> ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P569>
+    ?x6 } }
+  runtime_info:
+    client_time: 1.047895908355713
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5584152"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_149
+  description: WDBench/Queries/multiple_bgps.txt Query 149
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    ?x2 . ?x2 <http://www.wikidata.org/prop/direct/P279> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P279>
+    ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P31> ?x5 . ?x2 <http://www.wikidata.org/prop/direct/P31>
+    ?x6 } }
+  runtime_info:
+    client_time: 1.9496722221374512
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"232448796"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_163
+  description: WDBench/Queries/multiple_bgps.txt Query 163
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1082>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P1448> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P1448>
+    ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256>
+    . ?x1 <http://www.wikidata.org/prop/direct/P36> ?x6 } }
+  runtime_info:
+    client_time: 35.5450644493103
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1571336100"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_168
+  description: WDBench/Queries/multiple_bgps.txt Query 168
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1082>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P17> ?x3 . ?x3 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q6256> . ?x3 <http://www.wikidata.org/prop/direct/P463>
+    ?x4 } }
+  runtime_info:
+    client_time: 0.4326467514038086
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"72201271"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_171
+  description: WDBench/Queries/multiple_bgps.txt Query 171
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1082>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P1082> ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P1448>
+    ?x5 . ?x6 <http://www.wikidata.org/prop/direct/P1448> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q6256> . ?x1 <http://www.wikidata.org/prop/direct/P36>
+    ?x7 } }
+  runtime_info:
+    client_time: 0.05232119560241699
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_183
+  description: WDBench/Queries/multiple_bgps.txt Query 183
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P115>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q476028>
+    . ?x3 <http://www.wikidata.org/prop/direct/P625> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P625>
+    ?x4 } }
+  runtime_info:
+    client_time: 0.04082298278808594
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_209
+  description: WDBench/Queries/multiple_bgps.txt Query 209
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P131>
+    <http://www.wikidata.org/entity/Q9899> . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q79007> . ?x2 <http://www.wikidata.org/prop/direct/P625>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.02121424674987793
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_212
+  description: WDBench/Queries/multiple_bgps.txt Query 212
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P131>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P138> ?x3 . ?x3 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q5> . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q79007> } }
+  runtime_info:
+    client_time: 0.1394498348236084
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"96113"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_256
+  description: WDBench/Queries/multiple_bgps.txt Query 256
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1433>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P478>
+    ?x4 } }
+  runtime_info:
+    client_time: 3.078064203262329
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"34218846"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_272
+  description: WDBench/Queries/multiple_bgps.txt Query 272
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1533>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P1533> ?x4 . ?x5 <http://www.wikidata.org/prop/direct/P1533>
+    ?x6 . ?x7 <http://www.wikidata.org/prop/direct/P734> ?x2 . ?x8 <http://www.wikidata.org/prop/direct/P734>
+    ?x4 . ?x9 <http://www.wikidata.org/prop/direct/P734> ?x6 . ?x8 <http://www.wikidata.org/prop/direct/P735>
+    ?x1 . ?x9 <http://www.wikidata.org/prop/direct/P735> ?x3 . ?x9 <http://www.wikidata.org/prop/direct/P735>
+    ?x5 } }
+  runtime_info:
+    client_time: 42.147329330444336
+  headers: []
+  results: 'HTTP code: 500: { "exception": "Tried to allocate 9.8 GB, but only 9.6
+    GB were available", "query": "SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT
+    * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1533> ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P1533>
+    ?x4 . ?x5 <http://www.wikidata.org/prop/direct/P1533> ?x6 . ?x7 <http://www.wikidata.org/prop/direct/P734>
+    ?x2 . ?x8 <http://www.wikidata.org/prop/direct/P734> ?x4 . ?x9 <http://www.wikidata.org/prop/direct/P734>
+    ?x6 . ?x8 <http://www.wikidata.org/prop/direct/P735> ?x1 . ?x9 <http://www.wikidata.org/prop/direct/P735>
+    ?x3 . ?x9 <http://www.wikidata.org/prop/direct/P735> ?x5 } }", "resultsize": 0,
+    "runtimeInformation": { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [ { "cache_status": "computed", "children": [ { "cache_status":
+    "computed", "children": [], "column_names": [ "?x4", "?x3" ], "description": "IndexScan
+    ?x3 <http://www.wikidata.org/prop/direct/P1533> ?x4", "details": null, "estimated_column_multiplicities":
+    [ 1.0184240341186523, 1.0117563009262085 ], "estimated_operation_cost": 8437,
+    "estimated_size": 8437, "estimated_total_cost": 8437, "operation_time": 2, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 21171, "status":
+    "fully materialized", "total_time": 2 }, { "cache_status": "computed", "children":
+    [], "column_names": [ "?x4", "?x8" ], "description": "IndexScan ?x8 <http://www.wikidata.org/prop/direct/P734>
+    ?x4", "details": { "num-blocks-all": 182, "num-blocks-read": 181, "num-elements-read":
+    5656250 }, "estimated_column_multiplicities": [ 11.143671989440918, 1.0325555801391602
+    ], "estimated_operation_cost": 5658233, "estimated_size": 5658233, "estimated_total_cost":
+    5658233, "operation_time": 2, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 5656250, "status": "lazily materialized",
+    "total_time": 2 } ], "column_names": [ "?x4", "?x3", "?x8" ], "description": "Join
+    on ?x4", "details": { "time-for-filtering-blocks": 4 }, "estimated_column_multiplicities":
+    [ 7.94428825378418, 7.892276287078857, 1.0184165239334106 ], "estimated_operation_cost":
+    5732480, "estimated_size": 65810, "estimated_total_cost": 11399150, "operation_time":
+    98, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3,
+    "result_rows": 2192298, "status": "fully materialized", "total_time": 102 } ],
+    "column_names": [ "?x4", "?x3", "?x8" ], "description": "Sort (internal order)
+    on ?x8", "details": { "time-cloning": 21 }, "estimated_column_multiplicities":
+    [ 7.94428825378418, 7.892276287078857, 1.0184165239334106 ], "estimated_operation_cost":
+    1052960, "estimated_size": 65810, "estimated_total_cost": 12452110, "operation_time":
+    213, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3,
+    "result_rows": 2192298, "status": "fully materialized", "total_time": 315 }, {
+    "cache_status": "computed", "children": [], "column_names": [ "?x8", "?x1" ],
+    "description": "IndexScan ?x8 <http://www.wikidata.org/prop/direct/P735> ?x1",
+    "details": { "num-blocks-all": 262, "num-blocks-read": 262, "num-elements-read":
+    8175035 }, "estimated_column_multiplicities": [ 1.066035509109497, 49.329811096191406
+    ], "estimated_operation_cost": 8175035, "estimated_size": 8175035, "estimated_total_cost":
+    8175035, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 8175035, "status": "lazily materialized",
+    "total_time": 1 } ], "column_names": [ "?x4", "?x3", "?x8", "?x1" ], "description":
+    "Join on ?x8", "details": { "time-for-filtering-blocks": 24 }, "estimated_column_multiplicities":
+    [ 5.928225517272949, 5.889412879943848, 1.0, 1.0184091329574585 ], "estimated_operation_cost":
+    8289953, "estimated_size": 49108, "estimated_total_cost": 28917098, "operation_time":
+    155, "original_operation_time": 0, "original_total_time": 0, "result_cols": 4,
+    "result_rows": 1911798, "status": "fully materialized", "total_time": 471 } ],
+    "column_names": [ "?x4", "?x3", "?x8", "?x1" ], "description": "Sort (internal
+    order) on ?x1", "details": { "time-cloning": 24 }, "estimated_column_multiplicities":
+    [ 5.928225517272949, 5.889412879943848, 1.0, 1.0184091329574585 ], "estimated_operation_cost":
+    736620, "estimated_size": 49108, "estimated_total_cost": 29653718, "operation_time":
+    181, "original_operation_time": 0, "original_total_time": 0, "result_cols": 4,
+    "result_rows": 1911798, "status": "fully materialized", "total_time": 652 }, {
+    "cache_status": "computed", "children": [], "column_names": [ "?x1", "?x2" ],
+    "description": "IndexScan ?x1 <http://www.wikidata.org/prop/direct/P1533> ?x2",
+    "details": null, "estimated_column_multiplicities": [ 1.0117563009262085, 1.0184240341186523
+    ], "estimated_operation_cost": 8437, "estimated_size": 8437, "estimated_total_cost":
+    8437, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 21171, "status": "fully materialized", "total_time":
+    1 } ], "column_names": [ "?x4", "?x3", "?x8", "?x1", "?x2" ], "description": "Join
+    on ?x1", "details": null, "estimated_column_multiplicities": [ 1.03696870803833,
+    1.030179500579834, 1.0115939378738403, 1.0, 1.0 ], "estimated_operation_cost":
+    63558, "estimated_size": 6013, "estimated_total_cost": 29725713, "operation_time":
+    98, "original_operation_time": 0, "original_total_time": 0, "result_cols": 5,
+    "result_rows": 1614339, "status": "fully materialized", "total_time": 751 } ],
+    "column_names": [ "?x4", "?x3", "?x8", "?x1", "?x2" ], "description": "Sort (internal
+    order) on ?x3", "details": { "time-cloning": 25 }, "estimated_column_multiplicities":
+    [ 1.03696870803833, 1.030179500579834, 1.0115939378738403, 1.0, 1.0 ], "estimated_operation_cost":
+    72156, "estimated_size": 6013, "estimated_total_cost": 29797869, "operation_time":
+    168, "original_operation_time": 0, "original_total_time": 0, "result_cols": 5,
+    "result_rows": 1614339, "status": "fully materialized", "total_time": 919 }, {
+    "cache_status": "computed", "children": [], "column_names": [ "?x3", "?x9" ],
+    "description": "IndexScan ?x9 <http://www.wikidata.org/prop/direct/P735> ?x3",
+    "details": null, "estimated_column_multiplicities": [ 49.329811096191406, 1.066035509109497
+    ], "estimated_operation_cost": 8175035, "estimated_size": 8175035, "estimated_total_cost":
+    8175035, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 0, "status": "not started", "total_time":
+    0 } ], "column_names": [ "?x4", "?x3", "?x8", "?x1", "?x2", "?x9" ], "description":
+    "Join on ?x3", "details": { "time-for-filtering-blocks": 17 }, "estimated_column_multiplicities":
+    [ 35.807430267333984, 35.57299041748047, 34.931217193603516, 34.53086853027344,
+    34.53086853027344, 1.0301746129989624 ], "estimated_operation_cost": 8388651,
+    "estimated_size": 207603, "estimated_total_cost": 46361555, "operation_time":
+    41052, "original_operation_time": 0, "original_total_time": 0, "result_cols":
+    6, "result_rows": 0, "status": "failed", "total_time": 41971 } ], "column_names":
+    [ "?x4", "?x3", "?x8", "?x1", "?x2", "?x9" ], "description": "Sort (internal order)
+    on ?x9", "details": null, "estimated_column_multiplicities": [ 35.807430267333984,
+    35.57299041748047, 34.931217193603516, 34.53086853027344, 34.53086853027344, 1.0301746129989624
+    ], "estimated_operation_cost": 3529251, "estimated_size": 207603, "estimated_total_cost":
+    49890806, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 6, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 41971 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?x9", "?x6" ], "description": "IndexScan ?x9 <http://www.wikidata.org/prop/direct/P734>
+    ?x6", "details": null, "estimated_column_multiplicities": [ 1.0325555801391602,
+    11.143671989440918 ], "estimated_operation_cost": 5658233, "estimated_size": 5658233,
+    "estimated_total_cost": 5658233, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "not
+    started", "total_time": 0 } ], "column_names": [ "?x4", "?x3", "?x8", "?x1", "?x2",
+    "?x9", "?x6" ], "description": "Join on ?x9", "details": null, "estimated_column_multiplicities":
+    [ 25.881214141845703, 25.711763381958008, 25.247896194458008, 24.958528518676758,
+    24.958528518676758, 1.0, 1.0301743745803833 ], "estimated_operation_cost": 6015889,
+    "estimated_size": 150053, "estimated_total_cost": 61564928, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 7, "result_rows":
+    0, "status": "failed because child failed", "total_time": 41971 }, { "cache_status":
+    "computed", "children": [], "column_names": [ "?x9", "?x5" ], "description": "IndexScan
+    ?x9 <http://www.wikidata.org/prop/direct/P735> ?x5", "details": null, "estimated_column_multiplicities":
+    [ 1.066035509109497, 49.329811096191406 ], "estimated_operation_cost": 8175035,
+    "estimated_size": 8175035, "estimated_total_cost": 8175035, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    0, "status": "not started", "total_time": 0 } ], "column_names": [ "?x4", "?x3",
+    "?x8", "?x1", "?x2", "?x9", "?x6", "?x5" ], "description": "Join on ?x9", "details":
+    null, "estimated_column_multiplicities": [ 19.31320571899414, 19.186756134033203,
+    18.840608596801758, 18.62467384338379, 18.62467384338379, 1.0, 1.0, 0.9999974966049194
+    ], "estimated_operation_cost": 8437061, "estimated_size": 111973, "estimated_total_cost":
+    78177024, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 8, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 41972 } ], "column_names": [ "?x4", "?x3", "?x8", "?x1", "?x2",
+    "?x9", "?x6", "?x5" ], "description": "Sort (internal order) on ?x6 ?x5", "details":
+    null, "estimated_column_multiplicities": [ 19.31320571899414, 19.186756134033203,
+    18.840608596801758, 18.62467384338379, 18.62467384338379, 1.0, 1.0, 0.9999974966049194
+    ], "estimated_operation_cost": 1791568, "estimated_size": 111973, "estimated_total_cost":
+    79968592, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 8, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 41972 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?x6", "?x5" ], "description": "IndexScan ?x5 <http://www.wikidata.org/prop/direct/P1533>
+    ?x6", "details": null, "estimated_column_multiplicities": [ 1.0184240341186523,
+    1.0117563009262085 ], "estimated_operation_cost": 8437, "estimated_size": 8437,
+    "estimated_total_cost": 8437, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "not
+    started", "total_time": 0 } ], "column_names": [ "?x4", "?x3", "?x8", "?x1", "?x2",
+    "?x9", "?x6", "?x5" ], "description": "MultiColumnJoin on ?x6 ?x5 ", "details":
+    null, "estimated_column_multiplicities": [ 19.540258407592773, 19.412321090698242,
+    19.062105178833008, 18.843631744384766, 18.843631744384766, 1.0117563009262085,
+    1.0117563009262085, 1.011753797531128 ], "estimated_operation_cost": 275614, "estimated_size":
+    8382, "estimated_total_cost": 80252643, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 8, "result_rows": 0, "status": "failed
+    because child failed", "total_time": 41972 } ], "column_names": [ "?x1", "?x2",
+    "?x3", "?x4", "?x5", "?x6", "?x8", "?x9" ], "description": "Strip Columns", "details":
+    null, "estimated_column_multiplicities": [ 18.843631744384766, 18.843631744384766,
+    19.412321090698242, 19.540258407592773, 1.011753797531128, 1.0117563009262085,
+    19.062105178833008, 1.0117563009262085 ], "estimated_operation_cost": 0, "estimated_size":
+    8382, "estimated_total_cost": 80252643, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 8, "result_rows": 0, "status": "failed
+    because child failed", "total_time": 41972 } ], "column_names": [ "?x2" ], "description":
+    "Strip Columns", "details": null, "estimated_column_multiplicities": [ 18.843631744384766
+    ], "estimated_operation_cost": 0, "estimated_size": 8382, "estimated_total_cost":
+    80252643, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 41973 } ], "column_names": [ "?x2" ], "description": "Sort (internal
+    order) on ?x2", "details": null, "estimated_column_multiplicities": [ 18.843631744384766
+    ], "estimated_operation_cost": 108966, "estimated_size": 8382, "estimated_total_cost":
+    80361609, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 41973 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?x2" ], "description": "IndexScan ?x7 <http://www.wikidata.org/prop/direct/P734>
+    ?x2", "details": null, "estimated_column_multiplicities": [ 11.143671989440918
+    ], "estimated_operation_cost": 5658233, "estimated_size": 5658233, "estimated_total_cost":
+    5658233, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "not started", "total_time":
+    0 } ], "column_names": [], "description": "Join on ?x2", "details": null, "estimated_column_multiplicities":
+    [], "estimated_operation_cost": 5731879, "estimated_size": 65264, "estimated_total_cost":
+    91751721, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 0, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 41973 } ], "column_names": [ "?qlever_count_ (U)" ], "description":
+    "GroupBy (implicit)", "details": null, "estimated_column_multiplicities": [ 1.0
+    ], "estimated_operation_cost": 0, "estimated_size": 1, "estimated_total_cost":
+    91751721, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 41974 }, "status": "ERROR", "time": { "computeResult": 42136, "total":
+    42136 } }'
+- name: multiple_bgps_query_273
+  description: WDBench/Queries/multiple_bgps.txt Query 273
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1533>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P1533> ?x4 . ?x5 <http://www.wikidata.org/prop/direct/P1533>
+    ?x6 . ?x7 <http://www.wikidata.org/prop/direct/P734> ?x2 . ?x8 <http://www.wikidata.org/prop/direct/P734>
+    ?x4 . ?x9 <http://www.wikidata.org/prop/direct/P734> ?x6 . ?x9 <http://www.wikidata.org/prop/direct/P734>
+    ?x10 . ?x8 <http://www.wikidata.org/prop/direct/P735> ?x1 . ?x9 <http://www.wikidata.org/prop/direct/P735>
+    ?x3 . ?x9 <http://www.wikidata.org/prop/direct/P735> ?x5 } }
+  runtime_info:
+    client_time: 41.58203983306885
+  headers: []
+  results: 'HTTP code: 500: { "exception": "Tried to allocate 9.8 GB, but only 9.6
+    GB were available", "query": "SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT
+    * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1533> ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P1533>
+    ?x4 . ?x5 <http://www.wikidata.org/prop/direct/P1533> ?x6 . ?x7 <http://www.wikidata.org/prop/direct/P734>
+    ?x2 . ?x8 <http://www.wikidata.org/prop/direct/P734> ?x4 . ?x9 <http://www.wikidata.org/prop/direct/P734>
+    ?x6 . ?x9 <http://www.wikidata.org/prop/direct/P734> ?x10 . ?x8 <http://www.wikidata.org/prop/direct/P735>
+    ?x1 . ?x9 <http://www.wikidata.org/prop/direct/P735> ?x3 . ?x9 <http://www.wikidata.org/prop/direct/P735>
+    ?x5 } }", "resultsize": 0, "runtimeInformation": { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [], "column_names": [ "?x4", "?x3" ], "description": "IndexScan ?x3
+    <http://www.wikidata.org/prop/direct/P1533> ?x4", "details": null, "estimated_column_multiplicities":
+    [ 1.0184240341186523, 1.0117563009262085 ], "estimated_operation_cost": 8437,
+    "estimated_size": 8437, "estimated_total_cost": 8437, "operation_time": 4, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 21171, "status":
+    "fully materialized", "total_time": 4 }, { "cache_status": "computed", "children":
+    [], "column_names": [ "?x4", "?x8" ], "description": "IndexScan ?x8 <http://www.wikidata.org/prop/direct/P734>
+    ?x4", "details": { "num-blocks-all": 182, "num-blocks-read": 181, "num-elements-read":
+    5656250 }, "estimated_column_multiplicities": [ 11.143671989440918, 1.0325555801391602
+    ], "estimated_operation_cost": 5658233, "estimated_size": 5658233, "estimated_total_cost":
+    5658233, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 5656250, "status": "lazily materialized",
+    "total_time": 1 } ], "column_names": [ "?x4", "?x3", "?x8" ], "description": "Join
+    on ?x4", "details": { "time-for-filtering-blocks": 2 }, "estimated_column_multiplicities":
+    [ 7.94428825378418, 7.892276287078857, 1.0184165239334106 ], "estimated_operation_cost":
+    5732480, "estimated_size": 65810, "estimated_total_cost": 11399150, "operation_time":
+    116, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3,
+    "result_rows": 2192298, "status": "fully materialized", "total_time": 121 } ],
+    "column_names": [ "?x4", "?x3", "?x8" ], "description": "Sort (internal order)
+    on ?x8", "details": { "time-cloning": 24 }, "estimated_column_multiplicities":
+    [ 7.94428825378418, 7.892276287078857, 1.0184165239334106 ], "estimated_operation_cost":
+    1052960, "estimated_size": 65810, "estimated_total_cost": 12452110, "operation_time":
+    215, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3,
+    "result_rows": 2192298, "status": "fully materialized", "total_time": 336 }, {
+    "cache_status": "computed", "children": [], "column_names": [ "?x8", "?x1" ],
+    "description": "IndexScan ?x8 <http://www.wikidata.org/prop/direct/P735> ?x1",
+    "details": { "num-blocks-all": 262, "num-blocks-read": 262, "num-elements-read":
+    8175035 }, "estimated_column_multiplicities": [ 1.066035509109497, 49.329811096191406
+    ], "estimated_operation_cost": 8175035, "estimated_size": 8175035, "estimated_total_cost":
+    8175035, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 8175035, "status": "lazily materialized",
+    "total_time": 1 } ], "column_names": [ "?x4", "?x3", "?x8", "?x1" ], "description":
+    "Join on ?x8", "details": { "time-for-filtering-blocks": 23 }, "estimated_column_multiplicities":
+    [ 5.928225517272949, 5.889412879943848, 1.0, 1.0184091329574585 ], "estimated_operation_cost":
+    8289953, "estimated_size": 49108, "estimated_total_cost": 28917098, "operation_time":
+    148, "original_operation_time": 0, "original_total_time": 0, "result_cols": 4,
+    "result_rows": 1911798, "status": "fully materialized", "total_time": 485 } ],
+    "column_names": [ "?x4", "?x3", "?x8", "?x1" ], "description": "Sort (internal
+    order) on ?x1", "details": { "time-cloning": 28 }, "estimated_column_multiplicities":
+    [ 5.928225517272949, 5.889412879943848, 1.0, 1.0184091329574585 ], "estimated_operation_cost":
+    736620, "estimated_size": 49108, "estimated_total_cost": 29653718, "operation_time":
+    190, "original_operation_time": 0, "original_total_time": 0, "result_cols": 4,
+    "result_rows": 1911798, "status": "fully materialized", "total_time": 675 }, {
+    "cache_status": "computed", "children": [], "column_names": [ "?x1", "?x2" ],
+    "description": "IndexScan ?x1 <http://www.wikidata.org/prop/direct/P1533> ?x2",
+    "details": null, "estimated_column_multiplicities": [ 1.0117563009262085, 1.0184240341186523
+    ], "estimated_operation_cost": 8437, "estimated_size": 8437, "estimated_total_cost":
+    8437, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 21171, "status": "fully materialized", "total_time":
+    1 } ], "column_names": [ "?x4", "?x3", "?x8", "?x1", "?x2" ], "description": "Join
+    on ?x1", "details": null, "estimated_column_multiplicities": [ 1.03696870803833,
+    1.030179500579834, 1.0115939378738403, 1.0, 1.0 ], "estimated_operation_cost":
+    63558, "estimated_size": 6013, "estimated_total_cost": 29725713, "operation_time":
+    110, "original_operation_time": 0, "original_total_time": 0, "result_cols": 5,
+    "result_rows": 1614339, "status": "fully materialized", "total_time": 786 } ],
+    "column_names": [ "?x4", "?x3", "?x8", "?x1", "?x2" ], "description": "Sort (internal
+    order) on ?x3", "details": { "time-cloning": 29 }, "estimated_column_multiplicities":
+    [ 1.03696870803833, 1.030179500579834, 1.0115939378738403, 1.0, 1.0 ], "estimated_operation_cost":
+    72156, "estimated_size": 6013, "estimated_total_cost": 29797869, "operation_time":
+    176, "original_operation_time": 0, "original_total_time": 0, "result_cols": 5,
+    "result_rows": 1614339, "status": "fully materialized", "total_time": 962 }, {
+    "cache_status": "computed", "children": [], "column_names": [ "?x3", "?x9" ],
+    "description": "IndexScan ?x9 <http://www.wikidata.org/prop/direct/P735> ?x3",
+    "details": null, "estimated_column_multiplicities": [ 49.329811096191406, 1.066035509109497
+    ], "estimated_operation_cost": 8175035, "estimated_size": 8175035, "estimated_total_cost":
+    8175035, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 0, "status": "not started", "total_time":
+    0 } ], "column_names": [ "?x4", "?x3", "?x8", "?x1", "?x2", "?x9" ], "description":
+    "Join on ?x3", "details": { "time-for-filtering-blocks": 16 }, "estimated_column_multiplicities":
+    [ 35.807430267333984, 35.57299041748047, 34.931217193603516, 34.53086853027344,
+    34.53086853027344, 1.0301746129989624 ], "estimated_operation_cost": 8388651,
+    "estimated_size": 207603, "estimated_total_cost": 46361555, "operation_time":
+    40423, "original_operation_time": 0, "original_total_time": 0, "result_cols":
+    6, "result_rows": 0, "status": "failed", "total_time": 41385 } ], "column_names":
+    [ "?x4", "?x3", "?x8", "?x1", "?x2", "?x9" ], "description": "Sort (internal order)
+    on ?x9", "details": null, "estimated_column_multiplicities": [ 35.807430267333984,
+    35.57299041748047, 34.931217193603516, 34.53086853027344, 34.53086853027344, 1.0301746129989624
+    ], "estimated_operation_cost": 3529251, "estimated_size": 207603, "estimated_total_cost":
+    49890806, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 6, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 41386 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?x9", "?x10" ], "description": "IndexScan ?x9 <http://www.wikidata.org/prop/direct/P734>
+    ?x10", "details": null, "estimated_column_multiplicities": [ 1.0325555801391602,
+    11.143671989440918 ], "estimated_operation_cost": 5658233, "estimated_size": 5658233,
+    "estimated_total_cost": 5658233, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "not
+    started", "total_time": 0 } ], "column_names": [ "?x4", "?x3", "?x8", "?x1", "?x2",
+    "?x9", "?x10" ], "description": "Join on ?x9", "details": null, "estimated_column_multiplicities":
+    [ 25.881214141845703, 25.711763381958008, 25.247896194458008, 24.958528518676758,
+    24.958528518676758, 1.0, 1.0301743745803833 ], "estimated_operation_cost": 6015889,
+    "estimated_size": 150053, "estimated_total_cost": 61564928, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 7, "result_rows":
+    0, "status": "failed because child failed", "total_time": 41386 }, { "cache_status":
+    "computed", "children": [], "column_names": [ "?x9", "?x6" ], "description": "IndexScan
+    ?x9 <http://www.wikidata.org/prop/direct/P734> ?x6", "details": null, "estimated_column_multiplicities":
+    [ 1.0325555801391602, 11.143671989440918 ], "estimated_operation_cost": 5658233,
+    "estimated_size": 5658233, "estimated_total_cost": 5658233, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    0, "status": "not started", "total_time": 0 } ], "column_names": [ "?x4", "?x3",
+    "?x8", "?x1", "?x2", "?x9", "?x10", "?x6" ], "description": "Join on ?x9", "details":
+    null, "estimated_column_multiplicities": [ 18.706653594970703, 18.584177017211914,
+    18.248899459838867, 18.03974723815918, 18.03974723815918, 1.0, 1.0, 0.9999940991401672
+    ], "estimated_operation_cost": 5916742, "estimated_size": 108456, "estimated_total_cost":
+    73139903, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 8, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 41387 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?x9", "?x5" ], "description": "IndexScan ?x9 <http://www.wikidata.org/prop/direct/P735>
+    ?x5", "details": null, "estimated_column_multiplicities": [ 1.066035509109497,
+    49.329811096191406 ], "estimated_operation_cost": 8175035, "estimated_size": 8175035,
+    "estimated_total_cost": 8175035, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "not
+    started", "total_time": 0 } ], "column_names": [ "?x4", "?x3", "?x8", "?x1", "?x2",
+    "?x9", "?x10", "?x6", "?x5" ], "description": "Join on ?x9", "details": null,
+    "estimated_column_multiplicities": [ 13.959369659423828, 13.867975234985352, 13.617782592773438,
+    13.461708068847656, 13.461708068847656, 1.0, 1.0, 1.0, 0.9999930262565613 ], "estimated_operation_cost":
+    8364423, "estimated_size": 80932, "estimated_total_cost": 89679361, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 9, "result_rows":
+    0, "status": "failed because child failed", "total_time": 41387 } ], "column_names":
+    [ "?x4", "?x3", "?x8", "?x1", "?x2", "?x9", "?x10", "?x6", "?x5" ], "description":
+    "Sort (internal order) on ?x6 ?x5", "details": null, "estimated_column_multiplicities":
+    [ 13.959369659423828, 13.867975234985352, 13.617782592773438, 13.461708068847656,
+    13.461708068847656, 1.0, 1.0, 1.0, 0.9999930262565613 ], "estimated_operation_cost":
+    1294912, "estimated_size": 80932, "estimated_total_cost": 90974273, "operation_time":
+    1, "original_operation_time": 0, "original_total_time": 0, "result_cols": 9, "result_rows":
+    0, "status": "failed because child failed", "total_time": 41388 }, { "cache_status":
+    "computed", "children": [], "column_names": [ "?x6", "?x5" ], "description": "IndexScan
+    ?x5 <http://www.wikidata.org/prop/direct/P1533> ?x6", "details": null, "estimated_column_multiplicities":
+    [ 1.0184240341186523, 1.0117563009262085 ], "estimated_operation_cost": 8437,
+    "estimated_size": 8437, "estimated_total_cost": 8437, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "not
+    started", "total_time": 0 } ], "column_names": [ "?x4", "?x3", "?x8", "?x1", "?x2",
+    "?x9", "?x10", "?x6", "?x5" ], "description": "MultiColumnJoin on ?x6 ?x5 ", "details":
+    null, "estimated_column_multiplicities": [ 14.123479843139648, 14.031011581420898,
+    13.777877807617188, 13.61996841430664, 13.61996841430664, 1.0117563009262085,
+    1.0117563009262085, 1.0117563009262085, 1.011749267578125 ], "estimated_operation_cost":
+    209187, "estimated_size": 8382, "estimated_total_cost": 91191897, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 9, "result_rows":
+    0, "status": "failed because child failed", "total_time": 41388 } ], "column_names":
+    [ "?x1", "?x10", "?x2", "?x3", "?x4", "?x5", "?x6", "?x8", "?x9" ], "description":
+    "Strip Columns", "details": null, "estimated_column_multiplicities": [ 13.61996841430664,
+    1.0117563009262085, 13.61996841430664, 14.031011581420898, 14.123479843139648,
+    1.011749267578125, 1.0117563009262085, 13.777877807617188, 1.0117563009262085
+    ], "estimated_operation_cost": 0, "estimated_size": 8382, "estimated_total_cost":
+    91191897, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 9, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 41389 } ], "column_names": [ "?x2" ], "description": "Strip Columns",
+    "details": null, "estimated_column_multiplicities": [ 13.61996841430664 ], "estimated_operation_cost":
+    0, "estimated_size": 8382, "estimated_total_cost": 91191897, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    0, "status": "failed because child failed", "total_time": 41389 } ], "column_names":
+    [ "?x2" ], "description": "Sort (internal order) on ?x2", "details": null, "estimated_column_multiplicities":
+    [ 13.61996841430664 ], "estimated_operation_cost": 108966, "estimated_size": 8382,
+    "estimated_total_cost": 91300863, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 1, "result_rows": 0, "status": "failed
+    because child failed", "total_time": 41389 }, { "cache_status": "computed", "children":
+    [], "column_names": [ "?x2" ], "description": "IndexScan ?x7 <http://www.wikidata.org/prop/direct/P734>
+    ?x2", "details": null, "estimated_column_multiplicities": [ 11.143671989440918
+    ], "estimated_operation_cost": 5658233, "estimated_size": 5658233, "estimated_total_cost":
+    5658233, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "not started", "total_time":
+    0 } ], "column_names": [], "description": "Join on ?x2", "details": null, "estimated_column_multiplicities":
+    [], "estimated_operation_cost": 5731954, "estimated_size": 65339, "estimated_total_cost":
+    102691050, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 0, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 41390 } ], "column_names": [ "?qlever_count_ (U)" ], "description":
+    "GroupBy (implicit)", "details": null, "estimated_column_multiplicities": [ 1.0
+    ], "estimated_operation_cost": 0, "estimated_size": 1, "estimated_total_cost":
+    102691050, "operation_time": 1, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 41391 }, "status": "ERROR", "time": { "computeResult": 41573, "total":
+    41573 } }'
+- name: multiple_bgps_query_303
+  description: WDBench/Queries/multiple_bgps.txt Query 303
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P176>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P179> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P17>
+    ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3231690>
+    } }
+  runtime_info:
+    client_time: 0.2163684368133545
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"360573"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_309
+  description: WDBench/Queries/multiple_bgps.txt Query 309
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    <http://www.wikidata.org/entity/Q142> . ?x2 <http://www.wikidata.org/prop/direct/P279>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P279> ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q43229> } }
+  runtime_info:
+    client_time: 0.7199134826660156
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"41952423"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_633
+  description: WDBench/Queries/multiple_bgps.txt Query 633
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P698> ?x3 } }
+  runtime_info:
+    client_time: 0.8346092700958252
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"33071516"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multiple_bgps_query_637
+  description: WDBench/Queries/multiple_bgps.txt Query 637
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P31> ?x1 . ?x4 <http://www.wikidata.org/prop/direct/P31>
+    ?x3 . ?x5 <http://www.wikidata.org/prop/direct/P31> ?x4 } }
+  runtime_info:
+    client_time: 10.280808210372925
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"109798649"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_3
+  description: WDBench/Queries/opts.txt Query 3
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P102>
+    <http://www.wikidata.org/entity/Q6721203> . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P569>
+    ?x2 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P19> ?x3 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P21> ?x4 } OPTIONAL { ?x3 <http://www.wikidata.org/prop/direct/P625>
+    ?x5 } } }
+  runtime_info:
+    client_time: 0.13672757148742676
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1186113"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_11
+  description: WDBench/Queries/opts.txt Query 11
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q170790> . ?x1 <http://www.wikidata.org/prop/direct/P27>
+    <http://www.wikidata.org/entity/Q70972> . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P27>
+    ?x2 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P569> ?x3 } } }
+  runtime_info:
+    client_time: 0.07567858695983887
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"68"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_51
+  description: WDBench/Queries/opts.txt Query 51
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+    . OPTIONAL { ?x3 <http://www.wikidata.org/prop/direct/P39> ?x3 } } }
+  runtime_info:
+    client_time: 0.740389347076416
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"24002096"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_54
+  description: WDBench/Queries/opts.txt Query 54
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1083>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P131> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q476028> . ?x1 <http://www.wikidata.org/prop/direct/P625>
+    ?x5 . OPTIONAL { ?x4 <http://www.wikidata.org/prop/direct/P115> ?x1 . ?x4 <http://www.wikidata.org/prop/direct/P154>
+    ?x6 . ?x4 <http://www.wikidata.org/prop/direct/P17> ?x7 } } }
+  runtime_info:
+    client_time: 0.15362882614135742
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"40801"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_60
+  description: WDBench/Queries/opts.txt Query 60
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1184>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P361> <http://www.wikidata.org/entity/Q21542493>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P170> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P214>
+    ?x5 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P571> ?x6 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P180> ?x7 . ?x7 <http://www.wikidata.org/prop/direct/P625>
+    ?x8 } } }
+  runtime_info:
+    client_time: 300.02705907821655
+  headers: []
+  results: 'HTTP code: 429: { "exception": "Operation timed out. Last operation: OptionalJoin
+    on ?x1 ", "query": "SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE
+    { ?x1 <http://www.wikidata.org/prop/direct/P1184> ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P361>
+    <http://www.wikidata.org/entity/Q21542493> . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P170>
+    ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P214> ?x5 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P571>
+    ?x6 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P180> ?x7 . ?x7 <http://www.wikidata.org/prop/direct/P625>
+    ?x8 } } }", "resultsize": 0, "runtimeInformation": { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [], "column_names": [ "?x1" ], "description": "IndexScan ?x1 <http://www.wikidata.org/prop/direct/P361>
+    <http://www.wikidata.org/entity/Q21542493>", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 6250, "estimated_size": 6250, "estimated_total_cost":
+    6250, "operation_time": 3, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 4675, "status": "fully materialized", "total_time":
+    3 }, { "cache_status": "computed", "children": [], "column_names": [ "?x1" ],
+    "description": "IndexScan ?x1 <http://www.wikidata.org/prop/direct/P1184> ?x2",
+    "details": null, "estimated_column_multiplicities": [ 1.0072004795074463 ], "estimated_operation_cost":
+    127711, "estimated_size": 127711, "estimated_total_cost": 127711, "operation_time":
+    4, "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    127711, "status": "fully materialized", "total_time": 4 } ], "column_names": [
+    "?x1" ], "description": "Join on ?x1", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 138367, "estimated_size": 4406, "estimated_total_cost":
+    272328, "operation_time": 2, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 4675, "status": "fully materialized", "total_time":
+    9 }, { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [], "column_names": [
+    "?x1", "?x3" ], "description": "IndexScan ?x1 <http://www.wikidata.org/prop/direct/P170>
+    ?x3", "details": null, "estimated_column_multiplicities": [ 1.0237500667572021,
+    4.703047275543213 ], "estimated_operation_cost": 1430446, "estimated_size": 1430446,
+    "estimated_total_cost": 1430446, "operation_time": 16, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 1430446, "status":
+    "fully materialized", "total_time": 16 }, { "cache_status": "computed", "children":
+    [], "column_names": [ "?x4", "?x5" ], "description": "IndexScan ?x4 <http://www.wikidata.org/prop/direct/P214>
+    ?x5", "details": null, "estimated_column_multiplicities": [ 1.024686574935913,
+    1.0022889375686646 ], "estimated_operation_cost": 3699644, "estimated_size": 3699644,
+    "estimated_total_cost": 3699644, "operation_time": 1, "original_operation_time":
+    1, "original_total_time": 1, "result_cols": 2, "result_rows": 31250, "status":
+    "lazily materialized", "total_time": 1 } ], "column_names": [ "?x1", "?x3", "?x4",
+    "?x5" ], "description": "Cartesian Product Join", "details": null, "estimated_column_multiplicities":
+    [ 1.0, 1.0, 1.0, 1.0 ], "estimated_operation_cost": 5292140961224, "estimated_size":
+    5292140961224, "estimated_total_cost": 5292146091314, "operation_time": 138232,
+    "original_operation_time": 138232, "original_total_time": 138249, "result_cols":
+    4, "result_rows": 9762000000, "status": "failed", "total_time": 138249 } ], "column_names":
+    [ "?x1", "?x3", "?x4", "?x5" ], "description": "Strip Columns", "details": null,
+    "estimated_column_multiplicities": [ 1.0, 1.0, 1.0, 1.0 ], "estimated_operation_cost":
+    0, "estimated_size": 5292140961224, "estimated_total_cost": 5292146091314, "operation_time":
+    298, "original_operation_time": 298, "original_total_time": 138548, "result_cols":
+    4, "result_rows": 9762000000, "status": "failed", "total_time": 138548 } ], "column_names":
+    [ "?x1" ], "description": "Strip Columns", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 0, "estimated_size": 5292140961224, "estimated_total_cost":
+    5292146091314, "operation_time": 10955, "original_operation_time": 10955, "original_total_time":
+    149504, "result_cols": 1, "result_rows": 9762000000, "status": "failed", "total_time":
+    149504 } ], "column_names": [ "?x1" ], "description": "Sort (internal order) on
+    ?x1", "details": null, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost":
+    222269920371408, "estimated_size": 5292140961224, "estimated_total_cost": 227562066462722,
+    "operation_time": 0, "original_operation_time": 0, "original_total_time": 0, "result_cols":
+    1, "result_rows": 0, "status": "optimized out", "total_time": 0 } ], "column_names":
+    [ "?x1" ], "description": "OptionalJoin on ?x1 ", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 21168563880148, "estimated_size": 4407, "estimated_total_cost":
+    248730630615198, "operation_time": 299940, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "cancelled", "total_time": 299949
+    } ], "column_names": [ "?x1" ], "description": "Sort (internal order) on ?x1",
+    "details": null, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost":
+    52884, "estimated_size": 4407, "estimated_total_cost": 248730630668082, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    0, "status": "cancelled", "total_time": 299949 }, { "cache_status": "computed",
+    "children": [], "column_names": [ "?x1" ], "description": "IndexScan ?x1 <http://www.wikidata.org/prop/direct/P571>
+    ?x6", "details": null, "estimated_column_multiplicities": [ 1.00981605052948 ],
+    "estimated_operation_cost": 3887620, "estimated_size": 3887620, "estimated_total_cost":
+    3887620, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "not started", "total_time":
+    0 } ], "column_names": [ "?x1" ], "description": "OptionalJoin on ?x1 ", "details":
+    null, "estimated_column_multiplicities": [ 1.00981605052948 ], "estimated_operation_cost":
+    15585912, "estimated_size": 4451, "estimated_total_cost": 248730650141614, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    0, "status": "cancelled", "total_time": 299949 }, { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [], "column_names": [ "?x7", "?x1" ], "description": "IndexScan ?x1
+    <http://www.wikidata.org/prop/direct/P180> ?x7", "details": null, "estimated_column_multiplicities":
+    [ 7.967447757720947, 2.282562732696533 ], "estimated_operation_cost": 950644,
+    "estimated_size": 950644, "estimated_total_cost": 950644, "operation_time": 0,
+    "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    0, "status": "not started", "total_time": 0 }, { "cache_status": "cached_not_pinned",
+    "children": [], "column_names": [ "?x7" ], "description": "IndexScan ?x7 <http://www.wikidata.org/prop/direct/P625>
+    ?x8", "details": null, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost":
+    5686, "estimated_size": 5686, "estimated_total_cost": 5686, "operation_time":
+    0, "original_operation_time": 1, "original_total_time": 1, "result_cols": 1, "result_rows":
+    18521, "status": "not started", "total_time": 0 } ], "column_names": [ "?x1" ],
+    "description": "Join on ?x7", "details": null, "estimated_column_multiplicities":
+    [ 0.9999988675117493 ], "estimated_operation_cost": 988042, "estimated_size":
+    31712, "estimated_total_cost": 1944372, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 1, "result_rows": 0, "status": "not
+    started", "total_time": 0 } ], "column_names": [ "?x1" ], "description": "Sort
+    (internal order) on ?x1", "details": null, "estimated_column_multiplicities":
+    [ 0.9999988675117493 ], "estimated_operation_cost": 443968, "estimated_size":
+    31712, "estimated_total_cost": 2388340, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 1, "result_rows": 0, "status": "not
+    started", "total_time": 0 } ], "column_names": [], "description": "OptionalJoin
+    on ?x1 ", "details": null, "estimated_column_multiplicities": [], "estimated_operation_cost":
+    162632, "estimated_size": 4495, "estimated_total_cost": 248730652692586, "operation_time":
+    1, "original_operation_time": 0, "original_total_time": 0, "result_cols": 0, "result_rows":
+    0, "status": "cancelled", "total_time": 299950 } ], "column_names": [ "?qlever_count_
+    (U)" ], "description": "GroupBy (implicit)", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 0, "estimated_size": 1, "estimated_total_cost":
+    248730652692586, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "cancelled", "total_time": 299950
+    }, "status": "ERROR", "time": { "computeResult": 300019, "total": 300019 } }'
+- name: opts_query_102
+  description: WDBench/Queries/opts.txt Query 102
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P136>
+    ?x2 . ?x2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q201658>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P345> ?x3 } } }
+  runtime_info:
+    client_time: 0.07310652732849121
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"393215"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_106
+  description: WDBench/Queries/opts.txt Query 106
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1433>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P478>
+    ?x4 . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P236> ?x5 } } }
+  runtime_info:
+    client_time: 7.069577693939209
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"69895191"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_107
+  description: WDBench/Queries/opts.txt Query 107
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1433>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P478>
+    ?x4 . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P236> ?x5 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P304> ?x6 } } }
+  runtime_info:
+    client_time: 17.242891550064087
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"69945276"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_110
+  description: WDBench/Queries/opts.txt Query 110
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1435>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P625> ?x3 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x4 } } }
+  runtime_info:
+    client_time: 0.09189748764038086
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2864"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_113
+  description: WDBench/Queries/opts.txt Query 113
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1476>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P18> ?x3 } } }
+  runtime_info:
+    client_time: 2.897812843322754
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"46099421"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_117
+  description: WDBench/Queries/opts.txt Query 117
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1566>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q668>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P131> ?x3 } } }
+  runtime_info:
+    client_time: 0.10430741310119629
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"42986"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_132
+  description: WDBench/Queries/opts.txt Query 132
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P171> ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P171>
+    <http://www.wikidata.org/entity/Q25401> . ?x2 <http://www.wikidata.org/prop/direct/P18>
+    ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P18> ?x6 . ?x3 <http://www.wikidata.org/prop/direct/P18>
+    ?x7 . OPTIONAL { ?x4 <http://www.wikidata.org/prop/direct/P171> ?x1 . ?x4 <http://www.wikidata.org/prop/direct/P18>
+    ?x8 } } }
+  runtime_info:
+    client_time: 2.0438754558563232
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"7543181"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_135
+  description: WDBench/Queries/opts.txt Query 135
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1741>
+    ?x2 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P166> ?x3 } OPTIONAL
+    { ?x3 <http://www.wikidata.org/prop/direct/P585> ?x4 } } }
+  runtime_info:
+    client_time: 100.3627278804779
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"27245300016"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_138
+  description: WDBench/Queries/opts.txt Query 138
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1788>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P625> ?x4 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P19>
+    ?x3 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P569> ?x5 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P18> ?x6 } } }
+  runtime_info:
+    client_time: 12.083126544952393
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"41579645"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_152
+  description: WDBench/Queries/opts.txt Query 152
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    <http://www.wikidata.org/entity/Q159> . ?x2 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q486972> . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P625>
+    ?x3 } OPTIONAL { ?x4 <http://www.wikidata.org/prop/direct/P1082> ?x4 } } }
+  runtime_info:
+    client_time: 0.8025112152099609
+  headers: []
+  results: 'HTTP code: 500: { "exception": "The memory limit was exceeded during the
+    computation of a cross-product. Check if this cross-product is intentional or
+    if you have mistyped a variable name.", "query": "SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q159>
+    . ?x2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q486972>
+    . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P625> ?x3 } OPTIONAL { ?x4
+    <http://www.wikidata.org/prop/direct/P1082> ?x4 } } }", "resultsize": 0, "runtimeInformation":
+    { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [], "column_names": [ "?x4", "?_QLever_internal_variable_qp_0"
+    ], "description": "IndexScan ?x4 <http://www.wikidata.org/prop/direct/P1082> ?_QLever_internal_variable_qp_0",
+    "details": null, "estimated_column_multiplicities": [ 2.0524277687072754, 20.18724250793457
+    ], "estimated_operation_cost": 1912721, "estimated_size": 1912721, "estimated_total_cost":
+    1912721, "operation_time": 2, "original_operation_time": 2, "original_total_time":
+    2, "result_cols": 2, "result_rows": 1912721, "status": "lazily materialized",
+    "total_time": 2 } ], "column_names": [ "?x4", "?_QLever_internal_variable_qp_0"
+    ], "description": "Filter ( ?_QLever_internal_variable_qp_0=?x4)", "details":
+    null, "estimated_column_multiplicities": [ 2.0524277687072754, 20.18724250793457
+    ], "estimated_operation_cost": 1914633, "estimated_size": 1912, "estimated_total_cost":
+    3827354, "operation_time": 9, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 0, "status": "fully materialized", "total_time":
+    12 } ], "column_names": [ "?x4 (U)", "?_QLever_internal_variable_qp_0 (U)" ],
+    "description": "Optional", "details": null, "estimated_column_multiplicities":
+    [ 2.0524277687072754, 20.18724250793457 ], "estimated_operation_cost": 3827354,
+    "estimated_size": 1912, "estimated_total_cost": 7654708, "operation_time": 0,
+    "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    1, "status": "fully materialized", "total_time": 12 }, { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [], "column_names": [
+    "?x1" ], "description": "IndexScan ?x1 <http://www.wikidata.org/prop/direct/P17>
+    <http://www.wikidata.org/entity/Q159>", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 481250, "estimated_size": 481250, "estimated_total_cost":
+    481250, "operation_time": 4, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 495886, "status": "fully materialized", "total_time":
+    4 }, { "cache_status": "computed", "children": [], "column_names": [ "?x2" ],
+    "description": "IndexScan ?x2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q486972>",
+    "details": null, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost":
+    543750, "estimated_size": 543750, "estimated_total_cost": 543750, "operation_time":
+    4, "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    559962, "status": "fully materialized", "total_time": 4 } ], "column_names": [
+    "?x1", "?x2" ], "description": "Cartesian Product Join", "details": null, "estimated_column_multiplicities":
+    [ 1.0, 1.0 ], "estimated_operation_cost": 261679687500, "estimated_size": 261679687500,
+    "estimated_total_cost": 261680712500, "operation_time": 742, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "failed",
+    "total_time": 750 } ], "column_names": [ "?x1", "?x2" ], "description": "Sort
+    (internal order) on ?x2", "details": null, "estimated_column_multiplicities":
+    [ 1.0, 1.0 ], "estimated_operation_cost": 9682148437500, "estimated_size": 261679687500,
+    "estimated_total_cost": 9943829150000, "operation_time": 1, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "failed
+    because child failed", "total_time": 751 }, { "cache_status": "cached_not_pinned",
+    "children": [], "column_names": [ "?x2", "?x3" ], "description": "IndexScan ?x2
+    <http://www.wikidata.org/prop/direct/P625> ?x3", "details": null, "estimated_column_multiplicities":
+    [ 1.0, 1.0 ], "estimated_operation_cost": 5686, "estimated_size": 5686, "estimated_total_cost":
+    5686, "operation_time": 0, "original_operation_time": 1, "original_total_time":
+    1, "result_cols": 2, "result_rows": 18521, "status": "not started", "total_time":
+    0 } ], "column_names": [ "?x1", "?x2", "?x3 (U)" ], "description": "OptionalJoin
+    on ?x2 ", "details": null, "estimated_column_multiplicities": [ 1.0, 1.0, 1.0
+    ], "estimated_operation_cost": 2093437548044, "estimated_size": 261679693825,
+    "estimated_total_cost": 12037266703730, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 0, "status": "failed
+    because child failed", "total_time": 751 } ], "column_names": [ "?x4 (U)", "?_QLever_internal_variable_qp_0
+    (U)", "?x1", "?x2", "?x3 (U)" ], "description": "Cartesian Product Join", "details":
+    null, "estimated_column_multiplicities": [ 1.0, 1.0, 1.0, 1.0, 1.0 ], "estimated_operation_cost":
+    500331574593400, "estimated_size": 500331574593400, "estimated_total_cost": 512368848951838,
+    "operation_time": 1, "original_operation_time": 0, "original_total_time": 0, "result_cols":
+    5, "result_rows": 0, "status": "failed because child failed", "total_time": 764
+    } ], "column_names": [ "?x1", "?x2", "?x3 (U)", "?x4 (U)" ], "description": "Strip
+    Columns", "details": null, "estimated_column_multiplicities": [ 1.0, 1.0, 1.0,
+    1.0 ], "estimated_operation_cost": 0, "estimated_size": 500331574593400, "estimated_total_cost":
+    512368848951838, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 4, "result_rows": 0, "status": "failed because child failed",
+    "total_time": 764 } ], "column_names": [], "description": "Strip Columns", "details":
+    null, "estimated_column_multiplicities": [], "estimated_operation_cost": 0, "estimated_size":
+    500331574593400, "estimated_total_cost": 512368848951838, "operation_time": 0,
+    "original_operation_time": 0, "original_total_time": 0, "result_cols": 0, "result_rows":
+    0, "status": "failed because child failed", "total_time": 764 } ], "column_names":
+    [ "?qlever_count_ (U)" ], "description": "GroupBy (implicit)", "details": null,
+    "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost": 0, "estimated_size":
+    1, "estimated_total_cost": 512368848951838, "operation_time": 1, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 1, "result_rows": 0, "status": "failed
+    because child failed", "total_time": 765 }, "status": "ERROR", "time": { "computeResult":
+    795, "total": 795 } }'
+- name: opts_query_207
+  description: WDBench/Queries/opts.txt Query 207
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P19>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072>
+    . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+    . ?x1 <http://www.wikidata.org/prop/direct/P569> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P625>
+    ?x4 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P18> ?x5 } } }
+  runtime_info:
+    client_time: 0.12617897987365723
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_293
+  description: WDBench/Queries/opts.txt Query 293
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q13442814> . ?x1 <http://www.wikidata.org/prop/direct/P50>
+    ?x2 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P50> ?x2 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P1476> ?x3 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P577>
+    ?x4 } } }
+  runtime_info:
+    client_time: 12.38629674911499
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"34205320"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_318
+  description: WDBench/Queries/opts.txt Query 318
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q3231690> . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 } } }
+  runtime_info:
+    client_time: 0.23708653450012207
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5900784"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: opts_query_480
+  description: WDBench/Queries/opts.txt Query 480
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P39>
+    <http://www.wikidata.org/entity/Q3044918> . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P569>
+    ?x2 } } }
+  runtime_info:
+    client_time: 0.07635831832885742
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"13289"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_62
+  description: WDBench/Queries/paths.txt Query 62
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q3044>
+    (<http://www.wikidata.org/prop/direct/P40>)* ?x1 } }
+  runtime_info:
+    client_time: 0.287905216217041
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"386400"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_67
+  description: WDBench/Queries/paths.txt Query 67
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q3454165>
+    (^<http://www.wikidata.org/prop/direct/P161>/<http://www.wikidata.org/prop/direct/P161>)+
+    ?x1 } }
+  runtime_info:
+    client_time: 11.52102255821228
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"241460"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_104
+  description: WDBench/Queries/paths.txt Query 104
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q80484>
+    ((<http://www.wikidata.org/prop/direct/P131>)+/(<http://www.wikidata.org/prop/direct/P17>)*)
+    <http://www.wikidata.org/entity/Q145> } }
+  runtime_info:
+    client_time: 1.2376360893249512
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_114
+  description: WDBench/Queries/paths.txt Query 114
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ()* ?x2
+    } }
+  runtime_info:
+    client_time: 0.00715327262878418
+  headers: []
+  results: 'HTTP code: 400: { "exception": "Invalid SPARQL query: Token \"()\": mismatched
+    input ''()'' expecting {''('', ''a'', ''^'', ''!'', IRI_REF, PNAME_NS, PNAME_LN,
+    VAR1, VAR2, PREFIX_LANGTAG}", "metadata": { "line": 1, "positionInLine": 65, "startIndex":
+    65, "stopIndex": 66 }, "query": "SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT
+    * WHERE { ?x1 ()* ?x2 } }", "resultsize": 0, "status": "ERROR", "time": { "computeResult":
+    0, "total": 0 } }'
+- name: paths_query_116
+  description: WDBench/Queries/paths.txt Query 116
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((((((((<http://www.wikidata.org/prop/direct/P171>|<http://www.wikidata.org/prop/direct/P273>)|<http://www.wikidata.org/prop/direct/P75>)|<http://www.wikidata.org/prop/direct/P76>)|<http://www.wikidata.org/prop/direct/P77>)|<http://www.wikidata.org/prop/direct/P70>)|<http://www.wikidata.org/prop/direct/P71>)|<http://www.wikidata.org/prop/direct/P74>)|<http://www.wikidata.org/prop/direct/P89>)*
+    <http://www.wikidata.org/entity/Q729> } }
+  runtime_info:
+    client_time: 2.979839324951172
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2308923"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_117
+  description: WDBench/Queries/paths.txt Query 117
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (((((<http://www.wikidata.org/prop/direct/P279>/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)
+    ?x1 } }
+  runtime_info:
+    client_time: 19.07325792312622
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"221"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_118
+  description: WDBench/Queries/paths.txt Query 118
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (((((<http://www.wikidata.org/prop/direct/P31>/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)
+    ?x1 } }
+  runtime_info:
+    client_time: 6.212064504623413
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_122
+  description: WDBench/Queries/paths.txt Query 122
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((((<http://www.wikidata.org/prop/direct/P279>/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)
+    ?x1 } }
+  runtime_info:
+    client_time: 6.849966287612915
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_124
+  description: WDBench/Queries/paths.txt Query 124
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (((<http://www.wikidata.org/prop/direct/P106>|<http://www.wikidata.org/prop/direct/P39>)|<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q488383> } }
+  runtime_info:
+    client_time: 18.654038190841675
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"124995971"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_132
+  description: WDBench/Queries/paths.txt Query 132
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)+
+    <http://www.wikidata.org/entity/Q268592> } }
+  runtime_info:
+    client_time: 300.26668667793274
+  headers: []
+  results: 'HTTP code: 429: { "exception": "Operation timed out. Last operation: TransitivePath
+    ?_QLever_internal_variable_qp_0 <http://www.wikidata.org/prop/direct/P31> ?_QLever_internal_variable_qp_2",
+    "query": "SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)+
+    <http://www.wikidata.org/entity/Q268592> } }", "resultsize": 0, "runtimeInformation":
+    { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [], "column_names": [ "?internal_property_path_variable_x", "?internal_property_path_variable_y",
+    "?internal_property_path_variable_z" ], "description": "IndexScan ?internal_property_path_variable_x
+    ?internal_property_path_variable_y ?internal_property_path_variable_z", "details":
+    null, "estimated_column_multiplicities": [ 32.908775329589844, 636972.375, 4.937713146209717
+    ], "estimated_operation_cost": 7969161598, "estimated_size": 7969161598, "estimated_total_cost":
+    7969161598, "operation_time": 20, "original_operation_time": 20, "original_total_time":
+    20, "result_cols": 3, "result_rows": 46413, "status": "lazily materialized", "total_time":
+    20 }, { "cache_status": "computed", "children": [], "column_names": [ "?internal_property_path_variable_x",
+    "?internal_property_path_variable_y", "?internal_property_path_variable_z" ],
+    "description": "IndexScan ?internal_property_path_variable_z ?internal_property_path_variable_y
+    ?internal_property_path_variable_x", "details": null, "estimated_column_multiplicities":
+    [ 4.937713146209717, 636972.375, 32.908775329589844 ], "estimated_operation_cost":
+    7969161598, "estimated_size": 7969161598, "estimated_total_cost": 7969161598,
+    "operation_time": 42, "original_operation_time": 42, "original_total_time": 42,
+    "result_cols": 3, "result_rows": 190024045, "status": "lazily materialized", "total_time":
+    42 } ], "column_names": [ "?internal_property_path_variable_x" ], "description":
+    "Union", "details": null, "estimated_column_multiplicities": [ 18.92324447631836
+    ], "estimated_operation_cost": 47814969588, "estimated_size": 15938323196, "estimated_total_cost":
+    63753292784, "operation_time": 2752, "original_operation_time": 2752, "original_total_time":
+    2815, "result_cols": 1, "result_rows": 190000000, "status": "lazily materialized",
+    "total_time": 2815 } ], "column_names": [ "?internal_property_path_variable_x"
+    ], "description": "Distinct", "details": null, "estimated_column_multiplicities":
+    [ 18.92324447631836 ], "estimated_operation_cost": 15938323196, "estimated_size":
+    15938323196, "estimated_total_cost": 79691615980, "operation_time": 423, "original_operation_time":
+    423, "original_total_time": 3238, "result_cols": 1, "result_rows": 137335122,
+    "status": "lazily materialized", "total_time": 3238 }, { "cache_status": "computed",
+    "children": [], "column_names": [ "?_QLever_internal_variable_qp_6", "?_QLever_internal_variable_qp_7"
+    ], "description": "IndexScan ?_QLever_internal_variable_qp_6 <http://www.wikidata.org/prop/direct/P279>
+    ?_QLever_internal_variable_qp_7", "details": null, "estimated_column_multiplicities":
+    [ 1.1742875576019287, 17.353670120239258 ], "estimated_operation_cost": 4970907,
+    "estimated_size": 4970907, "estimated_total_cost": 4970907, "operation_time":
+    36, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2,
+    "result_rows": 4970907, "status": "fully materialized", "total_time": 36 } ],
+    "column_names": [ "?_QLever_internal_variable_qp_2", "?_QLever_internal_variable_qp_1"
+    ], "description": "TransitivePath ?_QLever_internal_variable_qp_2 <http://www.wikidata.org/prop/direct/P279>
+    ?_QLever_internal_variable_qp_1", "details": { "Hull time": 73, "IdTable fill
+    time": 23, "Initialization time": 0 }, "estimated_column_multiplicities": [ 1.0,
+    1.0 ], "estimated_operation_cost": 15938323196, "estimated_size": 15938323196,
+    "estimated_total_cost": 95634910083, "operation_time": 137744, "original_operation_time":
+    137744, "original_total_time": 141019, "result_cols": 2, "result_rows": 136775378,
+    "status": "failed", "total_time": 141019 }, { "cache_status": "computed", "children":
+    [], "column_names": [ "?_QLever_internal_variable_qp_4", "?_QLever_internal_variable_qp_3"
+    ], "description": "IndexScan ?_QLever_internal_variable_qp_3 <http://www.wikidata.org/prop/direct/P31>
+    ?_QLever_internal_variable_qp_4", "details": null, "estimated_column_multiplicities":
+    [ 1110.335693359375, 1.0422996282577515 ], "estimated_operation_cost": 118808138,
+    "estimated_size": 118808138, "estimated_total_cost": 118808138, "operation_time":
+    1005, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2,
+    "result_rows": 118808138, "status": "fully materialized", "total_time": 1005 }
+    ], "column_names": [ "?_QLever_internal_variable_qp_0", "?_QLever_internal_variable_qp_2",
+    "?_QLever_internal_variable_qp_1" ], "description": "TransitivePath ?_QLever_internal_variable_qp_0
+    <http://www.wikidata.org/prop/direct/P31> ?_QLever_internal_variable_qp_2", "details":
+    { "Hull time": 88, "Initialization time": 0 }, "estimated_column_multiplicities":
+    [ 1.0, 1.0, 1.0 ], "estimated_operation_cost": 15938323196, "estimated_size":
+    15938323196, "estimated_total_cost": 111692041417, "operation_time": 158177, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 0, "status": "cancelled",
+    "total_time": 300202 } ], "column_names": [ "?_QLever_internal_variable_qp_0",
+    "?_QLever_internal_variable_qp_2", "?_QLever_internal_variable_qp_1" ], "description":
+    "Sort (internal order) on ?_QLever_internal_variable_qp_1 ?_QLever_internal_variable_qp_0",
+    "details": null, "estimated_column_multiplicities": [ 1.0, 1.0, 1.0 ], "estimated_operation_cost":
+    525964665468, "estimated_size": 15938323196, "estimated_total_cost": 637656706885,
+    "operation_time": 0, "original_operation_time": 0, "original_total_time": 0, "result_cols":
+    3, "result_rows": 0, "status": "cancelled", "total_time": 300202 } ], "column_names":
+    [ "?x1" ], "description": "TransitivePath ?x1 <???> <http://www.wikidata.org/entity/Q268592>",
+    "details": null, "estimated_column_multiplicities": [ 1.0, 1.0 ], "estimated_operation_cost":
+    1000, "estimated_size": 1000, "estimated_total_cost": 637656707885, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 2, "result_rows":
+    0, "status": "cancelled", "total_time": 300202 } ], "column_names": [ "?x1" ],
+    "description": "Strip Columns", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 0, "estimated_size": 1000, "estimated_total_cost":
+    637656707885, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "cancelled", "total_time": 300202
+    } ], "column_names": [], "description": "Strip Columns", "details": null, "estimated_column_multiplicities":
+    [], "estimated_operation_cost": 0, "estimated_size": 1000, "estimated_total_cost":
+    637656707885, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 0, "result_rows": 0, "status": "cancelled", "total_time": 300202
+    } ], "column_names": [ "?qlever_count_ (U)" ], "description": "GroupBy (implicit)",
+    "details": null, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost":
+    0, "estimated_size": 1, "estimated_total_cost": 637656707885, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    0, "status": "cancelled", "total_time": 300202 }, "status": "ERROR", "time": {
+    "computeResult": 300258, "total": 300258 } }'
+- name: paths_query_133
+  description: WDBench/Queries/paths.txt Query 133
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (((<http://www.wikidata.org/prop/direct/P31>)*|(<http://www.wikidata.org/prop/direct/P131>)*)/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q618123> } }
+  runtime_info:
+    client_time: 29.841949939727783
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"15114389"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_157
+  description: WDBench/Queries/paths.txt Query 157
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>/(<http://www.wikidata.org/prop/direct/P31>)*)+
+    <http://www.wikidata.org/entity/Q12737077> } }
+  runtime_info:
+    client_time: 14.701915264129639
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"180346"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_169
+  description: WDBench/Queries/paths.txt Query 169
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q35120> } }
+  runtime_info:
+    client_time: 6.060847759246826
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"4292513"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_183
+  description: WDBench/Queries/paths.txt Query 183
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q486972> } }
+  runtime_info:
+    client_time: 0.9841611385345459
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2853825"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_185
+  description: WDBench/Queries/paths.txt Query 185
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 15.381471157073975
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"12391310"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_201
+  description: WDBench/Queries/paths.txt Query 201
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>/<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P31>)+)
+    ?x1 } }
+  runtime_info:
+    client_time: 132.485764503479
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_205
+  description: WDBench/Queries/paths.txt Query 205
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)*
+    <http://www.wikidata.org/entity/Q215627> } }
+  runtime_info:
+    client_time: 18.459813117980957
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"12601276"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_206
+  description: WDBench/Queries/paths.txt Query 206
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)+
+    <http://www.wikidata.org/entity/Q12737077> } }
+  runtime_info:
+    client_time: 0.9067130088806152
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1199291"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_207
+  description: WDBench/Queries/paths.txt Query 207
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)+
+    <http://www.wikidata.org/entity/Q21146257> } }
+  runtime_info:
+    client_time: 145.89228200912476
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"114353027"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_213
+  description: WDBench/Queries/paths.txt Query 213
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P50>/<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)+)
+    <http://www.wikidata.org/entity/Q386724> } }
+  runtime_info:
+    client_time: 7.451528787612915
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"20612"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_217
+  description: WDBench/Queries/paths.txt Query 217
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P105>)*
+    <http://www.wikidata.org/entity/Q7432> } }
+  runtime_info:
+    client_time: 3.440988779067993
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3217632"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_392
+  description: WDBench/Queries/paths.txt Query 392
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>)*
+    <http://www.wikidata.org/entity/Q35120> } }
+  runtime_info:
+    client_time: 4.00510048866272
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"4204566"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_428
+  description: WDBench/Queries/paths.txt Query 428
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>)*
+    <http://www.wikidata.org/entity/Q16521> } }
+  runtime_info:
+    client_time: 3.7958788871765137
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3799090"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_443
+  description: WDBench/Queries/paths.txt Query 443
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>)*
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 14.651981115341187
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"12389443"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: paths_query_609
+  description: WDBench/Queries/paths.txt Query 609
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P31>)*)
+    <http://www.wikidata.org/entity/Q16521> } }
+  runtime_info:
+    client_time: 4.188132047653198
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3799147"^^<http://www.w3.org/2001/XMLSchema#int>'
+title: WDBench Wikidata-truthy Evaluation (~8B triples)
+description: WDBench Benchmark for Wikidata-truthy RDF dump, data from https://dumps.wikimedia.org/wikidatawiki/entities/
+  (13.06.2025), ~8 billion triples. 100 worst queries selected in total from the 5
+  set of queries at WDBench at https://github.com/MillenniumDB/WDBench
+timeout: 300
+name: WDBench (~8B triples)
+scale: 8000000000

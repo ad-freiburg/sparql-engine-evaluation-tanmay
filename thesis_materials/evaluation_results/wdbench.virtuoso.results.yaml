@@ -1,0 +1,1217 @@
+queries:
+- name: c2rpqs_query_12
+  description: WDBench/Queries/c2rpqs.txt Query 12
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q142>
+    <http://www.wikidata.org/prop/direct/P35> ?x1 . ?x1 (<http://www.wikidata.org/prop/direct/P279>)+
+    <http://www.wikidata.org/entity/Q35120> } }
+  runtime_info:
+    client_time: 71.80965566635132
+  headers: []
+  results: 'HTTP code: 500: Virtuoso 42000 Error TN...: Exceeded 10000000000 bytes
+    in transitive temp memory. use t_distinct, t_max or more T_MAX_memory options
+    to limit the search or increase the pool SPARQL query: SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q142> <http://www.wikidata.org/prop/direct/P35>
+    ?x1 . ?x1 (<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q35120>
+    } }'
+- name: c2rpqs_query_106
+  description: WDBench/Queries/c2rpqs.txt Query 106
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q35409> . ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P171>)* <http://www.wikidata.org/entity/Q28319>
+    } }
+  runtime_info:
+    client_time: 1.0659925937652588
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"193"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_107
+  description: WDBench/Queries/c2rpqs.txt Query 107
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 (<http://www.wikidata.org/prop/direct/P171>)*
+    <http://www.wikidata.org/entity/Q1390> } }
+  runtime_info:
+    client_time: 54.567140102386475
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"53443299"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_129
+  description: WDBench/Queries/c2rpqs.txt Query 129
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P105> ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x4 (<http://www.wikidata.org/prop/direct/P361>)+ ?x2 } }
+  runtime_info:
+    client_time: 130.28273129463196
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1894"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_132
+  description: WDBench/Queries/c2rpqs.txt Query 132
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P105> ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x4 (<http://www.wikidata.org/prop/direct/P361>)+ ?x2 } }
+  runtime_info:
+    client_time: 184.29285335540771
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2133"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_285
+  description: WDBench/Queries/c2rpqs.txt Query 285
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P18> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P297>
+    ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P31> ?x5 . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q2095> . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    ?x6 } }
+  runtime_info:
+    client_time: 6.343983888626099
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"6005140"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_286
+  description: WDBench/Queries/c2rpqs.txt Query 286
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> ?x3 . ?x3 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q39715> . ?x2 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q142> } }
+  runtime_info:
+    client_time: 5.2408692836761475
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"319"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_287
+  description: WDBench/Queries/c2rpqs.txt Query 287
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> ?x3 . ?x3 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q476028> . ?x2 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q36> } }
+  runtime_info:
+    client_time: 0.7635412216186523
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"524"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_289
+  description: WDBench/Queries/c2rpqs.txt Query 289
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q35120>
+    } }
+  runtime_info:
+    client_time: 50.93708372116089
+  headers: []
+  results: 'HTTP code: 500: Virtuoso 42000 Error TN...: Exceeded 10000000000 bytes
+    in transitive temp memory. use t_distinct, t_max or more T_MAX_memory options
+    to limit the search or increase the pool SPARQL query: SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17> ?x2 . ?x2
+    (<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q35120>
+    } }'
+- name: c2rpqs_query_290
+  description: WDBench/Queries/c2rpqs.txt Query 290
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q35120> } }
+  runtime_info:
+    client_time: 52.33829474449158
+  headers: []
+  results: 'HTTP code: 500: Virtuoso 42000 Error TN...: Exceeded 10000000000 bytes
+    in transitive temp memory. use t_distinct, t_max or more T_MAX_memory options
+    to limit the search or increase the pool SPARQL query: SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17> ?x2 . ?x2
+    (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q35120> } }'
+- name: c2rpqs_query_329
+  description: WDBench/Queries/c2rpqs.txt Query 329
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P21>
+    ?x2 . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q6671777> } }
+  runtime_info:
+    client_time: 13.28142499923706
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1784"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_334
+  description: WDBench/Queries/c2rpqs.txt Query 334
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2579>
+    ?x2 . ?x1 (<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q488383>
+    . ?x2 ((<http://www.wikidata.org/prop/direct/P31>)?/(<http://www.wikidata.org/prop/direct/P279>)+)
+    <http://www.wikidata.org/entity/Q11862829> } }
+  runtime_info:
+    client_time: 301.1257402896881
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: c2rpqs_query_337
+  description: WDBench/Queries/c2rpqs.txt Query 337
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P276>
+    ?x2 . ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 25.979363441467285
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1128"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_427
+  description: WDBench/Queries/c2rpqs.txt Query 427
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P3096>
+    ?x2 . ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 25.550987482070923
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_471
+  description: WDBench/Queries/c2rpqs.txt Query 471
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P625> ?x3 . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q486972> . ?x1 (<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q1356> } }
+  runtime_info:
+    client_time: 0.6462414264678955
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"8"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_474
+  description: WDBench/Queries/c2rpqs.txt Query 474
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)*
+    <http://www.wikidata.org/entity/Q215627> } }
+  runtime_info:
+    client_time: 34.84783220291138
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"12534360"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_475
+  description: WDBench/Queries/c2rpqs.txt Query 475
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P279>)* <http://www.wikidata.org/entity/Q1190554>
+    } }
+  runtime_info:
+    client_time: 1.0607709884643555
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"64703440"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_490
+  description: WDBench/Queries/c2rpqs.txt Query 490
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P361>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q43229> . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q43229> } }
+  runtime_info:
+    client_time: 300.9025390148163
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: c2rpqs_query_499
+  description: WDBench/Queries/c2rpqs.txt Query 499
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P462>
+    <http://www.wikidata.org/entity/Q943> . ?x1 (((<http://www.wikidata.org/prop/direct/P106>|<http://www.wikidata.org/prop/direct/P39>)|<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q488383> } }
+  runtime_info:
+    client_time: 301.1414930820465
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: single_bgps_query_100
+  description: WDBench/Queries/single_bgps.txt Query 100
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2048>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.15718626976013184
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1348166"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_101
+  description: WDBench/Queries/single_bgps.txt Query 101
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2067>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.33287620544433594
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1592372"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_102
+  description: WDBench/Queries/single_bgps.txt Query 102
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2093>
+    ?x2 } }
+  runtime_info:
+    client_time: 1.7788748741149902
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"149084204"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_103
+  description: WDBench/Queries/single_bgps.txt Query 103
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P213>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.34167003631591797
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2229403"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_104
+  description: WDBench/Queries/single_bgps.txt Query 104
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P214>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.339780330657959
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3699644"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_106
+  description: WDBench/Queries/single_bgps.txt Query 106
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P225>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.34841299057006836
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3905073"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_108
+  description: WDBench/Queries/single_bgps.txt Query 108
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2456>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.06376409530639648
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"97170"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_109
+  description: WDBench/Queries/single_bgps.txt Query 109
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P268>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.11231637001037598
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"727793"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_118
+  description: WDBench/Queries/single_bgps.txt Query 118
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P279>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.02187657356262207
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"4970907"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_119
+  description: WDBench/Queries/single_bgps.txt Query 119
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P27>
+    <http://www.wikidata.org/entity/Q30> } }
+  runtime_info:
+    client_time: 0.10530877113342285
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"615512"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_121
+  description: WDBench/Queries/single_bgps.txt Query 121
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P27>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.12260913848876953
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5629534"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_10
+  description: WDBench/Queries/multiple_bgps.txt Query 10
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P141>
+    <http://www.wikidata.org/entity/Q219127> } }
+  runtime_info:
+    client_time: 0.06480813026428223
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"9166"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_12
+  description: WDBench/Queries/multiple_bgps.txt Query 12
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P141>
+    <http://www.wikidata.org/entity/Q278113> } }
+  runtime_info:
+    client_time: 0.010420799255371094
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"16430"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_13
+  description: WDBench/Queries/multiple_bgps.txt Query 13
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P1843>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P627> ?x3 } }
+  runtime_info:
+    client_time: 0.16175389289855957
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"397168"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_14
+  description: WDBench/Queries/multiple_bgps.txt Query 14
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P225>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.07193565368652344
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3218008"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_15
+  description: WDBench/Queries/multiple_bgps.txt Query 15
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P225>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P627> ?x3 } }
+  runtime_info:
+    client_time: 0.0432131290435791
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"149882"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_16
+  description: WDBench/Queries/multiple_bgps.txt Query 16
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x2 <http://www.wikidata.org/prop/direct/P171>
+    ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P1843> ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P225>
+    ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    } }
+  runtime_info:
+    client_time: 300.3692693710327
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: multiple_bgps_query_17
+  description: WDBench/Queries/multiple_bgps.txt Query 17
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P105> ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x4 <http://www.wikidata.org/prop/direct/P361> ?x2 } }
+  runtime_info:
+    client_time: 1.6999709606170654
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"110"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_20
+  description: WDBench/Queries/multiple_bgps.txt Query 20
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q1028181> . ?x1 <http://www.wikidata.org/prop/direct/P19>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+    } }
+  runtime_info:
+    client_time: 0.7062826156616211
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"142733"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_35
+  description: WDBench/Queries/multiple_bgps.txt Query 35
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q12299841> . ?x2 <http://www.wikidata.org/prop/direct/P17>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P19> ?x2 . ?x4 <http://www.wikidata.org/prop/direct/P569>
+    ?x4 } }
+  runtime_info:
+    client_time: 300.37817549705505
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: multiple_bgps_query_77
+  description: WDBench/Queries/multiple_bgps.txt Query 77
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q33999> . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q5> . ?x1 <http://www.wikidata.org/prop/direct/P345>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P569> ?x3 } }
+  runtime_info:
+    client_time: 0.14731788635253906
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"186270"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_139
+  description: WDBench/Queries/multiple_bgps.txt Query 139
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q937857> . ?x2 <http://www.wikidata.org/prop/direct/P19>
+    ?x2 . ?x2 <http://www.wikidata.org/prop/direct/P20> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P21>
+    <http://www.wikidata.org/entity/Q6581097> . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 0.19911551475524902
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_143
+  description: WDBench/Queries/multiple_bgps.txt Query 143
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P19> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P21>
+    ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P27> ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P569>
+    ?x6 } }
+  runtime_info:
+    client_time: 0.4197428226470947
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5584152"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_149
+  description: WDBench/Queries/multiple_bgps.txt Query 149
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    ?x2 . ?x2 <http://www.wikidata.org/prop/direct/P279> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P279>
+    ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P31> ?x5 . ?x2 <http://www.wikidata.org/prop/direct/P31>
+    ?x6 } }
+  runtime_info:
+    client_time: 8.308190107345581
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"232448796"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_163
+  description: WDBench/Queries/multiple_bgps.txt Query 163
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1082>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P1448> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P1448>
+    ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256>
+    . ?x1 <http://www.wikidata.org/prop/direct/P36> ?x6 } }
+  runtime_info:
+    client_time: 3.3667023181915283
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1571336100"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_168
+  description: WDBench/Queries/multiple_bgps.txt Query 168
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1082>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P17> ?x3 . ?x3 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q6256> . ?x3 <http://www.wikidata.org/prop/direct/P463>
+    ?x4 } }
+  runtime_info:
+    client_time: 27.418909072875977
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"72201271"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_171
+  description: WDBench/Queries/multiple_bgps.txt Query 171
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1082>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P1082> ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P1448>
+    ?x5 . ?x6 <http://www.wikidata.org/prop/direct/P1448> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q6256> . ?x1 <http://www.wikidata.org/prop/direct/P36>
+    ?x7 } }
+  runtime_info:
+    client_time: 80.47691702842712
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_183
+  description: WDBench/Queries/multiple_bgps.txt Query 183
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P115>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q476028>
+    . ?x3 <http://www.wikidata.org/prop/direct/P625> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P625>
+    ?x4 } }
+  runtime_info:
+    client_time: 0.08475422859191895
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_209
+  description: WDBench/Queries/multiple_bgps.txt Query 209
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P131>
+    <http://www.wikidata.org/entity/Q9899> . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q79007> . ?x2 <http://www.wikidata.org/prop/direct/P625>
+    ?x2 } }
+  runtime_info:
+    client_time: 2.929337501525879
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_212
+  description: WDBench/Queries/multiple_bgps.txt Query 212
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P131>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P138> ?x3 . ?x3 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q5> . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q79007> } }
+  runtime_info:
+    client_time: 0.235213041305542
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"96113"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_256
+  description: WDBench/Queries/multiple_bgps.txt Query 256
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1433>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P478>
+    ?x4 } }
+  runtime_info:
+    client_time: 2.0294418334960938
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"34218846"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_272
+  description: WDBench/Queries/multiple_bgps.txt Query 272
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1533>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P1533> ?x4 . ?x5 <http://www.wikidata.org/prop/direct/P1533>
+    ?x6 . ?x7 <http://www.wikidata.org/prop/direct/P734> ?x2 . ?x8 <http://www.wikidata.org/prop/direct/P734>
+    ?x4 . ?x9 <http://www.wikidata.org/prop/direct/P734> ?x6 . ?x8 <http://www.wikidata.org/prop/direct/P735>
+    ?x1 . ?x9 <http://www.wikidata.org/prop/direct/P735> ?x3 . ?x9 <http://www.wikidata.org/prop/direct/P735>
+    ?x5 } }
+  runtime_info:
+    client_time: 9.942750453948975
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"902821598"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_273
+  description: WDBench/Queries/multiple_bgps.txt Query 273
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1533>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P1533> ?x4 . ?x5 <http://www.wikidata.org/prop/direct/P1533>
+    ?x6 . ?x7 <http://www.wikidata.org/prop/direct/P734> ?x2 . ?x8 <http://www.wikidata.org/prop/direct/P734>
+    ?x4 . ?x9 <http://www.wikidata.org/prop/direct/P734> ?x6 . ?x9 <http://www.wikidata.org/prop/direct/P734>
+    ?x10 . ?x8 <http://www.wikidata.org/prop/direct/P735> ?x1 . ?x9 <http://www.wikidata.org/prop/direct/P735>
+    ?x3 . ?x9 <http://www.wikidata.org/prop/direct/P735> ?x5 } }
+  runtime_info:
+    client_time: 11.905808687210083
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1207827722"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_303
+  description: WDBench/Queries/multiple_bgps.txt Query 303
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P176>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P179> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P17>
+    ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3231690>
+    } }
+  runtime_info:
+    client_time: 94.5399820804596
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"360573"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_309
+  description: WDBench/Queries/multiple_bgps.txt Query 309
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    <http://www.wikidata.org/entity/Q142> . ?x2 <http://www.wikidata.org/prop/direct/P279>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P279> ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q43229> } }
+  runtime_info:
+    client_time: 23.008228302001953
+  headers: []
+  results: 'Exception: curl command failed with exit code 52, stderr is empty'
+  server_restarted: true
+- name: multiple_bgps_query_633
+  description: WDBench/Queries/multiple_bgps.txt Query 633
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P698> ?x3 } }
+  runtime_info:
+    client_time: 4.210915565490723
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"33071516"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_637
+  description: WDBench/Queries/multiple_bgps.txt Query 637
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P31> ?x1 . ?x4 <http://www.wikidata.org/prop/direct/P31>
+    ?x3 . ?x5 <http://www.wikidata.org/prop/direct/P31> ?x4 } }
+  runtime_info:
+    client_time: 4.358794689178467
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"109798649"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_3
+  description: WDBench/Queries/opts.txt Query 3
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P102>
+    <http://www.wikidata.org/entity/Q6721203> . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P569>
+    ?x2 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P19> ?x3 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P21> ?x4 } OPTIONAL { ?x3 <http://www.wikidata.org/prop/direct/P625>
+    ?x5 } } }
+  runtime_info:
+    client_time: 1.342350959777832
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1186113"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_11
+  description: WDBench/Queries/opts.txt Query 11
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q170790> . ?x1 <http://www.wikidata.org/prop/direct/P27>
+    <http://www.wikidata.org/entity/Q70972> . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P27>
+    ?x2 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P569> ?x3 } } }
+  runtime_info:
+    client_time: 0.610558271408081
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"68"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_51
+  description: WDBench/Queries/opts.txt Query 51
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+    . OPTIONAL { ?x3 <http://www.wikidata.org/prop/direct/P39> ?x3 } } }
+  runtime_info:
+    client_time: 300.3488259315491
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: opts_query_54
+  description: WDBench/Queries/opts.txt Query 54
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1083>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P131> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q476028> . ?x1 <http://www.wikidata.org/prop/direct/P625>
+    ?x5 . OPTIONAL { ?x4 <http://www.wikidata.org/prop/direct/P115> ?x1 . ?x4 <http://www.wikidata.org/prop/direct/P154>
+    ?x6 . ?x4 <http://www.wikidata.org/prop/direct/P17> ?x7 } } }
+  runtime_info:
+    client_time: 0.7051167488098145
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"40801"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_60
+  description: WDBench/Queries/opts.txt Query 60
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1184>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P361> <http://www.wikidata.org/entity/Q21542493>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P170> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P214>
+    ?x5 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P571> ?x6 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P180> ?x7 . ?x7 <http://www.wikidata.org/prop/direct/P625>
+    ?x8 } } }
+  runtime_info:
+    client_time: 175.74536037445068
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"13910662449"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_102
+  description: WDBench/Queries/opts.txt Query 102
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P136>
+    ?x2 . ?x2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q201658>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P345> ?x3 } } }
+  runtime_info:
+    client_time: 0.38491320610046387
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"393215"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_106
+  description: WDBench/Queries/opts.txt Query 106
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1433>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P478>
+    ?x4 . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P236> ?x5 } } }
+  runtime_info:
+    client_time: 3.7697463035583496
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"69895191"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_107
+  description: WDBench/Queries/opts.txt Query 107
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1433>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P478>
+    ?x4 . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P236> ?x5 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P304> ?x6 } } }
+  runtime_info:
+    client_time: 3.677680253982544
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"69945276"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_110
+  description: WDBench/Queries/opts.txt Query 110
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1435>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P625> ?x3 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x4 } } }
+  runtime_info:
+    client_time: 0.17293334007263184
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2864"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_113
+  description: WDBench/Queries/opts.txt Query 113
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1476>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P18> ?x3 } } }
+  runtime_info:
+    client_time: 3.105280876159668
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"46099421"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_117
+  description: WDBench/Queries/opts.txt Query 117
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1566>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q668>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P131> ?x3 } } }
+  runtime_info:
+    client_time: 0.3597395420074463
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"42986"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_132
+  description: WDBench/Queries/opts.txt Query 132
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P171> ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P171>
+    <http://www.wikidata.org/entity/Q25401> . ?x2 <http://www.wikidata.org/prop/direct/P18>
+    ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P18> ?x6 . ?x3 <http://www.wikidata.org/prop/direct/P18>
+    ?x7 . OPTIONAL { ?x4 <http://www.wikidata.org/prop/direct/P171> ?x1 . ?x4 <http://www.wikidata.org/prop/direct/P18>
+    ?x8 } } }
+  runtime_info:
+    client_time: 58.72718858718872
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"7543181"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_135
+  description: WDBench/Queries/opts.txt Query 135
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1741>
+    ?x2 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P166> ?x3 } OPTIONAL
+    { ?x3 <http://www.wikidata.org/prop/direct/P585> ?x4 } } }
+  runtime_info:
+    client_time: 300.3584039211273
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: opts_query_138
+  description: WDBench/Queries/opts.txt Query 138
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1788>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P625> ?x4 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P19>
+    ?x3 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P569> ?x5 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P18> ?x6 } } }
+  runtime_info:
+    client_time: 3.755028247833252
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"41579645"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_152
+  description: WDBench/Queries/opts.txt Query 152
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    <http://www.wikidata.org/entity/Q159> . ?x2 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q486972> . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P625>
+    ?x3 } OPTIONAL { ?x4 <http://www.wikidata.org/prop/direct/P1082> ?x4 } } }
+  runtime_info:
+    client_time: 300.36817240715027
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: opts_query_207
+  description: WDBench/Queries/opts.txt Query 207
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P19>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072>
+    . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+    . ?x1 <http://www.wikidata.org/prop/direct/P569> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P625>
+    ?x4 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P18> ?x5 } } }
+  runtime_info:
+    client_time: 0.4410717487335205
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_293
+  description: WDBench/Queries/opts.txt Query 293
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q13442814> . ?x1 <http://www.wikidata.org/prop/direct/P50>
+    ?x2 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P50> ?x2 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P1476> ?x3 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P577>
+    ?x4 } } }
+  runtime_info:
+    client_time: 43.24158525466919
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"34205320"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_318
+  description: WDBench/Queries/opts.txt Query 318
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q3231690> . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 } } }
+  runtime_info:
+    client_time: 300.376252412796
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: opts_query_480
+  description: WDBench/Queries/opts.txt Query 480
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P39>
+    <http://www.wikidata.org/entity/Q3044918> . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P569>
+    ?x2 } } }
+  runtime_info:
+    client_time: 300.37150979042053
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: paths_query_62
+  description: WDBench/Queries/paths.txt Query 62
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q3044>
+    (<http://www.wikidata.org/prop/direct/P40>)* ?x1 } }
+  runtime_info:
+    client_time: 51.98550796508789
+  headers: []
+  results: 'HTTP code: 500: Virtuoso 42000 Error TN...: Exceeded 10000000000 bytes
+    in transitive temp memory. use t_distinct, t_max or more T_MAX_memory options
+    to limit the search or increase the pool SPARQL query: SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q3044> (<http://www.wikidata.org/prop/direct/P40>)*
+    ?x1 } }'
+- name: paths_query_67
+  description: WDBench/Queries/paths.txt Query 67
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q3454165>
+    (^<http://www.wikidata.org/prop/direct/P161>/<http://www.wikidata.org/prop/direct/P161>)+
+    ?x1 } }
+  runtime_info:
+    client_time: 11.909579277038574
+  headers: []
+  results: 'HTTP code: 500: Virtuoso 42000 Error TN...: Exceeded 10000000000 bytes
+    in transitive temp memory. use t_distinct, t_max or more T_MAX_memory options
+    to limit the search or increase the pool SPARQL query: SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q3454165> (^<http://www.wikidata.org/prop/direct/P161>/<http://www.wikidata.org/prop/direct/P161>)+
+    ?x1 } }'
+- name: paths_query_104
+  description: WDBench/Queries/paths.txt Query 104
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q80484>
+    ((<http://www.wikidata.org/prop/direct/P131>)+/(<http://www.wikidata.org/prop/direct/P17>)*)
+    <http://www.wikidata.org/entity/Q145> } }
+  runtime_info:
+    client_time: 2.4658203125
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_114
+  description: WDBench/Queries/paths.txt Query 114
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ()* ?x2
+    } }
+  runtime_info:
+    client_time: 0.006865501403808594
+  headers: []
+  results: 'HTTP code: 400: Virtuoso 37000 Error SP030: SPARQL compiler, line 1: syntax
+    error at '')'' before ''*'' SPARQL query: SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 ()* ?x2 } }'
+- name: paths_query_116
+  description: WDBench/Queries/paths.txt Query 116
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((((((((<http://www.wikidata.org/prop/direct/P171>|<http://www.wikidata.org/prop/direct/P273>)|<http://www.wikidata.org/prop/direct/P75>)|<http://www.wikidata.org/prop/direct/P76>)|<http://www.wikidata.org/prop/direct/P77>)|<http://www.wikidata.org/prop/direct/P70>)|<http://www.wikidata.org/prop/direct/P71>)|<http://www.wikidata.org/prop/direct/P74>)|<http://www.wikidata.org/prop/direct/P89>)*
+    <http://www.wikidata.org/entity/Q729> } }
+  runtime_info:
+    client_time: 129.0945909023285
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"136434806"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_117
+  description: WDBench/Queries/paths.txt Query 117
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (((((<http://www.wikidata.org/prop/direct/P279>/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)
+    ?x1 } }
+  runtime_info:
+    client_time: 5.281615257263184
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"221"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_118
+  description: WDBench/Queries/paths.txt Query 118
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (((((<http://www.wikidata.org/prop/direct/P31>/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)
+    ?x1 } }
+  runtime_info:
+    client_time: 1.2660839557647705
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_122
+  description: WDBench/Queries/paths.txt Query 122
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((((<http://www.wikidata.org/prop/direct/P279>/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)
+    ?x1 } }
+  runtime_info:
+    client_time: 3.1531620025634766
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_124
+  description: WDBench/Queries/paths.txt Query 124
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (((<http://www.wikidata.org/prop/direct/P106>|<http://www.wikidata.org/prop/direct/P39>)|<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q488383> } }
+  runtime_info:
+    client_time: 291.6073350906372
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"4562765555"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_132
+  description: WDBench/Queries/paths.txt Query 132
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)+
+    <http://www.wikidata.org/entity/Q268592> } }
+  runtime_info:
+    client_time: 8.153269052505493
+  headers: []
+  results: 'HTTP code: 500: Virtuoso 42000 Error TN...: Exceeded 10000000000 bytes
+    in transitive temp memory. use t_distinct, t_max or more T_MAX_memory options
+    to limit the search or increase the pool SPARQL query: SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)+
+    <http://www.wikidata.org/entity/Q268592> } }'
+- name: paths_query_133
+  description: WDBench/Queries/paths.txt Query 133
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (((<http://www.wikidata.org/prop/direct/P31>)*|(<http://www.wikidata.org/prop/direct/P131>)*)/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q618123> } }
+  runtime_info:
+    client_time: 0.011039018630981445
+  headers: []
+  results: 'HTTP code: 500: Virtuoso 37000 Error SQ156: Internal Optimized compiler
+    error : unknown table for a column dfe in sqldf.c:1547. Please report the statement
+    compiled. SPARQL query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE
+    { ?x1 (((<http://www.wikidata.org/prop/direct/P31>)*|(<http://www.wikidata.org/prop/direct/P131>)*)/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q618123> } }'
+- name: paths_query_157
+  description: WDBench/Queries/paths.txt Query 157
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>/(<http://www.wikidata.org/prop/direct/P31>)*)+
+    <http://www.wikidata.org/entity/Q12737077> } }
+  runtime_info:
+    client_time: 2.7546396255493164
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3566805"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_169
+  description: WDBench/Queries/paths.txt Query 169
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q35120> } }
+  runtime_info:
+    client_time: 55.06974506378174
+  headers: []
+  results: 'HTTP code: 500: Virtuoso 42000 Error TN...: Exceeded 10000000000 bytes
+    in transitive temp memory. use t_distinct, t_max or more T_MAX_memory options
+    to limit the search or increase the pool SPARQL query: SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q35120> } }'
+- name: paths_query_183
+  description: WDBench/Queries/paths.txt Query 183
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q486972> } }
+  runtime_info:
+    client_time: 5.1542675495147705
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"6600031"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_185
+  description: WDBench/Queries/paths.txt Query 185
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 26.265100717544556
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"12392376"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_201
+  description: WDBench/Queries/paths.txt Query 201
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>/<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P31>)+)
+    ?x1 } }
+  runtime_info:
+    client_time: 307.66559982299805
+  headers: []
+  results: 'HTTP code: 500: Virtuoso 42000 Error TN...: Exceeded 10000000000 bytes
+    in transitive temp memory. use t_distinct, t_max or more T_MAX_memory options
+    to limit the search or increase the pool SPARQL query: SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>/<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P31>)+)
+    ?x1 } }'
+- name: paths_query_205
+  description: WDBench/Queries/paths.txt Query 205
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)*
+    <http://www.wikidata.org/entity/Q215627> } }
+  runtime_info:
+    client_time: 34.44605016708374
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"13618010"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_206
+  description: WDBench/Queries/paths.txt Query 206
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)+
+    <http://www.wikidata.org/entity/Q12737077> } }
+  runtime_info:
+    client_time: 3.777064561843872
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"6333443"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_207
+  description: WDBench/Queries/paths.txt Query 207
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)+
+    <http://www.wikidata.org/entity/Q21146257> } }
+  runtime_info:
+    client_time: 116.97095990180969
+  headers: []
+  results: 'HTTP code: 500: Virtuoso 42000 Error TN...: Exceeded 10000000000 bytes
+    in transitive temp memory. use t_distinct, t_max or more T_MAX_memory options
+    to limit the search or increase the pool SPARQL query: SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)+
+    <http://www.wikidata.org/entity/Q21146257> } }'
+- name: paths_query_213
+  description: WDBench/Queries/paths.txt Query 213
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P50>/<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)+)
+    <http://www.wikidata.org/entity/Q386724> } }
+  runtime_info:
+    client_time: 300.4201741218567
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: paths_query_217
+  description: WDBench/Queries/paths.txt Query 217
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P105>)*
+    <http://www.wikidata.org/entity/Q7432> } }
+  runtime_info:
+    client_time: 3.1829216480255127
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3217632"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_392
+  description: WDBench/Queries/paths.txt Query 392
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>)*
+    <http://www.wikidata.org/entity/Q35120> } }
+  runtime_info:
+    client_time: 55.134681940078735
+  headers: []
+  results: 'HTTP code: 500: Virtuoso 42000 Error TN...: Exceeded 10000000000 bytes
+    in transitive temp memory. use t_distinct, t_max or more T_MAX_memory options
+    to limit the search or increase the pool SPARQL query: SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>)* <http://www.wikidata.org/entity/Q35120>
+    } }'
+- name: paths_query_428
+  description: WDBench/Queries/paths.txt Query 428
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>)*
+    <http://www.wikidata.org/entity/Q16521> } }
+  runtime_info:
+    client_time: 3.9371182918548584
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3799149"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_443
+  description: WDBench/Queries/paths.txt Query 443
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>)*
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 24.881550550460815
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"12389446"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_609
+  description: WDBench/Queries/paths.txt Query 609
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P31>)*)
+    <http://www.wikidata.org/entity/Q16521> } }
+  runtime_info:
+    client_time: 4.369508504867554
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3799148"^^<http://www.w3.org/2001/XMLSchema#integer>'
+title: WDBench Wikidata-truthy Evaluation (~8B triples)
+description: WDBench Benchmark for Wikidata-truthy RDF dump, data from https://dumps.wikimedia.org/wikidatawiki/entities/
+  (13.06.2025), ~8 billion triples. 100 worst queries selected in total from the 5
+  set of queries at WDBench at https://github.com/MillenniumDB/WDBench
+timeout: 300
+name: WDBench (~8B triples)
+scale: 8000000000

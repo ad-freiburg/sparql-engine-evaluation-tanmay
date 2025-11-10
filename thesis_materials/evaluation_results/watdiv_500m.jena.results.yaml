@@ -1,0 +1,1325 @@
+queries:
+- name: test1_query_1
+  description: Randomly selected query 1 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup8> . ?v0 <http://xmlns.com/foaf/familyName>
+    ?v2 } }
+  runtime_info:
+    client_time: 6.93830680847168
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"39779"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_2
+  description: Randomly selected query 2 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://purl.org/dc/terms/Location>
+    ?v1 . ?v0 <http://schema.org/birthDate> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/follows>
+    ?v0 } }
+  runtime_info:
+    client_time: 6.8404541015625
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_3
+  description: Randomly selected query 3 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Genre10> . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v2 . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://schema.org/expires>
+    ?v4 . ?v1 <http://schema.org/text> ?v5 . ?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v1 } }
+  runtime_info:
+    client_time: 0.9227159023284912
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"54593"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_4
+  description: Randomly selected query 4 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/goodrelations/includes>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Product140599> . ?v0 <http://purl.org/goodrelations/price>
+    ?v2 . ?v0 <http://schema.org/eligibleQuantity> ?v3 . ?v0 <http://schema.org/priceValidUntil>
+    ?v4 } }
+  runtime_info:
+    client_time: 0.01616048812866211
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_5
+  description: Randomly selected query 5 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic120> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://schema.org/description> ?v6 . ?v0 <http://purl.org/goodrelations/serialNumber>
+    ?v2 . ?v0 <http://purl.org/goodrelations/validFrom> ?v3 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v4 . ?v0 <http://schema.org/eligibleQuantity> ?v7 . ?v0 <http://schema.org/eligibleRegion>
+    ?v8 } }
+  runtime_info:
+    client_time: 0.47550082206726074
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"20805"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_6
+  description: Randomly selected query 6 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory11> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://ogp.me/ns#tag> ?v2 . ?v1 <http://ogp.me/ns#title> ?v4 . ?v1
+    <http://schema.org/expires> ?v7 . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v3 . ?v3 <http://ogp.me/ns#tag> ?v2 . ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v6 } }
+  runtime_info:
+    client_time: 1.6330840587615967
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2383"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_7
+  description: Randomly selected query 7 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer2946>
+    <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v0 <http://purl.org/goodrelations/serialNumber> ?v3 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v4 . ?v0 <http://schema.org/eligibleQuantity> ?v5 . ?v0 <http://schema.org/priceValidUntil>
+    ?v6 } }
+  runtime_info:
+    client_time: 0.012254714965820312
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"7"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_8
+  description: Randomly selected query 8 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 . ?v0 <http://schema.org/email> ?v2 . ?v0 <http://schema.org/nationality>
+    ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf> ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v5 } }
+  runtime_info:
+    client_time: 2.693303108215332
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_9
+  description: Randomly selected query 9 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic52> . ?v0 <http://ogp.me/ns#title> ?v2
+    . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 } }
+  runtime_info:
+    client_time: 0.17597603797912598
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"138964"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_10
+  description: Randomly selected query 10 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/goodrelations/offers>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Offer158538> . ?v0 <http://schema.org/telephone>
+    ?v2 } }
+  runtime_info:
+    client_time: 0.014242410659790039
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_11
+  description: Randomly selected query 11 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country1> . ?v0 <http://purl.org/goodrelations/offers>
+    ?v1 . ?v1 <http://purl.org/goodrelations/price> ?v2 . ?v1 <http://schema.org/priceValidUntil>
+    ?v4 } }
+  runtime_info:
+    client_time: 4.200968503952026
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"315738"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_12
+  description: Randomly selected query 12 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country20> . ?v0 <http://purl.org/goodrelations/offers>
+    ?v1 . ?v1 <http://purl.org/goodrelations/price> ?v2 . ?v1 <http://schema.org/priceValidUntil>
+    ?v4 } }
+  runtime_info:
+    client_time: 0.5752637386322021
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"35018"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_13
+  description: Randomly selected query 13 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic165> . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v6 . ?v0 <http://schema.org/description>
+    ?v7 . ?v0 <http://schema.org/keywords> ?v8 . ?v2 <http://purl.org/stuff/rev#rating>
+    ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer> ?v4 . ?v2 <http://purl.org/stuff/rev#totalVotes>
+    ?v5 } }
+  runtime_info:
+    client_time: 0.5054512023925781
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"479"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_14
+  description: Randomly selected query 14 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/nationality>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country16> . ?v0 <http://xmlns.com/foaf/familyName>
+    ?v1 . ?v0 <http://schema.org/birthDate> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    ?v4 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v5 } }
+  runtime_info:
+    client_time: 0.07171034812927246
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1378"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_15
+  description: Randomly selected query 15 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic144> . ?v0 <http://schema.org/keywords>
+    ?v2 . ?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v0 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase>
+    ?v4 . ?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate> ?v5 } }
+  runtime_info:
+    client_time: 0.49851250648498535
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"15838"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_16
+  description: Randomly selected query 16 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory12> . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v2 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 } }
+  runtime_info:
+    client_time: 0.6442339420318604
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"963166"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_17
+  description: Randomly selected query 17 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country16> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v2 <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/validFrom>
+    ?v3 . ?v0 <http://purl.org/goodrelations/validThrough> ?v4 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v5 . ?v0 <http://schema.org/priceValidUntil> ?v7 } }
+  runtime_info:
+    client_time: 0.7887334823608398
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5803"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_18
+  description: Randomly selected query 18 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role2> . ?v0 <http://schema.org/birthDate>
+    ?v2 . ?v0 <http://schema.org/jobTitle> ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v4 } }
+  runtime_info:
+    client_time: 2.3894951343536377
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"11793"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_19
+  description: Randomly selected query 19 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v2 <http://schema.org/jobTitle>
+    ?v3 . ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase> ?v0 . ?v0 <http://purl.org/goodrelations/price>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate> ?v5 } }
+  runtime_info:
+    client_time: 5.1731181144714355
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"50511"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_20
+  description: Randomly selected query 20 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/User284435>
+    <http://schema.org/nationality> ?v2 . ?v0 <http://schema.org/eligibleRegion> ?v2
+    . ?v0 <http://schema.org/eligibleQuantity> ?v1 } }
+  runtime_info:
+    client_time: 0.013166666030883789
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_21
+  description: Randomly selected query 21 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://purl.org/dc/terms/Location>
+    ?v1 . ?v0 <http://xmlns.com/foaf/givenName> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId>
+    ?v4 } }
+  runtime_info:
+    client_time: 6.652774333953857
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"630146"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_22
+  description: Randomly selected query 22 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/homepage>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Website37254> . ?v0 <http://ogp.me/ns#title>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v3 } }
+  runtime_info:
+    client_time: 0.011383533477783203
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_23
+  description: Randomly selected query 23 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer6887>
+    <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v0 <http://purl.org/goodrelations/price> ?v3 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v4 . ?v1 <http://schema.org/text> ?v5 } }
+  runtime_info:
+    client_time: 0.013935565948486328
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"15"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_24
+  description: Randomly selected query 24 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6> . ?v2 <http://schema.org/author>
+    ?v0 . ?v0 <http://schema.org/telephone> ?v3 } }
+  runtime_info:
+    client_time: 0.8850786685943604
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"787"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_25
+  description: Randomly selected query 25 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase60407>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v3 . ?v2 <http://purl.org/goodrelations/includes>
+    ?v3 . ?v2 <http://purl.org/goodrelations/validThrough> ?v4 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v5 . ?v2 <http://schema.org/eligibleRegion> ?v1 . ?v0 <http://www.geonames.org/ontology#parentCountry>
+    ?v1 . ?v6 <http://schema.org/nationality> ?v1 } }
+  runtime_info:
+    client_time: 2.9963815212249756
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"20584326"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_26
+  description: Randomly selected query 26 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre90> . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v1 . ?v0 <http://ogp.me/ns#tag> ?v2 . ?v0 <http://schema.org/keywords> ?v3 }
+    }
+  runtime_info:
+    client_time: 0.18219709396362305
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"15756"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_27
+  description: Randomly selected query 27 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/homepage>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Website47382> . ?v0 <http://ogp.me/ns#title>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v3 } }
+  runtime_info:
+    client_time: 0.013837337493896484
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_28
+  description: Randomly selected query 28 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer11958>
+    <http://purl.org/goodrelations/offers> ?v1 . ?v1 <http://purl.org/goodrelations/price>
+    ?v2 . ?v1 <http://schema.org/eligibleRegion> ?v3 } }
+  runtime_info:
+    client_time: 0.011911630630493164
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"234"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_29
+  description: Randomly selected query 29 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory10> . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://schema.org/contentRating> ?v5 . ?v0 <http://schema.org/contentSize>
+    ?v6 . ?v0 <http://schema.org/description> ?v7 . ?v8 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 . ?v2 <http://ogp.me/ns#tag> ?v1 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 } }
+  runtime_info:
+    client_time: 180.0107409954071
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: test1_query_30
+  description: Randomly selected query 30 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City111>
+    <http://www.geonames.org/ontology#parentCountry> ?v1 . ?v2 <http://schema.org/eligibleRegion>
+    ?v1 . ?v4 <http://schema.org/nationality> ?v1 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v3 } }
+  runtime_info:
+    client_time: 180.01087284088135
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: test1_query_31
+  description: Randomly selected query 31 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase74207> . ?v0 <http://xmlns.com/foaf/familyName>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId>
+    ?v4 } }
+  runtime_info:
+    client_time: 0.015816450119018555
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_32
+  description: Randomly selected query 32 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Website13157> . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId>
+    ?v2 } }
+  runtime_info:
+    client_time: 0.012761116027832031
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"33"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_33
+  description: Randomly selected query 33 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/goodrelations/offers>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Offer544420> . ?v0 <http://schema.org/telephone>
+    ?v2 } }
+  runtime_info:
+    client_time: 0.014985084533691406
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_34
+  description: Randomly selected query 34 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre116> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://schema.org/contentSize> ?v2 . ?v1 <http://schema.org/description>
+    ?v3 } }
+  runtime_info:
+    client_time: 0.0382843017578125
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2027"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_35
+  description: Randomly selected query 35 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://xmlns.com/foaf/givenName>
+    ?v1 . ?v0 <http://schema.org/nationality> ?v3 . ?v2 <http://www.geonames.org/ontology#parentCountry>
+    ?v3 . ?v4 <http://schema.org/eligibleRegion> ?v3 } }
+  runtime_info:
+    client_time: 180.0116183757782
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: test1_query_36
+  description: Randomly selected query 36 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 . ?v0 <http://schema.org/email> ?v2 . ?v0 <http://schema.org/nationality>
+    ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf> ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v5 } }
+  runtime_info:
+    client_time: 2.763906717300415
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_37
+  description: Randomly selected query 37 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City229>
+    <http://www.geonames.org/ontology#parentCountry> ?v1 . ?v2 <http://schema.org/eligibleRegion>
+    ?v1 . ?v2 <http://purl.org/goodrelations/validFrom> ?v3 } }
+  runtime_info:
+    client_time: 1.298356056213379
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"258032"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_38
+  description: Randomly selected query 38 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory9> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://ogp.me/ns#tag> ?v2 . ?v1 <http://schema.org/contentRating> ?v6
+    . ?v1 <http://schema.org/description> ?v7 . ?v1 <http://schema.org/keywords> ?v8
+    . ?v1 <http://schema.org/text> ?v9 . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v4 . ?v10 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v1 . ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v5 } }
+  runtime_info:
+    client_time: 1.9573307037353516
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"319292"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_39
+  description: Randomly selected query 39 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role1> . ?v2 <http://schema.org/contactPoint>
+    ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> ?v3 } }
+  runtime_info:
+    client_time: 4.3340067863464355
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"8847"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_40
+  description: Randomly selected query 40 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country11> . ?v2 <http://purl.org/goodrelations/includes>
+    ?v0 . ?v3 <http://purl.org/goodrelations/offers> ?v2 . ?v2 <http://purl.org/goodrelations/price>
+    ?v4 . ?v2 <http://purl.org/goodrelations/serialNumber> ?v5 . ?v2 <http://purl.org/goodrelations/validFrom>
+    ?v6 . ?v2 <http://purl.org/goodrelations/validThrough> ?v7 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v8 . ?v0 <http://xmlns.com/foaf/homepage> ?v1 . ?v3 <http://schema.org/telephone>
+    ?v10 } }
+  runtime_info:
+    client_time: 1.9108707904815674
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"8099"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_41
+  description: Randomly selected query 41 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v1 . ?v0 <http://schema.org/nationality> ?v8 . ?v2 <http://schema.org/eligibleRegion>
+    ?v8 . ?v2 <http://purl.org/goodrelations/includes> ?v3 . ?v4 <http://purl.org/goodrelations/offers>
+    ?v2 . ?v2 <http://purl.org/goodrelations/serialNumber> ?v5 . ?v2 <http://purl.org/goodrelations/validThrough>
+    ?v6 . ?v2 <http://schema.org/eligibleQuantity> ?v7 } }
+  runtime_info:
+    client_time: 180.00997233390808
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: test1_query_42
+  description: Randomly selected query 42 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender0> . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 . ?v0 <http://schema.org/email> ?v2 . ?v0 <http://schema.org/nationality>
+    ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf> ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v5 } }
+  runtime_info:
+    client_time: 1.020188331604004
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_43
+  description: Randomly selected query 43 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6> . ?v0 <http://xmlns.com/foaf/givenName>
+    ?v2 . ?v0 <http://schema.org/email> ?v3 . ?v0 <http://schema.org/nationality>
+    ?v4 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf> ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    ?v5 } }
+  runtime_info:
+    client_time: 0.5672740936279297
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_44
+  description: Randomly selected query 44 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory1> . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v2 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 } }
+  runtime_info:
+    client_time: 0.6334054470062256
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"790145"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_45
+  description: Randomly selected query 45 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic65> . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 . ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v0 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v3 . ?v2 <http://purl.org/stuff/rev#hasReview> ?v5 . ?v5 <http://purl.org/stuff/rev#rating>
+    ?v6 . ?v5 <http://purl.org/stuff/rev#reviewer> ?v7 . ?v5 <http://purl.org/stuff/rev#text>
+    ?v8 . ?v5 <http://purl.org/stuff/rev#title> ?v9 . ?v5 <http://purl.org/stuff/rev#totalVotes>
+    ?v10 } }
+  runtime_info:
+    client_time: 1.1435952186584473
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1534"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_46
+  description: Randomly selected query 46 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup3> . ?v2 <http://schema.org/author>
+    ?v0 . ?v0 <http://schema.org/telephone> ?v3 } }
+  runtime_info:
+    client_time: 0.87473464012146
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"816"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_47
+  description: Randomly selected query 47 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory1> . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://schema.org/contentRating> ?v5 . ?v0 <http://schema.org/contentSize>
+    ?v6 . ?v0 <http://schema.org/description> ?v7 . ?v8 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 . ?v2 <http://ogp.me/ns#tag> ?v1 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 } }
+  runtime_info:
+    client_time: 180.01136565208435
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: test1_query_48
+  description: Randomly selected query 48 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v1 . ?v0 <http://schema.org/nationality> ?v8 . ?v2 <http://schema.org/eligibleRegion>
+    ?v8 . ?v2 <http://purl.org/goodrelations/includes> ?v3 . ?v4 <http://purl.org/goodrelations/offers>
+    ?v2 . ?v2 <http://purl.org/goodrelations/serialNumber> ?v5 . ?v2 <http://purl.org/goodrelations/validThrough>
+    ?v6 . ?v2 <http://schema.org/eligibleQuantity> ?v7 } }
+  runtime_info:
+    client_time: 180.0106737613678
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: test1_query_49
+  description: Randomly selected query 49 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country3> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v2 <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/price>
+    ?v3 . ?v0 <http://purl.org/goodrelations/serialNumber> ?v4 . ?v0 <http://purl.org/goodrelations/validFrom>
+    ?v5 . ?v0 <http://purl.org/goodrelations/validThrough> ?v6 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v8 . ?v0 <http://schema.org/priceValidUntil> ?v11 . ?v1 <http://ogp.me/ns#tag>
+    ?v7 . ?v1 <http://schema.org/keywords> ?v10 . ?v12 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor>
+    ?v1 } }
+  runtime_info:
+    client_time: 5.3630805015563965
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"380760"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_50
+  description: Randomly selected query 50 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory12> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://purl.org/stuff/rev#hasReview> ?v3 . ?v1 <http://schema.org/contentSize>
+    ?v9 . ?v3 <http://purl.org/stuff/rev#rating> ?v4 . ?v3 <http://purl.org/stuff/rev#reviewer>
+    ?v5 . ?v3 <http://purl.org/stuff/rev#text> ?v6 . ?v3 <http://purl.org/stuff/rev#title>
+    ?v7 . ?v3 <http://purl.org/stuff/rev#totalVotes> ?v8 } }
+  runtime_info:
+    client_time: 1.2281999588012695
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1650"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_51
+  description: Randomly selected query 51 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country19> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v2 <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/validFrom>
+    ?v3 . ?v0 <http://purl.org/goodrelations/validThrough> ?v4 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v5 . ?v0 <http://schema.org/priceValidUntil> ?v7 } }
+  runtime_info:
+    client_time: 0.6916294097900391
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"4796"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_52
+  description: Randomly selected query 52 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer7533>
+    <http://purl.org/goodrelations/offers> ?v1 . ?v1 <http://purl.org/goodrelations/price>
+    ?v2 . ?v1 <http://purl.org/goodrelations/serialNumber> ?v3 . ?v1 <http://schema.org/eligibleRegion>
+    ?v4 } }
+  runtime_info:
+    client_time: 0.010727167129516602
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"215"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_53
+  description: Randomly selected query 53 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role2> . ?v7 <http://purl.org/stuff/rev#reviewer>
+    ?v5 . ?v5 <http://db.uwaterloo.ca/~galuc/wsdbm/follows> ?v5 . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v7 . ?v0 <http://xmlns.com/foaf/homepage> ?v1 . ?v2 <http://purl.org/goodrelations/includes>
+    ?v0 . ?v0 <http://ogp.me/ns#title> ?v3 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 . ?v0 <http://schema.org/description> ?v8 . ?v0 <http://schema.org/text> ?v10
+    . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v11 . ?v2 <http://schema.org/eligibleRegion>
+    ?v9 } }
+  runtime_info:
+    client_time: 1.3714606761932373
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_54
+  description: Randomly selected query 54 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City235>
+    <http://www.geonames.org/ontology#parentCountry> ?v1 . ?v2 <http://schema.org/eligibleRegion>
+    ?v1 . ?v4 <http://schema.org/nationality> ?v1 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v3 } }
+  runtime_info:
+    client_time: 180.0098114013672
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: test1_query_55
+  description: Randomly selected query 55 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/User575446>
+    <http://purl.org/dc/terms/Location> ?v1 . ?v1 <http://www.geonames.org/ontology#parentCountry>
+    ?v2 . ?v3 <http://schema.org/eligibleRegion> ?v2 . ?v3 <http://purl.org/goodrelations/price>
+    ?v4 . ?v3 <http://purl.org/goodrelations/serialNumber> ?v5 . ?v3 <http://purl.org/goodrelations/validFrom>
+    ?v6 . ?v3 <http://purl.org/goodrelations/validThrough> ?v7 . ?v3 <http://schema.org/eligibleQuantity>
+    ?v8 } }
+  runtime_info:
+    client_time: 0.012680530548095703
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_56
+  description: Randomly selected query 56 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/User216592>
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v1 } }
+  runtime_info:
+    client_time: 0.009944438934326172
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_57
+  description: Randomly selected query 57 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory10> . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v2 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 } }
+  runtime_info:
+    client_time: 0.6329946517944336
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"811373"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_58
+  description: Randomly selected query 58 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country15> . ?v2 <http://purl.org/goodrelations/includes>
+    ?v0 . ?v3 <http://purl.org/goodrelations/offers> ?v2 . ?v2 <http://purl.org/goodrelations/price>
+    ?v4 . ?v2 <http://purl.org/goodrelations/serialNumber> ?v5 . ?v2 <http://purl.org/goodrelations/validFrom>
+    ?v6 . ?v2 <http://purl.org/goodrelations/validThrough> ?v7 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v8 . ?v0 <http://xmlns.com/foaf/homepage> ?v1 . ?v3 <http://schema.org/telephone>
+    ?v10 } }
+  runtime_info:
+    client_time: 1.4531044960021973
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"12531"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_59
+  description: Randomly selected query 59 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Genre15> . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v2 . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://schema.org/expires>
+    ?v4 . ?v1 <http://schema.org/text> ?v5 . ?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v1 } }
+  runtime_info:
+    client_time: 0.40346670150756836
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"30927"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_60
+  description: Randomly selected query 60 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre127> . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v1 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v2 . ?v0 <http://schema.org/description>
+    ?v3 . ?v0 <http://schema.org/expires> ?v4 . ?v1 <http://schema.org/url> ?v5 }
+    }
+  runtime_info:
+    client_time: 0.022789478302001953
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"18"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_61
+  description: Randomly selected query 61 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role1> . ?v0 <http://schema.org/birthDate>
+    ?v2 . ?v0 <http://schema.org/jobTitle> ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v4 } }
+  runtime_info:
+    client_time: 3.436033010482788
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"17592"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_62
+  description: Randomly selected query 62 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory8> . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v3 } }
+  runtime_info:
+    client_time: 1.0574569702148438
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1164721"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_63
+  description: Randomly selected query 63 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory5> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://ogp.me/ns#tag> ?v2 . ?v1 <http://schema.org/contentRating> ?v6
+    . ?v1 <http://schema.org/description> ?v7 . ?v1 <http://schema.org/keywords> ?v8
+    . ?v1 <http://schema.org/text> ?v9 . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v4 . ?v10 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v1 . ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v5 } }
+  runtime_info:
+    client_time: 1.9352080821990967
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"333212"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_64
+  description: Randomly selected query 64 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender0> . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 . ?v0 <http://xmlns.com/foaf/familyName> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/follows>
+    ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> ?v4 } }
+  runtime_info:
+    client_time: 0.988227367401123
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_65
+  description: Randomly selected query 65 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 } }
+  runtime_info:
+    client_time: 4.4791669845581055
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1126025"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_66
+  description: Randomly selected query 66 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic112> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://schema.org/description> ?v6 . ?v0 <http://purl.org/goodrelations/serialNumber>
+    ?v2 . ?v0 <http://purl.org/goodrelations/validFrom> ?v3 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v4 . ?v0 <http://schema.org/eligibleQuantity> ?v7 . ?v0 <http://schema.org/eligibleRegion>
+    ?v8 } }
+  runtime_info:
+    client_time: 0.4438767433166504
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"20612"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_67
+  description: Randomly selected query 67 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic100> . ?v0 <http://schema.org/caption>
+    ?v2 . ?v0 <http://schema.org/expires> ?v3 . ?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor>
+    ?v0 . ?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate> ?v5 } }
+  runtime_info:
+    client_time: 0.08518052101135254
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"206"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_68
+  description: Randomly selected query 68 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/stuff/rev#hasReview>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Review996927> . ?v0 <http://schema.org/keywords>
+    ?v2 } }
+  runtime_info:
+    client_time: 0.011159658432006836
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_69
+  description: Randomly selected query 69 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country13> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v2 <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/price>
+    ?v3 . ?v0 <http://purl.org/goodrelations/serialNumber> ?v4 . ?v0 <http://purl.org/goodrelations/validFrom>
+    ?v5 . ?v0 <http://purl.org/goodrelations/validThrough> ?v6 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v8 . ?v0 <http://schema.org/priceValidUntil> ?v10 . ?v1 <http://schema.org/author>
+    ?v7 } }
+  runtime_info:
+    client_time: 1.508284568786621
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"887"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_70
+  description: Randomly selected query 70 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/goodrelations/includes>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Product203099> . ?v0 <http://purl.org/goodrelations/price>
+    ?v2 . ?v0 <http://schema.org/eligibleQuantity> ?v3 . ?v0 <http://schema.org/priceValidUntil>
+    ?v4 } }
+  runtime_info:
+    client_time: 0.011671066284179688
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_71
+  description: Randomly selected query 71 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Genre14> . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v2 . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://schema.org/expires>
+    ?v4 . ?v1 <http://schema.org/text> ?v5 . ?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v1 } }
+  runtime_info:
+    client_time: 0.30837178230285645
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"22214"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_72
+  description: Randomly selected query 72 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/dc/terms/Location>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/City8> . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId> ?v3 } }
+  runtime_info:
+    client_time: 0.09917712211608887
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1804"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_73
+  description: Randomly selected query 73 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic2> . ?v0 <http://ogp.me/ns#title> ?v2
+    . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 } }
+  runtime_info:
+    client_time: 0.1464557647705078
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"114735"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_74
+  description: Randomly selected query 74 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase1434366>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v0 . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v3 . ?v0 <http://schema.org/text>
+    ?v4 . ?v2 <http://ogp.me/ns#tag> ?v1 } }
+  runtime_info:
+    client_time: 0.011292219161987305
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_75
+  description: Randomly selected query 75 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/dc/terms/Location>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/City209> . ?v0 <http://xmlns.com/foaf/age>
+    ?v2 . ?v0 <http://schema.org/birthDate> ?v3 } }
+  runtime_info:
+    client_time: 0.01752328872680664
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"164"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_76
+  description: Randomly selected query 76 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup7> . ?v0 <http://xmlns.com/foaf/familyName>
+    ?v2 } }
+  runtime_info:
+    client_time: 0.3732893466949463
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"119809"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_77
+  description: Randomly selected query 77 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/language>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Language18> . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v1 . ?v1 <http://purl.org/stuff/rev#title> ?v2 } }
+  runtime_info:
+    client_time: 0.0381016731262207
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1622"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_78
+  description: Randomly selected query 78 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country21> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v2 <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/price>
+    ?v3 . ?v0 <http://purl.org/goodrelations/serialNumber> ?v4 . ?v0 <http://purl.org/goodrelations/validFrom>
+    ?v5 . ?v0 <http://purl.org/goodrelations/validThrough> ?v6 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v8 . ?v0 <http://schema.org/priceValidUntil> ?v11 . ?v1 <http://ogp.me/ns#tag>
+    ?v7 . ?v1 <http://schema.org/keywords> ?v10 . ?v12 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor>
+    ?v1 } }
+  runtime_info:
+    client_time: 1.0725288391113281
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"23534"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_79
+  description: Randomly selected query 79 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase1284902>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v0 . ?v0 <http://ogp.me/ns#title>
+    ?v1 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v2 . ?v0 <http://schema.org/description>
+    ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v4 } }
+  runtime_info:
+    client_time: 0.010263442993164062
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_80
+  description: Randomly selected query 80 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role1> . ?v4 <http://schema.org/nationality>
+    ?v7 . ?v1 <http://schema.org/eligibleRegion> ?v7 . ?v0 <http://purl.org/goodrelations/offers>
+    ?v1 . ?v1 <http://purl.org/goodrelations/validFrom> ?v2 . ?v1 <http://purl.org/goodrelations/validThrough>
+    ?v3 . ?v1 <http://schema.org/eligibleQuantity> ?v6 . ?v1 <http://schema.org/priceValidUntil>
+    ?v8 } }
+  runtime_info:
+    client_time: 180.00917840003967
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: test1_query_81
+  description: Randomly selected query 81 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/dc/terms/Location>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/City161> . ?v0 <http://xmlns.com/foaf/age>
+    ?v2 . ?v0 <http://schema.org/birthDate> ?v3 } }
+  runtime_info:
+    client_time: 0.018477201461791992
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"216"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_82
+  description: Randomly selected query 82 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/User524752>
+    <http://schema.org/nationality> ?v2 . ?v0 <http://schema.org/eligibleRegion> ?v2
+    . ?v0 <http://schema.org/eligibleQuantity> ?v1 } }
+  runtime_info:
+    client_time: 0.010544538497924805
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_83
+  description: Randomly selected query 83 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic91> . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v8 . ?v2 <http://purl.org/stuff/rev#rating>
+    ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer> ?v4 . ?v2 <http://purl.org/stuff/rev#text>
+    ?v5 . ?v2 <http://purl.org/stuff/rev#title> ?v6 . ?v2 <http://purl.org/stuff/rev#totalVotes>
+    ?v7 } }
+  runtime_info:
+    client_time: 0.7091314792633057
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"596"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_84
+  description: Randomly selected query 84 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory4> . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://schema.org/contentRating> ?v5 . ?v0 <http://schema.org/contentSize>
+    ?v6 . ?v0 <http://schema.org/description> ?v7 . ?v8 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 . ?v2 <http://ogp.me/ns#tag> ?v1 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 } }
+  runtime_info:
+    client_time: 180.01133608818054
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: test1_query_85
+  description: Randomly selected query 85 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic200> . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v8 . ?v2 <http://purl.org/stuff/rev#rating>
+    ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer> ?v4 . ?v2 <http://purl.org/stuff/rev#text>
+    ?v5 . ?v2 <http://purl.org/stuff/rev#title> ?v6 . ?v2 <http://purl.org/stuff/rev#totalVotes>
+    ?v7 } }
+  runtime_info:
+    client_time: 0.6879644393920898
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"502"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_86
+  description: Randomly selected query 86 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer261>
+    <http://purl.org/goodrelations/offers> ?v1 . ?v1 <http://purl.org/goodrelations/price>
+    ?v2 . ?v1 <http://purl.org/goodrelations/serialNumber> ?v3 . ?v1 <http://schema.org/eligibleRegion>
+    ?v4 } }
+  runtime_info:
+    client_time: 0.011837959289550781
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"167"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_87
+  description: Randomly selected query 87 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City176>
+    <http://www.geonames.org/ontology#parentCountry> ?v1 . ?v2 <http://schema.org/eligibleRegion>
+    ?v1 . ?v6 <http://schema.org/nationality> ?v1 . ?v2 <http://purl.org/goodrelations/includes>
+    ?v3 . ?v2 <http://purl.org/goodrelations/serialNumber> ?v4 . ?v2 <http://purl.org/goodrelations/validThrough>
+    ?v5 . ?v2 <http://schema.org/eligibleQuantity> ?v8 . ?v6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v7 . ?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v3 . ?v9 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor>
+    ?v3 } }
+  runtime_info:
+    client_time: 180.01057410240173
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: test1_query_88
+  description: Randomly selected query 88 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic56> . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v8 . ?v2 <http://purl.org/stuff/rev#rating>
+    ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer> ?v4 . ?v2 <http://purl.org/stuff/rev#text>
+    ?v5 . ?v2 <http://purl.org/stuff/rev#title> ?v6 . ?v2 <http://purl.org/stuff/rev#totalVotes>
+    ?v7 } }
+  runtime_info:
+    client_time: 0.784404993057251
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"587"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_89
+  description: Randomly selected query 89 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender0> . ?v0 <http://purl.org/dc/terms/Location>
+    ?v1 . ?v0 <http://schema.org/birthDate> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/follows>
+    ?v0 } }
+  runtime_info:
+    client_time: 1.033785343170166
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_90
+  description: Randomly selected query 90 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic173> . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v8 . ?v2 <http://purl.org/stuff/rev#rating>
+    ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer> ?v4 . ?v2 <http://purl.org/stuff/rev#text>
+    ?v5 . ?v2 <http://purl.org/stuff/rev#title> ?v6 . ?v2 <http://purl.org/stuff/rev#totalVotes>
+    ?v7 } }
+  runtime_info:
+    client_time: 0.7145624160766602
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"560"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_91
+  description: Randomly selected query 91 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/dc/terms/Location>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/City173> . ?v0 <http://xmlns.com/foaf/familyName>
+    ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId> ?v3 } }
+  runtime_info:
+    client_time: 0.01843094825744629
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1348"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_92
+  description: Randomly selected query 92 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v2 <http://schema.org/jobTitle>
+    ?v3 . ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase> ?v0 . ?v0 <http://purl.org/goodrelations/price>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate> ?v5 } }
+  runtime_info:
+    client_time: 4.940798997879028
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"50511"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_93
+  description: Randomly selected query 93 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://purl.org/stuff/rev#hasReview>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Review649334> . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v2 . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 } }
+  runtime_info:
+    client_time: 0.01039743423461914
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_94
+  description: Randomly selected query 94 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v2 <http://schema.org/jobTitle>
+    ?v3 . ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase> ?v0 . ?v0 <http://purl.org/goodrelations/price>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate> ?v5 } }
+  runtime_info:
+    client_time: 4.887786865234375
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"50511"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_95
+  description: Randomly selected query 95 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role1> . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 . ?v0 <http://xmlns.com/foaf/givenName> ?v2 . ?v4 <http://schema.org/editor>
+    ?v0 } }
+  runtime_info:
+    client_time: 4.848227500915527
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"4226"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_96
+  description: Randomly selected query 96 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://www.geonames.org/ontology#parentCountry>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country16> . ?v0 <http://purl.org/dc/terms/Location>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> ?v3 } }
+  runtime_info:
+    client_time: 0.12885022163391113
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"23279"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_97
+  description: Randomly selected query 97 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory4> . ?v0 <http://schema.org/contentRating>
+    ?v2 . ?v0 <http://schema.org/description> ?v3 . ?v0 <http://schema.org/expires>
+    ?v4 . ?v0 <http://schema.org/text> ?v5 } }
+  runtime_info:
+    client_time: 0.2409501075744629
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"189"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_98
+  description: Randomly selected query 98 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://purl.org/dc/terms/Location>
+    ?v1 . ?v0 <http://xmlns.com/foaf/givenName> ?v2 . ?v0 <http://schema.org/telephone>
+    ?v3 } }
+  runtime_info:
+    client_time: 6.340630054473877
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"31675"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_99
+  description: Randomly selected query 99 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre112> . ?v0 <http://ogp.me/ns#title>
+    ?v1 . ?v0 <http://schema.org/contentRating> ?v2 } }
+  runtime_info:
+    client_time: 0.05985856056213379
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3920"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_100
+  description: Randomly selected query 100 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country2> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v0 <http://purl.org/goodrelations/price> ?v2 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v3 . ?v0 <http://schema.org/eligibleQuantity> ?v4 . ?v1 <http://schema.org/text>
+    ?v6 } }
+  runtime_info:
+    client_time: 5.218583583831787
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"98989"^^<http://www.w3.org/2001/XMLSchema#integer>'
+title: WatDiv v0.6 Evaluation (~550M triples)
+description: Waterloo SPARQL Diversity Test Suite (WatDiv) v0.6 - synthetic data with
+  ~550 million triples. 100 queries randomly selected from the watdiv-stress-1000/test.1.sparql
+  file of the published test workload at https://dsg.uwaterloo.ca/watdiv/
+timeout: 180
+name: WatDiv v0.6 (~550M triples)
+scale: 500000000

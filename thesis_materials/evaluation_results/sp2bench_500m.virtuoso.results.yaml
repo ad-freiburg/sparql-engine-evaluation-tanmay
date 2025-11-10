@@ -1,0 +1,218 @@
+queries:
+- name: Q1 year of journal
+  description: Return the year of publication of 'Journal 1 (1940)'.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX dcterms: <http://purl.org/dc/terms/> PREFIX bench: <http://localhost/vocabulary/bench/>
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT ?yr WHERE { ?journal rdf:type bench:Journal . ?journal dc:title
+    "Journal 1 (1940)"^^xsd:string . ?journal dcterms:issued ?yr } }'
+  runtime_info:
+    client_time: 1.9570727348327637
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: Q2 inproceedings with properties
+  description: Extract all inproceedings with multiple properties including optional
+    abstract.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX swrc: <http://swrc.ontoware.org/ontology#> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX bench: <http://localhost/vocabulary/bench/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT ?inproc ?author ?booktitle ?title ?proc ?ee ?page ?url ?yr ?abstract
+    WHERE { ?inproc rdf:type bench:Inproceedings . ?inproc dc:creator ?author . ?inproc
+    bench:booktitle ?booktitle . ?inproc dc:title ?title . ?inproc dcterms:partOf
+    ?proc . ?inproc rdfs:seeAlso ?ee . ?inproc swrc:pages ?page . ?inproc foaf:homepage
+    ?url . ?inproc dcterms:issued ?yr OPTIONAL { ?inproc bench:abstract ?abstract
+    } } ORDER BY ?yr }'
+  runtime_info:
+    client_time: 143.9255301952362
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"47577507"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: Q3a articles with pages
+  description: Select all articles with property 'swrc:pages'.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bench:
+    <http://localhost/vocabulary/bench/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT ?article WHERE { ?article rdf:type
+    bench:Article . ?article ?property ?value FILTER (?property=swrc:pages) } }'
+  runtime_info:
+    client_time: 0.0914764404296875
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5348506"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: Q3b articles with month
+  description: Select all articles with property 'swrc:month'.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bench:
+    <http://localhost/vocabulary/bench/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT ?article WHERE { ?article rdf:type
+    bench:Article . ?article ?property ?value FILTER (?property=swrc:month) } }'
+  runtime_info:
+    client_time: 0.04089236259460449
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"37178"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: Q3c articles with isbn
+  description: Select all articles with property 'swrc:isbn'.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    PREFIX bench: <http://localhost/vocabulary/bench/> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT ?article WHERE { ?article rdf:type bench:Article . ?article ?property
+    ?value FILTER (?property=swrc:isbn) } }'
+  runtime_info:
+    client_time: 0.06076669692993164
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: Q4 author pairs same journal
+  description: Select all distinct pairs of article author names for authors that
+    published in the same journal.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX bench:
+    <http://localhost/vocabulary/bench/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX dcterms: <http://purl.org/dc/terms/> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX swrc: <http://swrc.ontoware.org/ontology#> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT DISTINCT ?name1 ?name2 WHERE { ?article1 rdf:type bench:Article
+    . ?article2 rdf:type bench:Article . ?article1 dc:creator ?author1 . ?author1
+    foaf:name ?name1 . ?article2 dc:creator ?author2 . ?author2 foaf:name ?name2 .
+    ?article1 swrc:journal ?journal . ?article2 swrc:journal ?journal FILTER (?name1<?name2)
+    } }'
+  runtime_info:
+    client_time: 180.2454957962036
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: Q5a authors inproceedings and articles
+  description: Return names of persons that occur as author of at least one inproceeding
+    and one article.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX bench: <http://localhost/vocabulary/bench/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT DISTINCT ?person ?name WHERE
+    { ?article rdf:type bench:Article . ?article dc:creator ?person . ?inproc rdf:type
+    bench:Inproceedings . ?inproc dc:creator ?person2 . ?person foaf:name ?name .
+    ?person2 foaf:name ?name2 FILTER (?name=?name2) } }'
+  runtime_info:
+    client_time: 14.224160194396973
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5388977"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: Q5b authors inproceedings and articles alt
+  description: Return names of persons that occur as author of at least one inproceeding
+    and one article (same as Q5a).
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    PREFIX bench: <http://localhost/vocabulary/bench/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT DISTINCT ?person ?name WHERE
+    { ?article rdf:type bench:Article . ?article dc:creator ?person . ?inproc rdf:type
+    bench:Inproceedings . ?inproc dc:creator ?person . ?person foaf:name ?name } }'
+  runtime_info:
+    client_time: 8.80760669708252
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5388977"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: Q6 first publications by year
+  description: Return publications per year authored by persons with no earlier publications.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT ?yr ?name ?document WHERE { ?class rdfs:subClassOf foaf:Document
+    . ?document rdf:type ?class . ?document dcterms:issued ?yr . ?document dc:creator
+    ?author . ?author foaf:name ?name OPTIONAL { ?class2 rdfs:subClassOf foaf:Document
+    . ?document2 rdf:type ?class2 . ?document2 dcterms:issued ?yr2 . ?document2 dc:creator
+    ?author2 FILTER (?author=?author2 && ?yr2<?yr) } FILTER (!bound(?author2)) } }'
+  runtime_info:
+    client_time: 46.300464153289795
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"57752606"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: Q7 cited papers not uncited
+  description: Return titles of papers cited at least once, but not by uncited papers.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT DISTINCT ?title WHERE { ?class rdfs:subClassOf foaf:Document .
+    ?doc rdf:type ?class . ?doc dc:title ?title . ?bag2 ?member2 ?doc . ?doc2 dcterms:references
+    ?bag2 OPTIONAL { ?class3 rdfs:subClassOf foaf:Document . ?doc3 rdf:type ?class3
+    . ?doc3 dcterms:references ?bag3 . ?bag3 ?member3 ?doc OPTIONAL { ?class4 rdfs:subClassOf
+    foaf:Document . ?doc4 rdf:type ?class4 . ?doc4 dcterms:references ?bag4 . ?bag4
+    ?member4 ?doc3 } FILTER (!bound(?doc4)) } FILTER (!bound(?doc3)) } }'
+  runtime_info:
+    client_time: 180.21251916885376
+  headers: []
+  results: 'HTTP code: 500: Virtuoso S1TAT Error Query did not complete due to ANYTIME
+    timeout. '
+- name: Q8 coauthors of Paul Erdoes
+  description: Compute authors who have published with 'Paul Erdoes' or with coauthors
+    of 'Paul Erdoes'.
+  query: 'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX foaf: <http://xmlns.com/foaf/0.1/> PREFIX dc: <http://purl.org/dc/elements/1.1/>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT DISTINCT ?name WHERE { ?erdoes
+    rdf:type foaf:Person . ?erdoes foaf:name "Paul Erdoes"^^xsd:string . { ?document
+    dc:creator ?erdoes . ?document dc:creator ?author . ?document2 dc:creator ?author
+    . ?document2 dc:creator ?author2 . ?author2 foaf:name ?name FILTER (?author!=?erdoes
+    && ?document2!=?document && ?author2!=?erdoes && ?author2!=?author) } UNION {
+    ?document dc:creator ?erdoes. ?document dc:creator ?author. ?author foaf:name
+    ?name FILTER (?author!=?erdoes) } } }'
+  runtime_info:
+    client_time: 0.03730416297912598
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"493"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: Q9 properties of persons
+  description: Return incoming and outgoing properties of persons.
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+    SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT DISTINCT ?predicate WHERE {
+    { ?person rdf:type foaf:Person . ?subject ?predicate ?person } UNION { ?person
+    rdf:type foaf:Person . ?person ?predicate ?object } } }'
+  runtime_info:
+    client_time: 39.267937660217285
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"4"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: Q10 relations of Paul Erdoes
+  description: Return all subjects related to 'Paul Erdoes' (publications or venues).
+  query: 'PREFIX person: <http://localhost/persons/> SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT ?subject ?predicate WHERE { ?subject ?predicate person:Paul_Erdoes
+    } }'
+  runtime_info:
+    client_time: 0.007071256637573242
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"656"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: Q11 ee urls pagination
+  description: Return 10 electronic edition URLs starting from the 51st publication
+    in lexicographic order.
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS
+    ?qlever_count_) WHERE { SELECT ?ee WHERE { ?publication rdfs:seeAlso ?ee } ORDER
+    BY ?ee LIMIT 10 OFFSET 50 }'
+  runtime_info:
+    client_time: 6.974229574203491
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"10"^^<http://www.w3.org/2001/XMLSchema#integer>'
+title: SP2Bench v1.1 Evaluation (~500M triples)
+description: SP2Bench benchmark v1.1 - synthetic dataset with ~500 million triples.
+  SP2Bench at https://dbis.informatik.uni-freiburg.de/forschung/projekte/SP2B/
+timeout: 180
+name: SP2Bench v1.1 (~500M triples)
+scale: 500000000

@@ -1,0 +1,1072 @@
+queries:
+- name: join-2-small-large
+  description: JOIN of a small and a large predicate
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s swrc:chapter ?o1 . ?s dc:creator ?o2 }'
+  runtime_info:
+    client_time: 0.016933917999267578
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"20"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-2-large-small
+  description: JOIN of a large and a small predicate
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 . ?s swrc:chapter ?o2 }'
+  runtime_info:
+    client_time: 92.00820398330688
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: join-2-large-large
+  description: JOIN of two large predicates
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 . ?s rdf:type ?o2 }'
+  runtime_info:
+    client_time: 92.00765800476074
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: join-2-largest-result
+  description: JOIN of two predicates with the largest possible result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s dc:creator ?o2 }'
+  runtime_info:
+    client_time: 85.5124671459198
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"11166057"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-2-large-large-with-large-result
+  description: JOIN of two large predicates with a reasonably large result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s dc:creator ?o2 }'
+  runtime_info:
+    client_time: 85.53399062156677
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"11166057"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-2-large-large-with-small-result
+  description: JOIN of two large predicates with a small result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:publisher ?o1 . ?s dc:creator ?o2 }'
+  runtime_info:
+    client_time: 1.253570795059204
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"8181"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-3-star-largest-sum-of-join-sizes
+  description: JOIN star of three large predicates with the largest sum of join sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . ?s dc:creator ?o2 . ?s rdf:type
+    ?o3 }'
+  runtime_info:
+    client_time: 92.00664067268372
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: join-3-chain-largest-sum-of-join-sizes
+  description: JOIN chain of three large predicates with the largest sum of join sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . ?b rdf:type ?c . ?c rdfs:subClassOf ?d }'
+  runtime_info:
+    client_time: 92.00887203216553
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: optional-join-small-large
+  description: OPTIONAL JOIN of a small and a large predicate
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s swrc:chapter ?o1 OPTIONAL { ?s dc:creator
+    ?o2 } }'
+  runtime_info:
+    client_time: 0.01473546028137207
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"20"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: optional-join-large-small
+  description: OPTIONAL JOIN of a large and a small predicate
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 OPTIONAL { ?s swrc:chapter
+    ?o2 } }'
+  runtime_info:
+    client_time: 92.00915789604187
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: optional-join-large-large
+  description: OPTIONAL JOIN of two large predicates
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 OPTIONAL { ?s rdf:type ?o2
+    } }'
+  runtime_info:
+    client_time: 92.00884628295898
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: optional-join-2-large-large-with-large-result
+  description: OPTIONAL JOIN of two large predicates with a reasonably large join
+    result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . OPTIONAL { ?s dc:creator
+    ?o2 } }'
+  runtime_info:
+    client_time: 82.37735056877136
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"15789193"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: optional-join-2-large-large-with-small-join-result-1
+  description: OPTIONAL JOIN of two large predicates with a small join result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:publisher ?o1 . OPTIONAL { ?s dc:creator ?o2 } }'
+  runtime_info:
+    client_time: 1.3057446479797363
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"56005"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: optional-join-2-large-large-with-small-join-result-2
+  description: OPTIONAL JOIN of two large predicates with a small join result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:creator ?o1 . OPTIONAL { ?s dc:publisher ?o2 } }'
+  runtime_info:
+    client_time: 92.00921964645386
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: optional-join-3-star-1
+  description: OPTIONAL JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . ?s dc:creator ?o2 . OPTIONAL
+    { ?s rdf:type ?o3 } }'
+  runtime_info:
+    client_time: 92.01011252403259
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: optional-join-3-star-2
+  description: OPTIONAL JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . OPTIONAL { ?s dc:creator
+    ?o2 . ?s rdf:type ?o3 } }'
+  runtime_info:
+    client_time: 92.0081729888916
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: optional-join-3-chain-1
+  description: OPTIONAL JOIN chain of three large predicates with the largest sum
+    of join sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . ?b rdf:type ?c . OPTIONAL { ?c rdfs:subClassOf
+    ?d } }'
+  runtime_info:
+    client_time: 92.00986933708191
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: optional-join-3-chain-2
+  description: OPTIONAL JOIN chain of three large predicates with the largest sum
+    of join sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . OPTIONAL { ?b rdf:type ?c . ?c rdfs:subClassOf
+    ?d } }'
+  runtime_info:
+    client_time: 92.00818586349487
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: minus-join-small-large
+  description: MINUS JOIN of a small and a large predicate
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s swrc:chapter ?o1 MINUS { ?s dc:creator
+    ?o2 } }'
+  runtime_info:
+    client_time: 12.323423862457275
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: minus-join-large-small
+  description: MINUS JOIN of a large and a small predicate
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 MINUS { ?s swrc:chapter
+    ?o2 } }'
+  runtime_info:
+    client_time: 2.8812124729156494
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"11166037"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: minus-join-large-large
+  description: MINUS JOIN of two large predicates
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 MINUS { ?s rdf:type ?o2
+    } }'
+  runtime_info:
+    client_time: 14.882431268692017
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: minus-join-2-large-large-with-large-result
+  description: MINUS JOIN of two large predicates with a reasonably large join result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . MINUS { ?s dc:creator ?o2
+    } }'
+  runtime_info:
+    client_time: 13.20976996421814
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"4623136"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: minus-join-2-large-large-with-small-join-result-1
+  description: MINUS JOIN of two large predicates with a small join result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:publisher ?o1 . MINUS { ?s dc:creator ?o2 } }'
+  runtime_info:
+    client_time: 9.154473543167114
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"47824"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: minus-join-2-large-large-with-small-join-result-2
+  description: MINUS JOIN of two large predicates with a small join result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:creator ?o1 . MINUS { ?s dc:publisher ?o2 } }'
+  runtime_info:
+    client_time: 3.020566701889038
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"11157945"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: minus-join-3-star-1
+  description: MINUS JOIN star of three large predicates with the largest sum of join
+    sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . ?s dc:creator ?o2 . MINUS
+    { ?s rdf:type ?o3 } }'
+  runtime_info:
+    client_time: 92.0104022026062
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: minus-join-3-star-2
+  description: MINUS JOIN star of three large predicates with the largest sum of join
+    sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . MINUS { ?s dc:creator ?o2
+    . ?s rdf:type ?o3 } }'
+  runtime_info:
+    client_time: 92.00859498977661
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: minus-join-3-chain-1
+  description: MINUS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . ?b rdf:type ?c . MINUS { ?c rdfs:subClassOf
+    ?d } }'
+  runtime_info:
+    client_time: 92.00848460197449
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: minus-join-3-chain-2
+  description: MINUS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . MINUS { ?b rdf:type ?c . ?c rdfs:subClassOf
+    ?d } }'
+  runtime_info:
+    client_time: 88.3410255908966
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"11166057"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: exists-join-small-large
+  description: EXISTS JOIN of a small and a large predicate
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s swrc:chapter ?o1 FILTER EXISTS { ?s dc:creator
+    ?o2 } }'
+  runtime_info:
+    client_time: 0.010802268981933594
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"6"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: exists-join-large-small
+  description: EXISTS JOIN of a large and a small predicate
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX swrc: <http://swrc.ontoware.org/ontology#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 FILTER EXISTS { ?s swrc:chapter
+    ?o2 } }'
+  runtime_info:
+    client_time: 92.00939154624939
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: exists-join-large-large
+  description: EXISTS JOIN of two large predicates
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:creator ?o1 FILTER EXISTS { ?s rdf:type
+    ?o2 } }'
+  runtime_info:
+    client_time: 92.00918531417847
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: exists-join-2-large-large-with-large-result
+  description: EXISTS JOIN of two large predicates with a reasonably large join result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . FILTER EXISTS { ?s dc:creator
+    ?o2 } }'
+  runtime_info:
+    client_time: 81.23271369934082
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"4074878"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: exists-join-2-large-large-with-small-join-result-1
+  description: EXISTS JOIN of two large predicates with a small join result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:publisher ?o1 . FILTER EXISTS { ?s dc:creator ?o2 } }'
+  runtime_info:
+    client_time: 1.192014217376709
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3459"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: exists-join-2-large-large-with-small-join-result-2
+  description: EXISTS JOIN of two large predicates with a small join result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dc:creator ?o1 . FILTER EXISTS { ?s dc:publisher ?o2 } }'
+  runtime_info:
+    client_time: 92.00767779350281
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: exists-join-3-star-1
+  description: EXISTS JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . ?s dc:creator ?o2 . FILTER
+    EXISTS { ?s rdf:type ?o3 } }'
+  runtime_info:
+    client_time: 92.00971245765686
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: exists-join-3-star-2
+  description: EXISTS JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dc:title ?o1 . FILTER EXISTS { ?s dc:creator
+    ?o2 . ?s rdf:type ?o3 } }'
+  runtime_info:
+    client_time: 92.0099310874939
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: exists-join-3-chain-1
+  description: EXISTS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . ?b rdf:type ?c . FILTER EXISTS { ?c rdfs:subClassOf
+    ?d } }'
+  runtime_info:
+    client_time: 92.01039266586304
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: exists-join-3-chain-2
+  description: EXISTS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?a dc:creator ?b . FILTER EXISTS { ?b rdf:type ?c . ?c rdfs:subClassOf
+    ?d } }'
+  runtime_info:
+    client_time: 92.00914025306702
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: union-no-constraint
+  description: UNION of two large predicates, no constraint
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s dc:creator ?o } UNION { ?s rdf:type ?o
+    } }'
+  runtime_info:
+    client_time: 5.119499921798706
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"19864071"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: union-constraint-from-star
+  description: UNION of two large predicates, constrained by a large predicate known
+    to have join partners
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s dc:title ?o1 } UNION { ?s dc:creator
+    ?o1 } ?s rdf:type ?o2 }'
+  runtime_info:
+    client_time: 92.0099184513092
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: union-constraint-small-join
+  description: UNION of two large predicates, constrained by a join with a small result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX dcterms: <http://purl.org/dc/terms/>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s dc:publisher ?o1 } UNION { ?s dcterms:references
+    ?o1 } ?s dc:creator ?o2 }'
+  runtime_info:
+    client_time: 92.00747752189636
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: union-constraint-large-join
+  description: UNION of two large predicates, constrained by a join with a large result
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s dc:creator ?o1 } UNION { ?s rdf:type
+    ?o1 } ?s dc:title ?o2 }'
+  runtime_info:
+    client_time: 92.00816321372986
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: union-constraint-filter-restrictive
+  description: UNION of two large predicates, constraint by restrictive FILTER
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s dc:creator ?o } UNION { ?s rdf:type ?o
+    } FILTER (?s = ?o) }'
+  runtime_info:
+    client_time: 92.00957679748535
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: multicolumn-join-small
+  description: Multicolumn JOIN small
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*)
+    AS ?count) WHERE { ?s rdf:_27 ?o . ?s rdf:_17 ?o }'
+  runtime_info:
+    client_time: 0.16466164588928223
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"2348"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multicolumn-join-large
+  description: Multicolumn JOIN large
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(*)
+    AS ?count) WHERE { ?s rdf:_2 ?o . ?s rdf:_1 ?o }'
+  runtime_info:
+    client_time: 0.628436803817749
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"9209"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-count-object-high-multiplicity
+  description: GROUP BY with COUNT, for object with high multiplicity
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?object
+    (COUNT(?subject) AS ?count) { ?subject rdf:type ?object } GROUP BY ?object ORDER
+    BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 2.6149401664733887
+  result_size: 10
+  headers:
+  - object
+  - count
+  results:
+  - - <http://xmlns.com/foaf/0.1/Person>
+    - '"4521217"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://localhost/vocabulary/bench/Inproceedings>
+    - '"3062329"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://localhost/vocabulary/bench/Article>
+    - '"1001081"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://localhost/vocabulary/bench/Proceedings>
+    - '"49083"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag>
+    - '"36134"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-count-object-low-multiplicity
+  description: GROUP BY with COUNT, for object with low multiplicity
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?object (COUNT(?subject)
+    AS ?count) { ?subject foaf:name ?object } GROUP BY ?object ORDER BY DESC(?count)
+    LIMIT 10'
+  runtime_info:
+    client_time: 7.591716766357422
+  result_size: 10
+  headers:
+  - object
+  - count
+  results:
+  - - '"Isi-Ugo Christenson"'
+    - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - '"Ignateva-Parasia Gentili"'
+    - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - '"Zeshin-Homeros Lapari"'
+    - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - '"Friedhelm-Ciera Ney"'
+    - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - '"Colleen-Manolito Rovell"'
+    - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-count-object-wrong-sort-order
+  description: GROUP BY with COUNT, for object but not sorted by object
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT ?o1 (COUNT(?s) AS ?count) { ?s rdf:type ?o1 . ?s dc:creator ?o2 } GROUP
+    BY ?o1 ORDER BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 84.42255449295044
+  result_size: 7
+  headers:
+  - o1
+  - count
+  results:
+  - - <http://localhost/vocabulary/bench/Inproceedings>
+    - '"8521551"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://localhost/vocabulary/bench/Article>
+    - '"2614770"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://localhost/vocabulary/bench/Incollection>
+    - '"23032"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://localhost/vocabulary/bench/Book>
+    - '"4823"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://localhost/vocabulary/bench/PhDThesis>
+    - '"1000"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-complex-aggregate
+  description: GROUP BY with COUNT and MIN and MAX and SAMPLE
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT ?o1 (COUNT(?s) AS ?count) (MIN(?s) AS ?min) (MAX(?s) AS ?max) (SAMPLE(?s)
+    AS ?sample) { ?s rdf:type ?o1 . ?s dc:creator ?o2 } GROUP BY ?o1 ORDER BY DESC(?count)
+    LIMIT 10'
+  runtime_info:
+    client_time: 92.01003885269165
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: group-by-implicit-numeric-baseline
+  description: Implicit GROUP BY with COUNT on numeric predicate as baseline
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(?o) AS ?count)
+    { ?s dcterms:issued ?o }'
+  runtime_info:
+    client_time: 0.9233436584472656
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3139378"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-numeric-sum
+  description: Implicit GROUP BY with SUM on numeric predicate
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(?o) AS ?sum) { ?s
+    dcterms:issued ?o }'
+  runtime_info:
+    client_time: 0.8048267364501953
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"6319935296"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-numeric-min
+  description: Implicit GROUP BY with MIN on numeric predicate
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (MIN(?o) AS ?min) { ?s
+    dcterms:issued ?o }'
+  runtime_info:
+    client_time: 0.8105602264404297
+  result_size: 1
+  headers:
+  - min
+  results:
+  - - '"1940"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-numeric-max
+  description: Implicit GROUP BY with MAX on numeric predicate
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (MAX(?o) AS ?max) { ?s
+    dcterms:issued ?o }'
+  runtime_info:
+    client_time: 0.8278100490570068
+  result_size: 1
+  headers:
+  - max
+  results:
+  - - '"2022"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-numeric-avg
+  description: Implicit GROUP BY with AVG on numeric predicate
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (AVG(?o) AS ?avg) { ?s
+    dcterms:issued ?o }'
+  runtime_info:
+    client_time: 0.8363478183746338
+  result_size: 1
+  headers:
+  - avg
+  results:
+  - - '"2013.117023818093902677"^^<http://www.w3.org/2001/XMLSchema#decimal>'
+- name: group-by-implicit-string-baseline
+  description: Implicit GROUP BY with COUNT on string predicate as baseline
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT (COUNT(?o) AS ?count) {
+    ?s foaf:name ?o }'
+  runtime_info:
+    client_time: 1.222433090209961
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"4521217"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-string-min
+  description: Implicit GROUP BY with MIN on string predicate
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT (MIN(?o) AS ?min) { ?s
+    foaf:name ?o }'
+  runtime_info:
+    client_time: 10.641245365142822
+  result_size: 1
+  headers:
+  - min
+  results:
+  - - '"Aaarti Arollo"'
+- name: group-by-implicit-string-max
+  description: Implicit GROUP BY with MAX on string predicate
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT (MAX(?o) AS ?max) { ?s
+    foaf:name ?o }'
+  runtime_info:
+    client_time: 10.68285059928894
+  result_size: 1
+  headers:
+  - max
+  results:
+  - - '"ris-Nisus Yerkovich"'
+- name: group-by-string-groupconcat
+  description: GROUP BY with GROUP_CONCAT on string predicate with high subject multiplicity
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT (SUM(STRLEN(?cat)) AS ?sum)
+    { { SELECT (GROUP_CONCAT(?o; SEPARATOR=" ") AS ?cat) { ?s foaf:name ?o } GROUP
+    BY ?s } }'
+  runtime_info:
+    client_time: 54.48468375205994
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"92881638"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: distinct-count-object-high-multiplicity
+  description: COUNT DISTINCT, for object with high multiplicity
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(DISTINCT
+    ?object) AS ?count) { ?subject rdf:type ?object }'
+  runtime_info:
+    client_time: 2.481205701828003
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"12"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: distinct-count-object-low-multiplicity
+  description: COUNT DISTINCT, for object with low multiplicity
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT (COUNT(DISTINCT ?object)
+    AS ?count) { ?subject foaf:name ?object }'
+  runtime_info:
+    client_time: 2.289501905441284
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"4521217"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: distinct-count-object-wrong-sort-order
+  description: COUNT DISTINCT, for object but not sorted by object
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    SELECT (COUNT(DISTINCT ?o1) AS ?count) { ?s rdf:type ?o1 . ?s dc:creator ?o2 }'
+  runtime_info:
+    client_time: 90.97153568267822
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"7"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: strlen
+  description: String length for large string predicate
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(?o))
+    AS ?checksum) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 0.007668733596801758
+  result_size: 1
+  headers:
+  - checksum
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: strbefore
+  description: STRBEFORE string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(STRBEFORE(?o,
+    "a"))) AS ?checksum) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 0.006786346435546875
+  result_size: 1
+  headers:
+  - checksum
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: strafter
+  description: STRAFTER string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(STRAFTER(?o,
+    "a"))) AS ?checksum) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 0.006830453872680664
+  result_size: 1
+  headers:
+  - checksum
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: strstarts
+  description: STRSTARTS string function
+  query: 'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    SELECT (SUM(xsd:integer(STRSTARTS(?o, "a"))) AS ?count) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 0.006353855133056641
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: strends
+  description: STRENDS string function
+  query: 'PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    SELECT (SUM(xsd:integer(STRENDS(?o, "a"))) AS ?count) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 0.0059888362884521484
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: result-size-tiny
+  description: Export 10 tuples
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?s ?o WHERE { ?s dc:creator
+    ?o } LIMIT 10'
+  runtime_info:
+    client_time: 0.0072324275970458984
+  result_size: 10
+  headers:
+  - s
+  - o
+  results:
+  - - <http://localhost/publications/inprocs/Proceeding1/1982/Inproceeding3>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1978/Inproceeding3>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1979/Inproceeding1>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1974/Inproceeding7>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1965/Inproceeding9>
+    - <http://localhost/persons/Paul_Erdoes>
+- name: result-size-small
+  description: Export 1000 tuples
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?s ?o WHERE { ?s dc:creator
+    ?o } LIMIT 1000'
+  runtime_info:
+    client_time: 0.021079301834106445
+  result_size: 1000
+  headers:
+  - s
+  - o
+  results:
+  - - <http://localhost/publications/inprocs/Proceeding1/1982/Inproceeding3>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1978/Inproceeding3>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1979/Inproceeding1>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1974/Inproceeding7>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1965/Inproceeding9>
+    - <http://localhost/persons/Paul_Erdoes>
+- name: result-size-medium
+  description: Export 100K tuples
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?s ?o WHERE { ?s dc:creator
+    ?o } LIMIT 100000'
+  runtime_info:
+    client_time: 0.8867449760437012
+  result_size: 100000
+  headers:
+  - s
+  - o
+  results:
+  - - <http://localhost/publications/inprocs/Proceeding1/1982/Inproceeding3>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1978/Inproceeding3>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1979/Inproceeding1>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1974/Inproceeding7>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1965/Inproceeding9>
+    - <http://localhost/persons/Paul_Erdoes>
+- name: result-size-large
+  description: Export 1M tuples
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?s ?o WHERE { ?s dc:creator
+    ?o } LIMIT 1000000'
+  runtime_info:
+    client_time: 7.812842130661011
+  result_size: 1000000
+  headers:
+  - s
+  - o
+  results:
+  - - <http://localhost/publications/inprocs/Proceeding1/1982/Inproceeding3>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1978/Inproceeding3>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1979/Inproceeding1>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1974/Inproceeding7>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1965/Inproceeding9>
+    - <http://localhost/persons/Paul_Erdoes>
+- name: result-size-xlarge
+  description: Export 10M tuples
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT ?s ?o WHERE { ?s dc:creator
+    ?o } LIMIT 10000000'
+  runtime_info:
+    client_time: 79.19283986091614
+  result_size: 10000000
+  headers:
+  - s
+  - o
+  results:
+  - - <http://localhost/publications/inprocs/Proceeding1/1982/Inproceeding3>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1978/Inproceeding3>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1979/Inproceeding1>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1974/Inproceeding7>
+    - <http://localhost/persons/Paul_Erdoes>
+  - - <http://localhost/publications/inprocs/Proceeding1/1965/Inproceeding9>
+    - <http://localhost/persons/Paul_Erdoes>
+- name: numeric-baseline
+  description: Baseline for numeric queries
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(?o) AS ?sum) WHERE
+    { ?s dcterms:issued ?o }'
+  runtime_info:
+    client_time: 0.8667430877685547
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"6319935296"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-abs
+  description: ABS function
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(ABS(?o)) AS ?sum)
+    WHERE { ?s dcterms:issued ?o }'
+  runtime_info:
+    client_time: 0.8848781585693359
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"6319935296"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-ceil
+  description: CEIL function
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(CEIL(?o)) AS ?sum)
+    WHERE { ?s dcterms:issued ?o }'
+  runtime_info:
+    client_time: 0.8597853183746338
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"6319935296"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-floor
+  description: FLOOR function
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(FLOOR(?o)) AS ?sum)
+    WHERE { ?s dcterms:issued ?o }'
+  runtime_info:
+    client_time: 0.8880257606506348
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"6319935296"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-round
+  description: ROUND function
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(ROUND(?o)) AS ?sum)
+    WHERE { ?s dcterms:issued ?o }'
+  runtime_info:
+    client_time: 0.8384089469909668
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"6319935296"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-add
+  description: Addition
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(?o + ?o) AS ?sum)
+    WHERE { ?s dcterms:issued ?o }'
+  runtime_info:
+    client_time: 0.9665176868438721
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"12639870592"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-greater
+  description: Greater than
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (SUM(?o > 0) AS ?sum)
+    WHERE { ?s dcterms:issued ?o }'
+  runtime_info:
+    client_time: 0.8745279312133789
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - []
+- name: numeric-filter-bin-search-fifty-fifty
+  description: Numeric FILTER that filters out 50 percent of the values
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(?s) AS ?count)
+    { ?s dcterms:issued ?o . FILTER (?o >= 2015) }'
+  runtime_info:
+    client_time: 0.8565182685852051
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"1676909"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-filter-bin-search-seventy-thirty
+  description: Numeric FILTER that filters out 70 percent of the values
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(?s) AS ?count)
+    { ?s dcterms:issued ?o . FILTER (?o >= 2018) }'
+  runtime_info:
+    client_time: 0.8426191806793213
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"1134373"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-filter-bin-search-ninetyfive-five
+  description: Numeric FILTER that filters out 95 percent of the values
+  query: 'PREFIX dcterms: <http://purl.org/dc/terms/> SELECT (COUNT(?s) AS ?count)
+    { ?s dcterms:issued ?o . FILTER (?o >= 2022) }'
+  runtime_info:
+    client_time: 0.809734582901001
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"238484"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: filter-few-results
+  description: FILTER that filters out most rows and has few results
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(?s) AS ?count)
+    { ?s dc:creator ?o . FILTER (?s = ?o) }'
+  runtime_info:
+    client_time: 72.39770483970642
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: filter-many-results
+  description: FILTER that filters out few rows and has many results
+  query: 'PREFIX dc: <http://purl.org/dc/elements/1.1/> SELECT (COUNT(?s) AS ?count)
+    { ?s dc:creator ?o . FILTER (?s != ?o) }'
+  runtime_info:
+    client_time: 76.50641298294067
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"11166057"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: filter-language-en
+  description: FILTER on string predicate for only English literals
+  query: 'PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT (COUNT(?s) AS ?count) {
+    ?s foaf:name ?o . FILTER(LANG(?o) = "en") }'
+  runtime_info:
+    client_time: 10.673365831375122
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: number-of-triples
+  description: Total number of triples
+  query: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 12.271994590759277
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"50000869"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: number-of-subjects
+  description: Total number of distinct subjects
+  query: SELECT (COUNT(DISTINCT ?s) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 16.195529460906982
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"8698023"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: number-of-predicates
+  description: Total number of distinct predicates
+  query: SELECT (COUNT(DISTINCT ?p) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 13.73304009437561
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"77"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: number-of-objects
+  description: Total number of distinct objects
+  query: SELECT (COUNT(DISTINCT ?o) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 21.908617973327637
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"23439187"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: number-of-literals
+  description: Total number of literals
+  query: SELECT (COUNT(?o) AS ?count) WHERE { ?s ?p ?o FILTER ISLITERAL(?o) }
+  runtime_info:
+    client_time: 92.00997567176819
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: number-of-blank-nodes
+  description: Total number of blank nodes
+  query: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o FILTER ISBLANK(?s) }
+  runtime_info:
+    client_time: 92.00686693191528
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+title: Sparqloscope SP2Bench Evaluation (~50M triples)
+description: Sparqloscope benchmark for SP2Bench synthetic dataset with ~50 million
+  triples. Sparqloscope at https://github.com/ad-freiburg/sparqloscope
+timeout: 60
+name: Sparqloscope SP2Bench (~50M triples)
+scale: 50000000

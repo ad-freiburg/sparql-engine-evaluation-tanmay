@@ -1,0 +1,1236 @@
+queries:
+- name: join-2-small-large
+  description: JOIN of a small and a large predicate
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dblp:formerStreamTitle ?o1 . ?s rdf:type
+    ?o2 }'
+  runtime_info:
+    client_time: 0.27907466888427734
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"2000"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-2-large-small
+  description: JOIN of a large and a small predicate
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s dblp:formerStreamTitle
+    ?o2 }'
+  runtime_info:
+    client_time: 0.034679412841796875
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"2000"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-2-large-large
+  description: JOIN of two large predicates
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s dblp:hasSignature ?o2
+    }'
+  runtime_info:
+    client_time: 61.653454542160034
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"54513886"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-2-largest-result
+  description: JOIN of two predicates with the largest possible result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:hasSignature ?o1 . ?s dblp:createdBy ?o2 }'
+  runtime_info:
+    client_time: 61.03239154815674
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"136138238"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-2-large-large-with-large-result
+  description: JOIN of two large predicates with a reasonably large result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:hasSignature ?o1 . ?s dblp:createdBy ?o2 }'
+  runtime_info:
+    client_time: 60.59788155555725
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"136138238"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-2-large-large-with-small-result
+  description: JOIN of two large predicates with a small result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:publishedAsPartOf ?o1 . ?s dblp:publishedInJournalVolume ?o2 }'
+  runtime_info:
+    client_time: 8.845917224884033
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"2150"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-3-star-largest-sum-of-join-sizes
+  description: JOIN star of three large predicates with the largest sum of join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dblp:signatureOrdinal ?o1 . ?s rdf:type
+    ?o2 . ?s dblp:signatureDblpName ?o3 }'
+  runtime_info:
+    client_time: 89.46621131896973
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"54513867"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-3-chain-largest-sum-of-join-sizes
+  description: JOIN chain of three large predicates with the largest sum of join sizes
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count) WHERE
+    { ?a dblp:signaturePublication ?b . ?b rdf:type ?c . ?c rdfs:subClassOf ?d }'
+  runtime_info:
+    client_time: 180.01368021965027
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: join-xlarge-star-on-small-predicates
+  description: JOIN star of many small predicates
+  query: 'PREFIX terms: <http://purl.org/dc/terms/> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dblp:formerStreamTitle ?o0 . ?s dblp:awardWebpage
+    ?o1 . ?s dblp:successorStream ?o2 . ?s dblp:predeccessorStream ?o3 . ?s rdfs:comment
+    ?o4 . ?s rdfs:domain ?o5 . ?s rdfs:range ?o6 . ?s rdfs:subPropertyOf ?o7 . ?s
+    owl:equivalentProperty ?o8 . ?s rdfs:subClassOf ?o9 . ?s owl:equivalentClass ?o10
+    . ?s owl:inverseOf ?o11 . ?s dblp:publishersAddress ?o12 . ?s dblp:publishedInBookChapter
+    ?o13 . ?s terms:creator ?o14 . ?s terms:abstract ?o15 . ?s terms:title ?o16 .
+    ?s owl:priorVersion ?o17 . ?s owl:versionInfo ?o18 . ?s owl:versionIRI ?o19 .
+    ?s terms:modified ?o20 . ?s terms:license ?o21 . ?s terms:description ?o22 }'
+  runtime_info:
+    client_time: 0.01813983917236328
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-xlarge-chain-on-small-predicates
+  description: JOIN chain of many small predicates
+  query: 'PREFIX terms: <http://purl.org/dc/terms/> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?v0 dblp:formerStreamTitle ?v1 . ?v1 dblp:awardWebpage
+    ?v2 . ?v2 dblp:successorStream ?v3 . ?v3 dblp:predeccessorStream ?v4 . ?v4 rdfs:comment
+    ?v5 . ?v5 rdfs:domain ?v6 . ?v6 rdfs:range ?v7 . ?v7 rdfs:subPropertyOf ?v8 .
+    ?v8 owl:equivalentProperty ?v9 . ?v9 rdfs:subClassOf ?v10 . ?v10 owl:equivalentClass
+    ?v11 . ?v11 owl:inverseOf ?v12 . ?v12 dblp:publishersAddress ?v13 . ?v13 dblp:publishedInBookChapter
+    ?v14 . ?v14 terms:creator ?v15 . ?v15 terms:abstract ?v16 . ?v16 terms:title ?v17
+    . ?v17 owl:priorVersion ?v18 . ?v18 owl:versionInfo ?v19 . ?v19 owl:versionIRI
+    ?v20 . ?v20 terms:modified ?v21 . ?v21 terms:license ?v22 . ?v22 terms:description
+    ?v23 }'
+  runtime_info:
+    client_time: 0.015903949737548828
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: optional-join-small-large
+  description: OPTIONAL JOIN of a small and a large predicate
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dblp:formerStreamTitle ?o1 OPTIONAL { ?s
+    rdf:type ?o2 } }'
+  runtime_info:
+    client_time: 0.11904335021972656
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"2000"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: optional-join-large-small
+  description: OPTIONAL JOIN of a large and a small predicate
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 OPTIONAL { ?s dblp:formerStreamTitle
+    ?o2 } }'
+  runtime_info:
+    client_time: 180.01073479652405
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-large-large
+  description: OPTIONAL JOIN of two large predicates
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 OPTIONAL { ?s dblp:hasSignature
+    ?o2 } }'
+  runtime_info:
+    client_time: 180.01060438156128
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-2-large-large-with-large-result
+  description: OPTIONAL JOIN of two large predicates with a reasonably large join
+    result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:hasSignature ?o1 . OPTIONAL { ?s dblp:createdBy ?o2 } }'
+  runtime_info:
+    client_time: 148.85027146339417
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"136138238"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: optional-join-2-large-large-with-small-join-result-1
+  description: OPTIONAL JOIN of two large predicates with a small join result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:publishedAsPartOf ?o1 . OPTIONAL { ?s dblp:publishedInJournalVolume
+    ?o2 } }'
+  runtime_info:
+    client_time: 39.006277561187744
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3818842"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: optional-join-2-large-large-with-small-join-result-2
+  description: OPTIONAL JOIN of two large predicates with a small join result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:publishedInJournalVolume ?o1 . OPTIONAL { ?s dblp:publishedAsPartOf
+    ?o2 } }'
+  runtime_info:
+    client_time: 46.682286739349365
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3997860"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: optional-join-3-star-1
+  description: OPTIONAL JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dblp:signatureOrdinal ?o1 . ?s rdf:type
+    ?o2 . OPTIONAL { ?s dblp:signatureDblpName ?o3 } }'
+  runtime_info:
+    client_time: 180.0127854347229
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-3-star-2
+  description: OPTIONAL JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dblp:signatureOrdinal ?o1 . OPTIONAL {
+    ?s rdf:type ?o2 . ?s dblp:signatureDblpName ?o3 } }'
+  runtime_info:
+    client_time: 180.01039624214172
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-3-chain-1
+  description: OPTIONAL JOIN chain of three large predicates with the largest sum
+    of join sizes
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count) WHERE
+    { ?a dblp:signaturePublication ?b . ?b rdf:type ?c . OPTIONAL { ?c rdfs:subClassOf
+    ?d } }'
+  runtime_info:
+    client_time: 180.01203608512878
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-3-chain-2
+  description: OPTIONAL JOIN chain of three large predicates with the largest sum
+    of join sizes
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count) WHERE
+    { ?a dblp:signaturePublication ?b . OPTIONAL { ?b rdf:type ?c . ?c rdfs:subClassOf
+    ?d } }'
+  runtime_info:
+    client_time: 180.01252937316895
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-small-large
+  description: MINUS JOIN of a small and a large predicate
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dblp:formerStreamTitle ?o1 MINUS { ?s rdf:type
+    ?o2 } }'
+  runtime_info:
+    client_time: 180.01231837272644
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-large-small
+  description: MINUS JOIN of a large and a small predicate
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 MINUS { ?s dblp:formerStreamTitle
+    ?o2 } }'
+  runtime_info:
+    client_time: 180.01158738136292
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-large-large
+  description: MINUS JOIN of two large predicates
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 MINUS { ?s dblp:hasSignature
+    ?o2 } }'
+  runtime_info:
+    client_time: 180.01349449157715
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-2-large-large-with-large-result
+  description: MINUS JOIN of two large predicates with a reasonably large join result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:hasSignature ?o1 . MINUS { ?s dblp:createdBy ?o2 } }'
+  runtime_info:
+    client_time: 180.01174306869507
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-2-large-large-with-small-join-result-1
+  description: MINUS JOIN of two large predicates with a small join result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:publishedAsPartOf ?o1 . MINUS { ?s dblp:publishedInJournalVolume
+    ?o2 } }'
+  runtime_info:
+    client_time: 49.888065576553345
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3816692"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: minus-join-2-large-large-with-small-join-result-2
+  description: MINUS JOIN of two large predicates with a small join result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:publishedInJournalVolume ?o1 . MINUS { ?s dblp:publishedAsPartOf
+    ?o2 } }'
+  runtime_info:
+    client_time: 48.93965554237366
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3995710"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: minus-join-3-star-1
+  description: MINUS JOIN star of three large predicates with the largest sum of join
+    sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dblp:signatureOrdinal ?o1 . ?s rdf:type
+    ?o2 . MINUS { ?s dblp:signatureDblpName ?o3 } }'
+  runtime_info:
+    client_time: 180.01091527938843
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-3-star-2
+  description: MINUS JOIN star of three large predicates with the largest sum of join
+    sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dblp:signatureOrdinal ?o1 . MINUS { ?s
+    rdf:type ?o2 . ?s dblp:signatureDblpName ?o3 } }'
+  runtime_info:
+    client_time: 180.01282143592834
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-3-chain-1
+  description: MINUS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count) WHERE
+    { ?a dblp:signaturePublication ?b . ?b rdf:type ?c . MINUS { ?c rdfs:subClassOf
+    ?d } }'
+  runtime_info:
+    client_time: 47.17682766914368
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: minus-join-3-chain-2
+  description: MINUS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count) WHERE
+    { ?a dblp:signaturePublication ?b . MINUS { ?b rdf:type ?c . ?c rdfs:subClassOf
+    ?d } }'
+  runtime_info:
+    client_time: 180.01221561431885
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-small-large
+  description: EXISTS JOIN of a small and a large predicate
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dblp:formerStreamTitle ?o1 FILTER EXISTS
+    { ?s rdf:type ?o2 } }'
+  runtime_info:
+    client_time: 0.02095341682434082
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"1000"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: exists-join-large-small
+  description: EXISTS JOIN of a large and a small predicate
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 FILTER EXISTS { ?s dblp:formerStreamTitle
+    ?o2 } }'
+  runtime_info:
+    client_time: 180.0104422569275
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-large-large
+  description: EXISTS JOIN of two large predicates
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 FILTER EXISTS { ?s dblp:hasSignature
+    ?o2 } }'
+  runtime_info:
+    client_time: 180.01291370391846
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-2-large-large-with-large-result
+  description: EXISTS JOIN of two large predicates with a reasonably large join result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:hasSignature ?o1 . FILTER EXISTS { ?s dblp:createdBy ?o2 } }'
+  runtime_info:
+    client_time: 55.014246463775635
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"27256943"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: exists-join-2-large-large-with-small-join-result-1
+  description: EXISTS JOIN of two large predicates with a small join result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:publishedAsPartOf ?o1 . FILTER EXISTS { ?s dblp:publishedInJournalVolume
+    ?o2 } }'
+  runtime_info:
+    client_time: 9.786014080047607
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"2150"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: exists-join-2-large-large-with-small-join-result-2
+  description: EXISTS JOIN of two large predicates with a small join result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:publishedInJournalVolume ?o1 . FILTER EXISTS { ?s dblp:publishedAsPartOf
+    ?o2 } }'
+  runtime_info:
+    client_time: 9.87496829032898
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"2150"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: exists-join-3-star-1
+  description: EXISTS JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dblp:signatureOrdinal ?o1 . ?s rdf:type
+    ?o2 . FILTER EXISTS { ?s dblp:signatureDblpName ?o3 } }'
+  runtime_info:
+    client_time: 134.7242579460144
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"54513867"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: exists-join-3-star-2
+  description: EXISTS JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s dblp:signatureOrdinal ?o1 . FILTER EXISTS
+    { ?s rdf:type ?o2 . ?s dblp:signatureDblpName ?o3 } }'
+  runtime_info:
+    client_time: 180.01024222373962
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-3-chain-1
+  description: EXISTS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count) WHERE
+    { ?a dblp:signaturePublication ?b . ?b rdf:type ?c . FILTER EXISTS { ?c rdfs:subClassOf
+    ?d } }'
+  runtime_info:
+    client_time: 129.50696206092834
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"54513886"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: exists-join-3-chain-2
+  description: EXISTS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count) WHERE
+    { ?a dblp:signaturePublication ?b . FILTER EXISTS { ?b rdf:type ?c . ?c rdfs:subClassOf
+    ?d } }'
+  runtime_info:
+    client_time: 144.2934868335724
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"27256943"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: union-no-constraint
+  description: UNION of two large predicates, no constraint
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s rdf:type ?o } UNION { ?s dblp:hasSignature
+    ?o } }'
+  runtime_info:
+    client_time: 23.164949417114258
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"146006444"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: union-constraint-from-star
+  description: UNION of two large predicates, constrained by a large predicate known
+    to have join partners
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s dblp:signatureOrdinal ?o1 } UNION { ?s
+    rdf:type ?o1 } ?s dblp:signatureDblpName ?o2 }'
+  runtime_info:
+    client_time: 180.01040720939636
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: union-constraint-small-join
+  description: UNION of two large predicates, constrained by a join with a small result
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { { ?s dblp:publishedAsPartOf ?o1 } UNION { ?s dblp:publishedInStream ?o1
+    } ?s dblp:publishedInJournalVolume ?o2 }'
+  runtime_info:
+    client_time: 29.3194420337677
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"4034465"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: union-constraint-large-join
+  description: UNION of two large predicates, constrained by a join with a large result
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s dblp:hasSignature ?o1 } UNION { ?s rdf:type
+    ?o1 } ?s dblp:createdBy ?o2 }'
+  runtime_info:
+    client_time: 180.0102653503418
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: union-constraint-filter-restrictive
+  description: UNION of two large predicates, constraint by restrictive FILTER
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dblp: <https://dblp.org/rdf/schema#>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s rdf:type ?o } UNION { ?s dblp:hasSignature
+    ?o } FILTER (?s = ?o) }'
+  runtime_info:
+    client_time: 11.407217264175415
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multicolumn-join-small
+  description: Multicolumn JOIN small
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:subStream ?o . ?s dblp:relatedStream ?o }'
+  runtime_info:
+    client_time: 0.011536836624145508
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multicolumn-join-large
+  description: Multicolumn JOIN large
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s dblp:createdBy ?o . ?s dblp:authoredBy ?o }'
+  runtime_info:
+    client_time: 45.337138652801514
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"27096034"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-count-object-high-multiplicity
+  description: GROUP BY with COUNT, for object with high multiplicity
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?object
+    (COUNT(?subject) AS ?count) { ?subject rdf:type ?object } GROUP BY ?object ORDER
+    BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 180.0133571624756
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: group-by-count-object-low-multiplicity
+  description: GROUP BY with COUNT, for object with low multiplicity
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT ?object (COUNT(?subject)
+    AS ?count) { ?subject dblp:hasSignature ?object } GROUP BY ?object ORDER BY DESC(?count)
+    LIMIT 10'
+  runtime_info:
+    client_time: 180.01224851608276
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: group-by-count-object-wrong-sort-order
+  description: GROUP BY with COUNT, for object but not sorted by object
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT ?o1 (COUNT(?s) AS ?count)
+    { ?s dblp:bibtexType ?o1 . ?s dblp:hasSignature ?o2 } GROUP BY ?o1 ORDER BY DESC(?count)
+    LIMIT 10'
+  runtime_info:
+    client_time: 76.79027485847473
+  result_size: 8
+  headers:
+  - o1
+  - count
+  results:
+  - - <http://purl.org/net/nknouf/ns/bibtex#Article>
+    - '"13844226"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://purl.org/net/nknouf/ns/bibtex#Inproceedings>
+    - '"12855465"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://purl.org/net/nknouf/ns/bibtex#Proceedings>
+    - '"153712"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://purl.org/net/nknouf/ns/bibtex#Phdthesis>
+    - '"148657"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://purl.org/net/nknouf/ns/bibtex#Incollection>
+    - '"142242"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-complex-aggregate
+  description: GROUP BY with COUNT and MIN and MAX and SAMPLE
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT ?o1 (COUNT(?s) AS ?count)
+    (MIN(?s) AS ?min) (MAX(?s) AS ?max) (SAMPLE(?s) AS ?sample) { ?s dblp:bibtexType
+    ?o1 . ?s dblp:hasSignature ?o2 } GROUP BY ?o1 ORDER BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 82.50250315666199
+  result_size: 8
+  headers:
+  - o1
+  - count
+  - min
+  - max
+  - sample
+  results:
+  - - <http://purl.org/net/nknouf/ns/bibtex#Article>
+    - '"13844226"^^<http://www.w3.org/2001/XMLSchema#integer>'
+    - <https://dblp.org/rec/conf/mobiquitous/AlamPR15>
+    - <https://dblp.org/rec/tr/unicamp/IC-12-08>
+    - <https://dblp.org/rec/journals/cm/TeliCC17>
+  - - <http://purl.org/net/nknouf/ns/bibtex#Inproceedings>
+    - '"12855465"^^<http://www.w3.org/2001/XMLSchema#integer>'
+    - <https://dblp.org/rec/books/daglib/p/0001MWK11>
+    - <https://dblp.org/rec/www/org/mitre/future>
+    - <https://dblp.org/rec/conf/scisisis/NarazakiIITNN12>
+  - - <http://purl.org/net/nknouf/ns/bibtex#Proceedings>
+    - '"153712"^^<http://www.w3.org/2001/XMLSchema#integer>'
+    - <https://dblp.org/rec/books/daglib/0028528>
+    - <https://dblp.org/rec/tr/trier/MI99-17>
+    - <https://dblp.org/rec/conf/reconfig/2015>
+  - - <http://purl.org/net/nknouf/ns/bibtex#Phdthesis>
+    - '"148657"^^<http://www.w3.org/2001/XMLSchema#integer>'
+    - <https://dblp.org/rec/books/daglib/0000492>
+    - <https://dblp.org/rec/series/ssw/Vougiouklis20>
+    - <https://dblp.org/rec/phd/gr/Panteli19>
+  - - <http://purl.org/net/nknouf/ns/bibtex#Incollection>
+    - '"142242"^^<http://www.w3.org/2001/XMLSchema#integer>'
+    - <https://dblp.org/rec/books/acm/17/CohenO17>
+    - <https://dblp.org/rec/series/xmedia/WieserS09>
+    - <https://dblp.org/rec/series/asc/IwataHN14>
+- name: group-by-implicit-numeric-baseline
+  description: Implicit GROUP BY with COUNT on numeric predicate as baseline
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(?o) AS ?count)
+    { ?s dblp:numberOfCreators ?o }'
+  runtime_info:
+    client_time: 3.1271872520446777
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"8069206"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-numeric-sum
+  description: Implicit GROUP BY with SUM on numeric predicate
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (SUM(?o) AS ?sum) { ?s
+    dblp:numberOfCreators ?o }'
+  runtime_info:
+    client_time: 3.2435190677642822
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"27256943"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-numeric-min
+  description: Implicit GROUP BY with MIN on numeric predicate
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (MIN(?o) AS ?min) { ?s
+    dblp:numberOfCreators ?o }'
+  runtime_info:
+    client_time: 3.277881383895874
+  result_size: 1
+  headers:
+  - min
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-numeric-max
+  description: Implicit GROUP BY with MAX on numeric predicate
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (MAX(?o) AS ?max) { ?s
+    dblp:numberOfCreators ?o }'
+  runtime_info:
+    client_time: 3.1240720748901367
+  result_size: 1
+  headers:
+  - max
+  results:
+  - - '"450"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-numeric-avg
+  description: Implicit GROUP BY with AVG on numeric predicate
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (AVG(?o) AS ?avg) { ?s
+    dblp:numberOfCreators ?o }'
+  runtime_info:
+    client_time: 3.263542652130127
+  result_size: 1
+  headers:
+  - avg
+  results:
+  - - '"3.377896536536556384853727"^^<http://www.w3.org/2001/XMLSchema#decimal>'
+- name: group-by-implicit-string-baseline
+  description: Implicit GROUP BY with COUNT on string predicate as baseline
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(?o) AS ?count)
+    { ?s dblp:signatureDblpName ?o }'
+  runtime_info:
+    client_time: 33.17363381385803
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"27256943"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-string-min
+  description: Implicit GROUP BY with MIN on string predicate
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (MIN(?o) AS ?min) { ?s
+    dblp:signatureDblpName ?o }'
+  runtime_info:
+    client_time: 35.38019847869873
+  result_size: 1
+  headers:
+  - min
+  results:
+  - - '""Johann" Sebastian Rudolph"'
+- name: group-by-implicit-string-max
+  description: Implicit GROUP BY with MAX on string predicate
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (MAX(?o) AS ?max) { ?s
+    dblp:signatureDblpName ?o }'
+  runtime_info:
+    client_time: 35.27824139595032
+  result_size: 1
+  headers:
+  - max
+  results:
+  - - "\"\xFEorger\xF0ur P\xE1lsd\xF3ttir\""
+- name: group-by-string-groupconcat
+  description: GROUP BY with GROUP_CONCAT on string predicate with high subject multiplicity
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (SUM(STRLEN(?cat)) AS
+    ?sum) { { SELECT (GROUP_CONCAT(?o; SEPARATOR=" ") AS ?cat) { ?s dblp:signatureDblpName
+    ?o } GROUP BY ?s } }'
+  runtime_info:
+    client_time: 180.0116789340973
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: distinct-count-object-high-multiplicity
+  description: COUNT DISTINCT, for object with high multiplicity
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(DISTINCT
+    ?object) AS ?count) { ?subject rdf:type ?object }'
+  runtime_info:
+    client_time: 30.047219038009644
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"32"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: distinct-count-object-low-multiplicity
+  description: COUNT DISTINCT, for object with low multiplicity
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(DISTINCT ?object)
+    AS ?count) { ?subject dblp:hasSignature ?object }'
+  runtime_info:
+    client_time: 180.01137328147888
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: distinct-count-object-wrong-sort-order
+  description: COUNT DISTINCT, for object but not sorted by object
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(DISTINCT ?o1)
+    AS ?count) { ?s dblp:bibtexType ?o1 . ?s dblp:hasSignature ?o2 }'
+  runtime_info:
+    client_time: 20.728074312210083
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"8"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: transitive-path-plus
+  description: Transitive path with plus
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    { ?s dblp:relatedStream+ ?o }'
+  runtime_info:
+    client_time: 0.015102148056030273
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: transitive-path-plus-fixed-subject
+  description: Transitive path with plus and a fixed subject
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    { <https://dblp.org/streams/conf/damp> dblp:relatedStream+ ?o }'
+  runtime_info:
+    client_time: 0.012256383895874023
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: transitive-path-large-join-and-plus
+  description: Transitive path with a large join and plus
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    { ?s dblp:publishedInStream/dblp:relatedStream+ ?o }'
+  runtime_info:
+    client_time: 19.626969814300537
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: transitive-path-small-join-and-plus
+  description: Transitive path with a small join and plus
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(*) AS ?count)
+    { ?s dblp:subStream/dblp:relatedStream+ ?o }'
+  runtime_info:
+    client_time: 0.011942386627197266
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: regex-3-contains
+  description: CONTAINS filter with fixed string of length 3
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?s rdfs:label ?o FILTER CONTAINS(?o, "com") }'
+  runtime_info:
+    client_time: 83.32182431221008
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"481653"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: regex-3-fixed
+  description: REGEX filter with fixed string of length 3
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?s rdfs:label ?o FILTER REGEX(?o, "com") }'
+  runtime_info:
+    client_time: 88.13029718399048
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"481653"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: regex-3
+  description: REGEX filter with expression of length 3
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?s rdfs:label ?o FILTER REGEX(?o, "c.m") }'
+  runtime_info:
+    client_time: 87.98485541343689
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"758684"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: regex-prefix-1
+  description: REGEX filter with prefix of length 1
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?s rdfs:label ?o FILTER REGEX(?o, "^C") }'
+  runtime_info:
+    client_time: 81.01952266693115
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"579211"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: regex-prefix-2
+  description: REGEX filter with prefix of length 2
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?s rdfs:label ?object FILTER REGEX(?object, "^Co") }'
+  runtime_info:
+    client_time: 79.88522243499756
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"37799"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: regex-prefix-3
+  description: REGEX filter with prefix of length 3
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (COUNT(*) AS
+    ?count) WHERE { ?s rdfs:label ?object FILTER REGEX(?object, "^Com") }'
+  runtime_info:
+    client_time: 80.46530890464783
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"1018"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: strlen
+  description: String length for large string predicate
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(?o))
+    AS ?checksum) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 81.2844648361206
+  result_size: 1
+  headers:
+  - checksum
+  results:
+  - - '"951505867"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: strbefore
+  description: STRBEFORE string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(STRBEFORE(?o,
+    "a"))) AS ?checksum) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 82.51323866844177
+  result_size: 1
+  headers:
+  - checksum
+  results:
+  - - '"70920208"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: strafter
+  description: STRAFTER string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT (SUM(STRLEN(STRAFTER(?o,
+    "a"))) AS ?checksum) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 81.10850429534912
+  result_size: 1
+  headers:
+  - checksum
+  results:
+  - - '"859097996"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: strstarts
+  description: STRSTARTS string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    SELECT (SUM(xsd:integer(STRSTARTS(?o, "a"))) AS ?count) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 80.25112628936768
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"48"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: strends
+  description: STRENDS string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    SELECT (SUM(xsd:integer(STRENDS(?o, "a"))) AS ?count) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 79.86533761024475
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"393871"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: result-size-tiny
+  description: Export 10 tuples
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE
+    { ?s rdf:type ?o } LIMIT 10'
+  runtime_info:
+    client_time: 0.010445117950439453
+  result_size: 10
+  headers:
+  - s
+  - o
+  results:
+  - - <https://dblp.org/rec/conf/scisisis/NarazakiIITNN12>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/mm/HanWYWL20>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/icaart/GattutaLSSS20>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/iccvw/ShelhamerBD15>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/iat/AnyouzoaD03>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+- name: result-size-small
+  description: Export 1000 tuples
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE
+    { ?s rdf:type ?o } LIMIT 1000'
+  runtime_info:
+    client_time: 0.03734636306762695
+  result_size: 1000
+  headers:
+  - s
+  - o
+  results:
+  - - <https://dblp.org/rec/conf/scisisis/NarazakiIITNN12>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/mm/HanWYWL20>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/icaart/GattutaLSSS20>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/iccvw/ShelhamerBD15>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/iat/AnyouzoaD03>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+- name: result-size-medium
+  description: Export 100K tuples
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE
+    { ?s rdf:type ?o } LIMIT 100000'
+  runtime_info:
+    client_time: 1.0805511474609375
+  result_size: 100000
+  headers:
+  - s
+  - o
+  results:
+  - - <https://dblp.org/rec/conf/scisisis/NarazakiIITNN12>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/mm/HanWYWL20>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/icaart/GattutaLSSS20>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/iccvw/ShelhamerBD15>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/iat/AnyouzoaD03>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+- name: result-size-large
+  description: Export 1M tuples
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE
+    { ?s rdf:type ?o } LIMIT 1000000'
+  runtime_info:
+    client_time: 9.647716283798218
+  result_size: 1000000
+  headers:
+  - s
+  - o
+  results:
+  - - <https://dblp.org/rec/conf/scisisis/NarazakiIITNN12>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/mm/HanWYWL20>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/icaart/GattutaLSSS20>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/iccvw/ShelhamerBD15>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/iat/AnyouzoaD03>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+- name: result-size-xlarge
+  description: Export 10M tuples
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT ?s ?o WHERE
+    { ?s rdf:type ?o } LIMIT 10000000'
+  runtime_info:
+    client_time: 101.41051149368286
+  result_size: 10000000
+  headers:
+  - s
+  - o
+  results:
+  - - <https://dblp.org/rec/conf/scisisis/NarazakiIITNN12>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/mm/HanWYWL20>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/icaart/GattutaLSSS20>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/iccvw/ShelhamerBD15>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+  - - <https://dblp.org/rec/conf/iat/AnyouzoaD03>
+    - <https://dblp.org/rdf/schema#Inproceedings>
+- name: numeric-baseline
+  description: Baseline for numeric queries
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (SUM(?o) AS ?sum) WHERE
+    { ?s dblp:numberOfCreators ?o }'
+  runtime_info:
+    client_time: 3.0294029712677
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"27256943"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-abs
+  description: ABS function
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (SUM(ABS(?o)) AS ?sum)
+    WHERE { ?s dblp:numberOfCreators ?o }'
+  runtime_info:
+    client_time: 3.044081687927246
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"27256943"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-ceil
+  description: CEIL function
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (SUM(CEIL(?o)) AS ?sum)
+    WHERE { ?s dblp:numberOfCreators ?o }'
+  runtime_info:
+    client_time: 3.0968003273010254
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"27256943"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-floor
+  description: FLOOR function
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (SUM(FLOOR(?o)) AS ?sum)
+    WHERE { ?s dblp:numberOfCreators ?o }'
+  runtime_info:
+    client_time: 3.05621600151062
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"27256943"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-round
+  description: ROUND function
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (SUM(ROUND(?o)) AS ?sum)
+    WHERE { ?s dblp:numberOfCreators ?o }'
+  runtime_info:
+    client_time: 3.1039323806762695
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"27256943"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-add
+  description: Addition
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (SUM(?o + ?o) AS ?sum)
+    WHERE { ?s dblp:numberOfCreators ?o }'
+  runtime_info:
+    client_time: 4.6458516120910645
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"54513886"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-greater
+  description: Greater than
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (SUM(?o > 0) AS ?sum)
+    WHERE { ?s dblp:numberOfCreators ?o }'
+  runtime_info:
+    client_time: 4.716374397277832
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - []
+- name: numeric-filter-bin-search-fifty-fifty
+  description: Numeric FILTER that filters out 50 percent of the values
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(?s) AS ?count)
+    { ?s dblp:numberOfCreators ?o . FILTER (?o >= 2) }'
+  runtime_info:
+    client_time: 49.918212890625
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"6878294"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-filter-bin-search-seventy-thirty
+  description: Numeric FILTER that filters out 70 percent of the values
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(?s) AS ?count)
+    { ?s dblp:numberOfCreators ?o . FILTER (?o >= 3) }'
+  runtime_info:
+    client_time: 36.59519362449646
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"5012016"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-filter-bin-search-ninetyfive-five
+  description: Numeric FILTER that filters out 95 percent of the values
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(?s) AS ?count)
+    { ?s dblp:numberOfCreators ?o . FILTER (?o >= 7) }'
+  runtime_info:
+    client_time: 3.080212116241455
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"514402"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: filter-few-results
+  description: FILTER that filters out most rows and has few results
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(?s)
+    AS ?count) { ?s rdf:type ?o . FILTER (?s = ?o) }'
+  runtime_info:
+    client_time: 9.8323814868927
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: filter-many-results
+  description: FILTER that filters out few rows and has many results
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT (COUNT(?s)
+    AS ?count) { ?s rdf:type ?o . FILTER (?s != ?o) }'
+  runtime_info:
+    client_time: 180.01178646087646
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: filter-language-en
+  description: FILTER on string predicate for only English literals
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (COUNT(?s) AS ?count)
+    { ?s dblp:signatureDblpName ?o . FILTER(LANG(?o) = "en") }'
+  runtime_info:
+    client_time: 32.88321900367737
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: date-year
+  description: YEAR function
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (SUM(YEAR(?o)) AS ?sum)
+    WHERE { ?s dblp:yearOfPublication ?o }'
+  runtime_info:
+    client_time: 6.219553709030151
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"16241913607"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: date-month
+  description: MONTH function
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (SUM(MONTH(?o)) AS ?sum)
+    WHERE { ?s dblp:yearOfPublication ?o }'
+  runtime_info:
+    client_time: 5.609606742858887
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - []
+- name: date-day
+  description: DAY function
+  query: 'PREFIX dblp: <https://dblp.org/rdf/schema#> SELECT (SUM(DAY(?o)) AS ?sum)
+    WHERE { ?s dblp:yearOfPublication ?o }'
+  runtime_info:
+    client_time: 5.654780864715576
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - []
+- name: number-of-triples
+  description: Total number of triples
+  query: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 180.00970673561096
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: number-of-subjects
+  description: Total number of distinct subjects
+  query: SELECT (COUNT(DISTINCT ?s) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 180.01126432418823
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: number-of-predicates
+  description: Total number of distinct predicates
+  query: SELECT (COUNT(DISTINCT ?p) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 134.0797564983368
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"90"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: number-of-objects
+  description: Total number of distinct objects
+  query: SELECT (COUNT(DISTINCT ?o) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 180.01083421707153
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: number-of-literals
+  description: Total number of literals
+  query: SELECT (COUNT(?o) AS ?count) WHERE { ?s ?p ?o FILTER ISLITERAL(?o) }
+  runtime_info:
+    client_time: 180.01127576828003
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: number-of-blank-nodes
+  description: Total number of blank nodes
+  query: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o FILTER ISBLANK(?s) }
+  runtime_info:
+    client_time: 180.01190185546875
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+title: Sparqloscope DBLP Evaluation (~525M triples)
+description: Sparqloscope benchmark for DBLP computer science bibliography, data from
+  https://dblp.org/rdf (01.09.2025), ~525 million triples. Sparqloscope at https://github.com/ad-freiburg/sparqloscope
+timeout: 180
+name: Sparqloscope DBLP (~525M triples)
+scale: 500000000

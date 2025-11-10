@@ -1,0 +1,3546 @@
+queries:
+- name: test1_query_1
+  description: Randomly selected query 1 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age> <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup8>
+    . ?v0 <http://xmlns.com/foaf/familyName> ?v2 }
+  runtime_info:
+    client_time: 2.008220911026001
+  result_size: 3883
+  headers:
+  - v0
+  - v2
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User327486>
+    - '"ELISA"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User494658>
+    - '"DON"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User496829>
+    - '"CHARITY"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User182091>
+    - '"RACHELLE"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User213746>
+    - '"MILES"'
+- name: test1_query_2
+  description: Randomly selected query 2 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v0 <http://purl.org/dc/terms/Location> ?v1 . ?v0 <http://schema.org/birthDate>
+    ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/follows> ?v0 }
+  runtime_info:
+    client_time: 11.000303030014038
+  result_size: 1
+  headers:
+  - v0
+  - v1
+  - v2
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User119412>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City0>
+    - '"1998-09-12"'
+- name: test1_query_3
+  description: Randomly selected query 3 from watdiv test 1
+  query: SELECT * WHERE { ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/Genre10>
+    . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v2 . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://schema.org/expires> ?v4 . ?v1 <http://schema.org/text> ?v5 .
+    ?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v1 }
+  runtime_info:
+    client_time: 1.249100923538208
+  result_size: 3328
+  headers:
+  - v0
+  - v1
+  - v2
+  - v4
+  - v5
+  - v6
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer304584>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product25608>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre92>
+    - '"2016-11-29"'
+    - '"gouged valance''s guttersnipes fuller vocational gushers earful welt liquidator''s
+      Harrington''s hangover''s needy plunked wriggler''s quick diminuendo platonic
+      furling Kathy excretion''s Shavian''s undulates howdy secretarial"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User452560>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer304584>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product25608>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre92>
+    - '"2016-11-29"'
+    - '"gouged valance''s guttersnipes fuller vocational gushers earful welt liquidator''s
+      Harrington''s hangover''s needy plunked wriggler''s quick diminuendo platonic
+      furling Kathy excretion''s Shavian''s undulates howdy secretarial"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User136528>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer304584>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product25608>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre92>
+    - '"2016-11-29"'
+    - '"gouged valance''s guttersnipes fuller vocational gushers earful welt liquidator''s
+      Harrington''s hangover''s needy plunked wriggler''s quick diminuendo platonic
+      furling Kathy excretion''s Shavian''s undulates howdy secretarial"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User62767>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer304584>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product25608>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre92>
+    - '"2016-11-29"'
+    - '"gouged valance''s guttersnipes fuller vocational gushers earful welt liquidator''s
+      Harrington''s hangover''s needy plunked wriggler''s quick diminuendo platonic
+      furling Kathy excretion''s Shavian''s undulates howdy secretarial"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User457381>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer304584>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product25608>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre92>
+    - '"2016-11-29"'
+    - '"gouged valance''s guttersnipes fuller vocational gushers earful welt liquidator''s
+      Harrington''s hangover''s needy plunked wriggler''s quick diminuendo platonic
+      furling Kathy excretion''s Shavian''s undulates howdy secretarial"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User449352>
+- name: test1_query_4
+  description: Randomly selected query 4 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product140599>
+    . ?v0 <http://purl.org/goodrelations/price> ?v2 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v3 . ?v0 <http://schema.org/priceValidUntil> ?v4 }
+  runtime_info:
+    client_time: 0.009363651275634766
+  result_size: 0
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  results: []
+- name: test1_query_5
+  description: Randomly selected query 5 from watdiv test 1
+  query: SELECT * WHERE { ?v1 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic120>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://schema.org/description>
+    ?v6 . ?v0 <http://purl.org/goodrelations/serialNumber> ?v2 . ?v0 <http://purl.org/goodrelations/validFrom>
+    ?v3 . ?v0 <http://purl.org/goodrelations/validThrough> ?v4 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v7 . ?v0 <http://schema.org/eligibleRegion> ?v8 }
+  runtime_info:
+    client_time: 0.7599277496337891
+  result_size: 2038
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v4
+  - v6
+  - v7
+  - v8
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer210702>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product75397>
+    - '"87794638"'
+    - '"2013-04-19"'
+    - '"2013-11-28"'
+    - '"contribute Nebraskans homophobia murmur amaze Chinooks crop parsed mannishly
+      osier dillydally swopped destination Cortes''s copilot''s"'
+    - '"6"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country14>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer210702>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product75397>
+    - '"87794638"'
+    - '"2013-04-19"'
+    - '"2013-11-28"'
+    - '"contribute Nebraskans homophobia murmur amaze Chinooks crop parsed mannishly
+      osier dillydally swopped destination Cortes''s copilot''s"'
+    - '"6"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country10>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer210702>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product75397>
+    - '"87794638"'
+    - '"2013-04-19"'
+    - '"2013-11-28"'
+    - '"contribute Nebraskans homophobia murmur amaze Chinooks crop parsed mannishly
+      osier dillydally swopped destination Cortes''s copilot''s"'
+    - '"6"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country0>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer210702>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product75397>
+    - '"87794638"'
+    - '"2013-04-19"'
+    - '"2013-11-28"'
+    - '"contribute Nebraskans homophobia murmur amaze Chinooks crop parsed mannishly
+      osier dillydally swopped destination Cortes''s copilot''s"'
+    - '"6"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country1>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer11388>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product95546>
+    - '"99489377"'
+    - '"2013-04-05"'
+    - '"2013-09-05"'
+    - '"antiquating analyzes brooding sweetmeat''s containing dram"'
+    - '"6"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country2>
+- name: test1_query_6
+  description: Randomly selected query 6 from watdiv test 1
+  query: SELECT * WHERE { ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory11>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://ogp.me/ns#tag>
+    ?v2 . ?v1 <http://ogp.me/ns#title> ?v4 . ?v1 <http://schema.org/expires> ?v7 .
+    ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v3 . ?v3 <http://ogp.me/ns#tag>
+    ?v2 . ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v6 }
+  runtime_info:
+    client_time: 1.1327028274536133
+  result_size: 247
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v4
+  - v6
+  - v7
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer150079>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product40066>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic97>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre53>
+    - '"decapitates bo''s''n''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre3>
+    - '"2018-05-28"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer379293>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product40066>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic97>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre53>
+    - '"decapitates bo''s''n''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre3>
+    - '"2018-05-28"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer399291>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product40066>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic97>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre53>
+    - '"decapitates bo''s''n''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre3>
+    - '"2018-05-28"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer74963>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product40066>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic97>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre53>
+    - '"decapitates bo''s''n''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre3>
+    - '"2018-05-28"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer228786>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product33045>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic38>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre64>
+    - '"hedonism"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre11>
+    - '"2014-07-18"'
+- name: test1_query_7
+  description: Randomly selected query 7 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer2946> <http://purl.org/goodrelations/offers>
+    ?v0 . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v0 <http://purl.org/goodrelations/serialNumber>
+    ?v3 . ?v0 <http://purl.org/goodrelations/validThrough> ?v4 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v5 . ?v0 <http://schema.org/priceValidUntil> ?v6 }
+  runtime_info:
+    client_time: 0.014797687530517578
+  result_size: 6
+  headers:
+  - v0
+  - v1
+  - v3
+  - v4
+  - v5
+  - v6
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer162>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product12348>
+    - '"78869760"'
+    - '"2013-11-03"'
+    - '"8"'
+    - '"2013-07-07"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer250014>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product101256>
+    - '"13032082"'
+    - '"2013-10-30"'
+    - '"6"'
+    - '"2013-06-23"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer243548>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product81200>
+    - '"19520837"'
+    - '"2013-12-12"'
+    - '"6"'
+    - '"2013-08-26"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer184>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product76456>
+    - '"37666686"'
+    - '"2013-12-18"'
+    - '"9"'
+    - '"2013-07-30"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer380>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product82897>
+    - '"64686682"'
+    - '"2013-10-13"'
+    - '"4"'
+    - '"2013-08-05"'
+- name: test1_query_8
+  description: Randomly selected query 8 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v0 <http://xmlns.com/foaf/age> ?v1 . ?v0 <http://schema.org/email> ?v2 . ?v0
+    <http://schema.org/nationality> ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf>
+    ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v5 }
+  runtime_info:
+    client_time: 3.1350045204162598
+  result_size: 19
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v5
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User894>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"leggins hardheartedness emitting thickening''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country11>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product36073>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User894>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"leggins hardheartedness emitting thickening''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country11>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product63352>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User894>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"leggins hardheartedness emitting thickening''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country11>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product12618>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User894>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"leggins hardheartedness emitting thickening''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country11>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product91980>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User894>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"leggins hardheartedness emitting thickening''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country11>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product52097>
+- name: test1_query_9
+  description: Randomly selected query 9 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic52>
+    . ?v0 <http://ogp.me/ns#title> ?v2 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 }
+  runtime_info:
+    client_time: 1.242971658706665
+  result_size: 10616
+  headers:
+  - v0
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product87993>
+    - '"graphologist''s soundless knells cote roadwork procession cringe''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User192253>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product87993>
+    - '"graphologist''s soundless knells cote roadwork procession cringe''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User226331>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product87993>
+    - '"graphologist''s soundless knells cote roadwork procession cringe''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User346330>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product12930>
+    - '"practitioners Lanny"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User324583>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product12930>
+    - '"practitioners Lanny"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User406184>
+- name: test1_query_10
+  description: Randomly selected query 10 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://purl.org/goodrelations/offers> <http://db.uwaterloo.ca/~galuc/wsdbm/Offer158538>
+    . ?v0 <http://schema.org/telephone> ?v2 }
+  runtime_info:
+    client_time: 0.013206720352172852
+  result_size: 0
+  headers:
+  - v0
+  - v2
+  results: []
+- name: test1_query_11
+  description: Randomly selected query 11 from watdiv test 1
+  query: SELECT * WHERE { ?v1 <http://schema.org/eligibleRegion> <http://db.uwaterloo.ca/~galuc/wsdbm/Country1>
+    . ?v0 <http://purl.org/goodrelations/offers> ?v1 . ?v1 <http://purl.org/goodrelations/price>
+    ?v2 . ?v1 <http://schema.org/priceValidUntil> ?v4 }
+  runtime_info:
+    client_time: 5.217215299606323
+  result_size: 38041
+  headers:
+  - v0
+  - v1
+  - v2
+  - v4
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer5002>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer279247>
+    - '"58"'
+    - '"2013-07-25"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer4417>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer1699>
+    - '"918"'
+    - '"2013-08-23"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1456>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer1699>
+    - '"918"'
+    - '"2013-08-23"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer2445>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer1699>
+    - '"918"'
+    - '"2013-08-23"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer2432>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer1699>
+    - '"918"'
+    - '"2013-08-23"'
+- name: test1_query_12
+  description: Randomly selected query 12 from watdiv test 1
+  query: SELECT * WHERE { ?v1 <http://schema.org/eligibleRegion> <http://db.uwaterloo.ca/~galuc/wsdbm/Country20>
+    . ?v0 <http://purl.org/goodrelations/offers> ?v1 . ?v1 <http://purl.org/goodrelations/price>
+    ?v2 . ?v1 <http://schema.org/priceValidUntil> ?v4 }
+  runtime_info:
+    client_time: 0.5390539169311523
+  result_size: 4021
+  headers:
+  - v0
+  - v1
+  - v2
+  - v4
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1016>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer422737>
+    - '"263"'
+    - '"2013-08-14"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer5694>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer183216>
+    - '"223"'
+    - '"2013-07-21"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer2869>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer245851>
+    - '"809"'
+    - '"2013-08-30"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer2132>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer245851>
+    - '"809"'
+    - '"2013-08-30"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer5017>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer166330>
+    - '"958"'
+    - '"2013-08-01"'
+- name: test1_query_13
+  description: Randomly selected query 13 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic165>
+    . ?v0 <http://purl.org/stuff/rev#hasReview> ?v2 . ?v0 <http://schema.org/contentRating>
+    ?v6 . ?v0 <http://schema.org/description> ?v7 . ?v0 <http://schema.org/keywords>
+    ?v8 . ?v2 <http://purl.org/stuff/rev#rating> ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer>
+    ?v4 . ?v2 <http://purl.org/stuff/rev#totalVotes> ?v5 }
+  runtime_info:
+    client_time: 0.3030726909637451
+  result_size: 43
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product85361>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review454051>
+    - '"10"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User233891>
+    - '"198"'
+    - '"18"'
+    - '"playboy''s opting draft robing inflected readership''s Buffy''s bronzed"'
+    - '"sexuality''s portends letup playthings irrevocable airdropped endemics paddocking
+      captivated billionaire''s droned inferiority''s existentialists consortium unsaddle
+      Ronda awfulness acidifying hulk flack counterrevolutions travel jauntiness''s"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product85361>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review60336>
+    - '"7"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User383655>
+    - '"35"'
+    - '"18"'
+    - '"playboy''s opting draft robing inflected readership''s Buffy''s bronzed"'
+    - '"sexuality''s portends letup playthings irrevocable airdropped endemics paddocking
+      captivated billionaire''s droned inferiority''s existentialists consortium unsaddle
+      Ronda awfulness acidifying hulk flack counterrevolutions travel jauntiness''s"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product85361>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review685810>
+    - '"6"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User114088>
+    - '"461"'
+    - '"18"'
+    - '"playboy''s opting draft robing inflected readership''s Buffy''s bronzed"'
+    - '"sexuality''s portends letup playthings irrevocable airdropped endemics paddocking
+      captivated billionaire''s droned inferiority''s existentialists consortium unsaddle
+      Ronda awfulness acidifying hulk flack counterrevolutions travel jauntiness''s"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product85361>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review444159>
+    - '"2"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User313836>
+    - '"138"'
+    - '"18"'
+    - '"playboy''s opting draft robing inflected readership''s Buffy''s bronzed"'
+    - '"sexuality''s portends letup playthings irrevocable airdropped endemics paddocking
+      captivated billionaire''s droned inferiority''s existentialists consortium unsaddle
+      Ronda awfulness acidifying hulk flack counterrevolutions travel jauntiness''s"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product112203>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review675777>
+    - '"4"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User195414>
+    - '"621"'
+    - '"7"'
+    - '"desperation further trivial rotundity entombs Scot convalescence haunt dons
+      away"'
+    - '"replacements breakage''s surface bedtime''s hags hobby breakpoints Habakkuk
+      Albanians Lon Taliban''s wooding alive strands sorest caster aspirations monarchist''s
+      homicide crematory''s"'
+- name: test1_query_14
+  description: Randomly selected query 14 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://schema.org/nationality> <http://db.uwaterloo.ca/~galuc/wsdbm/Country16>
+    . ?v0 <http://xmlns.com/foaf/familyName> ?v1 . ?v0 <http://schema.org/birthDate>
+    ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> ?v4 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v5 }
+  runtime_info:
+    client_time: 0.07677054405212402
+  result_size: 146
+  headers:
+  - v0
+  - v1
+  - v2
+  - v4
+  - v5
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User83789>
+    - '"GUY"'
+    - '"1991-01-03"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product3>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User83789>
+    - '"GUY"'
+    - '"1991-01-03"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product0>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User348737>
+    - '"SIMONE"'
+    - '"1970-12-26"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product3>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User348737>
+    - '"SIMONE"'
+    - '"1970-12-26"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product3165>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User146391>
+    - '"RAE"'
+    - '"1995-07-13"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product6728>
+- name: test1_query_15
+  description: Randomly selected query 15 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic144>
+    . ?v0 <http://schema.org/keywords> ?v2 . ?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor>
+    ?v0 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase> ?v4 . ?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate>
+    ?v5 }
+  runtime_info:
+    client_time: 0.49683308601379395
+  result_size: 1269
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  - v5
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product14088>
+    - '"mitts crimps Dirichlet heavenly Rochambeau sics copycatted saws bonny flippant
+      gingivitis luckless Keller portion''s virgin"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User93453>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase484423>
+    - '"2012-01-25"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product4725>
+    - '"trefoil''s Svengali attaining quarreled residuals superficiality"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User49462>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase301127>
+    - '"2012-06-22"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product4725>
+    - '"trefoil''s Svengali attaining quarreled residuals superficiality"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User227044>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase308392>
+    - '"2012-04-05"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product110087>
+    - '"dealer''s combustion''s Samoan''s Tallahassee submerses disestablish asperity"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User260132>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase279856>
+    - '"2012-07-20"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product52975>
+    - '"Conner''s twelves shoulders chicory''s loyal totem''s telephone obit''s goiter
+      cosmoses pauses humbleness''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User405407>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase484721>
+    - '"2012-08-14"'
+- name: test1_query_16
+  description: Randomly selected query 16 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory12>
+    . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v2 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 }
+  runtime_info:
+    client_time: 1.9572651386260986
+  result_size: 77443
+  headers:
+  - v0
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product52440>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre43>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User94104>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product52440>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre43>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User251594>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product52440>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre43>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User10875>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product52440>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre43>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User376475>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product52440>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre43>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User450492>
+- name: test1_query_17
+  description: Randomly selected query 17 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion> <http://db.uwaterloo.ca/~galuc/wsdbm/Country16>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v2 <http://purl.org/goodrelations/offers>
+    ?v0 . ?v0 <http://purl.org/goodrelations/validFrom> ?v3 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v4 . ?v0 <http://schema.org/eligibleQuantity> ?v5 . ?v0 <http://schema.org/priceValidUntil>
+    ?v7 }
+  runtime_info:
+    client_time: 0.6312787532806396
+  result_size: 502
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v4
+  - v5
+  - v7
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer23046>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product29344>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1864>
+    - '"2013-05-13"'
+    - '"2013-10-02"'
+    - '"7"'
+    - '"2013-08-26"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer23046>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product29344>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer4421>
+    - '"2013-05-13"'
+    - '"2013-10-02"'
+    - '"7"'
+    - '"2013-08-26"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer269163>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product1122>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer5886>
+    - '"2013-04-08"'
+    - '"2013-12-18"'
+    - '"7"'
+    - '"2013-06-29"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer269163>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product1122>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1202>
+    - '"2013-04-08"'
+    - '"2013-12-18"'
+    - '"7"'
+    - '"2013-06-29"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer157381>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product48999>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer4150>
+    - '"2013-06-13"'
+    - '"2013-10-14"'
+    - '"4"'
+    - '"2013-07-07"'
+- name: test1_query_18
+  description: Randomly selected query 18 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/Role2>
+    . ?v0 <http://schema.org/birthDate> ?v2 . ?v0 <http://schema.org/jobTitle> ?v3
+    . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v4 }
+  runtime_info:
+    client_time: 2.039712905883789
+  result_size: 1290
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User460879>
+    - '"1975-09-24"'
+    - '"scorers coagulation''s groaning increments survivals occupy journalistic stagflation
+      uncertainly Duse''s Heinlein forswearing jackknives cheetahs eighth''s drink''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product42>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User460879>
+    - '"1975-09-24"'
+    - '"scorers coagulation''s groaning increments survivals occupy journalistic stagflation
+      uncertainly Duse''s Heinlein forswearing jackknives cheetahs eighth''s drink''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product275>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User460879>
+    - '"1975-09-24"'
+    - '"scorers coagulation''s groaning increments survivals occupy journalistic stagflation
+      uncertainly Duse''s Heinlein forswearing jackknives cheetahs eighth''s drink''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product27>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User203160>
+    - '"1994-07-06"'
+    - '"ringworm huntresses truncation''s avow oversleeps audibility''s brasher devalued
+      prodigious mourning passive Mohammedanisms dressmaker outcropped Tessa circularity''s
+      pussyfoots conjure broadening pragmatist hairpieces chimpanzee bankruptcy''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product1>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User203160>
+    - '"1994-07-06"'
+    - '"ringworm huntresses truncation''s avow oversleeps audibility''s brasher devalued
+      prodigious mourning passive Mohammedanisms dressmaker outcropped Tessa circularity''s
+      pussyfoots conjure broadening pragmatist hairpieces chimpanzee bankruptcy''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product995>
+- name: test1_query_19
+  description: Randomly selected query 19 from watdiv test 1
+  query: SELECT * WHERE { ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v2 <http://schema.org/jobTitle> ?v3 . ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase>
+    ?v0 . ?v0 <http://purl.org/goodrelations/price> ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate>
+    ?v5 }
+  runtime_info:
+    client_time: 3.175903081893921
+  result_size: 5246
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v5
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase315246>
+    - '"741"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User187184>
+    - '"brownie breakdowns tyrannies compact engravings stripteasing abnegation''s
+      sternness lengthy Pierce marketplace''s unquestioned zoologist''s"'
+    - '"2012-09-16"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase492755>
+    - '"638"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User187184>
+    - '"brownie breakdowns tyrannies compact engravings stripteasing abnegation''s
+      sternness lengthy Pierce marketplace''s unquestioned zoologist''s"'
+    - '"2012-07-20"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase190258>
+    - '"745"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User187184>
+    - '"brownie breakdowns tyrannies compact engravings stripteasing abnegation''s
+      sternness lengthy Pierce marketplace''s unquestioned zoologist''s"'
+    - '"2012-08-04"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase283235>
+    - '"997"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User348506>
+    - '"hackers Orientals overnights immorality ragouts"'
+    - '"2012-07-19"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase220612>
+    - '"382"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User348506>
+    - '"hackers Orientals overnights immorality ragouts"'
+    - '"2012-05-26"'
+- name: test1_query_20
+  description: Randomly selected query 20 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/User284435> <http://schema.org/nationality>
+    ?v2 . ?v0 <http://schema.org/eligibleRegion> ?v2 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v1 }
+  runtime_info:
+    client_time: 0.00908207893371582
+  result_size: 0
+  headers:
+  - v0
+  - v1
+  - v2
+  results: []
+- name: test1_query_21
+  description: Randomly selected query 21 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v0 <http://purl.org/dc/terms/Location> ?v1 . ?v0 <http://xmlns.com/foaf/givenName>
+    ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId> ?v4 }
+  runtime_info:
+    client_time: 4.999737977981567
+  result_size: 63330
+  headers:
+  - v0
+  - v1
+  - v2
+  - v4
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User73095>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City6>
+    - '"EVE"'
+    - '"5070019"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User377281>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City66>
+    - '"LYNNETTE"'
+    - '"4515346"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User384563>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City0>
+    - '"ELEANOR"'
+    - '"2783932"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User317448>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City0>
+    - '"JEFFERY"'
+    - '"5395123"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User327486>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City7>
+    - '"KAYLA"'
+    - '"7851249"'
+- name: test1_query_22
+  description: Randomly selected query 22 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://xmlns.com/foaf/homepage> <http://db.uwaterloo.ca/~galuc/wsdbm/Website37254>
+    . ?v0 <http://ogp.me/ns#title> ?v2 . ?v0 <http://schema.org/contentRating> ?v3
+    }
+  runtime_info:
+    client_time: 0.010013580322265625
+  result_size: 0
+  headers:
+  - v0
+  - v2
+  - v3
+  results: []
+- name: test1_query_23
+  description: Randomly selected query 23 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer6887> <http://purl.org/goodrelations/offers>
+    ?v0 . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v0 <http://purl.org/goodrelations/price>
+    ?v3 . ?v0 <http://purl.org/goodrelations/validThrough> ?v4 . ?v1 <http://schema.org/text>
+    ?v5 }
+  runtime_info:
+    client_time: 0.007285118103027344
+  result_size: 0
+  headers:
+  - v0
+  - v1
+  - v3
+  - v4
+  - v5
+  results: []
+- name: test1_query_24
+  description: Randomly selected query 24 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age> <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    . ?v2 <http://schema.org/author> ?v0 . ?v0 <http://schema.org/telephone> ?v3 }
+  runtime_info:
+    client_time: 0.7176246643066406
+  result_size: 82
+  headers:
+  - v0
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User286674>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product75449>
+    - '"3434083"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User269456>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product108204>
+    - '"5253706"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User491570>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product102229>
+    - '"6067946"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User195199>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product107368>
+    - '"2616622"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User348335>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product47542>
+    - '"3525839"'
+- name: test1_query_25
+  description: Randomly selected query 25 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase60407> <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor>
+    ?v3 . ?v2 <http://purl.org/goodrelations/includes> ?v3 . ?v2 <http://purl.org/goodrelations/validThrough>
+    ?v4 . ?v2 <http://schema.org/eligibleQuantity> ?v5 . ?v2 <http://schema.org/eligibleRegion>
+    ?v1 . ?v0 <http://www.geonames.org/ontology#parentCountry> ?v1 . ?v6 <http://schema.org/nationality>
+    ?v1 }
+  runtime_info:
+    client_time: 38.635868549346924
+  result_size: 2521748
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/City0>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country3>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer57769>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product99>
+    - '"2013-10-15"'
+    - '"4"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User67618>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/City0>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country3>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer57769>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product99>
+    - '"2013-10-15"'
+    - '"4"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User429564>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/City0>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country3>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer57769>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product99>
+    - '"2013-10-15"'
+    - '"4"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User101813>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/City0>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country3>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer57769>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product99>
+    - '"2013-10-15"'
+    - '"4"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User122313>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/City0>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country3>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer57769>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product99>
+    - '"2013-10-15"'
+    - '"4"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User315534>
+- name: test1_query_26
+  description: Randomly selected query 26 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre90>
+    . ?v0 <http://xmlns.com/foaf/homepage> ?v1 . ?v0 <http://ogp.me/ns#tag> ?v2 .
+    ?v0 <http://schema.org/keywords> ?v3 }
+  runtime_info:
+    client_time: 0.19679856300354004
+  result_size: 1540
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product120247>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website68>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic193>
+    - '"cobblestone appendix sledding interventions patronizing carsick Thea''s irritation''s
+      geothermal slaved squashier physiologist''s skiers voluminously stages supervision
+      sunken backhand''s bloodhound''s Chevron accuser''s cussed"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product120247>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website68>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic203>
+    - '"cobblestone appendix sledding interventions patronizing carsick Thea''s irritation''s
+      geothermal slaved squashier physiologist''s skiers voluminously stages supervision
+      sunken backhand''s bloodhound''s Chevron accuser''s cussed"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product120247>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website68>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic105>
+    - '"cobblestone appendix sledding interventions patronizing carsick Thea''s irritation''s
+      geothermal slaved squashier physiologist''s skiers voluminously stages supervision
+      sunken backhand''s bloodhound''s Chevron accuser''s cussed"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product120247>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website68>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic7>
+    - '"cobblestone appendix sledding interventions patronizing carsick Thea''s irritation''s
+      geothermal slaved squashier physiologist''s skiers voluminously stages supervision
+      sunken backhand''s bloodhound''s Chevron accuser''s cussed"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product120247>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website68>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic23>
+    - '"cobblestone appendix sledding interventions patronizing carsick Thea''s irritation''s
+      geothermal slaved squashier physiologist''s skiers voluminously stages supervision
+      sunken backhand''s bloodhound''s Chevron accuser''s cussed"'
+- name: test1_query_27
+  description: Randomly selected query 27 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://xmlns.com/foaf/homepage> <http://db.uwaterloo.ca/~galuc/wsdbm/Website47382>
+    . ?v0 <http://ogp.me/ns#title> ?v2 . ?v0 <http://schema.org/contentRating> ?v3
+    }
+  runtime_info:
+    client_time: 0.009279727935791016
+  result_size: 0
+  headers:
+  - v0
+  - v2
+  - v3
+  results: []
+- name: test1_query_28
+  description: Randomly selected query 28 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer11958> <http://purl.org/goodrelations/offers>
+    ?v1 . ?v1 <http://purl.org/goodrelations/price> ?v2 . ?v1 <http://schema.org/eligibleRegion>
+    ?v3 }
+  runtime_info:
+    client_time: 0.008373737335205078
+  result_size: 0
+  headers:
+  - v1
+  - v2
+  - v3
+  results: []
+- name: test1_query_29
+  description: Randomly selected query 29 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory10>
+    . ?v0 <http://ogp.me/ns#tag> ?v1 . ?v0 <http://schema.org/contentRating> ?v5 .
+    ?v0 <http://schema.org/contentSize> ?v6 . ?v0 <http://schema.org/description>
+    ?v7 . ?v8 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 . ?v2 <http://ogp.me/ns#tag>
+    ?v1 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v4 }
+  runtime_info:
+    client_time: 62.00672745704651
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: test1_query_30
+  description: Randomly selected query 30 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City111> <http://www.geonames.org/ontology#parentCountry>
+    ?v1 . ?v2 <http://schema.org/eligibleRegion> ?v1 . ?v4 <http://schema.org/nationality>
+    ?v1 . ?v2 <http://schema.org/eligibleQuantity> ?v3 }
+  runtime_info:
+    client_time: 62.00542902946472
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: test1_query_31
+  description: Randomly selected query 31 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase74207> . ?v0 <http://xmlns.com/foaf/familyName>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId>
+    ?v4 }
+  runtime_info:
+    client_time: 0.009962081909179688
+  result_size: 0
+  headers:
+  - v0
+  - v1
+  - v2
+  - v4
+  results: []
+- name: test1_query_32
+  description: Randomly selected query 32 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> <http://db.uwaterloo.ca/~galuc/wsdbm/Website13157>
+    . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId> ?v2 }
+  runtime_info:
+    client_time: 0.015756845474243164
+  result_size: 37
+  headers:
+  - v0
+  - v2
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User43178>
+    - '"1954613"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User498396>
+    - '"9883939"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User113001>
+    - '"3785824"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User137413>
+    - '"5359940"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User496289>
+    - '"4982373"'
+- name: test1_query_33
+  description: Randomly selected query 33 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://purl.org/goodrelations/offers> <http://db.uwaterloo.ca/~galuc/wsdbm/Offer544420>
+    . ?v0 <http://schema.org/telephone> ?v2 }
+  runtime_info:
+    client_time: 0.0066640377044677734
+  result_size: 0
+  headers:
+  - v0
+  - v2
+  results: []
+- name: test1_query_34
+  description: Randomly selected query 34 from watdiv test 1
+  query: SELECT * WHERE { ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre116>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://schema.org/contentSize>
+    ?v2 . ?v1 <http://schema.org/description> ?v3 }
+  runtime_info:
+    client_time: 0.05778217315673828
+  result_size: 202
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer290408>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product70296>
+    - '"9512"'
+    - '"obtrudes jury''s podium bisque curvature''s exiling orphans countertenor''s
+      darkest debunked chutzpa frigidly patio''s radiogram''s generation subverts"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer327187>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product70296>
+    - '"9512"'
+    - '"obtrudes jury''s podium bisque curvature''s exiling orphans countertenor''s
+      darkest debunked chutzpa frigidly patio''s radiogram''s generation subverts"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer60922>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product70296>
+    - '"9512"'
+    - '"obtrudes jury''s podium bisque curvature''s exiling orphans countertenor''s
+      darkest debunked chutzpa frigidly patio''s radiogram''s generation subverts"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer109790>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product33032>
+    - '"6698"'
+    - '"flooring inquiry Orly Oligocene''s misunderstanding tactless stuttering headwind''s
+      urbanization speckles Turing entourage''s polishing faxing kinked honeymooned
+      maw"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer166504>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product33032>
+    - '"6698"'
+    - '"flooring inquiry Orly Oligocene''s misunderstanding tactless stuttering headwind''s
+      urbanization speckles Turing entourage''s polishing faxing kinked honeymooned
+      maw"'
+- name: test1_query_35
+  description: Randomly selected query 35 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v0 <http://xmlns.com/foaf/givenName> ?v1 . ?v0 <http://schema.org/nationality>
+    ?v3 . ?v2 <http://www.geonames.org/ontology#parentCountry> ?v3 . ?v4 <http://schema.org/eligibleRegion>
+    ?v3 }
+  runtime_info:
+    client_time: 62.00493383407593
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: test1_query_36
+  description: Randomly selected query 36 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v0 <http://xmlns.com/foaf/age> ?v1 . ?v0 <http://schema.org/email> ?v2 . ?v0
+    <http://schema.org/nationality> ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf>
+    ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v5 }
+  runtime_info:
+    client_time: 2.3132357597351074
+  result_size: 19
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v5
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User894>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"leggins hardheartedness emitting thickening''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country11>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product36073>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User894>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"leggins hardheartedness emitting thickening''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country11>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product63352>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User894>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"leggins hardheartedness emitting thickening''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country11>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product12618>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User894>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"leggins hardheartedness emitting thickening''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country11>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product91980>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User894>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"leggins hardheartedness emitting thickening''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country11>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product52097>
+- name: test1_query_37
+  description: Randomly selected query 37 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City229> <http://www.geonames.org/ontology#parentCountry>
+    ?v1 . ?v2 <http://schema.org/eligibleRegion> ?v1 . ?v2 <http://purl.org/goodrelations/validFrom>
+    ?v3 }
+  runtime_info:
+    client_time: 0.5615971088409424
+  result_size: 8159
+  headers:
+  - v1
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Country13>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer252933>
+    - '"2013-05-12"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Country13>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer141042>
+    - '"2013-03-22"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Country13>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer55611>
+    - '"2013-02-03"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Country13>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer298857>
+    - '"2013-05-31"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Country13>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer17141>
+    - '"2013-02-26"'
+- name: test1_query_38
+  description: Randomly selected query 38 from watdiv test 1
+  query: SELECT * WHERE { ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory9>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://ogp.me/ns#tag>
+    ?v2 . ?v1 <http://schema.org/contentRating> ?v6 . ?v1 <http://schema.org/description>
+    ?v7 . ?v1 <http://schema.org/keywords> ?v8 . ?v1 <http://schema.org/text> ?v9
+    . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v4 . ?v10 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v1 . ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v5 }
+  runtime_info:
+    client_time: 1.665363073348999
+  result_size: 27810
+  headers:
+  - v0
+  - v1
+  - v10
+  - v2
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  - v9
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer333691>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product87204>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User412776>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic20>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre42>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre18>
+    - '"17"'
+    - '"Mercado Assam agglomerations genre capitalizes Richthofen Bernadine''s disembodying
+      cockatoo''s Doris''s queasiest seasoning pavement"'
+    - '"bannister''s slinging Schnauzer''s doughtier"'
+    - '"hemlock''s huskers Cantrell''s prayers squatters yen Luvs horseflies pullets
+      heck''s legitimated swaggerer dipsomania''s Bordon''s"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer333691>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product87204>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User412776>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic20>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre30>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre0>
+    - '"17"'
+    - '"Mercado Assam agglomerations genre capitalizes Richthofen Bernadine''s disembodying
+      cockatoo''s Doris''s queasiest seasoning pavement"'
+    - '"bannister''s slinging Schnauzer''s doughtier"'
+    - '"hemlock''s huskers Cantrell''s prayers squatters yen Luvs horseflies pullets
+      heck''s legitimated swaggerer dipsomania''s Bordon''s"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer333691>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product87204>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User412776>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic193>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre42>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre18>
+    - '"17"'
+    - '"Mercado Assam agglomerations genre capitalizes Richthofen Bernadine''s disembodying
+      cockatoo''s Doris''s queasiest seasoning pavement"'
+    - '"bannister''s slinging Schnauzer''s doughtier"'
+    - '"hemlock''s huskers Cantrell''s prayers squatters yen Luvs horseflies pullets
+      heck''s legitimated swaggerer dipsomania''s Bordon''s"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer333691>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product87204>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User412776>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic193>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre30>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre0>
+    - '"17"'
+    - '"Mercado Assam agglomerations genre capitalizes Richthofen Bernadine''s disembodying
+      cockatoo''s Doris''s queasiest seasoning pavement"'
+    - '"bannister''s slinging Schnauzer''s doughtier"'
+    - '"hemlock''s huskers Cantrell''s prayers squatters yen Luvs horseflies pullets
+      heck''s legitimated swaggerer dipsomania''s Bordon''s"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer333691>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product87204>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User412776>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic187>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre42>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre18>
+    - '"17"'
+    - '"Mercado Assam agglomerations genre capitalizes Richthofen Bernadine''s disembodying
+      cockatoo''s Doris''s queasiest seasoning pavement"'
+    - '"bannister''s slinging Schnauzer''s doughtier"'
+    - '"hemlock''s huskers Cantrell''s prayers squatters yen Luvs horseflies pullets
+      heck''s legitimated swaggerer dipsomania''s Bordon''s"'
+- name: test1_query_39
+  description: Randomly selected query 39 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/Role1>
+    . ?v2 <http://schema.org/contactPoint> ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    ?v3 }
+  runtime_info:
+    client_time: 2.623582601547241
+  result_size: 883
+  headers:
+  - v0
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User268079>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer5554>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender0>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User113720>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer5608>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User250934>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer3607>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User330356>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer5787>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User353903>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer2522>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+- name: test1_query_40
+  description: Randomly selected query 40 from watdiv test 1
+  query: SELECT * WHERE { ?v2 <http://schema.org/eligibleRegion> <http://db.uwaterloo.ca/~galuc/wsdbm/Country11>
+    . ?v2 <http://purl.org/goodrelations/includes> ?v0 . ?v3 <http://purl.org/goodrelations/offers>
+    ?v2 . ?v2 <http://purl.org/goodrelations/price> ?v4 . ?v2 <http://purl.org/goodrelations/serialNumber>
+    ?v5 . ?v2 <http://purl.org/goodrelations/validFrom> ?v6 . ?v2 <http://purl.org/goodrelations/validThrough>
+    ?v7 . ?v2 <http://schema.org/eligibleQuantity> ?v8 . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v1 . ?v3 <http://schema.org/telephone> ?v10 }
+  runtime_info:
+    client_time: 1.3307054042816162
+  result_size: 1451
+  headers:
+  - v0
+  - v1
+  - v10
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product2485>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website20275>
+    - '"8634189"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer259074>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer4633>
+    - '"60"'
+    - '"87156399"'
+    - '"2013-06-13"'
+    - '"2013-11-20"'
+    - '"9"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product81971>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website931>
+    - '"6421754"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer219542>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer40>
+    - '"988"'
+    - '"91892638"'
+    - '"2013-01-13"'
+    - '"2013-11-26"'
+    - '"7"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product79978>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website21699>
+    - '"2777880"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer123153>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer2549>
+    - '"373"'
+    - '"30208082"'
+    - '"2013-02-21"'
+    - '"2013-12-18"'
+    - '"8"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product72429>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website20378>
+    - '"6318699"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer278088>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer4297>
+    - '"780"'
+    - '"40048335"'
+    - '"2013-02-11"'
+    - '"2013-12-10"'
+    - '"7"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product41226>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website24725>
+    - '"6987119"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer55823>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer2456>
+    - '"319"'
+    - '"23740405"'
+    - '"2013-04-10"'
+    - '"2013-10-23"'
+    - '"8"'
+- name: test1_query_41
+  description: Randomly selected query 41 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v0 <http://xmlns.com/foaf/homepage> ?v1 . ?v0 <http://schema.org/nationality>
+    ?v8 . ?v2 <http://schema.org/eligibleRegion> ?v8 . ?v2 <http://purl.org/goodrelations/includes>
+    ?v3 . ?v4 <http://purl.org/goodrelations/offers> ?v2 . ?v2 <http://purl.org/goodrelations/serialNumber>
+    ?v5 . ?v2 <http://purl.org/goodrelations/validThrough> ?v6 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v7 }
+  runtime_info:
+    client_time: 62.00774598121643
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: test1_query_42
+  description: Randomly selected query 42 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender0>
+    . ?v0 <http://xmlns.com/foaf/age> ?v1 . ?v0 <http://schema.org/email> ?v2 . ?v0
+    <http://schema.org/nationality> ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf>
+    ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v5 }
+  runtime_info:
+    client_time: 1.0189402103424072
+  result_size: 0
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v5
+  results: []
+- name: test1_query_43
+  description: Randomly selected query 43 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age> <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    . ?v0 <http://xmlns.com/foaf/givenName> ?v2 . ?v0 <http://schema.org/email> ?v3
+    . ?v0 <http://schema.org/nationality> ?v4 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf>
+    ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> ?v5 }
+  runtime_info:
+    client_time: 0.5372178554534912
+  result_size: 1
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  - v5
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User894>
+    - '"LAUREN"'
+    - '"leggins hardheartedness emitting thickening''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country11>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+- name: test1_query_44
+  description: Randomly selected query 44 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory1>
+    . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v2 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 }
+  runtime_info:
+    client_time: 1.279031753540039
+  result_size: 76019
+  headers:
+  - v0
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product9260>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre69>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User365009>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product9260>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre69>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User243776>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product9260>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre69>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User180655>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product9260>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre69>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User425776>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product9260>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre79>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User365009>
+- name: test1_query_45
+  description: Randomly selected query 45 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic65>
+    . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v4 . ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v0 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v3 . ?v2 <http://purl.org/stuff/rev#hasReview>
+    ?v5 . ?v5 <http://purl.org/stuff/rev#rating> ?v6 . ?v5 <http://purl.org/stuff/rev#reviewer>
+    ?v7 . ?v5 <http://purl.org/stuff/rev#text> ?v8 . ?v5 <http://purl.org/stuff/rev#title>
+    ?v9 . ?v5 <http://purl.org/stuff/rev#totalVotes> ?v10 }
+  runtime_info:
+    client_time: 3.0422863960266113
+  result_size: 581
+  headers:
+  - v0
+  - v10
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  - v9
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre78>
+    - '"983"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product33037>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory2>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre6>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review509237>
+    - '"6"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User467233>
+    - '"barbells slave''s Californian''s allocation boners sects toffies vengeance
+      archetype''s buffoonery Homer attitudinizes casseroles bureaucracy coveted livelier
+      cagy toffee''s blunted paler overstatement leads yokels"'
+    - '"flock McMahon''s duelist''s funnily daydream''s chameleon Enkidu''s skeptical"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre78>
+    - '"497"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product10059>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory6>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre6>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review304891>
+    - '"6"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User183224>
+    - '"dressmakers slaying wheezes Liza lovemaking rarity locoweeds Prakrit Creator''s
+      concomitant Gates circumscriptions impulsion''s Brandy''s malcontents paucity
+      collation fullbacks mistresses geezers enmeshed harnesses"'
+    - '"recollect"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre78>
+    - '"435"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product7903>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory5>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre6>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review477480>
+    - '"5"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User482472>
+    - '"silent prowler seamstresses blockaded thymi chafing blinder entombed rowdiest
+      infer liquoring bunghole Jersey woodpile shoplift donned doming"'
+    - '"holler''s perspectives cankering hamstrung fruitcakes irradiated analogously
+      ethical surnames class''s falsification punter factotums serving assuaged orphan"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre78>
+    - '"61"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product50301>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory14>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre6>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review420342>
+    - '"7"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User358666>
+    - '"Snider derides brainwashing fun blameworthy skirted perpetrate tourney''s
+      caparisoning cluing layer''s earthly Sabbath''s consecutive clewing ringer sunbathing''s
+      minks cornstalk incongruity warmongering''s wannabe Vindemiatrix''s aquaplane"'
+    - '"resides guarantied rugby''s synergy''s sacramental absent burglarizing Eleanor''s
+      monster''s Sudetenland sufferance''s weed''s Hornblower''s sassing cellar nestling''s
+      arcking"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre78>
+    - '"140"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product8504>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory14>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre6>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review606162>
+    - '"3"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User384868>
+    - '"ere artichoke''s shakedown''s welshes carolled calisthenics''s lean wince''s
+      condom Manuela identically pomp''s Cancer''s moister hyperventilating snorkels
+      Google premiums Kiev Frigidaire lettuces continuity nudity''s"'
+    - '"turnkeys maracas midges cilium''s Thessaly madwoman''s Vonnegut Africa''s
+      Iowas rigidity''s tormentor crocuses dieters itchiness"'
+- name: test1_query_46
+  description: Randomly selected query 46 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age> <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup3>
+    . ?v2 <http://schema.org/author> ?v0 . ?v0 <http://schema.org/telephone> ?v3 }
+  runtime_info:
+    client_time: 0.6265778541564941
+  result_size: 82
+  headers:
+  - v0
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User196021>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product67409>
+    - '"4386912"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User55443>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product100421>
+    - '"4758599"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User375870>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product7367>
+    - '"4560533"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User312115>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product55950>
+    - '"2293624"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User374243>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product3057>
+    - '"2401355"'
+- name: test1_query_47
+  description: Randomly selected query 47 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory1>
+    . ?v0 <http://ogp.me/ns#tag> ?v1 . ?v0 <http://schema.org/contentRating> ?v5 .
+    ?v0 <http://schema.org/contentSize> ?v6 . ?v0 <http://schema.org/description>
+    ?v7 . ?v8 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 . ?v2 <http://ogp.me/ns#tag>
+    ?v1 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v4 }
+  runtime_info:
+    client_time: 62.00531768798828
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: test1_query_48
+  description: Randomly selected query 48 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v0 <http://xmlns.com/foaf/homepage> ?v1 . ?v0 <http://schema.org/nationality>
+    ?v8 . ?v2 <http://schema.org/eligibleRegion> ?v8 . ?v2 <http://purl.org/goodrelations/includes>
+    ?v3 . ?v4 <http://purl.org/goodrelations/offers> ?v2 . ?v2 <http://purl.org/goodrelations/serialNumber>
+    ?v5 . ?v2 <http://purl.org/goodrelations/validThrough> ?v6 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v7 }
+  runtime_info:
+    client_time: 62.006433725357056
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: test1_query_49
+  description: Randomly selected query 49 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion> <http://db.uwaterloo.ca/~galuc/wsdbm/Country3>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v2 <http://purl.org/goodrelations/offers>
+    ?v0 . ?v0 <http://purl.org/goodrelations/price> ?v3 . ?v0 <http://purl.org/goodrelations/serialNumber>
+    ?v4 . ?v0 <http://purl.org/goodrelations/validFrom> ?v5 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v6 . ?v0 <http://schema.org/eligibleQuantity> ?v8 . ?v0 <http://schema.org/priceValidUntil>
+    ?v11 . ?v1 <http://ogp.me/ns#tag> ?v7 . ?v1 <http://schema.org/keywords> ?v10
+    . ?v12 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v1 }
+  runtime_info:
+    client_time: 3.719207286834717
+  result_size: 25689
+  headers:
+  - v0
+  - v1
+  - v10
+  - v11
+  - v12
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer53323>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product80289>
+    - '"magnums yearlies biodiversity dormouse''s chitchatting aliened sombreros rabbiting"'
+    - '"2013-07-20"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase646198>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1484>
+    - '"365"'
+    - '"18954586"'
+    - '"2013-04-28"'
+    - '"2013-12-12"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic33>
+    - '"8"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer53323>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product80289>
+    - '"magnums yearlies biodiversity dormouse''s chitchatting aliened sombreros rabbiting"'
+    - '"2013-07-20"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase646198>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1601>
+    - '"365"'
+    - '"18954586"'
+    - '"2013-04-28"'
+    - '"2013-12-12"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic33>
+    - '"8"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer53323>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product80289>
+    - '"magnums yearlies biodiversity dormouse''s chitchatting aliened sombreros rabbiting"'
+    - '"2013-07-20"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase646198>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1484>
+    - '"365"'
+    - '"18954586"'
+    - '"2013-04-28"'
+    - '"2013-12-12"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic158>
+    - '"8"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer53323>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product80289>
+    - '"magnums yearlies biodiversity dormouse''s chitchatting aliened sombreros rabbiting"'
+    - '"2013-07-20"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase646198>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1601>
+    - '"365"'
+    - '"18954586"'
+    - '"2013-04-28"'
+    - '"2013-12-12"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic158>
+    - '"8"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer53323>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product80289>
+    - '"magnums yearlies biodiversity dormouse''s chitchatting aliened sombreros rabbiting"'
+    - '"2013-07-20"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase646198>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1484>
+    - '"365"'
+    - '"18954586"'
+    - '"2013-04-28"'
+    - '"2013-12-12"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic190>
+    - '"8"'
+- name: test1_query_50
+  description: Randomly selected query 50 from watdiv test 1
+  query: SELECT * WHERE { ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory12>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://purl.org/stuff/rev#hasReview>
+    ?v3 . ?v1 <http://schema.org/contentSize> ?v9 . ?v3 <http://purl.org/stuff/rev#rating>
+    ?v4 . ?v3 <http://purl.org/stuff/rev#reviewer> ?v5 . ?v3 <http://purl.org/stuff/rev#text>
+    ?v6 . ?v3 <http://purl.org/stuff/rev#title> ?v7 . ?v3 <http://purl.org/stuff/rev#totalVotes>
+    ?v8 }
+  runtime_info:
+    client_time: 0.7247097492218018
+  result_size: 127
+  headers:
+  - v0
+  - v1
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  - v9
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer52773>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product105699>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review730598>
+    - '"5"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User128537>
+    - '"organelle pleasant Lidia''s teetotallers latent Yuri''s clamminess''s"'
+    - '"overdone Benny inconsolable honeys soil tyrannosaurus aquarium''s silkworm
+      Zambezi''s pennies roadrunner unctions pile''s Aleichem''s viewers jazzing"'
+    - '"842"'
+    - '"2516"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer82986>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product105699>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review730598>
+    - '"5"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User128537>
+    - '"organelle pleasant Lidia''s teetotallers latent Yuri''s clamminess''s"'
+    - '"overdone Benny inconsolable honeys soil tyrannosaurus aquarium''s silkworm
+      Zambezi''s pennies roadrunner unctions pile''s Aleichem''s viewers jazzing"'
+    - '"842"'
+    - '"2516"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer320041>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product105699>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review730598>
+    - '"5"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User128537>
+    - '"organelle pleasant Lidia''s teetotallers latent Yuri''s clamminess''s"'
+    - '"overdone Benny inconsolable honeys soil tyrannosaurus aquarium''s silkworm
+      Zambezi''s pennies roadrunner unctions pile''s Aleichem''s viewers jazzing"'
+    - '"842"'
+    - '"2516"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer180880>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product51022>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review128955>
+    - '"10"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User355690>
+    - '"downsizing cosmologists realtor''s bloody readership Urania"'
+    - '"Leslie''s mining Brice''s Palermo balsa yuck''s"'
+    - '"544"'
+    - '"8800"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer8387>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product51163>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review182182>
+    - '"2"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User268555>
+    - '"loomed victories totalled shimmed sixteenth ineluctable insomniacs Hurst''s
+      fabrication underclassmen"'
+    - '"pigs conquers slaughterhouse dowses foolhardiness''s"'
+    - '"220"'
+    - '"7001"'
+- name: test1_query_51
+  description: Randomly selected query 51 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion> <http://db.uwaterloo.ca/~galuc/wsdbm/Country19>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v2 <http://purl.org/goodrelations/offers>
+    ?v0 . ?v0 <http://purl.org/goodrelations/validFrom> ?v3 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v4 . ?v0 <http://schema.org/eligibleQuantity> ?v5 . ?v0 <http://schema.org/priceValidUntil>
+    ?v7 }
+  runtime_info:
+    client_time: 0.46248936653137207
+  result_size: 328
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v4
+  - v5
+  - v7
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer5885>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product123682>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1952>
+    - '"2013-05-25"'
+    - '"2013-12-02"'
+    - '"3"'
+    - '"2013-07-21"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer5885>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product123682>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer4872>
+    - '"2013-05-25"'
+    - '"2013-12-02"'
+    - '"3"'
+    - '"2013-07-21"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer5885>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product123682>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer4106>
+    - '"2013-05-25"'
+    - '"2013-12-02"'
+    - '"3"'
+    - '"2013-07-21"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer5885>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product123682>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer3091>
+    - '"2013-05-25"'
+    - '"2013-12-02"'
+    - '"3"'
+    - '"2013-07-21"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer5885>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product123682>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer3752>
+    - '"2013-05-25"'
+    - '"2013-12-02"'
+    - '"3"'
+    - '"2013-07-21"'
+- name: test1_query_52
+  description: Randomly selected query 52 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer7533> <http://purl.org/goodrelations/offers>
+    ?v1 . ?v1 <http://purl.org/goodrelations/price> ?v2 . ?v1 <http://purl.org/goodrelations/serialNumber>
+    ?v3 . ?v1 <http://schema.org/eligibleRegion> ?v4 }
+  runtime_info:
+    client_time: 0.007230043411254883
+  result_size: 0
+  headers:
+  - v1
+  - v2
+  - v3
+  - v4
+  results: []
+- name: test1_query_53
+  description: Randomly selected query 53 from watdiv test 1
+  query: SELECT * WHERE { ?v5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/Role2>
+    . ?v7 <http://purl.org/stuff/rev#reviewer> ?v5 . ?v5 <http://db.uwaterloo.ca/~galuc/wsdbm/follows>
+    ?v5 . ?v0 <http://purl.org/stuff/rev#hasReview> ?v7 . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v1 . ?v2 <http://purl.org/goodrelations/includes> ?v0 . ?v0 <http://ogp.me/ns#title>
+    ?v3 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v4 . ?v0 <http://schema.org/description>
+    ?v8 . ?v0 <http://schema.org/text> ?v10 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v11 . ?v2 <http://schema.org/eligibleRegion> ?v9 }
+  runtime_info:
+    client_time: 1.250044345855713
+  result_size: 0
+  headers:
+  - v0
+  - v1
+  - v10
+  - v11
+  - v2
+  - v3
+  - v4
+  - v5
+  - v7
+  - v8
+  - v9
+  results: []
+- name: test1_query_54
+  description: Randomly selected query 54 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City235> <http://www.geonames.org/ontology#parentCountry>
+    ?v1 . ?v2 <http://schema.org/eligibleRegion> ?v1 . ?v4 <http://schema.org/nationality>
+    ?v1 . ?v2 <http://schema.org/eligibleQuantity> ?v3 }
+  runtime_info:
+    client_time: 62.00519609451294
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: test1_query_55
+  description: Randomly selected query 55 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/User575446> <http://purl.org/dc/terms/Location>
+    ?v1 . ?v1 <http://www.geonames.org/ontology#parentCountry> ?v2 . ?v3 <http://schema.org/eligibleRegion>
+    ?v2 . ?v3 <http://purl.org/goodrelations/price> ?v4 . ?v3 <http://purl.org/goodrelations/serialNumber>
+    ?v5 . ?v3 <http://purl.org/goodrelations/validFrom> ?v6 . ?v3 <http://purl.org/goodrelations/validThrough>
+    ?v7 . ?v3 <http://schema.org/eligibleQuantity> ?v8 }
+  runtime_info:
+    client_time: 0.008731603622436523
+  result_size: 0
+  headers:
+  - v1
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  results: []
+- name: test1_query_56
+  description: Randomly selected query 56 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/User216592> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v1 }
+  runtime_info:
+    client_time: 0.007509469985961914
+  result_size: 1
+  headers:
+  - v1
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Role0>
+- name: test1_query_57
+  description: Randomly selected query 57 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory10>
+    . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v2 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 }
+  runtime_info:
+    client_time: 1.3742990493774414
+  result_size: 79540
+  headers:
+  - v0
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19921>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre84>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User68401>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19921>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre84>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User154934>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19921>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre84>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User342970>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19921>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre54>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User68401>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19921>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre54>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User154934>
+- name: test1_query_58
+  description: Randomly selected query 58 from watdiv test 1
+  query: SELECT * WHERE { ?v2 <http://schema.org/eligibleRegion> <http://db.uwaterloo.ca/~galuc/wsdbm/Country15>
+    . ?v2 <http://purl.org/goodrelations/includes> ?v0 . ?v3 <http://purl.org/goodrelations/offers>
+    ?v2 . ?v2 <http://purl.org/goodrelations/price> ?v4 . ?v2 <http://purl.org/goodrelations/serialNumber>
+    ?v5 . ?v2 <http://purl.org/goodrelations/validFrom> ?v6 . ?v2 <http://purl.org/goodrelations/validThrough>
+    ?v7 . ?v2 <http://schema.org/eligibleQuantity> ?v8 . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v1 . ?v3 <http://schema.org/telephone> ?v10 }
+  runtime_info:
+    client_time: 0.9113903045654297
+  result_size: 582
+  headers:
+  - v0
+  - v1
+  - v10
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product49260>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website12148>
+    - '"6441036"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer27501>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer4021>
+    - '"858"'
+    - '"51610397"'
+    - '"2013-01-11"'
+    - '"2013-11-19"'
+    - '"4"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19792>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website9745>
+    - '"2364450"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer40824>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1905>
+    - '"960"'
+    - '"73938901"'
+    - '"2013-05-22"'
+    - '"2013-11-18"'
+    - '"2"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product81101>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website3878>
+    - '"6451831"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer331185>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1029>
+    - '"476"'
+    - '"27981200"'
+    - '"2013-01-07"'
+    - '"2013-10-17"'
+    - '"6"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product88156>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website7855>
+    - '"8683111"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer298079>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer2604>
+    - '"672"'
+    - '"85233636"'
+    - '"2013-01-08"'
+    - '"2013-12-18"'
+    - '"6"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product18817>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website1829>
+    - '"4031270"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer321423>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer4028>
+    - '"707"'
+    - '"90674324"'
+    - '"2013-01-05"'
+    - '"2013-10-22"'
+    - '"6"'
+- name: test1_query_59
+  description: Randomly selected query 59 from watdiv test 1
+  query: SELECT * WHERE { ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/Genre15>
+    . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v2 . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://schema.org/expires> ?v4 . ?v1 <http://schema.org/text> ?v5 .
+    ?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v1 }
+  runtime_info:
+    client_time: 0.37891697883605957
+  result_size: 2433
+  headers:
+  - v0
+  - v1
+  - v2
+  - v4
+  - v5
+  - v6
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer131055>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19084>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre66>
+    - '"2017-05-29"'
+    - '"Marietta''s goulash''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User380100>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer131055>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19084>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre66>
+    - '"2017-05-29"'
+    - '"Marietta''s goulash''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User153339>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer445875>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19084>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre66>
+    - '"2017-05-29"'
+    - '"Marietta''s goulash''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User380100>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer445875>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19084>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre66>
+    - '"2017-05-29"'
+    - '"Marietta''s goulash''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User153339>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer217801>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product124777>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre66>
+    - '"2018-04-29"'
+    - '"selling perorations statesman''s swanked grant''s adjoining epitomized cubist''s
+      misfire''s torpedos cheesiest McNaughton tango"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User20619>
+- name: test1_query_60
+  description: Randomly selected query 60 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre127>
+    . ?v0 <http://xmlns.com/foaf/homepage> ?v1 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v2 . ?v0 <http://schema.org/description> ?v3 . ?v0 <http://schema.org/expires>
+    ?v4 . ?v1 <http://schema.org/url> ?v5 }
+  runtime_info:
+    client_time: 0.020995378494262695
+  result_size: 2
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v4
+  - v5
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product37925>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website24643>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory10>
+    - '"deceitful deprogrammed confectionery Poznan''s tonne''s roosters liturgies
+      deforming carping cottonseed''s publication''s acquiesce herbicides corrosive
+      sanctifying obliviousness slovens Cuba enervation English impugned Fresno Meiji''s
+      Pinochet"'
+    - '"2018-10-17"'
+    - '"snooping donors zodiacal Melendez ante''s Goodrich''s ferreting straplesses
+      quantity''s"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product68763>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website6738>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory7>
+    - '"southerns booster''s heck burgeons curiosity''s"'
+    - '"2019-07-03"'
+    - '"wassailing Tsongkhapa Thames charismatic''s chaffinches cornucopia Tashkent
+      undermines volition''s cognomen scrap''s goings canvassers Havarti"'
+- name: test1_query_61
+  description: Randomly selected query 61 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/Role1>
+    . ?v0 <http://schema.org/birthDate> ?v2 . ?v0 <http://schema.org/jobTitle> ?v3
+    . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v4 }
+  runtime_info:
+    client_time: 2.0857317447662354
+  result_size: 2178
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User162292>
+    - '"1973-09-01"'
+    - '"strainer Oslo round''s upholstery''s moneyed specialists gutting romance''s
+      Btu''s brokers common''s cookeries pizzicato''s tolerates traveller''s subbing
+      tunes mallet smuggler''s spaciously pincushions southward might''s confederated
+      Adderley"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product3>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User162292>
+    - '"1973-09-01"'
+    - '"strainer Oslo round''s upholstery''s moneyed specialists gutting romance''s
+      Btu''s brokers common''s cookeries pizzicato''s tolerates traveller''s subbing
+      tunes mallet smuggler''s spaciously pincushions southward might''s confederated
+      Adderley"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product4335>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User162292>
+    - '"1973-09-01"'
+    - '"strainer Oslo round''s upholstery''s moneyed specialists gutting romance''s
+      Btu''s brokers common''s cookeries pizzicato''s tolerates traveller''s subbing
+      tunes mallet smuggler''s spaciously pincushions southward might''s confederated
+      Adderley"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product151>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User162292>
+    - '"1973-09-01"'
+    - '"strainer Oslo round''s upholstery''s moneyed specialists gutting romance''s
+      Btu''s brokers common''s cookeries pizzicato''s tolerates traveller''s subbing
+      tunes mallet smuggler''s spaciously pincushions southward might''s confederated
+      Adderley"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product0>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User472425>
+    - '"1970-09-17"'
+    - '"Downy bolt''s separators inclemency''s uncertainty''s apropos thanking Tyrone
+      conceptual integral''s galoshes irascibility housekeeper''s foul portraiture''s"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product1>
+- name: test1_query_62
+  description: Randomly selected query 62 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory8>
+    . ?v0 <http://ogp.me/ns#tag> ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v3 }
+  runtime_info:
+    client_time: 1.754469633102417
+  result_size: 115507
+  headers:
+  - v0
+  - v1
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product72012>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic207>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre67>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product72012>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic207>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre66>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product72012>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic154>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre67>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product72012>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic154>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre66>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product72012>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic198>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre67>
+- name: test1_query_63
+  description: Randomly selected query 63 from watdiv test 1
+  query: SELECT * WHERE { ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory5>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://ogp.me/ns#tag>
+    ?v2 . ?v1 <http://schema.org/contentRating> ?v6 . ?v1 <http://schema.org/description>
+    ?v7 . ?v1 <http://schema.org/keywords> ?v8 . ?v1 <http://schema.org/text> ?v9
+    . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v4 . ?v10 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v1 . ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v5 }
+  runtime_info:
+    client_time: 1.5330944061279297
+  result_size: 25132
+  headers:
+  - v0
+  - v1
+  - v10
+  - v2
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  - v9
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer268642>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product108191>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User472997>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic193>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre107>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre7>
+    - '"8"'
+    - '"nonwhite digressions"'
+    - '"Lesa knee genealogical votes trialing potion''s whenever jalousie''s askew
+      beatification''s lissom Wobegon Tevet identifier imaginative bushed virginal
+      bazaars tenor''s undies teed Hendrix necrosis deepest circuit"'
+    - '"bungle''s polygamist Nissan''s rotisserie''s Edison''s zeds coupling''s panderer''s
+      Virgie''s pervaded flog bedraggle m  tier''s callousing KFC alcoves"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer268642>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product108191>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User161385>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic193>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre107>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre7>
+    - '"8"'
+    - '"nonwhite digressions"'
+    - '"Lesa knee genealogical votes trialing potion''s whenever jalousie''s askew
+      beatification''s lissom Wobegon Tevet identifier imaginative bushed virginal
+      bazaars tenor''s undies teed Hendrix necrosis deepest circuit"'
+    - '"bungle''s polygamist Nissan''s rotisserie''s Edison''s zeds coupling''s panderer''s
+      Virgie''s pervaded flog bedraggle m  tier''s callousing KFC alcoves"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer268642>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product108191>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User464842>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic193>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre107>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre7>
+    - '"8"'
+    - '"nonwhite digressions"'
+    - '"Lesa knee genealogical votes trialing potion''s whenever jalousie''s askew
+      beatification''s lissom Wobegon Tevet identifier imaginative bushed virginal
+      bazaars tenor''s undies teed Hendrix necrosis deepest circuit"'
+    - '"bungle''s polygamist Nissan''s rotisserie''s Edison''s zeds coupling''s panderer''s
+      Virgie''s pervaded flog bedraggle m  tier''s callousing KFC alcoves"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer73824>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product108191>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User472997>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic193>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre107>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre7>
+    - '"8"'
+    - '"nonwhite digressions"'
+    - '"Lesa knee genealogical votes trialing potion''s whenever jalousie''s askew
+      beatification''s lissom Wobegon Tevet identifier imaginative bushed virginal
+      bazaars tenor''s undies teed Hendrix necrosis deepest circuit"'
+    - '"bungle''s polygamist Nissan''s rotisserie''s Edison''s zeds coupling''s panderer''s
+      Virgie''s pervaded flog bedraggle m  tier''s callousing KFC alcoves"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer73824>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product108191>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User161385>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic193>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre107>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Genre7>
+    - '"8"'
+    - '"nonwhite digressions"'
+    - '"Lesa knee genealogical votes trialing potion''s whenever jalousie''s askew
+      beatification''s lissom Wobegon Tevet identifier imaginative bushed virginal
+      bazaars tenor''s undies teed Hendrix necrosis deepest circuit"'
+    - '"bungle''s polygamist Nissan''s rotisserie''s Edison''s zeds coupling''s panderer''s
+      Virgie''s pervaded flog bedraggle m  tier''s callousing KFC alcoves"'
+- name: test1_query_64
+  description: Randomly selected query 64 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender0>
+    . ?v0 <http://xmlns.com/foaf/age> ?v1 . ?v0 <http://xmlns.com/foaf/familyName>
+    ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/follows> ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes>
+    ?v4 }
+  runtime_info:
+    client_time: 0.9543495178222656
+  result_size: 6
+  headers:
+  - v0
+  - v1
+  - v2
+  - v4
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User368663>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup3>
+    - '"DARWIN"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website1200>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User368663>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup3>
+    - '"DARWIN"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website17602>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User368663>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup3>
+    - '"DARWIN"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website14734>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User368663>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup3>
+    - '"DARWIN"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website1547>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User368663>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup3>
+    - '"DARWIN"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website1031>
+- name: test1_query_65
+  description: Randomly selected query 65 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v0 <http://xmlns.com/foaf/age> ?v1 }
+  runtime_info:
+    client_time: 3.3671815395355225
+  result_size: 112599
+  headers:
+  - v0
+  - v1
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User31186>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup2>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User316921>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User377281>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup5>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User384563>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup5>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User317448>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup4>
+- name: test1_query_66
+  description: Randomly selected query 66 from watdiv test 1
+  query: SELECT * WHERE { ?v1 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic112>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://schema.org/description>
+    ?v6 . ?v0 <http://purl.org/goodrelations/serialNumber> ?v2 . ?v0 <http://purl.org/goodrelations/validFrom>
+    ?v3 . ?v0 <http://purl.org/goodrelations/validThrough> ?v4 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v7 . ?v0 <http://schema.org/eligibleRegion> ?v8 }
+  runtime_info:
+    client_time: 0.46873974800109863
+  result_size: 2164
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v4
+  - v6
+  - v7
+  - v8
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer135609>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product48568>
+    - '"98515453"'
+    - '"2013-06-14"'
+    - '"2013-11-25"'
+    - '"lasagnas silversmith''s intransigence''s coals sensationalism''s bobble Yalu''s
+      cleaners signatures buckeye elbow juridical Dodson stultifying addle"'
+    - '"2"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country4>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer135609>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product48568>
+    - '"98515453"'
+    - '"2013-06-14"'
+    - '"2013-11-25"'
+    - '"lasagnas silversmith''s intransigence''s coals sensationalism''s bobble Yalu''s
+      cleaners signatures buckeye elbow juridical Dodson stultifying addle"'
+    - '"2"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country3>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer135609>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product48568>
+    - '"98515453"'
+    - '"2013-06-14"'
+    - '"2013-11-25"'
+    - '"lasagnas silversmith''s intransigence''s coals sensationalism''s bobble Yalu''s
+      cleaners signatures buckeye elbow juridical Dodson stultifying addle"'
+    - '"2"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country10>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer135609>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product48568>
+    - '"98515453"'
+    - '"2013-06-14"'
+    - '"2013-11-25"'
+    - '"lasagnas silversmith''s intransigence''s coals sensationalism''s bobble Yalu''s
+      cleaners signatures buckeye elbow juridical Dodson stultifying addle"'
+    - '"2"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country0>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer135609>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product48568>
+    - '"98515453"'
+    - '"2013-06-14"'
+    - '"2013-11-25"'
+    - '"lasagnas silversmith''s intransigence''s coals sensationalism''s bobble Yalu''s
+      cleaners signatures buckeye elbow juridical Dodson stultifying addle"'
+    - '"2"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country7>
+- name: test1_query_67
+  description: Randomly selected query 67 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic100>
+    . ?v0 <http://schema.org/caption> ?v2 . ?v0 <http://schema.org/expires> ?v3 .
+    ?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v0 . ?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate>
+    ?v5 }
+  runtime_info:
+    client_time: 0.08915019035339355
+  result_size: 11
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  - v5
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product37347>
+    - '"permuted wen''s lowed muskier gibberish suppurates implosion Brzezinski wrap
+      triplet''s raunchiness''s yelp''s joyfulness Harrison''s pensioned refocuses
+      employment''s plain''s zaniness''s"'
+    - '"2014-07-08"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase345440>
+    - '"2012-01-02"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product16883>
+    - '"tiger Marseilles upbringing''s heritage attires memento''s droll"'
+    - '"2018-07-01"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase683007>
+    - '"2012-02-01"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product16883>
+    - '"tiger Marseilles upbringing''s heritage attires memento''s droll"'
+    - '"2018-07-01"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase441806>
+    - '"2012-07-14"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product56895>
+    - '"inconsistency shipbuilding latrine weekdays marquee preterite''s diameters
+      expeditions syllogism bestseller dominating Fri cutlass''s Angora''s dado''s
+      branch''s Tallahassee''s"'
+    - '"2014-06-22"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase504435>
+    - '"2012-11-27"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product23601>
+    - '"papas tailcoat''s Unitarians evaluate congeniality''s Judith falconer immorality''s
+      photojournalist''s limitations mistreatment''s succumbing Sanders grayed typing''s
+      equalling darling''s"'
+    - '"2016-08-01"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase205112>
+    - '"2012-07-13"'
+- name: test1_query_68
+  description: Randomly selected query 68 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://purl.org/stuff/rev#hasReview> <http://db.uwaterloo.ca/~galuc/wsdbm/Review996927>
+    . ?v0 <http://schema.org/keywords> ?v2 }
+  runtime_info:
+    client_time: 0.009063243865966797
+  result_size: 0
+  headers:
+  - v0
+  - v2
+  results: []
+- name: test1_query_69
+  description: Randomly selected query 69 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion> <http://db.uwaterloo.ca/~galuc/wsdbm/Country13>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v2 <http://purl.org/goodrelations/offers>
+    ?v0 . ?v0 <http://purl.org/goodrelations/price> ?v3 . ?v0 <http://purl.org/goodrelations/serialNumber>
+    ?v4 . ?v0 <http://purl.org/goodrelations/validFrom> ?v5 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v6 . ?v0 <http://schema.org/eligibleQuantity> ?v8 . ?v0 <http://schema.org/priceValidUntil>
+    ?v10 . ?v1 <http://schema.org/author> ?v7 }
+  runtime_info:
+    client_time: 0.9736855030059814
+  result_size: 70
+  headers:
+  - v0
+  - v1
+  - v10
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer356202>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product111370>
+    - '"2013-08-03"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer5794>
+    - '"980"'
+    - '"32143233"'
+    - '"2013-05-04"'
+    - '"2013-10-21"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User485628>
+    - '"3"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer356202>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product111370>
+    - '"2013-08-03"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer5794>
+    - '"980"'
+    - '"32143233"'
+    - '"2013-05-04"'
+    - '"2013-10-21"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User41684>
+    - '"3"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer41049>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product115882>
+    - '"2013-07-17"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer3092>
+    - '"521"'
+    - '"59766297"'
+    - '"2013-01-29"'
+    - '"2013-09-13"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User487407>
+    - '"9"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer41049>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product115882>
+    - '"2013-07-17"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer208>
+    - '"521"'
+    - '"59766297"'
+    - '"2013-01-29"'
+    - '"2013-09-13"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User487407>
+    - '"9"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer41049>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product115882>
+    - '"2013-07-17"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer3092>
+    - '"521"'
+    - '"59766297"'
+    - '"2013-01-29"'
+    - '"2013-09-13"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User370033>
+    - '"9"'
+- name: test1_query_70
+  description: Randomly selected query 70 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://purl.org/goodrelations/includes> <http://db.uwaterloo.ca/~galuc/wsdbm/Product203099>
+    . ?v0 <http://purl.org/goodrelations/price> ?v2 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v3 . ?v0 <http://schema.org/priceValidUntil> ?v4 }
+  runtime_info:
+    client_time: 0.008712530136108398
+  result_size: 0
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  results: []
+- name: test1_query_71
+  description: Randomly selected query 71 from watdiv test 1
+  query: SELECT * WHERE { ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/Genre14>
+    . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v2 . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://schema.org/expires> ?v4 . ?v1 <http://schema.org/text> ?v5 .
+    ?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v1 }
+  runtime_info:
+    client_time: 0.30507373809814453
+  result_size: 2009
+  headers:
+  - v0
+  - v1
+  - v2
+  - v4
+  - v5
+  - v6
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer342186>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product21770>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre33>
+    - '"2018-05-13"'
+    - '"rennet''s insulators Essex"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User214664>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer342186>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product21770>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre33>
+    - '"2018-05-13"'
+    - '"rennet''s insulators Essex"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User103615>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer342186>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product21770>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre33>
+    - '"2018-05-13"'
+    - '"rennet''s insulators Essex"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User277073>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer342186>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product21770>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre33>
+    - '"2018-05-13"'
+    - '"rennet''s insulators Essex"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User282862>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer342186>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product21770>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre33>
+    - '"2018-05-13"'
+    - '"rennet''s insulators Essex"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User126847>
+- name: test1_query_72
+  description: Randomly selected query 72 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://purl.org/dc/terms/Location> <http://db.uwaterloo.ca/~galuc/wsdbm/City8>
+    . ?v0 <http://xmlns.com/foaf/homepage> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId>
+    ?v3 }
+  runtime_info:
+    client_time: 0.09148716926574707
+  result_size: 197
+  headers:
+  - v0
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User50354>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website6458>
+    - '"9217816"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User435557>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website13229>
+    - '"6759471"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User346300>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website24025>
+    - '"5593627"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User177785>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website22671>
+    - '"1420387"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User467120>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Website124>
+    - '"6115518"'
+- name: test1_query_73
+  description: Randomly selected query 73 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic2>
+    . ?v0 <http://ogp.me/ns#title> ?v2 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 }
+  runtime_info:
+    client_time: 0.2901921272277832
+  result_size: 12788
+  headers:
+  - v0
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19921>
+    - '"slovenliness''s vilification Janelle Eire bearer largess''s prequel indispensable"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User68401>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19921>
+    - '"slovenliness''s vilification Janelle Eire bearer largess''s prequel indispensable"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User154934>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19921>
+    - '"slovenliness''s vilification Janelle Eire bearer largess''s prequel indispensable"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User342970>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product52440>
+    - '"west exit gravestone''s stopcock''s douse sickly swells repatriate patriarchy
+      reflex''s chinned Renault''s partials nighthawk haemorrhage handiwork Amiga
+      adept slumbering shipment Benny minibus"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User94104>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product52440>
+    - '"west exit gravestone''s stopcock''s douse sickly swells repatriate patriarchy
+      reflex''s chinned Renault''s partials nighthawk haemorrhage handiwork Amiga
+      adept slumbering shipment Benny minibus"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User251594>
+- name: test1_query_74
+  description: Randomly selected query 74 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase1434366> <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor>
+    ?v0 . ?v0 <http://ogp.me/ns#tag> ?v1 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v3 . ?v0 <http://schema.org/text> ?v4 . ?v2 <http://ogp.me/ns#tag> ?v1 }
+  runtime_info:
+    client_time: 0.009190559387207031
+  result_size: 0
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v4
+  results: []
+- name: test1_query_75
+  description: Randomly selected query 75 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://purl.org/dc/terms/Location> <http://db.uwaterloo.ca/~galuc/wsdbm/City209>
+    . ?v0 <http://xmlns.com/foaf/age> ?v2 . ?v0 <http://schema.org/birthDate> ?v3
+    }
+  runtime_info:
+    client_time: 0.012954473495483398
+  result_size: 14
+  headers:
+  - v0
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User347368>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"1971-11-09"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User259076>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup2>
+    - '"1972-05-01"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User430295>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup3>
+    - '"1977-03-06"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User324864>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"1970-09-01"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User498976>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup4>
+    - '"1972-08-26"'
+- name: test1_query_76
+  description: Randomly selected query 76 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age> <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup7>
+    . ?v0 <http://xmlns.com/foaf/familyName> ?v2 }
+  runtime_info:
+    client_time: 0.38436102867126465
+  result_size: 11920
+  headers:
+  - v0
+  - v2
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User255360>
+    - '"CAROLYN"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User199184>
+    - '"HARRIETT"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User485095>
+    - '"MITZI"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User36030>
+    - '"LARRY"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User151874>
+    - '"EMANUEL"'
+- name: test1_query_77
+  description: Randomly selected query 77 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://schema.org/language> <http://db.uwaterloo.ca/~galuc/wsdbm/Language18>
+    . ?v0 <http://purl.org/stuff/rev#hasReview> ?v1 . ?v1 <http://purl.org/stuff/rev#title>
+    ?v2 }
+  runtime_info:
+    client_time: 0.04346966743469238
+  result_size: 138
+  headers:
+  - v0
+  - v1
+  - v2
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product11207>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review228249>
+    - '"inheritance materialism''s ploy Sn''s modulation''s sarape wryest Goodwin
+      Nibelung purified bakery''s rube spottiest renders whirlpool spermicide"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product11207>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review160519>
+    - '"Icelandic''s dodge''s misleads appointees penny spattering milieux crazed
+      chattiness flamb   antes dispatcher sundries grottoes aquaplaned germination
+      trucking''s Boeing''s guise''s Virginia Angelo Carib''s consorts"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product11207>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review63490>
+    - '"impulsing allegory transcriptions transcribe fumigate"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product11207>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review74670>
+    - '"linkage fender"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product11207>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review38459>
+    - '"callusing hallmark diphthongs ale loanword''s graffiti sentimentalism''s federating
+      turbojet atrociousness''s"'
+- name: test1_query_78
+  description: Randomly selected query 78 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion> <http://db.uwaterloo.ca/~galuc/wsdbm/Country21>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v2 <http://purl.org/goodrelations/offers>
+    ?v0 . ?v0 <http://purl.org/goodrelations/price> ?v3 . ?v0 <http://purl.org/goodrelations/serialNumber>
+    ?v4 . ?v0 <http://purl.org/goodrelations/validFrom> ?v5 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v6 . ?v0 <http://schema.org/eligibleQuantity> ?v8 . ?v0 <http://schema.org/priceValidUntil>
+    ?v11 . ?v1 <http://ogp.me/ns#tag> ?v7 . ?v1 <http://schema.org/keywords> ?v10
+    . ?v12 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v1 }
+  runtime_info:
+    client_time: 0.7021923065185547
+  result_size: 1004
+  headers:
+  - v0
+  - v1
+  - v10
+  - v11
+  - v12
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer201756>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product86551>
+    - '"beastliness''s sandstorm singleton''s swopped engraver capitols alerting polygonal"'
+    - '"2013-07-21"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase294888>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1605>
+    - '"240"'
+    - '"16304986"'
+    - '"2013-03-04"'
+    - '"2013-10-23"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic33>
+    - '"4"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer201756>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product86551>
+    - '"beastliness''s sandstorm singleton''s swopped engraver capitols alerting polygonal"'
+    - '"2013-07-21"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase294888>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer937>
+    - '"240"'
+    - '"16304986"'
+    - '"2013-03-04"'
+    - '"2013-10-23"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic33>
+    - '"4"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer201756>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product86551>
+    - '"beastliness''s sandstorm singleton''s swopped engraver capitols alerting polygonal"'
+    - '"2013-07-21"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase294888>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer3646>
+    - '"240"'
+    - '"16304986"'
+    - '"2013-03-04"'
+    - '"2013-10-23"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic33>
+    - '"4"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer201756>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product86551>
+    - '"beastliness''s sandstorm singleton''s swopped engraver capitols alerting polygonal"'
+    - '"2013-07-21"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase294888>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer1605>
+    - '"240"'
+    - '"16304986"'
+    - '"2013-03-04"'
+    - '"2013-10-23"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic38>
+    - '"4"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer201756>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product86551>
+    - '"beastliness''s sandstorm singleton''s swopped engraver capitols alerting polygonal"'
+    - '"2013-07-21"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase294888>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer937>
+    - '"240"'
+    - '"16304986"'
+    - '"2013-03-04"'
+    - '"2013-10-23"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Topic38>
+    - '"4"'
+- name: test1_query_79
+  description: Randomly selected query 79 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase1284902> <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor>
+    ?v0 . ?v0 <http://ogp.me/ns#title> ?v1 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v2 . ?v0 <http://schema.org/description> ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v4 }
+  runtime_info:
+    client_time: 0.006916999816894531
+  result_size: 0
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v4
+  results: []
+- name: test1_query_80
+  description: Randomly selected query 80 from watdiv test 1
+  query: SELECT * WHERE { ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/Role1>
+    . ?v4 <http://schema.org/nationality> ?v7 . ?v1 <http://schema.org/eligibleRegion>
+    ?v7 . ?v0 <http://purl.org/goodrelations/offers> ?v1 . ?v1 <http://purl.org/goodrelations/validFrom>
+    ?v2 . ?v1 <http://purl.org/goodrelations/validThrough> ?v3 . ?v1 <http://schema.org/eligibleQuantity>
+    ?v6 . ?v1 <http://schema.org/priceValidUntil> ?v8 }
+  runtime_info:
+    client_time: 62.008403301239014
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: test1_query_81
+  description: Randomly selected query 81 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://purl.org/dc/terms/Location> <http://db.uwaterloo.ca/~galuc/wsdbm/City161>
+    . ?v0 <http://xmlns.com/foaf/age> ?v2 . ?v0 <http://schema.org/birthDate> ?v3
+    }
+  runtime_info:
+    client_time: 0.03313612937927246
+  result_size: 18
+  headers:
+  - v0
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User350338>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup7>
+    - '"1998-04-07"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User24339>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup4>
+    - '"1983-06-20"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User202401>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup5>
+    - '"1986-01-29"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User290953>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup3>
+    - '"1997-09-24"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User14851>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup7>
+    - '"1984-02-08"'
+- name: test1_query_82
+  description: Randomly selected query 82 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/User524752> <http://schema.org/nationality>
+    ?v2 . ?v0 <http://schema.org/eligibleRegion> ?v2 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v1 }
+  runtime_info:
+    client_time: 0.008186101913452148
+  result_size: 0
+  headers:
+  - v0
+  - v1
+  - v2
+  results: []
+- name: test1_query_83
+  description: Randomly selected query 83 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic91>
+    . ?v0 <http://purl.org/stuff/rev#hasReview> ?v2 . ?v0 <http://schema.org/contentRating>
+    ?v8 . ?v2 <http://purl.org/stuff/rev#rating> ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer>
+    ?v4 . ?v2 <http://purl.org/stuff/rev#text> ?v5 . ?v2 <http://purl.org/stuff/rev#title>
+    ?v6 . ?v2 <http://purl.org/stuff/rev#totalVotes> ?v7 }
+  runtime_info:
+    client_time: 0.4000406265258789
+  result_size: 48
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product66844>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review477233>
+    - '"7"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User121728>
+    - '"nosh''s eclectically"'
+    - '"retrenchments suturing advise overconfident entanglement''s Trevelyan troy
+      glee"'
+    - '"762"'
+    - '"10"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product83764>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review396896>
+    - '"4"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User242652>
+    - '"archive waterways pixel sachems jay snagged coop''s voltaic Usenet''s populate
+      carolling blowsiest aquamarine bestsellers thanked programmers derogatory shingle''s
+      retinas chamberlain disobediently astonishingly dodder''s"'
+    - '"unpaid chapter framer''s astonishment''s cams omniscience"'
+    - '"172"'
+    - '"13"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19238>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review226278>
+    - '"9"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User344100>
+    - '"Zinfandel''s slant''s slangiest polynomial haggard Riel''s Teddy''s"'
+    - '"idleness''s puffballs enumeration''s loop Essie''s guff bubble''s disputable
+      belongings knuckleheads sloppy quizzing immodesty''s compiled interdependence''s
+      pajamas Ella''s customize prays abrasives"'
+    - '"288"'
+    - '"17"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19238>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review517300>
+    - '"2"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User227065>
+    - '"subplot Canaletto shaming squealer hued woodsman''s forebode eviscerates somehow
+      nieces sensationalists Lodz''s bibliography turgid"'
+    - '"butted throttles stopovers attitude''s manufacture mediator''s certification''s
+      wakefulness''s pacification''s theme obligated spaceflights Tecumseh midst whipped
+      breezing clerestory scarcity''s Palisades sedating flickers barbequed"'
+    - '"503"'
+    - '"17"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product98279>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review47829>
+    - '"4"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User362807>
+    - '"hellebore treble''s tattooist''s epitaph Presbyterians comet curving Menotti
+      niggardliness descriptions Tannh  user''s center''s fly''s Flynn drone''s oversells
+      uncomplimentary flack brightening manufacture''s filigree''s superabundance''s
+      treasure''s mistrusted bullshitted"'
+    - '"sextant''s curtail"'
+    - '"23"'
+    - '"9"'
+- name: test1_query_84
+  description: Randomly selected query 84 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory4>
+    . ?v0 <http://ogp.me/ns#tag> ?v1 . ?v0 <http://schema.org/contentRating> ?v5 .
+    ?v0 <http://schema.org/contentSize> ?v6 . ?v0 <http://schema.org/description>
+    ?v7 . ?v8 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 . ?v2 <http://ogp.me/ns#tag>
+    ?v1 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v4 }
+  runtime_info:
+    client_time: 62.00631237030029
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: test1_query_85
+  description: Randomly selected query 85 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic200>
+    . ?v0 <http://purl.org/stuff/rev#hasReview> ?v2 . ?v0 <http://schema.org/contentRating>
+    ?v8 . ?v2 <http://purl.org/stuff/rev#rating> ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer>
+    ?v4 . ?v2 <http://purl.org/stuff/rev#text> ?v5 . ?v2 <http://purl.org/stuff/rev#title>
+    ?v6 . ?v2 <http://purl.org/stuff/rev#totalVotes> ?v7 }
+  runtime_info:
+    client_time: 0.4852573871612549
+  result_size: 63
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product103059>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review430391>
+    - '"3"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User240953>
+    - '"frowsy rounding unintentionally rattle recruited Annabelle hits Rosemarie
+      cooper''s inevitability tumbrils enmities worries cannery bassinet''s"'
+    - '"Avery''s gallstone cures lammed commiserate Steadicam hibachi neighbor''s
+      lifestyles potion''s encountering perishing carving''s"'
+    - '"364"'
+    - '"15"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product103059>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review288182>
+    - '"4"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User225165>
+    - '"brutalizing purple"'
+    - '"interlarding Brittany''s faithless Confucianism''s"'
+    - '"369"'
+    - '"15"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product44312>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review490340>
+    - '"1"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User47806>
+    - '"imputed Aldrin''s unsupported Cessna Quisling agglutinations please steadied
+      pleasantness existence''s brunet Olympiad hopscotch''s"'
+    - '"windbag epaulets husky Gipsies Arabia inhales remarry design disconnected
+      controls juggle dogies disillusion Guyana sprightliest travesties velocity hooliganism
+      inanity workweek churchman''s dessert''s defamed Whitefield preciseness"'
+    - '"740"'
+    - '"8"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product44312>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review720476>
+    - '"5"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User428519>
+    - '"ballast''s cathartics glossiest abeam congressman Persephone''s Batu''s captor''s
+      rescission Ewing loser represses yokel reserving Midland whizz snails rusty
+      tilting"'
+    - '"mooning convoying Bond''s fulness''s reffed manhood ladyfinger heard Shavian
+      decontaminate"'
+    - '"787"'
+    - '"8"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product42867>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review656505>
+    - '"3"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User138960>
+    - '"maybe encounter for recuperation''s prepay Francisca"'
+    - '"masterstroke demijohns"'
+    - '"864"'
+    - '"17"'
+- name: test1_query_86
+  description: Randomly selected query 86 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer261> <http://purl.org/goodrelations/offers>
+    ?v1 . ?v1 <http://purl.org/goodrelations/price> ?v2 . ?v1 <http://purl.org/goodrelations/serialNumber>
+    ?v3 . ?v1 <http://schema.org/eligibleRegion> ?v4 }
+  runtime_info:
+    client_time: 0.016308307647705078
+  result_size: 253
+  headers:
+  - v1
+  - v2
+  - v3
+  - v4
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer309799>
+    - '"784"'
+    - '"98797473"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country3>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer309799>
+    - '"784"'
+    - '"98797473"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country5>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer309799>
+    - '"784"'
+    - '"98797473"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country10>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer309799>
+    - '"784"'
+    - '"98797473"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country0>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer309799>
+    - '"784"'
+    - '"98797473"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Country8>
+- name: test1_query_87
+  description: Randomly selected query 87 from watdiv test 1
+  query: SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City176> <http://www.geonames.org/ontology#parentCountry>
+    ?v1 . ?v2 <http://schema.org/eligibleRegion> ?v1 . ?v6 <http://schema.org/nationality>
+    ?v1 . ?v2 <http://purl.org/goodrelations/includes> ?v3 . ?v2 <http://purl.org/goodrelations/serialNumber>
+    ?v4 . ?v2 <http://purl.org/goodrelations/validThrough> ?v5 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v8 . ?v6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v7 . ?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v3 . ?v9 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v3 }
+  runtime_info:
+    client_time: 62.00948786735535
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: test1_query_88
+  description: Randomly selected query 88 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic56>
+    . ?v0 <http://purl.org/stuff/rev#hasReview> ?v2 . ?v0 <http://schema.org/contentRating>
+    ?v8 . ?v2 <http://purl.org/stuff/rev#rating> ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer>
+    ?v4 . ?v2 <http://purl.org/stuff/rev#text> ?v5 . ?v2 <http://purl.org/stuff/rev#title>
+    ?v6 . ?v2 <http://purl.org/stuff/rev#totalVotes> ?v7 }
+  runtime_info:
+    client_time: 0.49765968322753906
+  result_size: 61
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product107916>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review52610>
+    - '"0"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User274603>
+    - '"gone credulous repentance''s vileness schoolroom quaking haywire drowsiest
+      rebuking"'
+    - '"windmilled mature clavichord''s bruin dabble"'
+    - '"668"'
+    - '"10"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product107916>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review474008>
+    - '"7"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User429570>
+    - '"alit estrogen harlot Moslem label buckler curds innocent''s ploy reinvented
+      snippet scripture codex''s zany bawdy critter lipreading birthstone absurdity''s
+      legitimately gouged ferried Yerkes''s"'
+    - '"autopsied retarded transition''s Revlon shortbread"'
+    - '"265"'
+    - '"10"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product40238>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review419566>
+    - '"5"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User88081>
+    - '"imperturbability reprimand pursues doping eatery arbutus"'
+    - '"repugnant underscore''s Brigham''s setback interrelationship''s hallucinogen
+      jettisoned nonflammable Andorra''s stabbings Cavour brands Yates Melvin shabbiness''s
+      licenced rebel biorhythm''s overindulges"'
+    - '"293"'
+    - '"11"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product13846>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review646322>
+    - '"2"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User215576>
+    - '"Boeing Voltaire''s propels spaceman carolers feelingly retyped Shintos fiches
+      attacker surrealism Maghreb''s"'
+    - '"weekly''s glue unblocked demonstrator Kodiak Tyson microbiology''s Charles''s
+      Jupiter''s Riviera cloudier change"'
+    - '"465"'
+    - '"15"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product19238>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review226278>
+    - '"9"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User344100>
+    - '"Zinfandel''s slant''s slangiest polynomial haggard Riel''s Teddy''s"'
+    - '"idleness''s puffballs enumeration''s loop Essie''s guff bubble''s disputable
+      belongings knuckleheads sloppy quizzing immodesty''s compiled interdependence''s
+      pajamas Ella''s customize prays abrasives"'
+    - '"288"'
+    - '"17"'
+- name: test1_query_89
+  description: Randomly selected query 89 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender0>
+    . ?v0 <http://purl.org/dc/terms/Location> ?v1 . ?v0 <http://schema.org/birthDate>
+    ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/follows> ?v0 }
+  runtime_info:
+    client_time: 0.9440360069274902
+  result_size: 0
+  headers:
+  - v0
+  - v1
+  - v2
+  results: []
+- name: test1_query_90
+  description: Randomly selected query 90 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://ogp.me/ns#tag> <http://db.uwaterloo.ca/~galuc/wsdbm/Topic173>
+    . ?v0 <http://purl.org/stuff/rev#hasReview> ?v2 . ?v0 <http://schema.org/contentRating>
+    ?v8 . ?v2 <http://purl.org/stuff/rev#rating> ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer>
+    ?v4 . ?v2 <http://purl.org/stuff/rev#text> ?v5 . ?v2 <http://purl.org/stuff/rev#title>
+    ?v6 . ?v2 <http://purl.org/stuff/rev#totalVotes> ?v7 }
+  runtime_info:
+    client_time: 0.4495701789855957
+  result_size: 49
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  - v5
+  - v6
+  - v7
+  - v8
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product13141>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review89481>
+    - '"9"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User442362>
+    - '"continental''s preventible"'
+    - '"p"'
+    - '"538"'
+    - '"8"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product14921>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review452189>
+    - '"2"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User62091>
+    - '"Huntsville jilts catwalks naps pestilences Trobriand disintegration importation
+      Ting impacting sportswoman"'
+    - '"repellant conjured sampler what''s"'
+    - '"396"'
+    - '"7"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product117440>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review499968>
+    - '"7"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User565>
+    - '"impressionist''s trot yokel Tasha tureens spares osiers"'
+    - '"defined analgesia''s invitationals scroll''s uncle''s"'
+    - '"656"'
+    - '"7"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product68727>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review662425>
+    - '"2"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User46422>
+    - '"razed Carrier''s discompose droppings''s plaything"'
+    - '"muskiest chromatic baloney Ashlee aperitif dismount metatarsals Juggernaut
+      Clemens smooching manly crotches unknowings preambling vouch vise"'
+    - '"305"'
+    - '"18"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product52407>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Review32095>
+    - '"9"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User387348>
+    - '"invention''s authoritativeness''s Yesenia''s Madonna obtained ignoramuses
+      kayaked hamstring underachievers telecasted"'
+    - '"ejaculates shrilling radio warlord''s alimony threshold verdict''s invigorating
+      Cypriot''s bitchiest shire cackled Z  rich"'
+    - '"499"'
+    - '"15"'
+- name: test1_query_91
+  description: Randomly selected query 91 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://purl.org/dc/terms/Location> <http://db.uwaterloo.ca/~galuc/wsdbm/City173>
+    . ?v0 <http://xmlns.com/foaf/familyName> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId>
+    ?v3 }
+  runtime_info:
+    client_time: 0.017455339431762695
+  result_size: 133
+  headers:
+  - v0
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User241450>
+    - '"MITZI"'
+    - '"5095875"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User297464>
+    - '"MARGUERITE"'
+    - '"5351747"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User450996>
+    - '"RONALD"'
+    - '"8507522"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User130124>
+    - '"MILTON"'
+    - '"8121254"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User39626>
+    - '"HILLARY"'
+    - '"1051941"'
+- name: test1_query_92
+  description: Randomly selected query 92 from watdiv test 1
+  query: SELECT * WHERE { ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v2 <http://schema.org/jobTitle> ?v3 . ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase>
+    ?v0 . ?v0 <http://purl.org/goodrelations/price> ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate>
+    ?v5 }
+  runtime_info:
+    client_time: 3.137768030166626
+  result_size: 5246
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v5
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase315246>
+    - '"741"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User187184>
+    - '"brownie breakdowns tyrannies compact engravings stripteasing abnegation''s
+      sternness lengthy Pierce marketplace''s unquestioned zoologist''s"'
+    - '"2012-09-16"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase492755>
+    - '"638"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User187184>
+    - '"brownie breakdowns tyrannies compact engravings stripteasing abnegation''s
+      sternness lengthy Pierce marketplace''s unquestioned zoologist''s"'
+    - '"2012-07-20"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase190258>
+    - '"745"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User187184>
+    - '"brownie breakdowns tyrannies compact engravings stripteasing abnegation''s
+      sternness lengthy Pierce marketplace''s unquestioned zoologist''s"'
+    - '"2012-08-04"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase283235>
+    - '"997"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User348506>
+    - '"hackers Orientals overnights immorality ragouts"'
+    - '"2012-07-19"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase220612>
+    - '"382"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User348506>
+    - '"hackers Orientals overnights immorality ragouts"'
+    - '"2012-05-26"'
+- name: test1_query_93
+  description: Randomly selected query 93 from watdiv test 1
+  query: SELECT * WHERE { ?v2 <http://purl.org/stuff/rev#hasReview> <http://db.uwaterloo.ca/~galuc/wsdbm/Review649334>
+    . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v2 . ?v0 <http://xmlns.com/foaf/age> ?v1 }
+  runtime_info:
+    client_time: 0.01022028923034668
+  result_size: 3
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User358276>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup4>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product2564>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory2>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User407928>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup4>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product2564>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory2>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User416439>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup4>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product2564>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory2>
+- name: test1_query_94
+  description: Randomly selected query 94 from watdiv test 1
+  query: SELECT * WHERE { ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v2 <http://schema.org/jobTitle> ?v3 . ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase>
+    ?v0 . ?v0 <http://purl.org/goodrelations/price> ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate>
+    ?v5 }
+  runtime_info:
+    client_time: 3.008514404296875
+  result_size: 5246
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v5
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase315246>
+    - '"741"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User187184>
+    - '"brownie breakdowns tyrannies compact engravings stripteasing abnegation''s
+      sternness lengthy Pierce marketplace''s unquestioned zoologist''s"'
+    - '"2012-09-16"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase492755>
+    - '"638"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User187184>
+    - '"brownie breakdowns tyrannies compact engravings stripteasing abnegation''s
+      sternness lengthy Pierce marketplace''s unquestioned zoologist''s"'
+    - '"2012-07-20"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase190258>
+    - '"745"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User187184>
+    - '"brownie breakdowns tyrannies compact engravings stripteasing abnegation''s
+      sternness lengthy Pierce marketplace''s unquestioned zoologist''s"'
+    - '"2012-08-04"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase283235>
+    - '"997"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User348506>
+    - '"hackers Orientals overnights immorality ragouts"'
+    - '"2012-07-19"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase220612>
+    - '"382"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/User348506>
+    - '"hackers Orientals overnights immorality ragouts"'
+    - '"2012-05-26"'
+- name: test1_query_95
+  description: Randomly selected query 95 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/Role1>
+    . ?v0 <http://xmlns.com/foaf/age> ?v1 . ?v0 <http://xmlns.com/foaf/givenName>
+    ?v2 . ?v4 <http://schema.org/editor> ?v0 }
+  runtime_info:
+    client_time: 2.8287365436553955
+  result_size: 433
+  headers:
+  - v0
+  - v1
+  - v2
+  - v4
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User382935>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup3>
+    - '"WILLARD"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product60961>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User177666>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup4>
+    - '"LANE"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product228>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User21067>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6>
+    - '"MARCELINO"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product122205>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User147763>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup3>
+    - '"REBEKAH"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product36068>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User178996>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup2>
+    - '"MARINA"'
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product12338>
+- name: test1_query_96
+  description: Randomly selected query 96 from watdiv test 1
+  query: SELECT * WHERE { ?v1 <http://www.geonames.org/ontology#parentCountry> <http://db.uwaterloo.ca/~galuc/wsdbm/Country16>
+    . ?v0 <http://purl.org/dc/terms/Location> ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    ?v3 }
+  runtime_info:
+    client_time: 0.0685734748840332
+  result_size: 992
+  headers:
+  - v0
+  - v1
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User202319>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City31>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User356598>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City31>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User201570>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City31>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User131906>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City31>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender0>
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User196884>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City31>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+- name: test1_query_97
+  description: Randomly selected query 97 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory4>
+    . ?v0 <http://schema.org/contentRating> ?v2 . ?v0 <http://schema.org/description>
+    ?v3 . ?v0 <http://schema.org/expires> ?v4 . ?v0 <http://schema.org/text> ?v5 }
+  runtime_info:
+    client_time: 0.20112204551696777
+  result_size: 23
+  headers:
+  - v0
+  - v2
+  - v3
+  - v4
+  - v5
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product86664>
+    - '"12"'
+    - '"pustules lanced crystallize salves macaw''s element goat reveller redden drawers
+      rehashes"'
+    - '"2018-07-24"'
+    - '"fleck''s Janette"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product80169>
+    - '"8"'
+    - '"spinals cabby''s challenger flooring Ginny''s ashcans mamas snowman"'
+    - '"2019-01-31"'
+    - '"liking jardini  res caustically marquis''s aviatrix Antwan''s lilies Tancred
+      tortoiseshell hellhole ritually codicil''s literate plight Remarque"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product108425>
+    - '"12"'
+    - '"vegetarianism''s panic''s Rubens sliced moderation fogging bohemian unpredictable
+      simian uniform koala''s abundance itinerary''s sagebrush T''ang gambling''s
+      acoustical technology''s relieves"'
+    - '"2015-11-05"'
+    - '"cauliflower errand wick''s joker''s walrus mantling undress''s continental''s
+      radish''s convulsion profit Gide microprocessor''s crematoria mascot''s lath''s
+      costarring terrestrials"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product58128>
+    - '"11"'
+    - '"pistachio escape''s translucent dailies Creation Qaddafi''s psychopaths unclothe
+      US''s"'
+    - '"2016-01-15"'
+    - '"shredding beehive''s kitten Doctorow''s resubmit slam''s emotional toolbox
+      graves Fredericton''s rawhide''s instep''s"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product95943>
+    - '"7"'
+    - '"corps''s rematches rocks boardroom sophomore sake''s"'
+    - '"2018-08-03"'
+    - '"incorrectness septet legalisms Keri Aquinas''s southern tightening peccadillo''s
+      adorable tartness delivers dialings jigsaw cassia Everest''s firefight spacy
+      shortening tonsil storekeeper''s paucity''s collaborated Charon nobler Haydn"'
+- name: test1_query_98
+  description: Randomly selected query 98 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v0 <http://purl.org/dc/terms/Location> ?v1 . ?v0 <http://xmlns.com/foaf/givenName>
+    ?v2 . ?v0 <http://schema.org/telephone> ?v3 }
+  runtime_info:
+    client_time: 3.8213367462158203
+  result_size: 3147
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User97344>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City39>
+    - '"ROSLYN"'
+    - '"2986851"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User89724>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City15>
+    - '"NEVA"'
+    - '"1836065"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User64651>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City2>
+    - '"DERICK"'
+    - '"1943458"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User91194>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City22>
+    - '"DAISY"'
+    - '"2172191"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/User11954>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/City1>
+    - '"GALEN"'
+    - '"5782566"'
+- name: test1_query_99
+  description: Randomly selected query 99 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre112>
+    . ?v0 <http://ogp.me/ns#title> ?v1 . ?v0 <http://schema.org/contentRating> ?v2
+    }
+  runtime_info:
+    client_time: 0.0654592514038086
+  result_size: 382
+  headers:
+  - v0
+  - v1
+  - v2
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product60274>
+    - '"Faith couplings hermaphrodite''s mortgagor trumpeted Fiona''s producing apoplexy
+      barker snivel gradually professor''s undervalued resort''s flabby salesmen Millet"'
+    - '"14"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product73111>
+    - '"Nasser''s rook''s dignitaries Dell''s hemispheres Holman Bran gemstone glisten''s
+      plaudits knave''s Isuzu worthiness principal''s Piedmont''s disbelieved native''s"'
+    - '"17"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product48975>
+    - '"isthmus"'
+    - '"10"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product891>
+    - '"gayness''s bet''s Pentax''s Jocelyn''s mortality''s whittler egret protraction''s
+      inexperienced lollipop perpetration silent accurst Marxism''s revolutionizing
+      refashions assimilation''s queen''s boyhood"'
+    - '"16"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Product72255>
+    - '"oven''s dilapidation regenerate ludicrously Aquarius polyps gorgeously tripped
+      illiteracy springboards"'
+    - '"10"'
+- name: test1_query_100
+  description: Randomly selected query 100 from watdiv test 1
+  query: SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion> <http://db.uwaterloo.ca/~galuc/wsdbm/Country2>
+    . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v0 <http://purl.org/goodrelations/price>
+    ?v2 . ?v0 <http://purl.org/goodrelations/validThrough> ?v3 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v4 . ?v1 <http://schema.org/text> ?v6 }
+  runtime_info:
+    client_time: 3.6714231967926025
+  result_size: 9696
+  headers:
+  - v0
+  - v1
+  - v2
+  - v3
+  - v4
+  - v6
+  results:
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer116520>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product45916>
+    - '"851"'
+    - '"2013-11-20"'
+    - '"6"'
+    - '"Enrico''s superimposing Ptah eve''s cite''s"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer172767>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product4903>
+    - '"982"'
+    - '"2013-10-21"'
+    - '"8"'
+    - '"eastbound genetically voluminous pedicure dewberry whiteness decomposes porcupine
+      Markab''s Borlaug''s"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer199647>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product66354>
+    - '"545"'
+    - '"2013-12-03"'
+    - '"8"'
+    - '"wharf''s misogynists secretariat predominant restructuring''s announcements
+      schmuck windscreens birdbrained Lester doctoring scrods nonexempt settee''s
+      mash''s fizziest slacker''s assuaged skew''s clustered guideline Jeffry''s witness''s
+      opportunity"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer353373>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product32471>
+    - '"392"'
+    - '"2013-10-27"'
+    - '"5"'
+    - '"factually muscularity lionizing thirteens pinwheeled lattices uneasy earwig''s
+      Telemachus isolates flurry"'
+  - - <http://db.uwaterloo.ca/~galuc/wsdbm/Offer180235>
+    - <http://db.uwaterloo.ca/~galuc/wsdbm/Product38303>
+    - '"361"'
+    - '"2013-09-18"'
+    - '"5"'
+    - '"bulldozer''s fogy''s gliding kingliest cabanas"'
+title: WatDiv v0.6 Evaluation (~55M triples)
+description: Waterloo SPARQL Diversity Test Suite (WatDiv) v0.6 - synthetic data with
+  ~55 million triples. 100 queries randomly selected from the watdiv-stress-1000/test.1.sparql
+  file of the published test workload at https://dsg.uwaterloo.ca/watdiv/
+timeout: 30
+name: WatDiv v0.6 (~55M triples)
+scale: 50000000

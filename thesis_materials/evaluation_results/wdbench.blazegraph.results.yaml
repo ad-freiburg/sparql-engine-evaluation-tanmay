@@ -1,0 +1,2343 @@
+queries:
+- name: c2rpqs_query_12
+  description: WDBench/Queries/c2rpqs.txt Query 12
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q142>
+    <http://www.wikidata.org/prop/direct/P35> ?x1 . ?x1 (<http://www.wikidata.org/prop/direct/P279>)+
+    <http://www.wikidata.org/entity/Q35120> } }
+  runtime_info:
+    client_time: 293.8003764152527
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_106
+  description: WDBench/Queries/c2rpqs.txt Query 106
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q35409> . ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P171>)* <http://www.wikidata.org/entity/Q28319>
+    } }
+  runtime_info:
+    client_time: 9.979376554489136
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"193"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_107
+  description: WDBench/Queries/c2rpqs.txt Query 107
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 (<http://www.wikidata.org/prop/direct/P171>)*
+    <http://www.wikidata.org/entity/Q1390> } }
+  runtime_info:
+    client_time: 189.12528657913208
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1246839"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_129
+  description: WDBench/Queries/c2rpqs.txt Query 129
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P105> ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x4 (<http://www.wikidata.org/prop/direct/P361>)+ ?x2 } }
+  runtime_info:
+    client_time: 34.22538089752197
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1325"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_132
+  description: WDBench/Queries/c2rpqs.txt Query 132
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P105> ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x4 (<http://www.wikidata.org/prop/direct/P361>)+ ?x2 } }
+  runtime_info:
+    client_time: 21.94441056251526
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1394"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_285
+  description: WDBench/Queries/c2rpqs.txt Query 285
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P18> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P297>
+    ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P31> ?x5 . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q2095> . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    ?x6 } }
+  runtime_info:
+    client_time: 300.18841314315796
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17> ?x2 . ?x1
+    <http://www.wikidata.org/prop/direct/P18> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P297>
+    ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P31> ?x5 . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q2095> . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    ?x6 } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: c2rpqs_query_286
+  description: WDBench/Queries/c2rpqs.txt Query 286
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> ?x3 . ?x3 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q39715> . ?x2 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q142> } }
+  runtime_info:
+    client_time: 311.8398835659027
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17> ?x2 . ?x1
+    <http://www.wikidata.org/prop/direct/P31> ?x3 . ?x3 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q39715> . ?x2 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q142> } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: c2rpqs_query_287
+  description: WDBench/Queries/c2rpqs.txt Query 287
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> ?x3 . ?x3 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q476028> . ?x2 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q36> } }
+  runtime_info:
+    client_time: 63.48480939865112
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"526"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_289
+  description: WDBench/Queries/c2rpqs.txt Query 289
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q35120>
+    } }
+  runtime_info:
+    client_time: 300.0109724998474
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17> ?x2 . ?x2
+    (<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q35120>
+    } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: c2rpqs_query_290
+  description: WDBench/Queries/c2rpqs.txt Query 290
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q35120> } }
+  runtime_info:
+    client_time: 300.01176381111145
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17> ?x2 . ?x2
+    (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q35120> } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: c2rpqs_query_329
+  description: WDBench/Queries/c2rpqs.txt Query 329
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P21>
+    ?x2 . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q6671777> } }
+  runtime_info:
+    client_time: 60.06474947929382
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"330"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_334
+  description: WDBench/Queries/c2rpqs.txt Query 334
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2579>
+    ?x2 . ?x1 (<http://www.wikidata.org/prop/direct/P279>)+ <http://www.wikidata.org/entity/Q488383>
+    . ?x2 ((<http://www.wikidata.org/prop/direct/P31>)?/(<http://www.wikidata.org/prop/direct/P279>)+)
+    <http://www.wikidata.org/entity/Q11862829> } }
+  runtime_info:
+    client_time: 261.48292803764343
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"15758"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_337
+  description: WDBench/Queries/c2rpqs.txt Query 337
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P276>
+    ?x2 . ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 287.8725697994232
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1123"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_427
+  description: WDBench/Queries/c2rpqs.txt Query 427
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P3096>
+    ?x2 . ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 279.33584570884705
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_471
+  description: WDBench/Queries/c2rpqs.txt Query 471
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P625> ?x3 . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q486972> . ?x1 (<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q1356> } }
+  runtime_info:
+    client_time: 300.26343846321106
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31> ?x2 . ?x1
+    <http://www.wikidata.org/prop/direct/P625> ?x3 . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q486972> . ?x1 (<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q1356> } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: c2rpqs_query_474
+  description: WDBench/Queries/c2rpqs.txt Query 474
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)*
+    <http://www.wikidata.org/entity/Q215627> } }
+  runtime_info:
+    client_time: 300.0108382701874
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31> ?x2 . ?x2
+    (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)*
+    <http://www.wikidata.org/entity/Q215627> } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: c2rpqs_query_475
+  description: WDBench/Queries/c2rpqs.txt Query 475
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P279>)* <http://www.wikidata.org/entity/Q1190554>
+    } }
+  runtime_info:
+    client_time: 22.68886637687683
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"49193577"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: c2rpqs_query_490
+  description: WDBench/Queries/c2rpqs.txt Query 490
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P361>
+    ?x2 . ?x2 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q43229> . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q43229> } }
+  runtime_info:
+    client_time: 304.53468203544617
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P361> ?x2 .
+    ?x2 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q43229> . ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q43229> } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: c2rpqs_query_499
+  description: WDBench/Queries/c2rpqs.txt Query 499
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P462>
+    <http://www.wikidata.org/entity/Q943> . ?x1 (((<http://www.wikidata.org/prop/direct/P106>|<http://www.wikidata.org/prop/direct/P39>)|<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q488383> } }
+  runtime_info:
+    client_time: 300.01256132125854
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P462> <http://www.wikidata.org/entity/Q943>
+    . ?x1 (((<http://www.wikidata.org/prop/direct/P106>|<http://www.wikidata.org/prop/direct/P39>)|<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q488383> } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: single_bgps_query_100
+  description: WDBench/Queries/single_bgps.txt Query 100
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2048>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.6237187385559082
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1348166"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_101
+  description: WDBench/Queries/single_bgps.txt Query 101
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2067>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.85611891746521
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1592374"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_102
+  description: WDBench/Queries/single_bgps.txt Query 102
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2093>
+    ?x2 } }
+  runtime_info:
+    client_time: 57.39910173416138
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"149084194"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_103
+  description: WDBench/Queries/single_bgps.txt Query 103
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P213>
+    ?x2 } }
+  runtime_info:
+    client_time: 1.0111584663391113
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2229403"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_104
+  description: WDBench/Queries/single_bgps.txt Query 104
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P214>
+    ?x2 } }
+  runtime_info:
+    client_time: 1.6188671588897705
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3699644"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_106
+  description: WDBench/Queries/single_bgps.txt Query 106
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P225>
+    ?x2 } }
+  runtime_info:
+    client_time: 1.4676084518432617
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3905073"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_108
+  description: WDBench/Queries/single_bgps.txt Query 108
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P2456>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.05573439598083496
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"97170"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_109
+  description: WDBench/Queries/single_bgps.txt Query 109
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P268>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.29820847511291504
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"727793"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_118
+  description: WDBench/Queries/single_bgps.txt Query 118
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P279>
+    ?x2 } }
+  runtime_info:
+    client_time: 1.7905166149139404
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"4970907"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_119
+  description: WDBench/Queries/single_bgps.txt Query 119
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P27>
+    <http://www.wikidata.org/entity/Q30> } }
+  runtime_info:
+    client_time: 0.2707052230834961
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"615512"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: single_bgps_query_121
+  description: WDBench/Queries/single_bgps.txt Query 121
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P27>
+    ?x2 } }
+  runtime_info:
+    client_time: 2.2338526248931885
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5629534"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_10
+  description: WDBench/Queries/multiple_bgps.txt Query 10
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P141>
+    <http://www.wikidata.org/entity/Q219127> } }
+  runtime_info:
+    client_time: 0.20852184295654297
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"9166"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_12
+  description: WDBench/Queries/multiple_bgps.txt Query 12
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P141>
+    <http://www.wikidata.org/entity/Q278113> } }
+  runtime_info:
+    client_time: 0.265918493270874
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"16430"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_13
+  description: WDBench/Queries/multiple_bgps.txt Query 13
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P1843>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P627> ?x3 } }
+  runtime_info:
+    client_time: 1.6320793628692627
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"397168"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_14
+  description: WDBench/Queries/multiple_bgps.txt Query 14
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P225>
+    ?x2 } }
+  runtime_info:
+    client_time: 22.91055417060852
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3218008"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_15
+  description: WDBench/Queries/multiple_bgps.txt Query 15
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x1 <http://www.wikidata.org/prop/direct/P225>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P627> ?x3 } }
+  runtime_info:
+    client_time: 1.1357252597808838
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"149882"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_16
+  description: WDBench/Queries/multiple_bgps.txt Query 16
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    <http://www.wikidata.org/entity/Q7432> . ?x2 <http://www.wikidata.org/prop/direct/P171>
+    ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P1843> ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P225>
+    ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    } }
+  runtime_info:
+    client_time: 300.0122241973877
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105> <http://www.wikidata.org/entity/Q7432>
+    . ?x2 <http://www.wikidata.org/prop/direct/P171> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P1843>
+    ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P225> ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q16521> } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: multiple_bgps_query_17
+  description: WDBench/Queries/multiple_bgps.txt Query 17
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P105>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P105> ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x3 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q16521>
+    . ?x4 <http://www.wikidata.org/prop/direct/P361> ?x2 } }
+  runtime_info:
+    client_time: 18.813993215560913
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"110"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_20
+  description: WDBench/Queries/multiple_bgps.txt Query 20
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q1028181> . ?x1 <http://www.wikidata.org/prop/direct/P19>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+    } }
+  runtime_info:
+    client_time: 1.672555923461914
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"142733"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_35
+  description: WDBench/Queries/multiple_bgps.txt Query 35
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q12299841> . ?x2 <http://www.wikidata.org/prop/direct/P17>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P19> ?x2 . ?x4 <http://www.wikidata.org/prop/direct/P569>
+    ?x4 } }
+  runtime_info:
+    client_time: 71.7962155342102
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_77
+  description: WDBench/Queries/multiple_bgps.txt Query 77
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q33999> . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q5> . ?x1 <http://www.wikidata.org/prop/direct/P345>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P569> ?x3 } }
+  runtime_info:
+    client_time: 2.5679433345794678
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"186270"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_139
+  description: WDBench/Queries/multiple_bgps.txt Query 139
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q937857> . ?x2 <http://www.wikidata.org/prop/direct/P19>
+    ?x2 . ?x2 <http://www.wikidata.org/prop/direct/P20> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P21>
+    <http://www.wikidata.org/entity/Q6581097> . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 300.01036834716797
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q937857>
+    . ?x2 <http://www.wikidata.org/prop/direct/P19> ?x2 . ?x2 <http://www.wikidata.org/prop/direct/P20>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581097>
+    . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+    } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: multiple_bgps_query_143
+  description: WDBench/Queries/multiple_bgps.txt Query 143
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P19> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P21>
+    ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P27> ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P569>
+    ?x6 } }
+  runtime_info:
+    client_time: 23.92935609817505
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5584152"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_149
+  description: WDBench/Queries/multiple_bgps.txt Query 149
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    ?x2 . ?x2 <http://www.wikidata.org/prop/direct/P279> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P279>
+    ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P31> ?x5 . ?x2 <http://www.wikidata.org/prop/direct/P31>
+    ?x6 } }
+  runtime_info:
+    client_time: 131.64927864074707
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"232448796"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_163
+  description: WDBench/Queries/multiple_bgps.txt Query 163
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1082>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P1448> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P1448>
+    ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256>
+    . ?x1 <http://www.wikidata.org/prop/direct/P36> ?x6 } }
+  runtime_info:
+    client_time: 300.0117790699005
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1082> ?x2 .
+    ?x1 <http://www.wikidata.org/prop/direct/P1448> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P1448>
+    ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q6256>
+    . ?x1 <http://www.wikidata.org/prop/direct/P36> ?x6 } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: multiple_bgps_query_168
+  description: WDBench/Queries/multiple_bgps.txt Query 168
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1082>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P17> ?x3 . ?x3 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q6256> . ?x3 <http://www.wikidata.org/prop/direct/P463>
+    ?x4 } }
+  runtime_info:
+    client_time: 213.94078922271729
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"72201271"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_171
+  description: WDBench/Queries/multiple_bgps.txt Query 171
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1082>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P1082> ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P1448>
+    ?x5 . ?x6 <http://www.wikidata.org/prop/direct/P1448> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q6256> . ?x1 <http://www.wikidata.org/prop/direct/P36>
+    ?x7 } }
+  runtime_info:
+    client_time: 252.9513828754425
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_183
+  description: WDBench/Queries/multiple_bgps.txt Query 183
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P115>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q476028>
+    . ?x3 <http://www.wikidata.org/prop/direct/P625> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P625>
+    ?x4 } }
+  runtime_info:
+    client_time: 0.12605643272399902
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_209
+  description: WDBench/Queries/multiple_bgps.txt Query 209
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P131>
+    <http://www.wikidata.org/entity/Q9899> . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q79007> . ?x2 <http://www.wikidata.org/prop/direct/P625>
+    ?x2 } }
+  runtime_info:
+    client_time: 0.20180535316467285
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_212
+  description: WDBench/Queries/multiple_bgps.txt Query 212
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P131>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P138> ?x3 . ?x3 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q5> . ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q79007> } }
+  runtime_info:
+    client_time: 3.366144895553589
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"96113"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_256
+  description: WDBench/Queries/multiple_bgps.txt Query 256
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1433>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P478>
+    ?x4 } }
+  runtime_info:
+    client_time: 300.00927209854126
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1433> ?x2 .
+    ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P478>
+    ?x4 } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: multiple_bgps_query_272
+  description: WDBench/Queries/multiple_bgps.txt Query 272
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1533>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P1533> ?x4 . ?x5 <http://www.wikidata.org/prop/direct/P1533>
+    ?x6 . ?x7 <http://www.wikidata.org/prop/direct/P734> ?x2 . ?x8 <http://www.wikidata.org/prop/direct/P734>
+    ?x4 . ?x9 <http://www.wikidata.org/prop/direct/P734> ?x6 . ?x8 <http://www.wikidata.org/prop/direct/P735>
+    ?x1 . ?x9 <http://www.wikidata.org/prop/direct/P735> ?x3 . ?x9 <http://www.wikidata.org/prop/direct/P735>
+    ?x5 } }
+  runtime_info:
+    client_time: 300.01449823379517
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1533> ?x2 .
+    ?x3 <http://www.wikidata.org/prop/direct/P1533> ?x4 . ?x5 <http://www.wikidata.org/prop/direct/P1533>
+    ?x6 . ?x7 <http://www.wikidata.org/prop/direct/P734> ?x2 . ?x8 <http://www.wikidata.org/prop/direct/P734>
+    ?x4 . ?x9 <http://www.wikidata.org/prop/direct/P734> ?x6 . ?x8 <http://www.wikidata.org/prop/direct/P735>
+    ?x1 . ?x9 <http://www.wikidata.org/prop/direct/P735> ?x3 . ?x9 <http://www.wikidata.org/prop/direct/P735>
+    ?x5 } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: multiple_bgps_query_273
+  description: WDBench/Queries/multiple_bgps.txt Query 273
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1533>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P1533> ?x4 . ?x5 <http://www.wikidata.org/prop/direct/P1533>
+    ?x6 . ?x7 <http://www.wikidata.org/prop/direct/P734> ?x2 . ?x8 <http://www.wikidata.org/prop/direct/P734>
+    ?x4 . ?x9 <http://www.wikidata.org/prop/direct/P734> ?x6 . ?x9 <http://www.wikidata.org/prop/direct/P734>
+    ?x10 . ?x8 <http://www.wikidata.org/prop/direct/P735> ?x1 . ?x9 <http://www.wikidata.org/prop/direct/P735>
+    ?x3 . ?x9 <http://www.wikidata.org/prop/direct/P735> ?x5 } }
+  runtime_info:
+    client_time: 300.01040625572205
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1533> ?x2 .
+    ?x3 <http://www.wikidata.org/prop/direct/P1533> ?x4 . ?x5 <http://www.wikidata.org/prop/direct/P1533>
+    ?x6 . ?x7 <http://www.wikidata.org/prop/direct/P734> ?x2 . ?x8 <http://www.wikidata.org/prop/direct/P734>
+    ?x4 . ?x9 <http://www.wikidata.org/prop/direct/P734> ?x6 . ?x9 <http://www.wikidata.org/prop/direct/P734>
+    ?x10 . ?x8 <http://www.wikidata.org/prop/direct/P735> ?x1 . ?x9 <http://www.wikidata.org/prop/direct/P735>
+    ?x3 . ?x9 <http://www.wikidata.org/prop/direct/P735> ?x5 } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: multiple_bgps_query_303
+  description: WDBench/Queries/multiple_bgps.txt Query 303
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P176>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P179> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P17>
+    ?x4 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q3231690>
+    } }
+  runtime_info:
+    client_time: 38.998839378356934
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"360573"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_309
+  description: WDBench/Queries/multiple_bgps.txt Query 309
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    <http://www.wikidata.org/entity/Q142> . ?x2 <http://www.wikidata.org/prop/direct/P279>
+    ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P279> ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q43229> } }
+  runtime_info:
+    client_time: 300.0109906196594
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q142>
+    . ?x2 <http://www.wikidata.org/prop/direct/P279> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P279>
+    ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q43229>
+    } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: multiple_bgps_query_633
+  description: WDBench/Queries/multiple_bgps.txt Query 633
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P698> ?x3 } }
+  runtime_info:
+    client_time: 198.73477792739868
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"33071516"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: multiple_bgps_query_637
+  description: WDBench/Queries/multiple_bgps.txt Query 637
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P31> ?x1 . ?x4 <http://www.wikidata.org/prop/direct/P31>
+    ?x3 . ?x5 <http://www.wikidata.org/prop/direct/P31> ?x4 } }
+  runtime_info:
+    client_time: 300.0106780529022
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31> ?x2 . ?x3
+    <http://www.wikidata.org/prop/direct/P31> ?x1 . ?x4 <http://www.wikidata.org/prop/direct/P31>
+    ?x3 . ?x5 <http://www.wikidata.org/prop/direct/P31> ?x4 } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: opts_query_3
+  description: WDBench/Queries/opts.txt Query 3
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P102>
+    <http://www.wikidata.org/entity/Q6721203> . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P569>
+    ?x2 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P19> ?x3 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P21> ?x4 } OPTIONAL { ?x3 <http://www.wikidata.org/prop/direct/P625>
+    ?x5 } } }
+  runtime_info:
+    client_time: 1.7706923484802246
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1186113"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_11
+  description: WDBench/Queries/opts.txt Query 11
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    <http://www.wikidata.org/entity/Q170790> . ?x1 <http://www.wikidata.org/prop/direct/P27>
+    <http://www.wikidata.org/entity/Q70972> . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P27>
+    ?x2 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P569> ?x3 } } }
+  runtime_info:
+    client_time: 0.12037920951843262
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"68"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_51
+  description: WDBench/Queries/opts.txt Query 51
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P106>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+    . OPTIONAL { ?x3 <http://www.wikidata.org/prop/direct/P39> ?x3 } } }
+  runtime_info:
+    client_time: 119.61149048805237
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"24002096"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_54
+  description: WDBench/Queries/opts.txt Query 54
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1083>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P131> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q476028> . ?x1 <http://www.wikidata.org/prop/direct/P625>
+    ?x5 . OPTIONAL { ?x4 <http://www.wikidata.org/prop/direct/P115> ?x1 . ?x4 <http://www.wikidata.org/prop/direct/P154>
+    ?x6 . ?x4 <http://www.wikidata.org/prop/direct/P17> ?x7 } } }
+  runtime_info:
+    client_time: 0.5521526336669922
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"40801"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_60
+  description: WDBench/Queries/opts.txt Query 60
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1184>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P361> <http://www.wikidata.org/entity/Q21542493>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P170> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P214>
+    ?x5 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P571> ?x6 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P180> ?x7 . ?x7 <http://www.wikidata.org/prop/direct/P625>
+    ?x8 } } }
+  runtime_info:
+    client_time: 317.4655201435089
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1184> ?x2 .
+    ?x1 <http://www.wikidata.org/prop/direct/P361> <http://www.wikidata.org/entity/Q21542493>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P170> ?x3 . ?x4 <http://www.wikidata.org/prop/direct/P214>
+    ?x5 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P571> ?x6 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P180> ?x7 . ?x7 <http://www.wikidata.org/prop/direct/P625>
+    ?x8 } } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: opts_query_102
+  description: WDBench/Queries/opts.txt Query 102
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P136>
+    ?x2 . ?x2 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q201658>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P345> ?x3 } } }
+  runtime_info:
+    client_time: 15.868176698684692
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"393215"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_106
+  description: WDBench/Queries/opts.txt Query 106
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1433>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P478>
+    ?x4 . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P236> ?x5 } } }
+  runtime_info:
+    client_time: 300.01437306404114
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1433> ?x2 .
+    ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P478>
+    ?x4 . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P236> ?x5 } } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: opts_query_107
+  description: WDBench/Queries/opts.txt Query 107
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1433>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P478>
+    ?x4 . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P236> ?x5 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P304> ?x6 } } }
+  runtime_info:
+    client_time: 305.6957631111145
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1433> ?x2 .
+    ?x1 <http://www.wikidata.org/prop/direct/P433> ?x3 . ?x1 <http://www.wikidata.org/prop/direct/P478>
+    ?x4 . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P236> ?x5 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P304> ?x6 } } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: opts_query_110
+  description: WDBench/Queries/opts.txt Query 110
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1435>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P625> ?x3 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    ?x4 } } }
+  runtime_info:
+    client_time: 15.324320316314697
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2864"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_113
+  description: WDBench/Queries/opts.txt Query 113
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1476>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P18> ?x3 } } }
+  runtime_info:
+    client_time: 300.01038551330566
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1476> ?x2 .
+    ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P18> ?x3 } } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: opts_query_117
+  description: WDBench/Queries/opts.txt Query 117
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1566>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P17> <http://www.wikidata.org/entity/Q668>
+    . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P131> ?x3 } } }
+  runtime_info:
+    client_time: 4.6397035121917725
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"42986"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_132
+  description: WDBench/Queries/opts.txt Query 132
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P171>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P171> ?x4 . ?x2 <http://www.wikidata.org/prop/direct/P171>
+    <http://www.wikidata.org/entity/Q25401> . ?x2 <http://www.wikidata.org/prop/direct/P18>
+    ?x5 . ?x1 <http://www.wikidata.org/prop/direct/P18> ?x6 . ?x3 <http://www.wikidata.org/prop/direct/P18>
+    ?x7 . OPTIONAL { ?x4 <http://www.wikidata.org/prop/direct/P171> ?x1 . ?x4 <http://www.wikidata.org/prop/direct/P18>
+    ?x8 } } }
+  runtime_info:
+    client_time: 52.204893589019775
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"7543181"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_135
+  description: WDBench/Queries/opts.txt Query 135
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1741>
+    ?x2 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P166> ?x3 } OPTIONAL
+    { ?x3 <http://www.wikidata.org/prop/direct/P585> ?x4 } } }
+  runtime_info:
+    client_time: 300.0115256309509
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1741> ?x2 .
+    OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P166> ?x3 } OPTIONAL { ?x3
+    <http://www.wikidata.org/prop/direct/P585> ?x4 } } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: opts_query_138
+  description: WDBench/Queries/opts.txt Query 138
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P1788>
+    ?x2 . ?x3 <http://www.wikidata.org/prop/direct/P625> ?x4 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P19>
+    ?x3 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P569> ?x5 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P18> ?x6 } } }
+  runtime_info:
+    client_time: 332.01855659484863
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: opts_query_152
+  description: WDBench/Queries/opts.txt Query 152
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P17>
+    <http://www.wikidata.org/entity/Q159> . ?x2 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q486972> . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P625>
+    ?x3 } OPTIONAL { ?x4 <http://www.wikidata.org/prop/direct/P1082> ?x4 } } }
+  runtime_info:
+    client_time: 332.01871252059937
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: opts_query_207
+  description: WDBench/Queries/opts.txt Query 207
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P19>
+    ?x2 . ?x1 <http://www.wikidata.org/prop/direct/P21> <http://www.wikidata.org/entity/Q6581072>
+    . ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>
+    . ?x1 <http://www.wikidata.org/prop/direct/P569> ?x3 . ?x2 <http://www.wikidata.org/prop/direct/P625>
+    ?x4 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P18> ?x5 } } }
+  runtime_info:
+    client_time: 0.6029322147369385
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_293
+  description: WDBench/Queries/opts.txt Query 293
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q13442814> . ?x1 <http://www.wikidata.org/prop/direct/P50>
+    ?x2 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P50> ?x2 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P1476> ?x3 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P577>
+    ?x4 } } }
+  runtime_info:
+    client_time: 300.0162601470947
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q13442814>
+    . ?x1 <http://www.wikidata.org/prop/direct/P50> ?x2 . OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P50>
+    ?x2 } OPTIONAL { ?x1 <http://www.wikidata.org/prop/direct/P1476> ?x3 } OPTIONAL
+    { ?x1 <http://www.wikidata.org/prop/direct/P577> ?x4 } } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:132)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: opts_query_318
+  description: WDBench/Queries/opts.txt Query 318
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P31>
+    <http://www.wikidata.org/entity/Q3231690> . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P17>
+    ?x2 } } }
+  runtime_info:
+    client_time: 6.676342725753784
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5900784"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: opts_query_480
+  description: WDBench/Queries/opts.txt Query 480
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 <http://www.wikidata.org/prop/direct/P39>
+    <http://www.wikidata.org/entity/Q3044918> . OPTIONAL { ?x2 <http://www.wikidata.org/prop/direct/P569>
+    ?x2 } } }
+  runtime_info:
+    client_time: 2.0845563411712646
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"13289"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_62
+  description: WDBench/Queries/paths.txt Query 62
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q3044>
+    (<http://www.wikidata.org/prop/direct/P40>)* ?x1 } }
+  runtime_info:
+    client_time: 73.05238080024719
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"386400"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_67
+  description: WDBench/Queries/paths.txt Query 67
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q3454165>
+    (^<http://www.wikidata.org/prop/direct/P161>/<http://www.wikidata.org/prop/direct/P161>)+
+    ?x1 } }
+  runtime_info:
+    client_time: 288.40838074684143
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"241460"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_104
+  description: WDBench/Queries/paths.txt Query 104
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://www.wikidata.org/entity/Q80484>
+    ((<http://www.wikidata.org/prop/direct/P131>)+/(<http://www.wikidata.org/prop/direct/P17>)*)
+    <http://www.wikidata.org/entity/Q145> } }
+  runtime_info:
+    client_time: 82.34478712081909
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_114
+  description: WDBench/Queries/paths.txt Query 114
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ()* ?x2
+    } }
+  runtime_info:
+    client_time: 0.011406421661376953
+  headers: []
+  results: 'HTTP code: 400: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 ()* ?x2 } } java.util.concurrent.ExecutionException:
+    org.openrdf.query.MalformedQueryException: Encountered " <NIL> "() "" at line
+    1, column 66. Was expecting one of: "(" ... "!" ... "^" ... "a" ... <Q_IRI_REF>
+    ... <PNAME_NS> ... <PNAME_LN> ... <VAR1> ... <VAR2> ... at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) Caused by: org.openrdf.query.MalformedQueryException:
+    Encountered " <NIL> "() "" at line 1, column 66. Was expecting one of: "(" ...
+    "!" ... "^" ... "a" ... <Q_IRI_REF> ... <PNAME_NS> ... <PNAME_LN> ... <VAR1> ...
+    <VAR2> ... at com.bigdata.rdf.sail.sparql.Bigdata2ASTSPARQLParser.parseQuery2(Bigdata2ASTSPARQLParser.java:400)
+    at com.bigdata.rdf.sail.webapp.QueryServlet$SparqlQueryTask.call(QueryServlet.java:741)
+    at com.bigdata.rdf.sail.webapp.QueryServlet$SparqlQueryTask.call(QueryServlet.java:695)
+    at com.bigdata.rdf.task.ApiTaskForIndexManager.call(ApiTaskForIndexManager.java:68)
+    at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+    at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+    ... 1 more Caused by: com.bigdata.rdf.sail.sparql.ast.ParseException: Encountered
+    " <NIL> "() "" at line 1, column 66. Was expecting one of: "(" ... "!" ... "^"
+    ... "a" ... <Q_IRI_REF> ... <PNAME_NS> ... <PNAME_LN> ... <VAR1> ... <VAR2> ...
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.generateParseException(SyntaxTreeBuilder.java:9718)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.jj_consume_token(SyntaxTreeBuilder.java:9585)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.PropertyListPath(SyntaxTreeBuilder.java:2985)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.TriplesSameSubjectPath(SyntaxTreeBuilder.java:2915)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.TriplesBlock(SyntaxTreeBuilder.java:2308)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.BasicGraphPattern(SyntaxTreeBuilder.java:2093)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.GraphPattern(SyntaxTreeBuilder.java:2030)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.GroupGraphPattern(SyntaxTreeBuilder.java:1965)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.WhereClause(SyntaxTreeBuilder.java:1009)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.SubSelect(SyntaxTreeBuilder.java:412)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.GroupGraphPattern(SyntaxTreeBuilder.java:1961)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.WhereClause(SyntaxTreeBuilder.java:1009)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.SelectQuery(SyntaxTreeBuilder.java:373)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.Query(SyntaxTreeBuilder.java:324)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.QueryContainer(SyntaxTreeBuilder.java:212)
+    at com.bigdata.rdf.sail.sparql.ast.SyntaxTreeBuilder.parseQuery(SyntaxTreeBuilder.java:32)
+    at com.bigdata.rdf.sail.sparql.Bigdata2ASTSPARQLParser.parseQuery2(Bigdata2ASTSPARQLParser.java:336)
+    ... 7 more '
+- name: paths_query_116
+  description: WDBench/Queries/paths.txt Query 116
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((((((((<http://www.wikidata.org/prop/direct/P171>|<http://www.wikidata.org/prop/direct/P273>)|<http://www.wikidata.org/prop/direct/P75>)|<http://www.wikidata.org/prop/direct/P76>)|<http://www.wikidata.org/prop/direct/P77>)|<http://www.wikidata.org/prop/direct/P70>)|<http://www.wikidata.org/prop/direct/P71>)|<http://www.wikidata.org/prop/direct/P74>)|<http://www.wikidata.org/prop/direct/P89>)*
+    <http://www.wikidata.org/entity/Q729> } }
+  runtime_info:
+    client_time: 300.00904726982117
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 ((((((((<http://www.wikidata.org/prop/direct/P171>|<http://www.wikidata.org/prop/direct/P273>)|<http://www.wikidata.org/prop/direct/P75>)|<http://www.wikidata.org/prop/direct/P76>)|<http://www.wikidata.org/prop/direct/P77>)|<http://www.wikidata.org/prop/direct/P70>)|<http://www.wikidata.org/prop/direct/P71>)|<http://www.wikidata.org/prop/direct/P74>)|<http://www.wikidata.org/prop/direct/P89>)*
+    <http://www.wikidata.org/entity/Q729> } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: paths_query_117
+  description: WDBench/Queries/paths.txt Query 117
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (((((<http://www.wikidata.org/prop/direct/P279>/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)
+    ?x1 } }
+  runtime_info:
+    client_time: 124.15172719955444
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"221"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_118
+  description: WDBench/Queries/paths.txt Query 118
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (((((<http://www.wikidata.org/prop/direct/P31>/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)
+    ?x1 } }
+  runtime_info:
+    client_time: 124.43620109558105
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_122
+  description: WDBench/Queries/paths.txt Query 122
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((((<http://www.wikidata.org/prop/direct/P279>/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)/<http://www.wikidata.org/prop/direct/P279>)
+    ?x1 } }
+  runtime_info:
+    client_time: 94.22698402404785
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_124
+  description: WDBench/Queries/paths.txt Query 124
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (((<http://www.wikidata.org/prop/direct/P106>|<http://www.wikidata.org/prop/direct/P39>)|<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q488383> } }
+  runtime_info:
+    client_time: 280.7598729133606
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"124995971"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_132
+  description: WDBench/Queries/paths.txt Query 132
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)+
+    <http://www.wikidata.org/entity/Q268592> } }
+  runtime_info:
+    client_time: 309.62515592575073
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)+
+    <http://www.wikidata.org/entity/Q268592> } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: paths_query_133
+  description: WDBench/Queries/paths.txt Query 133
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (((<http://www.wikidata.org/prop/direct/P31>)*|(<http://www.wikidata.org/prop/direct/P131>)*)/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q618123> } }
+  runtime_info:
+    client_time: 311.61941838264465
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 (((<http://www.wikidata.org/prop/direct/P31>)*|(<http://www.wikidata.org/prop/direct/P131>)*)/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q618123> } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: paths_query_157
+  description: WDBench/Queries/paths.txt Query 157
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>/(<http://www.wikidata.org/prop/direct/P31>)*)+
+    <http://www.wikidata.org/entity/Q12737077> } }
+  runtime_info:
+    client_time: 332.0123608112335
+  headers: []
+  results: 'Exception: curl command failed with exit code 28, stderr is empty'
+  server_restarted: true
+- name: paths_query_169
+  description: WDBench/Queries/paths.txt Query 169
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q35120> } }
+  runtime_info:
+    client_time: 300.0222918987274
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>|<http://www.wikidata.org/prop/direct/P131>)*
+    <http://www.wikidata.org/entity/Q35120> } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:132)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: paths_query_183
+  description: WDBench/Queries/paths.txt Query 183
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q486972> } }
+  runtime_info:
+    client_time: 27.155542373657227
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2853825"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_185
+  description: WDBench/Queries/paths.txt Query 185
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>)*/(<http://www.wikidata.org/prop/direct/P279>)*)
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 218.17630529403687
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"12391310"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_201
+  description: WDBench/Queries/paths.txt Query 201
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>/<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P31>)+)
+    ?x1 } }
+  runtime_info:
+    client_time: 300.01202940940857
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P31>/<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P31>)+)
+    ?x1 } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:132)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: paths_query_205
+  description: WDBench/Queries/paths.txt Query 205
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)*
+    <http://www.wikidata.org/entity/Q215627> } }
+  runtime_info:
+    client_time: 253.47438645362854
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"12601276"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_206
+  description: WDBench/Queries/paths.txt Query 206
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)+
+    <http://www.wikidata.org/entity/Q12737077> } }
+  runtime_info:
+    client_time: 47.112979888916016
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1199291"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_207
+  description: WDBench/Queries/paths.txt Query 207
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)+
+    <http://www.wikidata.org/entity/Q21146257> } }
+  runtime_info:
+    client_time: 311.2191026210785
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>|<http://www.wikidata.org/prop/direct/P279>)+
+    <http://www.wikidata.org/entity/Q21146257> } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: paths_query_213
+  description: WDBench/Queries/paths.txt Query 213
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 ((<http://www.wikidata.org/prop/direct/P50>/<http://www.wikidata.org/prop/direct/P31>)/(<http://www.wikidata.org/prop/direct/P279>)+)
+    <http://www.wikidata.org/entity/Q386724> } }
+  runtime_info:
+    client_time: 193.1028983592987
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"20612"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_217
+  description: WDBench/Queries/paths.txt Query 217
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P105>)*
+    <http://www.wikidata.org/entity/Q7432> } }
+  runtime_info:
+    client_time: 39.822768211364746
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3217632"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_392
+  description: WDBench/Queries/paths.txt Query 392
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>)*
+    <http://www.wikidata.org/entity/Q35120> } }
+  runtime_info:
+    client_time: 300.00938153266907
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P279>)* <http://www.wikidata.org/entity/Q35120>
+    } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: paths_query_428
+  description: WDBench/Queries/paths.txt Query 428
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>)*
+    <http://www.wikidata.org/entity/Q16521> } }
+  runtime_info:
+    client_time: 69.54826259613037
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3799090"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_443
+  description: WDBench/Queries/paths.txt Query 443
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>)*
+    <http://www.wikidata.org/entity/Q5> } }
+  runtime_info:
+    client_time: 224.31013774871826
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"12389443"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: paths_query_609
+  description: WDBench/Queries/paths.txt Query 609
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?x1 (<http://www.wikidata.org/prop/direct/P31>/(<http://www.wikidata.org/prop/direct/P31>)*)
+    <http://www.wikidata.org/entity/Q16521> } }
+  runtime_info:
+    client_time: 89.66805791854858
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3799147"^^<http://www.w3.org/2001/XMLSchema#integer>'
+title: WDBench Wikidata-truthy Evaluation (~8B triples)
+description: WDBench Benchmark for Wikidata-truthy RDF dump, data from https://dumps.wikimedia.org/wikidatawiki/entities/
+  (13.06.2025), ~8 billion triples. 100 worst queries selected in total from the 5
+  set of queries at WDBench at https://github.com/MillenniumDB/WDBench
+timeout: 300
+name: WDBench (~8B triples)
+scale: 8000000000

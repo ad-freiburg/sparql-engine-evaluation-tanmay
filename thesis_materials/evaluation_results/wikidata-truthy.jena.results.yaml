@@ -1,0 +1,1097 @@
+queries:
+- name: join-2-small-large
+  description: JOIN of a small and a large predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s wdtn:P8024 ?o1 . ?s schema:description ?o2 }'
+  runtime_info:
+    client_time: 0.4552147388458252
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"33878"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-2-large-small
+  description: JOIN of a large and a small predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 . ?s wdtn:P8024 ?o2 }'
+  runtime_info:
+    client_time: 0.04954648017883301
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"33878"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-2-large-large
+  description: JOIN of two large predicates
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s schema:description ?o1 . ?s schema:name
+    ?o2 }'
+  runtime_info:
+    client_time: 300.1309130191803
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: join-2-largest-result
+  description: JOIN of two predicates with the largest possible result
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:name ?o1 . ?s rdfs:label ?o2 }'
+  runtime_info:
+    client_time: 300.18547654151917
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: join-2-large-large-with-large-result
+  description: JOIN of two large predicates with a reasonably large result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 . ?s wdt:P2093 ?o2 }'
+  runtime_info:
+    client_time: 300.20771765708923
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: join-2-large-large-with-small-result
+  description: JOIN of two large predicates with a small result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P50 ?o1 . ?s wdt:P478 ?o2 }'
+  runtime_info:
+    client_time: 300.13681960105896
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: join-3-star-largest-sum-of-join-sizes
+  description: JOIN star of three large predicates with the largest sum of join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s schema:description ?o2
+    . ?s wdt:P31 ?o3 }'
+  runtime_info:
+    client_time: 300.11627650260925
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: join-3-chain-largest-sum-of-join-sizes
+  description: JOIN chain of three large predicates with the largest sum of join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . ?b wdt:P31 ?c . ?c schema:description ?d }'
+  runtime_info:
+    client_time: 300.1405408382416
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: join-xlarge-star-on-small-predicates
+  description: JOIN star of many small predicates
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s wdtn:P8024 ?o0 . ?s wdt:P8024 ?o1 . ?s wdt:P10837 ?o2 . ?s wdt:P5626 ?o3 .
+    ?s wdt:P3453 ?o4 . ?s wdt:P3177 ?o5 . ?s wdt:P7997 ?o6 . ?s wdt:P4740 ?o7 . ?s
+    wdt:P4034 ?o8 . ?s wdt:P9556 ?o9 . ?s wdt:P470 ?o10 . ?s wdt:P5052 ?o11 . ?s wdtn:P4466
+    ?o12 . ?s wdt:P4466 ?o13 . ?s wdt:P958 ?o14 . ?s wdt:P7492 ?o15 . ?s wdt:P1385
+    ?o16 . ?s wdt:P12123 ?o17 . ?s wdt:P6141 ?o18 . ?s wdt:P10916 ?o19 . ?s wdt:P10761
+    ?o20 . ?s wdt:P6019 ?o21 . ?s wdt:P3322 ?o22 . ?s wdt:P12249 ?o23 . ?s wdt:P4433
+    ?o24 }'
+  runtime_info:
+    client_time: 0.16991806030273438
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: join-xlarge-chain-on-small-predicates
+  description: JOIN chain of many small predicates
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?v0 wdtn:P8024 ?v1 . ?v1 wdt:P8024 ?v2 . ?v2 wdt:P10837 ?v3 . ?v3 wdt:P5626 ?v4
+    . ?v4 wdt:P3453 ?v5 . ?v5 wdt:P3177 ?v6 . ?v6 wdt:P7997 ?v7 . ?v7 wdt:P4740 ?v8
+    . ?v8 wdt:P4034 ?v9 . ?v9 wdt:P9556 ?v10 . ?v10 wdt:P470 ?v11 . ?v11 wdt:P5052
+    ?v12 . ?v12 wdtn:P4466 ?v13 . ?v13 wdt:P4466 ?v14 . ?v14 wdt:P958 ?v15 . ?v15
+    wdt:P7492 ?v16 . ?v16 wdt:P1385 ?v17 . ?v17 wdt:P12123 ?v18 . ?v18 wdt:P6141 ?v19
+    . ?v19 wdt:P10916 ?v20 . ?v20 wdt:P10761 ?v21 . ?v21 wdt:P6019 ?v22 . ?v22 wdt:P3322
+    ?v23 . ?v23 wdt:P12249 ?v24 . ?v24 wdt:P4433 ?v25 }'
+  runtime_info:
+    client_time: 0.05208587646484375
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: optional-join-small-large
+  description: OPTIONAL JOIN of a small and a large predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s wdtn:P8024 ?o1 OPTIONAL { ?s schema:description ?o2 } }'
+  runtime_info:
+    client_time: 0.6126549243927002
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"33878"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: optional-join-large-small
+  description: OPTIONAL JOIN of a large and a small predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 OPTIONAL { ?s wdtn:P8024 ?o2 } }'
+  runtime_info:
+    client_time: 300.02599334716797
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-large-large
+  description: OPTIONAL JOIN of two large predicates
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s schema:description ?o1 OPTIONAL { ?s schema:name
+    ?o2 } }'
+  runtime_info:
+    client_time: 300.0359606742859
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-2-large-large-with-large-result
+  description: OPTIONAL JOIN of two large predicates with a reasonably large join
+    result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 . OPTIONAL { ?s wdt:P2093 ?o2 } }'
+  runtime_info:
+    client_time: 300.0545291900635
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-2-large-large-with-small-join-result-1
+  description: OPTIONAL JOIN of two large predicates with a small join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P50 ?o1 . OPTIONAL { ?s wdt:P478 ?o2
+    } }'
+  runtime_info:
+    client_time: 300.04680156707764
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-2-large-large-with-small-join-result-2
+  description: OPTIONAL JOIN of two large predicates with a small join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P478 ?o1 . OPTIONAL { ?s wdt:P50 ?o2
+    } }'
+  runtime_info:
+    client_time: 300.0565552711487
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-3-star-1
+  description: OPTIONAL JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s schema:description ?o2
+    . OPTIONAL { ?s wdt:P31 ?o3 } }'
+  runtime_info:
+    client_time: 300.032466173172
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-3-star-2
+  description: OPTIONAL JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . OPTIONAL { ?s schema:description
+    ?o2 . ?s wdt:P31 ?o3 } }'
+  runtime_info:
+    client_time: 300.01104736328125
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-3-chain-1
+  description: OPTIONAL JOIN chain of three large predicates with the largest sum
+    of join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . ?b wdt:P31 ?c . OPTIONAL { ?c schema:description ?d } }'
+  runtime_info:
+    client_time: 300.01266074180603
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: optional-join-3-chain-2
+  description: OPTIONAL JOIN chain of three large predicates with the largest sum
+    of join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . OPTIONAL { ?b wdt:P31 ?c . ?c schema:description ?d } }'
+  runtime_info:
+    client_time: 300.01420760154724
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-small-large
+  description: MINUS JOIN of a small and a large predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s wdtn:P8024 ?o1 MINUS { ?s schema:description ?o2 } }'
+  runtime_info:
+    client_time: 300.0126178264618
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-large-small
+  description: MINUS JOIN of a large and a small predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 MINUS { ?s wdtn:P8024 ?o2 } }'
+  runtime_info:
+    client_time: 300.012380361557
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-large-large
+  description: MINUS JOIN of two large predicates
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s schema:description ?o1 MINUS { ?s schema:name
+    ?o2 } }'
+  runtime_info:
+    client_time: 300.01554918289185
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-2-large-large-with-large-result
+  description: MINUS JOIN of two large predicates with a reasonably large join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 . MINUS { ?s wdt:P2093 ?o2 } }'
+  runtime_info:
+    client_time: 300.0113015174866
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-2-large-large-with-small-join-result-1
+  description: MINUS JOIN of two large predicates with a small join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P50 ?o1 . MINUS { ?s wdt:P478 ?o2 }
+    }'
+  runtime_info:
+    client_time: 300.012806892395
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-2-large-large-with-small-join-result-2
+  description: MINUS JOIN of two large predicates with a small join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P478 ?o1 . MINUS { ?s wdt:P50 ?o2 }
+    }'
+  runtime_info:
+    client_time: 300.0179145336151
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-3-star-1
+  description: MINUS JOIN star of three large predicates with the largest sum of join
+    sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s schema:description ?o2
+    . MINUS { ?s wdt:P31 ?o3 } }'
+  runtime_info:
+    client_time: 300.0124077796936
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-3-star-2
+  description: MINUS JOIN star of three large predicates with the largest sum of join
+    sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . MINUS { ?s schema:description
+    ?o2 . ?s wdt:P31 ?o3 } }'
+  runtime_info:
+    client_time: 300.03014087677
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-3-chain-1
+  description: MINUS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . ?b wdt:P31 ?c . MINUS { ?c schema:description ?d } }'
+  runtime_info:
+    client_time: 300.0235753059387
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: minus-join-3-chain-2
+  description: MINUS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . MINUS { ?b wdt:P31 ?c . ?c schema:description ?d } }'
+  runtime_info:
+    client_time: 300.0110445022583
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-small-large
+  description: EXISTS JOIN of a small and a large predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s wdtn:P8024 ?o1 FILTER EXISTS { ?s schema:description ?o2 } }'
+  runtime_info:
+    client_time: 0.8660521507263184
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"1000"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: exists-join-large-small
+  description: EXISTS JOIN of a large and a small predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 FILTER EXISTS { ?s wdtn:P8024 ?o2 } }'
+  runtime_info:
+    client_time: 300.03206610679626
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-large-large
+  description: EXISTS JOIN of two large predicates
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s schema:description ?o1 FILTER EXISTS {
+    ?s schema:name ?o2 } }'
+  runtime_info:
+    client_time: 300.0622067451477
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-2-large-large-with-large-result
+  description: EXISTS JOIN of two large predicates with a reasonably large join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 . FILTER EXISTS { ?s wdt:P2093 ?o2 } }'
+  runtime_info:
+    client_time: 300.0429480075836
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-2-large-large-with-small-join-result-1
+  description: EXISTS JOIN of two large predicates with a small join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P50 ?o1 . FILTER EXISTS { ?s wdt:P478
+    ?o2 } }'
+  runtime_info:
+    client_time: 300.06161165237427
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-2-large-large-with-small-join-result-2
+  description: EXISTS JOIN of two large predicates with a small join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P478 ?o1 . FILTER EXISTS { ?s wdt:P50
+    ?o2 } }'
+  runtime_info:
+    client_time: 300.05859994888306
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-3-star-1
+  description: EXISTS JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s schema:description ?o2
+    . FILTER EXISTS { ?s wdt:P31 ?o3 } }'
+  runtime_info:
+    client_time: 300.0260179042816
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-3-star-2
+  description: EXISTS JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . FILTER EXISTS { ?s schema:description
+    ?o2 . ?s wdt:P31 ?o3 } }'
+  runtime_info:
+    client_time: 300.01082849502563
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-3-chain-1
+  description: EXISTS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . ?b wdt:P31 ?c . FILTER EXISTS { ?c schema:description ?d } }'
+  runtime_info:
+    client_time: 300.01032972335815
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: exists-join-3-chain-2
+  description: EXISTS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . FILTER EXISTS { ?b wdt:P31 ?c . ?c schema:description ?d } }'
+  runtime_info:
+    client_time: 300.0108439922333
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: union-no-constraint
+  description: UNION of two large predicates, no constraint
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s schema:description ?o } UNION { ?s schema:name
+    ?o } }'
+  runtime_info:
+    client_time: 300.0232617855072
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: union-constraint-from-star
+  description: UNION of two large predicates, constrained by a large predicate known
+    to have join partners
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s rdf:type ?o1 } UNION { ?s schema:description
+    ?o1 } ?s wdt:P31 ?o2 }'
+  runtime_info:
+    client_time: 300.04983949661255
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: union-constraint-small-join
+  description: UNION of two large predicates, constrained by a join with a small result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT (COUNT(*) AS ?count)
+    WHERE { { ?s wdt:P50 ?o1 } UNION { ?s skos:prefLabel ?o1 } ?s wdt:P478 ?o2 }'
+  runtime_info:
+    client_time: 300.0669674873352
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: union-constraint-large-join
+  description: UNION of two large predicates, constrained by a join with a large result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    { ?s schema:description ?o1 } UNION { ?s schema:name ?o1 } ?s wdt:P2093 ?o2 }'
+  runtime_info:
+    client_time: 300.05698561668396
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: union-constraint-filter-restrictive
+  description: UNION of two large predicates, constraint by restrictive FILTER
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s schema:description ?o } UNION { ?s schema:name
+    ?o } FILTER (?s = ?o) }'
+  runtime_info:
+    client_time: 300.0417835712433
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: multicolumn-join-small
+  description: Multicolumn JOIN small
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P921 ?o . ?s wdt:P31 ?o }'
+  runtime_info:
+    client_time: 300.05078196525574
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: multicolumn-join-large
+  description: Multicolumn JOIN large
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s skos:prefLabel ?o . ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 300.06638741493225
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: group-by-count-object-high-multiplicity
+  description: GROUP BY with COUNT, for object with high multiplicity
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT ?object (COUNT(?subject) AS ?count) { ?subject wdt:P2548 ?object } GROUP
+    BY ?object ORDER BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 81.68776106834412
+  result_size: 3
+  headers:
+  - object
+  - count
+  results:
+  - - <http://www.wikidata.org/entity/Q22809680>
+    - '"530762"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://www.wikidata.org/entity/Q22809711>
+    - '"527806"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://www.wikidata.org/entity/Q41329>
+    - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-count-object-low-multiplicity
+  description: GROUP BY with COUNT, for object with low multiplicity
+  query: 'PREFIX p: <http://www.wikidata.org/prop/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    SELECT ?object (COUNT(?subject) AS ?count) { ?subject skos:prefLabel ?object }
+    GROUP BY ?object ORDER BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 300.01081705093384
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: group-by-count-object-wrong-sort-order
+  description: GROUP BY with COUNT, for object but not sorted by object
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT ?o1 (COUNT(?s) AS ?count) { ?s
+    wdt:P13046 ?o1 . ?s schema:description ?o2 } GROUP BY ?o1 ORDER BY DESC(?count)
+    LIMIT 10'
+  runtime_info:
+    client_time: 282.6055693626404
+  result_size: 10
+  headers:
+  - o1
+  - count
+  results:
+  - - <http://www.wikidata.org/entity/Q7318358>
+    - '"105768732"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://www.wikidata.org/entity/Q1504425>
+    - '"783211"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://www.wikidata.org/entity/Q591041>
+    - '"67024"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://www.wikidata.org/entity/Q121763407>
+    - '"24294"^^<http://www.w3.org/2001/XMLSchema#integer>'
+  - - <http://www.wikidata.org/entity/Q2782326>
+    - '"4125"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-complex-aggregate
+  description: GROUP BY with COUNT and MIN and MAX and SAMPLE
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT ?o1 (COUNT(?s) AS ?count) (MIN(?s)
+    AS ?min) (MAX(?s) AS ?max) (SAMPLE(?s) AS ?sample) { ?s wdt:P13046 ?o1 . ?s schema:description
+    ?o2 } GROUP BY ?o1 ORDER BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 300.1141538619995
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: group-by-implicit-numeric-baseline
+  description: Implicit GROUP BY with COUNT on numeric predicate as baseline
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?o) AS ?count) { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 62.802852392196655
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"120995547"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-numeric-sum
+  description: Implicit GROUP BY with SUM on numeric predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(?o) AS ?sum) { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 63.42043161392212
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244891557167194061"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-numeric-min
+  description: Implicit GROUP BY with MIN on numeric predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (MIN(?o) AS ?min) { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 64.72887754440308
+  result_size: 1
+  headers:
+  - min
+  results:
+  - - '"984175"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-numeric-max
+  description: Implicit GROUP BY with MAX on numeric predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (MAX(?o) AS ?max) { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 65.77795934677124
+  result_size: 1
+  headers:
+  - max
+  results:
+  - - '"2360504999"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: group-by-implicit-numeric-avg
+  description: Implicit GROUP BY with AVG on numeric predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (AVG(?o) AS ?avg) { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 63.90149545669556
+  result_size: 1
+  headers:
+  - avg
+  results:
+  - - '"2023971652.17323296203619791065534"^^<http://www.w3.org/2001/XMLSchema#decimal>'
+- name: group-by-implicit-string-baseline
+  description: Implicit GROUP BY with COUNT on string predicate as baseline
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?o) AS ?count) { ?s schema:description ?o }'
+  runtime_info:
+    client_time: 300.011022567749
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: group-by-implicit-string-min
+  description: Implicit GROUP BY with MIN on string predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (MIN(?o) AS ?min) { ?s schema:description ?o }'
+  runtime_info:
+    client_time: 300.01303243637085
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: group-by-implicit-string-max
+  description: Implicit GROUP BY with MAX on string predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (MAX(?o) AS ?max) { ?s schema:description ?o }'
+  runtime_info:
+    client_time: 300.01097226142883
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: group-by-string-groupconcat
+  description: GROUP BY with GROUP_CONCAT on string predicate with high subject multiplicity
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(STRLEN(?cat)) AS ?sum) { { SELECT (GROUP_CONCAT(?o; SEPARATOR=" ")
+    AS ?cat) { ?s schema:description ?o } GROUP BY ?s } }'
+  runtime_info:
+    client_time: 300.2234025001526
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: distinct-count-object-high-multiplicity
+  description: COUNT DISTINCT, for object with high multiplicity
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(DISTINCT ?object) AS ?count) { ?subject wdt:P2548 ?object }'
+  runtime_info:
+    client_time: 0.24963593482971191
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: distinct-count-object-low-multiplicity
+  description: COUNT DISTINCT, for object with low multiplicity
+  query: 'PREFIX p: <http://www.wikidata.org/prop/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    SELECT (COUNT(DISTINCT ?object) AS ?count) { ?subject skos:prefLabel ?object }'
+  runtime_info:
+    client_time: 300.0132510662079
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: distinct-count-object-wrong-sort-order
+  description: COUNT DISTINCT, for object but not sorted by object
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(DISTINCT ?o1) AS ?count)
+    { ?s wdt:P13046 ?o1 . ?s schema:description ?o2 }'
+  runtime_info:
+    client_time: 140.9178056716919
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"44"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: transitive-path-plus
+  description: Transitive path with plus
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) { ?s wdt:P2293+ ?o }'
+  runtime_info:
+    client_time: 42.83279776573181
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"12972039"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: transitive-path-plus-fixed-subject
+  description: Transitive path with plus and a fixed subject
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) { wd:Q81867
+    wdt:P2293+ ?o }'
+  runtime_info:
+    client_time: 0.029881000518798828
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3519"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: transitive-path-large-join-and-plus
+  description: Transitive path with a large join and plus
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) { ?s wdt:P921/wdt:P2293+ ?o }'
+  runtime_info:
+    client_time: 300.01346492767334
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: transitive-path-small-join-and-plus
+  description: Transitive path with a small join and plus
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) { ?s wdt:P1911/wdt:P2293+ ?o }'
+  runtime_info:
+    client_time: 0.530949592590332
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"159948"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: regex-3-contains
+  description: CONTAINS filter with fixed string of length 3
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER CONTAINS(?o, "com")
+    }'
+  runtime_info:
+    client_time: 300.0127773284912
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: regex-3-fixed
+  description: REGEX filter with fixed string of length 3
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER REGEX(?o, "com") }'
+  runtime_info:
+    client_time: 300.2816231250763
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: regex-3
+  description: REGEX filter with expression of length 3
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER REGEX(?o, "c.m") }'
+  runtime_info:
+    client_time: 300.0176086425781
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: regex-prefix-1
+  description: REGEX filter with prefix of length 1
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER REGEX(?o, "^C") }'
+  runtime_info:
+    client_time: 300.0242340564728
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: regex-prefix-2
+  description: REGEX filter with prefix of length 2
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?object FILTER REGEX(?object,
+    "^Co") }'
+  runtime_info:
+    client_time: 300.02638125419617
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: regex-prefix-3
+  description: REGEX filter with prefix of length 3
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?object FILTER REGEX(?object,
+    "^Com") }'
+  runtime_info:
+    client_time: 300.010938167572
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: strlen
+  description: String length for large string predicate
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(STRLEN(?o)) AS ?checksum) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 300.01089358329773
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: strbefore
+  description: STRBEFORE string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(STRLEN(STRBEFORE(?o, "a"))) AS ?checksum) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 300.2922749519348
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: strafter
+  description: STRAFTER string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(STRLEN(STRAFTER(?o, "a"))) AS ?checksum) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 300.07525396347046
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: strstarts
+  description: STRSTARTS string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (SUM(xsd:integer(STRSTARTS(?o,
+    "a"))) AS ?count) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 300.3224174976349
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: strends
+  description: STRENDS string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (SUM(xsd:integer(STRENDS(?o,
+    "a"))) AS ?count) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 300.0106508731842
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: result-size-tiny
+  description: Export 10 tuples
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT ?s ?o WHERE { ?s schema:description ?o } LIMIT 10'
+  runtime_info:
+    client_time: 0.03739023208618164
+  result_size: 10
+  headers:
+  - s
+  - o
+  results:
+  - - <http://www.wikidata.org/entity/Q18290220>
+    - "\"film fr\xE5n 1990 regisserad av Bj\xF6rn Runge\"@sv"
+  - - <http://www.wikidata.org/entity/Q113562574>
+    - "\"\u59D3\u6C0F (Fessier)\"@zh-Hant"
+  - - <http://www.wikidata.org/entity/Q24578946>
+    - "\"chanteur Burkinab\xE9\"@fr"
+  - - <http://www.wikidata.org/entity/Q613251>
+    - "\"pou\u0161tn\xED \u0159eka v Hinduk\xFA\u0161i\"@cs"
+  - - <http://www.wikidata.org/entity/Q104821472>
+    - '"abuela de Ludwig van Beethoven"@es'
+- name: result-size-small
+  description: Export 1000 tuples
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT ?s ?o WHERE { ?s schema:description ?o } LIMIT 1000'
+  runtime_info:
+    client_time: 0.11026525497436523
+  result_size: 1000
+  headers:
+  - s
+  - o
+  results:
+  - - <http://www.wikidata.org/entity/Q18290220>
+    - "\"film fr\xE5n 1990 regisserad av Bj\xF6rn Runge\"@sv"
+  - - <http://www.wikidata.org/entity/Q113562574>
+    - "\"\u59D3\u6C0F (Fessier)\"@zh-Hant"
+  - - <http://www.wikidata.org/entity/Q24578946>
+    - "\"chanteur Burkinab\xE9\"@fr"
+  - - <http://www.wikidata.org/entity/Q613251>
+    - "\"pou\u0161tn\xED \u0159eka v Hinduk\xFA\u0161i\"@cs"
+  - - <http://www.wikidata.org/entity/Q104821472>
+    - '"abuela de Ludwig van Beethoven"@es'
+- name: result-size-medium
+  description: Export 100K tuples
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT ?s ?o WHERE { ?s schema:description ?o } LIMIT 100000'
+  runtime_info:
+    client_time: 8.305224657058716
+  result_size: 100000
+  headers:
+  - s
+  - o
+  results:
+  - - <http://www.wikidata.org/entity/Q18290220>
+    - "\"film fr\xE5n 1990 regisserad av Bj\xF6rn Runge\"@sv"
+  - - <http://www.wikidata.org/entity/Q113562574>
+    - "\"\u59D3\u6C0F (Fessier)\"@zh-Hant"
+  - - <http://www.wikidata.org/entity/Q24578946>
+    - "\"chanteur Burkinab\xE9\"@fr"
+  - - <http://www.wikidata.org/entity/Q613251>
+    - "\"pou\u0161tn\xED \u0159eka v Hinduk\xFA\u0161i\"@cs"
+  - - <http://www.wikidata.org/entity/Q104821472>
+    - '"abuela de Ludwig van Beethoven"@es'
+- name: result-size-large
+  description: Export 1M tuples
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT ?s ?o WHERE { ?s schema:description ?o } LIMIT 1000000'
+  runtime_info:
+    client_time: 72.5505428314209
+  result_size: 1000000
+  headers:
+  - s
+  - o
+  results:
+  - - <http://www.wikidata.org/entity/Q18290220>
+    - "\"film fr\xE5n 1990 regisserad av Bj\xF6rn Runge\"@sv"
+  - - <http://www.wikidata.org/entity/Q113562574>
+    - "\"\u59D3\u6C0F (Fessier)\"@zh-Hant"
+  - - <http://www.wikidata.org/entity/Q24578946>
+    - "\"chanteur Burkinab\xE9\"@fr"
+  - - <http://www.wikidata.org/entity/Q613251>
+    - "\"pou\u0161tn\xED \u0159eka v Hinduk\xFA\u0161i\"@cs"
+  - - <http://www.wikidata.org/entity/Q104821472>
+    - '"abuela de Ludwig van Beethoven"@es'
+- name: result-size-xlarge
+  description: Export 10M tuples
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT ?s ?o WHERE { ?s schema:description ?o } LIMIT 10000000'
+  runtime_info:
+    client_time: 300.0157766342163
+  headers: []
+  results: 'Malformed JSON: curl returned with code 200, but the JSON is malformed:
+    jq: parse error: Invalid numeric literal at line 22600002, column 3'
+- name: numeric-baseline
+  description: Baseline for numeric queries
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(?o) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 67.39890503883362
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244891557167194061"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-abs
+  description: ABS function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(ABS(?o)) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 67.1821403503418
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244891557167194061"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-ceil
+  description: CEIL function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(CEIL(?o)) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 67.15029883384705
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244891557167194061"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-floor
+  description: FLOOR function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(FLOOR(?o)) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 66.53387451171875
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244891557167194061"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-round
+  description: ROUND function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(ROUND(?o)) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 65.17668008804321
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244891557167194061"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-add
+  description: Addition
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(?o + ?o) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 103.40827417373657
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"489783114334388122"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: numeric-greater
+  description: Greater than
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(?o > 0) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 86.83098101615906
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - []
+- name: numeric-filter-bin-search-fifty-fifty
+  description: Numeric FILTER that filters out 50 percent of the values
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?s) AS ?count) { ?s schema:version ?o . FILTER (?o >= 2147882675)
+    }'
+  runtime_info:
+    client_time: 300.0114302635193
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: numeric-filter-bin-search-seventy-thirty
+  description: Numeric FILTER that filters out 70 percent of the values
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?s) AS ?count) { ?s schema:version ?o . FILTER (?o >= 2241500354)
+    }'
+  runtime_info:
+    client_time: 300.00993371009827
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: numeric-filter-bin-search-ninetyfive-five
+  description: Numeric FILTER that filters out 95 percent of the values
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?s) AS ?count) { ?s schema:version ?o . FILTER (?o >= 2325672138)
+    }'
+  runtime_info:
+    client_time: 232.01644730567932
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"14281637"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: filter-few-results
+  description: FILTER that filters out most rows and has few results
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?s) AS ?count) { ?s schema:description ?o . FILTER (?s = ?o) }'
+  runtime_info:
+    client_time: 296.702250957489
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: filter-many-results
+  description: FILTER that filters out few rows and has many results
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?s) AS ?count) { ?s schema:description ?o . FILTER (?s != ?o) }'
+  runtime_info:
+    client_time: 300.0285482406616
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: filter-language-en
+  description: FILTER on string predicate for only English literals
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?s) AS ?count) { ?s schema:description ?o . FILTER(LANG(?o) = "en")
+    }'
+  runtime_info:
+    client_time: 300.0112020969391
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: date-year
+  description: YEAR function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(YEAR(?o)) AS ?sum) WHERE { ?s schema:dateModified ?o }'
+  runtime_info:
+    client_time: 151.74068689346313
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244826830075"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: date-month
+  description: MONTH function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(MONTH(?o)) AS ?sum) WHERE { ?s schema:dateModified ?o }'
+  runtime_info:
+    client_time: 158.66249632835388
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"739595518"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: date-day
+  description: DAY function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(DAY(?o)) AS ?sum) WHERE { ?s schema:dateModified ?o }'
+  runtime_info:
+    client_time: 154.64075803756714
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"1862581270"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: number-of-triples
+  description: Total number of triples
+  query: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 300.00931906700134
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: number-of-subjects
+  description: Total number of distinct subjects
+  query: SELECT (COUNT(DISTINCT ?s) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 300.0109484195709
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: number-of-predicates
+  description: Total number of distinct predicates
+  query: SELECT (COUNT(DISTINCT ?p) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 300.00965189933777
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: number-of-objects
+  description: Total number of distinct objects
+  query: SELECT (COUNT(DISTINCT ?o) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 300.01104950904846
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: number-of-literals
+  description: Total number of literals
+  query: SELECT (COUNT(?o) AS ?count) WHERE { ?s ?p ?o FILTER ISLITERAL(?o) }
+  runtime_info:
+    client_time: 300.03900241851807
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+- name: number-of-blank-nodes
+  description: Total number of blank nodes
+  query: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o FILTER ISBLANK(?s) }
+  runtime_info:
+    client_time: 300.01278853416443
+  headers: []
+  results: 'HTTP code: 503: Query timed out '
+title: Sparqloscope Wikidata-truthy Evaluation (~8B triples)
+description: Sparqloscope benchmark for Wikidata-truthy RDF dump, data from https://dumps.wikimedia.org/wikidatawiki/entities/
+  (13.06.2025), ~8 billion triples. Sparqloscope at https://github.com/ad-freiburg/sparqloscope
+timeout: 300
+name: Sparqloscope Wikidata-truthy (~8B triples)
+scale: 8000000000

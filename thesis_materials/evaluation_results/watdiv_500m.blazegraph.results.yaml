@@ -1,0 +1,1698 @@
+queries:
+- name: test1_query_1
+  description: Randomly selected query 1 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup8> . ?v0 <http://xmlns.com/foaf/familyName>
+    ?v2 } }
+  runtime_info:
+    client_time: 1.7078850269317627
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"39779"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_2
+  description: Randomly selected query 2 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://purl.org/dc/terms/Location>
+    ?v1 . ?v0 <http://schema.org/birthDate> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/follows>
+    ?v0 } }
+  runtime_info:
+    client_time: 12.99894905090332
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_3
+  description: Randomly selected query 3 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Genre10> . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v2 . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://schema.org/expires>
+    ?v4 . ?v1 <http://schema.org/text> ?v5 . ?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v1 } }
+  runtime_info:
+    client_time: 1.6124505996704102
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"54593"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_4
+  description: Randomly selected query 4 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/goodrelations/includes>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Product140599> . ?v0 <http://purl.org/goodrelations/price>
+    ?v2 . ?v0 <http://schema.org/eligibleQuantity> ?v3 . ?v0 <http://schema.org/priceValidUntil>
+    ?v4 } }
+  runtime_info:
+    client_time: 0.025318622589111328
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_5
+  description: Randomly selected query 5 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic120> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://schema.org/description> ?v6 . ?v0 <http://purl.org/goodrelations/serialNumber>
+    ?v2 . ?v0 <http://purl.org/goodrelations/validFrom> ?v3 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v4 . ?v0 <http://schema.org/eligibleQuantity> ?v7 . ?v0 <http://schema.org/eligibleRegion>
+    ?v8 } }
+  runtime_info:
+    client_time: 1.0413355827331543
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"20805"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_6
+  description: Randomly selected query 6 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory11> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://ogp.me/ns#tag> ?v2 . ?v1 <http://ogp.me/ns#title> ?v4 . ?v1
+    <http://schema.org/expires> ?v7 . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v3 . ?v3 <http://ogp.me/ns#tag> ?v2 . ?v3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v6 } }
+  runtime_info:
+    client_time: 0.40057873725891113
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2383"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_7
+  description: Randomly selected query 7 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer2946>
+    <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v0 <http://purl.org/goodrelations/serialNumber> ?v3 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v4 . ?v0 <http://schema.org/eligibleQuantity> ?v5 . ?v0 <http://schema.org/priceValidUntil>
+    ?v6 } }
+  runtime_info:
+    client_time: 0.029427051544189453
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"7"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_8
+  description: Randomly selected query 8 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 . ?v0 <http://schema.org/email> ?v2 . ?v0 <http://schema.org/nationality>
+    ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf> ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v5 } }
+  runtime_info:
+    client_time: 6.533134698867798
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_9
+  description: Randomly selected query 9 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic52> . ?v0 <http://ogp.me/ns#title> ?v2
+    . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 } }
+  runtime_info:
+    client_time: 0.22735166549682617
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"138964"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_10
+  description: Randomly selected query 10 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/goodrelations/offers>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Offer158538> . ?v0 <http://schema.org/telephone>
+    ?v2 } }
+  runtime_info:
+    client_time: 0.0255889892578125
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_11
+  description: Randomly selected query 11 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country1> . ?v0 <http://purl.org/goodrelations/offers>
+    ?v1 . ?v1 <http://purl.org/goodrelations/price> ?v2 . ?v1 <http://schema.org/priceValidUntil>
+    ?v4 } }
+  runtime_info:
+    client_time: 6.385021924972534
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"315738"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_12
+  description: Randomly selected query 12 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country20> . ?v0 <http://purl.org/goodrelations/offers>
+    ?v1 . ?v1 <http://purl.org/goodrelations/price> ?v2 . ?v1 <http://schema.org/priceValidUntil>
+    ?v4 } }
+  runtime_info:
+    client_time: 0.8292317390441895
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"35018"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_13
+  description: Randomly selected query 13 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic165> . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v6 . ?v0 <http://schema.org/description>
+    ?v7 . ?v0 <http://schema.org/keywords> ?v8 . ?v2 <http://purl.org/stuff/rev#rating>
+    ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer> ?v4 . ?v2 <http://purl.org/stuff/rev#totalVotes>
+    ?v5 } }
+  runtime_info:
+    client_time: 0.31844377517700195
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"479"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_14
+  description: Randomly selected query 14 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/nationality>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country16> . ?v0 <http://xmlns.com/foaf/familyName>
+    ?v1 . ?v0 <http://schema.org/birthDate> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    ?v4 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v5 } }
+  runtime_info:
+    client_time: 0.14942622184753418
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1378"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_15
+  description: Randomly selected query 15 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic144> . ?v0 <http://schema.org/keywords>
+    ?v2 . ?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v0 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase>
+    ?v4 . ?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate> ?v5 } }
+  runtime_info:
+    client_time: 0.702258825302124
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"15838"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_16
+  description: Randomly selected query 16 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory12> . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v2 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 } }
+  runtime_info:
+    client_time: 0.6356499195098877
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"963166"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_17
+  description: Randomly selected query 17 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country16> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v2 <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/validFrom>
+    ?v3 . ?v0 <http://purl.org/goodrelations/validThrough> ?v4 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v5 . ?v0 <http://schema.org/priceValidUntil> ?v7 } }
+  runtime_info:
+    client_time: 1.0109477043151855
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"5803"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_18
+  description: Randomly selected query 18 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role2> . ?v0 <http://schema.org/birthDate>
+    ?v2 . ?v0 <http://schema.org/jobTitle> ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v4 } }
+  runtime_info:
+    client_time: 1.5541729927062988
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"11793"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_19
+  description: Randomly selected query 19 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v2 <http://schema.org/jobTitle>
+    ?v3 . ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase> ?v0 . ?v0 <http://purl.org/goodrelations/price>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate> ?v5 } }
+  runtime_info:
+    client_time: 1.698765754699707
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"50511"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_20
+  description: Randomly selected query 20 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/User284435>
+    <http://schema.org/nationality> ?v2 . ?v0 <http://schema.org/eligibleRegion> ?v2
+    . ?v0 <http://schema.org/eligibleQuantity> ?v1 } }
+  runtime_info:
+    client_time: 0.021732091903686523
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_21
+  description: Randomly selected query 21 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://purl.org/dc/terms/Location>
+    ?v1 . ?v0 <http://xmlns.com/foaf/givenName> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId>
+    ?v4 } }
+  runtime_info:
+    client_time: 16.699652671813965
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"630146"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_22
+  description: Randomly selected query 22 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/homepage>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Website37254> . ?v0 <http://ogp.me/ns#title>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v3 } }
+  runtime_info:
+    client_time: 0.024112224578857422
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_23
+  description: Randomly selected query 23 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer6887>
+    <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v0 <http://purl.org/goodrelations/price> ?v3 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v4 . ?v1 <http://schema.org/text> ?v5 } }
+  runtime_info:
+    client_time: 0.02814459800720215
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"15"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_24
+  description: Randomly selected query 24 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6> . ?v2 <http://schema.org/author>
+    ?v0 . ?v0 <http://schema.org/telephone> ?v3 } }
+  runtime_info:
+    client_time: 1.3294000625610352
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"787"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_25
+  description: Randomly selected query 25 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase60407>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v3 . ?v2 <http://purl.org/goodrelations/includes>
+    ?v3 . ?v2 <http://purl.org/goodrelations/validThrough> ?v4 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v5 . ?v2 <http://schema.org/eligibleRegion> ?v1 . ?v0 <http://www.geonames.org/ontology#parentCountry>
+    ?v1 . ?v6 <http://schema.org/nationality> ?v1 } }
+  runtime_info:
+    client_time: 10.253999471664429
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"20584326"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_26
+  description: Randomly selected query 26 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre90> . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v1 . ?v0 <http://ogp.me/ns#tag> ?v2 . ?v0 <http://schema.org/keywords> ?v3 }
+    }
+  runtime_info:
+    client_time: 0.3412318229675293
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"15756"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_27
+  description: Randomly selected query 27 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/homepage>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Website47382> . ?v0 <http://ogp.me/ns#title>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v3 } }
+  runtime_info:
+    client_time: 0.024464845657348633
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_28
+  description: Randomly selected query 28 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer11958>
+    <http://purl.org/goodrelations/offers> ?v1 . ?v1 <http://purl.org/goodrelations/price>
+    ?v2 . ?v1 <http://schema.org/eligibleRegion> ?v3 } }
+  runtime_info:
+    client_time: 0.028911352157592773
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"234"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_29
+  description: Randomly selected query 29 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory10> . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://schema.org/contentRating> ?v5 . ?v0 <http://schema.org/contentSize>
+    ?v6 . ?v0 <http://schema.org/description> ?v7 . ?v8 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 . ?v2 <http://ogp.me/ns#tag> ?v1 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 } }
+  runtime_info:
+    client_time: 180.012535572052
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory10> . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://schema.org/contentRating> ?v5 . ?v0 <http://schema.org/contentSize>
+    ?v6 . ?v0 <http://schema.org/description> ?v7 . ?v8 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 . ?v2 <http://ogp.me/ns#tag> ?v1 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: test1_query_30
+  description: Randomly selected query 30 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City111>
+    <http://www.geonames.org/ontology#parentCountry> ?v1 . ?v2 <http://schema.org/eligibleRegion>
+    ?v1 . ?v4 <http://schema.org/nationality> ?v1 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v3 } }
+  runtime_info:
+    client_time: 180.01101684570312
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City111> <http://www.geonames.org/ontology#parentCountry>
+    ?v1 . ?v2 <http://schema.org/eligibleRegion> ?v1 . ?v4 <http://schema.org/nationality>
+    ?v1 . ?v2 <http://schema.org/eligibleQuantity> ?v3 } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: test1_query_31
+  description: Randomly selected query 31 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase74207> . ?v0 <http://xmlns.com/foaf/familyName>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId>
+    ?v4 } }
+  runtime_info:
+    client_time: 0.026020288467407227
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_32
+  description: Randomly selected query 32 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Website13157> . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId>
+    ?v2 } }
+  runtime_info:
+    client_time: 0.022678375244140625
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"33"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_33
+  description: Randomly selected query 33 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/goodrelations/offers>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Offer544420> . ?v0 <http://schema.org/telephone>
+    ?v2 } }
+  runtime_info:
+    client_time: 0.020781517028808594
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_34
+  description: Randomly selected query 34 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre116> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://schema.org/contentSize> ?v2 . ?v1 <http://schema.org/description>
+    ?v3 } }
+  runtime_info:
+    client_time: 0.08932852745056152
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"2027"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_35
+  description: Randomly selected query 35 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://xmlns.com/foaf/givenName>
+    ?v1 . ?v0 <http://schema.org/nationality> ?v3 . ?v2 <http://www.geonames.org/ontology#parentCountry>
+    ?v3 . ?v4 <http://schema.org/eligibleRegion> ?v3 } }
+  runtime_info:
+    client_time: 180.0124454498291
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v0 <http://xmlns.com/foaf/givenName> ?v1 . ?v0 <http://schema.org/nationality>
+    ?v3 . ?v2 <http://www.geonames.org/ontology#parentCountry> ?v3 . ?v4 <http://schema.org/eligibleRegion>
+    ?v3 } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: test1_query_36
+  description: Randomly selected query 36 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 . ?v0 <http://schema.org/email> ?v2 . ?v0 <http://schema.org/nationality>
+    ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf> ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v5 } }
+  runtime_info:
+    client_time: 7.7631518840789795
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_37
+  description: Randomly selected query 37 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City229>
+    <http://www.geonames.org/ontology#parentCountry> ?v1 . ?v2 <http://schema.org/eligibleRegion>
+    ?v1 . ?v2 <http://purl.org/goodrelations/validFrom> ?v3 } }
+  runtime_info:
+    client_time: 2.7737605571746826
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"258032"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_38
+  description: Randomly selected query 38 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory9> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://ogp.me/ns#tag> ?v2 . ?v1 <http://schema.org/contentRating> ?v6
+    . ?v1 <http://schema.org/description> ?v7 . ?v1 <http://schema.org/keywords> ?v8
+    . ?v1 <http://schema.org/text> ?v9 . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v4 . ?v10 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v1 . ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v5 } }
+  runtime_info:
+    client_time: 0.48943305015563965
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"319292"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_39
+  description: Randomly selected query 39 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role1> . ?v2 <http://schema.org/contactPoint>
+    ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> ?v3 } }
+  runtime_info:
+    client_time: 0.4238564968109131
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"8847"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_40
+  description: Randomly selected query 40 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country11> . ?v2 <http://purl.org/goodrelations/includes>
+    ?v0 . ?v3 <http://purl.org/goodrelations/offers> ?v2 . ?v2 <http://purl.org/goodrelations/price>
+    ?v4 . ?v2 <http://purl.org/goodrelations/serialNumber> ?v5 . ?v2 <http://purl.org/goodrelations/validFrom>
+    ?v6 . ?v2 <http://purl.org/goodrelations/validThrough> ?v7 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v8 . ?v0 <http://xmlns.com/foaf/homepage> ?v1 . ?v3 <http://schema.org/telephone>
+    ?v10 } }
+  runtime_info:
+    client_time: 0.9144883155822754
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"8099"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_41
+  description: Randomly selected query 41 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v1 . ?v0 <http://schema.org/nationality> ?v8 . ?v2 <http://schema.org/eligibleRegion>
+    ?v8 . ?v2 <http://purl.org/goodrelations/includes> ?v3 . ?v4 <http://purl.org/goodrelations/offers>
+    ?v2 . ?v2 <http://purl.org/goodrelations/serialNumber> ?v5 . ?v2 <http://purl.org/goodrelations/validThrough>
+    ?v6 . ?v2 <http://schema.org/eligibleQuantity> ?v7 } }
+  runtime_info:
+    client_time: 180.01221203804016
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v0 <http://xmlns.com/foaf/homepage> ?v1 . ?v0 <http://schema.org/nationality>
+    ?v8 . ?v2 <http://schema.org/eligibleRegion> ?v8 . ?v2 <http://purl.org/goodrelations/includes>
+    ?v3 . ?v4 <http://purl.org/goodrelations/offers> ?v2 . ?v2 <http://purl.org/goodrelations/serialNumber>
+    ?v5 . ?v2 <http://purl.org/goodrelations/validThrough> ?v6 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v7 } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: test1_query_42
+  description: Randomly selected query 42 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender0> . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 . ?v0 <http://schema.org/email> ?v2 . ?v0 <http://schema.org/nationality>
+    ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf> ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v5 } }
+  runtime_info:
+    client_time: 4.681124448776245
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_43
+  description: Randomly selected query 43 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup6> . ?v0 <http://xmlns.com/foaf/givenName>
+    ?v2 . ?v0 <http://schema.org/email> ?v3 . ?v0 <http://schema.org/nationality>
+    ?v4 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/friendOf> ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    ?v5 } }
+  runtime_info:
+    client_time: 2.7749688625335693
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_44
+  description: Randomly selected query 44 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory1> . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v2 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 } }
+  runtime_info:
+    client_time: 0.5582678318023682
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"790145"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_45
+  description: Randomly selected query 45 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic65> . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 . ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v0 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v3 . ?v2 <http://purl.org/stuff/rev#hasReview> ?v5 . ?v5 <http://purl.org/stuff/rev#rating>
+    ?v6 . ?v5 <http://purl.org/stuff/rev#reviewer> ?v7 . ?v5 <http://purl.org/stuff/rev#text>
+    ?v8 . ?v5 <http://purl.org/stuff/rev#title> ?v9 . ?v5 <http://purl.org/stuff/rev#totalVotes>
+    ?v10 } }
+  runtime_info:
+    client_time: 1.1230394840240479
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1534"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_46
+  description: Randomly selected query 46 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup3> . ?v2 <http://schema.org/author>
+    ?v0 . ?v0 <http://schema.org/telephone> ?v3 } }
+  runtime_info:
+    client_time: 1.327697992324829
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"816"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_47
+  description: Randomly selected query 47 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory1> . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://schema.org/contentRating> ?v5 . ?v0 <http://schema.org/contentSize>
+    ?v6 . ?v0 <http://schema.org/description> ?v7 . ?v8 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 . ?v2 <http://ogp.me/ns#tag> ?v1 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 } }
+  runtime_info:
+    client_time: 180.0122971534729
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory1> . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://schema.org/contentRating> ?v5 . ?v0 <http://schema.org/contentSize>
+    ?v6 . ?v0 <http://schema.org/description> ?v7 . ?v8 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 . ?v2 <http://ogp.me/ns#tag> ?v1 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: test1_query_48
+  description: Randomly selected query 48 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v1 . ?v0 <http://schema.org/nationality> ?v8 . ?v2 <http://schema.org/eligibleRegion>
+    ?v8 . ?v2 <http://purl.org/goodrelations/includes> ?v3 . ?v4 <http://purl.org/goodrelations/offers>
+    ?v2 . ?v2 <http://purl.org/goodrelations/serialNumber> ?v5 . ?v2 <http://purl.org/goodrelations/validThrough>
+    ?v6 . ?v2 <http://schema.org/eligibleQuantity> ?v7 } }
+  runtime_info:
+    client_time: 180.010888338089
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1>
+    . ?v0 <http://xmlns.com/foaf/homepage> ?v1 . ?v0 <http://schema.org/nationality>
+    ?v8 . ?v2 <http://schema.org/eligibleRegion> ?v8 . ?v2 <http://purl.org/goodrelations/includes>
+    ?v3 . ?v4 <http://purl.org/goodrelations/offers> ?v2 . ?v2 <http://purl.org/goodrelations/serialNumber>
+    ?v5 . ?v2 <http://purl.org/goodrelations/validThrough> ?v6 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v7 } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: test1_query_49
+  description: Randomly selected query 49 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country3> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v2 <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/price>
+    ?v3 . ?v0 <http://purl.org/goodrelations/serialNumber> ?v4 . ?v0 <http://purl.org/goodrelations/validFrom>
+    ?v5 . ?v0 <http://purl.org/goodrelations/validThrough> ?v6 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v8 . ?v0 <http://schema.org/priceValidUntil> ?v11 . ?v1 <http://ogp.me/ns#tag>
+    ?v7 . ?v1 <http://schema.org/keywords> ?v10 . ?v12 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor>
+    ?v1 } }
+  runtime_info:
+    client_time: 6.605475187301636
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"380760"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_50
+  description: Randomly selected query 50 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory12> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://purl.org/stuff/rev#hasReview> ?v3 . ?v1 <http://schema.org/contentSize>
+    ?v9 . ?v3 <http://purl.org/stuff/rev#rating> ?v4 . ?v3 <http://purl.org/stuff/rev#reviewer>
+    ?v5 . ?v3 <http://purl.org/stuff/rev#text> ?v6 . ?v3 <http://purl.org/stuff/rev#title>
+    ?v7 . ?v3 <http://purl.org/stuff/rev#totalVotes> ?v8 } }
+  runtime_info:
+    client_time: 0.4696178436279297
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1650"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_51
+  description: Randomly selected query 51 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country19> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v2 <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/validFrom>
+    ?v3 . ?v0 <http://purl.org/goodrelations/validThrough> ?v4 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v5 . ?v0 <http://schema.org/priceValidUntil> ?v7 } }
+  runtime_info:
+    client_time: 0.45487070083618164
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"4796"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_52
+  description: Randomly selected query 52 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer7533>
+    <http://purl.org/goodrelations/offers> ?v1 . ?v1 <http://purl.org/goodrelations/price>
+    ?v2 . ?v1 <http://purl.org/goodrelations/serialNumber> ?v3 . ?v1 <http://schema.org/eligibleRegion>
+    ?v4 } }
+  runtime_info:
+    client_time: 0.023468732833862305
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"215"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_53
+  description: Randomly selected query 53 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role2> . ?v7 <http://purl.org/stuff/rev#reviewer>
+    ?v5 . ?v5 <http://db.uwaterloo.ca/~galuc/wsdbm/follows> ?v5 . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v7 . ?v0 <http://xmlns.com/foaf/homepage> ?v1 . ?v2 <http://purl.org/goodrelations/includes>
+    ?v0 . ?v0 <http://ogp.me/ns#title> ?v3 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 . ?v0 <http://schema.org/description> ?v8 . ?v0 <http://schema.org/text> ?v10
+    . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v11 . ?v2 <http://schema.org/eligibleRegion>
+    ?v9 } }
+  runtime_info:
+    client_time: 3.439779758453369
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_54
+  description: Randomly selected query 54 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City235>
+    <http://www.geonames.org/ontology#parentCountry> ?v1 . ?v2 <http://schema.org/eligibleRegion>
+    ?v1 . ?v4 <http://schema.org/nationality> ?v1 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v3 } }
+  runtime_info:
+    client_time: 180.00988626480103
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City235> <http://www.geonames.org/ontology#parentCountry>
+    ?v1 . ?v2 <http://schema.org/eligibleRegion> ?v1 . ?v4 <http://schema.org/nationality>
+    ?v1 . ?v2 <http://schema.org/eligibleQuantity> ?v3 } } java.util.concurrent.TimeoutException
+    at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204) at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: test1_query_55
+  description: Randomly selected query 55 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/User575446>
+    <http://purl.org/dc/terms/Location> ?v1 . ?v1 <http://www.geonames.org/ontology#parentCountry>
+    ?v2 . ?v3 <http://schema.org/eligibleRegion> ?v2 . ?v3 <http://purl.org/goodrelations/price>
+    ?v4 . ?v3 <http://purl.org/goodrelations/serialNumber> ?v5 . ?v3 <http://purl.org/goodrelations/validFrom>
+    ?v6 . ?v3 <http://purl.org/goodrelations/validThrough> ?v7 . ?v3 <http://schema.org/eligibleQuantity>
+    ?v8 } }
+  runtime_info:
+    client_time: 0.02404499053955078
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_56
+  description: Randomly selected query 56 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/User216592>
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v1 } }
+  runtime_info:
+    client_time: 0.02068471908569336
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_57
+  description: Randomly selected query 57 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory10> . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v2 . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 } }
+  runtime_info:
+    client_time: 0.5545535087585449
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"811373"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_58
+  description: Randomly selected query 58 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country15> . ?v2 <http://purl.org/goodrelations/includes>
+    ?v0 . ?v3 <http://purl.org/goodrelations/offers> ?v2 . ?v2 <http://purl.org/goodrelations/price>
+    ?v4 . ?v2 <http://purl.org/goodrelations/serialNumber> ?v5 . ?v2 <http://purl.org/goodrelations/validFrom>
+    ?v6 . ?v2 <http://purl.org/goodrelations/validThrough> ?v7 . ?v2 <http://schema.org/eligibleQuantity>
+    ?v8 . ?v0 <http://xmlns.com/foaf/homepage> ?v1 . ?v3 <http://schema.org/telephone>
+    ?v10 } }
+  runtime_info:
+    client_time: 0.7370545864105225
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"12531"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_59
+  description: Randomly selected query 59 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Genre15> . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v2 . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://schema.org/expires>
+    ?v4 . ?v1 <http://schema.org/text> ?v5 . ?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v1 } }
+  runtime_info:
+    client_time: 0.8087673187255859
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"30927"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_60
+  description: Randomly selected query 60 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre127> . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v1 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v2 . ?v0 <http://schema.org/description>
+    ?v3 . ?v0 <http://schema.org/expires> ?v4 . ?v1 <http://schema.org/url> ?v5 }
+    }
+  runtime_info:
+    client_time: 0.03930950164794922
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"18"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_61
+  description: Randomly selected query 61 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role1> . ?v0 <http://schema.org/birthDate>
+    ?v2 . ?v0 <http://schema.org/jobTitle> ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v4 } }
+  runtime_info:
+    client_time: 1.9189965724945068
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"17592"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_62
+  description: Randomly selected query 62 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory8> . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v3 } }
+  runtime_info:
+    client_time: 0.4988384246826172
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1164721"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_63
+  description: Randomly selected query 63 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory5> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://ogp.me/ns#tag> ?v2 . ?v1 <http://schema.org/contentRating> ?v6
+    . ?v1 <http://schema.org/description> ?v7 . ?v1 <http://schema.org/keywords> ?v8
+    . ?v1 <http://schema.org/text> ?v9 . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v4 . ?v10 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v1 . ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v5 } }
+  runtime_info:
+    client_time: 0.4092726707458496
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"333212"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_64
+  description: Randomly selected query 64 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender0> . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 . ?v0 <http://xmlns.com/foaf/familyName> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/follows>
+    ?v0 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/subscribes> ?v4 } }
+  runtime_info:
+    client_time: 5.186697483062744
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_65
+  description: Randomly selected query 65 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 } }
+  runtime_info:
+    client_time: 11.28326964378357
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1126025"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_66
+  description: Randomly selected query 66 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic112> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v1 <http://schema.org/description> ?v6 . ?v0 <http://purl.org/goodrelations/serialNumber>
+    ?v2 . ?v0 <http://purl.org/goodrelations/validFrom> ?v3 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v4 . ?v0 <http://schema.org/eligibleQuantity> ?v7 . ?v0 <http://schema.org/eligibleRegion>
+    ?v8 } }
+  runtime_info:
+    client_time: 0.3941013813018799
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"20612"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_67
+  description: Randomly selected query 67 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic100> . ?v0 <http://schema.org/caption>
+    ?v2 . ?v0 <http://schema.org/expires> ?v3 . ?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor>
+    ?v0 . ?v4 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate> ?v5 } }
+  runtime_info:
+    client_time: 0.21402311325073242
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"206"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_68
+  description: Randomly selected query 68 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/stuff/rev#hasReview>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Review996927> . ?v0 <http://schema.org/keywords>
+    ?v2 } }
+  runtime_info:
+    client_time: 0.023122549057006836
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_69
+  description: Randomly selected query 69 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country13> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v2 <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/price>
+    ?v3 . ?v0 <http://purl.org/goodrelations/serialNumber> ?v4 . ?v0 <http://purl.org/goodrelations/validFrom>
+    ?v5 . ?v0 <http://purl.org/goodrelations/validThrough> ?v6 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v8 . ?v0 <http://schema.org/priceValidUntil> ?v10 . ?v1 <http://schema.org/author>
+    ?v7 } }
+  runtime_info:
+    client_time: 3.5224828720092773
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"887"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_70
+  description: Randomly selected query 70 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/goodrelations/includes>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Product203099> . ?v0 <http://purl.org/goodrelations/price>
+    ?v2 . ?v0 <http://schema.org/eligibleQuantity> ?v3 . ?v0 <http://schema.org/priceValidUntil>
+    ?v4 } }
+  runtime_info:
+    client_time: 0.021578550338745117
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_71
+  description: Randomly selected query 71 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Genre14> . ?v1 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    ?v2 . ?v0 <http://purl.org/goodrelations/includes> ?v1 . ?v1 <http://schema.org/expires>
+    ?v4 . ?v1 <http://schema.org/text> ?v5 . ?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v1 } }
+  runtime_info:
+    client_time: 0.8153634071350098
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"22214"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_72
+  description: Randomly selected query 72 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/dc/terms/Location>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/City8> . ?v0 <http://xmlns.com/foaf/homepage>
+    ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId> ?v3 } }
+  runtime_info:
+    client_time: 0.2998960018157959
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1804"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_73
+  description: Randomly selected query 73 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic2> . ?v0 <http://ogp.me/ns#title> ?v2
+    . ?v3 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v0 } }
+  runtime_info:
+    client_time: 0.1989603042602539
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"114735"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_74
+  description: Randomly selected query 74 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase1434366>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v0 . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v3 . ?v0 <http://schema.org/text>
+    ?v4 . ?v2 <http://ogp.me/ns#tag> ?v1 } }
+  runtime_info:
+    client_time: 0.021294355392456055
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_75
+  description: Randomly selected query 75 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/dc/terms/Location>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/City209> . ?v0 <http://xmlns.com/foaf/age>
+    ?v2 . ?v0 <http://schema.org/birthDate> ?v3 } }
+  runtime_info:
+    client_time: 0.05083298683166504
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"164"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_76
+  description: Randomly selected query 76 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://xmlns.com/foaf/age>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/AgeGroup7> . ?v0 <http://xmlns.com/foaf/familyName>
+    ?v2 } }
+  runtime_info:
+    client_time: 1.298783779144287
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"119809"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_77
+  description: Randomly selected query 77 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/language>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Language18> . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v1 . ?v1 <http://purl.org/stuff/rev#title> ?v2 } }
+  runtime_info:
+    client_time: 0.08315253257751465
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1622"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_78
+  description: Randomly selected query 78 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country21> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v2 <http://purl.org/goodrelations/offers> ?v0 . ?v0 <http://purl.org/goodrelations/price>
+    ?v3 . ?v0 <http://purl.org/goodrelations/serialNumber> ?v4 . ?v0 <http://purl.org/goodrelations/validFrom>
+    ?v5 . ?v0 <http://purl.org/goodrelations/validThrough> ?v6 . ?v0 <http://schema.org/eligibleQuantity>
+    ?v8 . ?v0 <http://schema.org/priceValidUntil> ?v11 . ?v1 <http://ogp.me/ns#tag>
+    ?v7 . ?v1 <http://schema.org/keywords> ?v10 . ?v12 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor>
+    ?v1 } }
+  runtime_info:
+    client_time: 0.8319945335388184
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"23534"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_79
+  description: Randomly selected query 79 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Purchase1284902>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor> ?v0 . ?v0 <http://ogp.me/ns#title>
+    ?v1 . ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?v2 . ?v0 <http://schema.org/description>
+    ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre> ?v4 } }
+  runtime_info:
+    client_time: 0.02325606346130371
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_80
+  description: Randomly selected query 80 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role1> . ?v4 <http://schema.org/nationality>
+    ?v7 . ?v1 <http://schema.org/eligibleRegion> ?v7 . ?v0 <http://purl.org/goodrelations/offers>
+    ?v1 . ?v1 <http://purl.org/goodrelations/validFrom> ?v2 . ?v1 <http://purl.org/goodrelations/validThrough>
+    ?v3 . ?v1 <http://schema.org/eligibleQuantity> ?v6 . ?v1 <http://schema.org/priceValidUntil>
+    ?v8 } }
+  runtime_info:
+    client_time: 180.00989294052124
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?v4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role1> . ?v4 <http://schema.org/nationality>
+    ?v7 . ?v1 <http://schema.org/eligibleRegion> ?v7 . ?v0 <http://purl.org/goodrelations/offers>
+    ?v1 . ?v1 <http://purl.org/goodrelations/validFrom> ?v2 . ?v1 <http://purl.org/goodrelations/validThrough>
+    ?v3 . ?v1 <http://schema.org/eligibleQuantity> ?v6 . ?v1 <http://schema.org/priceValidUntil>
+    ?v8 } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: test1_query_81
+  description: Randomly selected query 81 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/dc/terms/Location>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/City161> . ?v0 <http://xmlns.com/foaf/age>
+    ?v2 . ?v0 <http://schema.org/birthDate> ?v3 } }
+  runtime_info:
+    client_time: 0.05742168426513672
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"216"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_82
+  description: Randomly selected query 82 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/User524752>
+    <http://schema.org/nationality> ?v2 . ?v0 <http://schema.org/eligibleRegion> ?v2
+    . ?v0 <http://schema.org/eligibleQuantity> ?v1 } }
+  runtime_info:
+    client_time: 0.02309441566467285
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_83
+  description: Randomly selected query 83 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic91> . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v8 . ?v2 <http://purl.org/stuff/rev#rating>
+    ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer> ?v4 . ?v2 <http://purl.org/stuff/rev#text>
+    ?v5 . ?v2 <http://purl.org/stuff/rev#title> ?v6 . ?v2 <http://purl.org/stuff/rev#totalVotes>
+    ?v7 } }
+  runtime_info:
+    client_time: 0.36397218704223633
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"596"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_84
+  description: Randomly selected query 84 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory4> . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://schema.org/contentRating> ?v5 . ?v0 <http://schema.org/contentSize>
+    ?v6 . ?v0 <http://schema.org/description> ?v7 . ?v8 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 . ?v2 <http://ogp.me/ns#tag> ?v1 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 } }
+  runtime_info:
+    client_time: 180.00960111618042
+  headers: []
+  results: 'HTTP code: 500: SPARQL-QUERY: queryStr=SELECT (COUNT(*) AS ?qlever_count_)
+    WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory4> . ?v0 <http://ogp.me/ns#tag>
+    ?v1 . ?v0 <http://schema.org/contentRating> ?v5 . ?v0 <http://schema.org/contentSize>
+    ?v6 . ?v0 <http://schema.org/description> ?v7 . ?v8 <http://db.uwaterloo.ca/~galuc/wsdbm/likes>
+    ?v0 . ?v2 <http://ogp.me/ns#tag> ?v1 . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v4 } } java.util.concurrent.TimeoutException at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+    at com.bigdata.rdf.sail.webapp.BigdataServlet.submitApiTask(BigdataServlet.java:292)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doSparqlQuery(QueryServlet.java:678)
+    at com.bigdata.rdf.sail.webapp.QueryServlet.doPost(QueryServlet.java:275) at com.bigdata.rdf.sail.webapp.RESTServlet.doPost(RESTServlet.java:269)
+    at com.bigdata.rdf.sail.webapp.MultiTenancyServlet.doPost(MultiTenancyServlet.java:195)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:707) at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+    at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:865) at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:146)
+    at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)
+    at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1595)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)
+    at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)
+    at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473) at
+    org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1564)
+    at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)
+    at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1242)
+    at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:144)
+    at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:220)
+    at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:126)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:335)
+    at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+    at org.eclipse.jetty.server.Server.handle(Server.java:503) at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:364)
+    at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:260)
+    at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)
+    at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:103) at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:333)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:310)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:168)
+    at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:126)
+    at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:366)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)
+    at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
+    at java.base/java.lang.Thread.run(Thread.java:1583) '
+- name: test1_query_85
+  description: Randomly selected query 85 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic200> . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v8 . ?v2 <http://purl.org/stuff/rev#rating>
+    ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer> ?v4 . ?v2 <http://purl.org/stuff/rev#text>
+    ?v5 . ?v2 <http://purl.org/stuff/rev#title> ?v6 . ?v2 <http://purl.org/stuff/rev#totalVotes>
+    ?v7 } }
+  runtime_info:
+    client_time: 0.33477234840393066
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"502"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_86
+  description: Randomly selected query 86 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/Retailer261>
+    <http://purl.org/goodrelations/offers> ?v1 . ?v1 <http://purl.org/goodrelations/price>
+    ?v2 . ?v1 <http://purl.org/goodrelations/serialNumber> ?v3 . ?v1 <http://schema.org/eligibleRegion>
+    ?v4 } }
+  runtime_info:
+    client_time: 0.028348684310913086
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"167"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_87
+  description: Randomly selected query 87 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { <http://db.uwaterloo.ca/~galuc/wsdbm/City176>
+    <http://www.geonames.org/ontology#parentCountry> ?v1 . ?v2 <http://schema.org/eligibleRegion>
+    ?v1 . ?v6 <http://schema.org/nationality> ?v1 . ?v2 <http://purl.org/goodrelations/includes>
+    ?v3 . ?v2 <http://purl.org/goodrelations/serialNumber> ?v4 . ?v2 <http://purl.org/goodrelations/validThrough>
+    ?v5 . ?v2 <http://schema.org/eligibleQuantity> ?v8 . ?v6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v7 . ?v6 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v3 . ?v9 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseFor>
+    ?v3 } }
+  runtime_info:
+    client_time: 72.74238014221191
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1010920"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_88
+  description: Randomly selected query 88 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic56> . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v8 . ?v2 <http://purl.org/stuff/rev#rating>
+    ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer> ?v4 . ?v2 <http://purl.org/stuff/rev#text>
+    ?v5 . ?v2 <http://purl.org/stuff/rev#title> ?v6 . ?v2 <http://purl.org/stuff/rev#totalVotes>
+    ?v7 } }
+  runtime_info:
+    client_time: 0.38298606872558594
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"587"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_89
+  description: Randomly selected query 89 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender0> . ?v0 <http://purl.org/dc/terms/Location>
+    ?v1 . ?v0 <http://schema.org/birthDate> ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/follows>
+    ?v0 } }
+  runtime_info:
+    client_time: 4.712879657745361
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_90
+  description: Randomly selected query 90 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://ogp.me/ns#tag>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Topic173> . ?v0 <http://purl.org/stuff/rev#hasReview>
+    ?v2 . ?v0 <http://schema.org/contentRating> ?v8 . ?v2 <http://purl.org/stuff/rev#rating>
+    ?v3 . ?v2 <http://purl.org/stuff/rev#reviewer> ?v4 . ?v2 <http://purl.org/stuff/rev#text>
+    ?v5 . ?v2 <http://purl.org/stuff/rev#title> ?v6 . ?v2 <http://purl.org/stuff/rev#totalVotes>
+    ?v7 } }
+  runtime_info:
+    client_time: 0.4018375873565674
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"560"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_91
+  description: Randomly selected query 91 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://purl.org/dc/terms/Location>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/City173> . ?v0 <http://xmlns.com/foaf/familyName>
+    ?v2 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/userId> ?v3 } }
+  runtime_info:
+    client_time: 0.05888223648071289
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1348"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_92
+  description: Randomly selected query 92 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v2 <http://schema.org/jobTitle>
+    ?v3 . ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase> ?v0 . ?v0 <http://purl.org/goodrelations/price>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate> ?v5 } }
+  runtime_info:
+    client_time: 1.3831348419189453
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"50511"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_93
+  description: Randomly selected query 93 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://purl.org/stuff/rev#hasReview>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Review649334> . ?v2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    ?v3 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/likes> ?v2 . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 } }
+  runtime_info:
+    client_time: 0.021866321563720703
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"1"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_94
+  description: Randomly selected query 94 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v2 <http://schema.org/jobTitle>
+    ?v3 . ?v2 <http://db.uwaterloo.ca/~galuc/wsdbm/makesPurchase> ?v0 . ?v0 <http://purl.org/goodrelations/price>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/purchaseDate> ?v5 } }
+  runtime_info:
+    client_time: 1.3762297630310059
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"50511"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_95
+  description: Randomly selected query 95 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Role1> . ?v0 <http://xmlns.com/foaf/age>
+    ?v1 . ?v0 <http://xmlns.com/foaf/givenName> ?v2 . ?v4 <http://schema.org/editor>
+    ?v0 } }
+  runtime_info:
+    client_time: 0.5622410774230957
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"4226"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_96
+  description: Randomly selected query 96 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v1 <http://www.geonames.org/ontology#parentCountry>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country16> . ?v0 <http://purl.org/dc/terms/Location>
+    ?v1 . ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender> ?v3 } }
+  runtime_info:
+    client_time: 0.2835090160369873
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"23279"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_97
+  description: Randomly selected query 97 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/ProductCategory4> . ?v0 <http://schema.org/contentRating>
+    ?v2 . ?v0 <http://schema.org/description> ?v3 . ?v0 <http://schema.org/expires>
+    ?v4 . ?v0 <http://schema.org/text> ?v5 } }
+  runtime_info:
+    client_time: 0.4720942974090576
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"189"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_98
+  description: Randomly selected query 98 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/gender>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Gender1> . ?v0 <http://purl.org/dc/terms/Location>
+    ?v1 . ?v0 <http://xmlns.com/foaf/givenName> ?v2 . ?v0 <http://schema.org/telephone>
+    ?v3 } }
+  runtime_info:
+    client_time: 2.240601062774658
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"31675"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_99
+  description: Randomly selected query 99 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://db.uwaterloo.ca/~galuc/wsdbm/hasGenre>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/SubGenre112> . ?v0 <http://ogp.me/ns#title>
+    ?v1 . ?v0 <http://schema.org/contentRating> ?v2 } }
+  runtime_info:
+    client_time: 0.14067935943603516
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"3920"^^<http://www.w3.org/2001/XMLSchema#integer>'
+- name: test1_query_100
+  description: Randomly selected query 100 from watdiv test 1
+  query: SELECT (COUNT(*) AS ?qlever_count_) WHERE { SELECT * WHERE { ?v0 <http://schema.org/eligibleRegion>
+    <http://db.uwaterloo.ca/~galuc/wsdbm/Country2> . ?v0 <http://purl.org/goodrelations/includes>
+    ?v1 . ?v0 <http://purl.org/goodrelations/price> ?v2 . ?v0 <http://purl.org/goodrelations/validThrough>
+    ?v3 . ?v0 <http://schema.org/eligibleQuantity> ?v4 . ?v1 <http://schema.org/text>
+    ?v6 } }
+  runtime_info:
+    client_time: 7.30224347114563
+  result_size: 1
+  headers:
+  - qlever_count_
+  results:
+  - - '"98989"^^<http://www.w3.org/2001/XMLSchema#integer>'
+title: WatDiv v0.6 Evaluation (~550M triples)
+description: Waterloo SPARQL Diversity Test Suite (WatDiv) v0.6 - synthetic data with
+  ~550 million triples. 100 queries randomly selected from the watdiv-stress-1000/test.1.sparql
+  file of the published test workload at https://dsg.uwaterloo.ca/watdiv/
+timeout: 180
+name: WatDiv v0.6 (~550M triples)
+scale: 500000000

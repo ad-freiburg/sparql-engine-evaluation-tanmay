@@ -1,0 +1,1480 @@
+queries:
+- name: join-2-small-large
+  description: JOIN of a small and a large predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s wdtn:P8024 ?o1 . ?s schema:description ?o2 }'
+  runtime_info:
+    client_time: 0.21578025817871094
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"33878"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: join-2-large-small
+  description: JOIN of a large and a small predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 . ?s wdtn:P8024 ?o2 }'
+  runtime_info:
+    client_time: 0.034778594970703125
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"33878"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: join-2-large-large
+  description: JOIN of two large predicates
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s schema:description ?o1 . ?s schema:name
+    ?o2 }'
+  runtime_info:
+    client_time: 19.572023391723633
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"30856872458"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: join-2-largest-result
+  description: JOIN of two predicates with the largest possible result
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:name ?o1 . ?s rdfs:label ?o2 }'
+  runtime_info:
+    client_time: 22.224111080169678
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"65228538698"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: join-2-large-large-with-large-result
+  description: JOIN of two large predicates with a reasonably large result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 . ?s wdt:P2093 ?o2 }'
+  runtime_info:
+    client_time: 10.478726863861084
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"6114355234"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: join-2-large-large-with-small-result
+  description: JOIN of two large predicates with a small result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P50 ?o1 . ?s wdt:P478 ?o2 }'
+  runtime_info:
+    client_time: 0.44751882553100586
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"29956077"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: join-3-star-largest-sum-of-join-sizes
+  description: JOIN star of three large predicates with the largest sum of join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s schema:description ?o2
+    . ?s wdt:P31 ?o3 }'
+  runtime_info:
+    client_time: 19.200236558914185
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3362006051"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: join-3-chain-largest-sum-of-join-sizes
+  description: JOIN chain of three large predicates with the largest sum of join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . ?b wdt:P31 ?c . ?c schema:description ?d }'
+  runtime_info:
+    client_time: 27.446949005126953
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"16258878352"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: join-xlarge-star-on-small-predicates
+  description: JOIN star of many small predicates
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s wdtn:P8024 ?o0 . ?s wdt:P8024 ?o1 . ?s wdt:P10837 ?o2 . ?s wdt:P5626 ?o3 .
+    ?s wdt:P3453 ?o4 . ?s wdt:P3177 ?o5 . ?s wdt:P7997 ?o6 . ?s wdt:P4740 ?o7 . ?s
+    wdt:P4034 ?o8 . ?s wdt:P9556 ?o9 . ?s wdt:P470 ?o10 . ?s wdt:P5052 ?o11 . ?s wdtn:P4466
+    ?o12 . ?s wdt:P4466 ?o13 . ?s wdt:P958 ?o14 . ?s wdt:P7492 ?o15 . ?s wdt:P1385
+    ?o16 . ?s wdt:P12123 ?o17 . ?s wdt:P6141 ?o18 . ?s wdt:P10916 ?o19 . ?s wdt:P10761
+    ?o20 . ?s wdt:P6019 ?o21 . ?s wdt:P3322 ?o22 . ?s wdt:P12249 ?o23 . ?s wdt:P4433
+    ?o24 }'
+  runtime_info:
+    client_time: 0.5093822479248047
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: join-xlarge-chain-on-small-predicates
+  description: JOIN chain of many small predicates
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?v0 wdtn:P8024 ?v1 . ?v1 wdt:P8024 ?v2 . ?v2 wdt:P10837 ?v3 . ?v3 wdt:P5626 ?v4
+    . ?v4 wdt:P3453 ?v5 . ?v5 wdt:P3177 ?v6 . ?v6 wdt:P7997 ?v7 . ?v7 wdt:P4740 ?v8
+    . ?v8 wdt:P4034 ?v9 . ?v9 wdt:P9556 ?v10 . ?v10 wdt:P470 ?v11 . ?v11 wdt:P5052
+    ?v12 . ?v12 wdtn:P4466 ?v13 . ?v13 wdt:P4466 ?v14 . ?v14 wdt:P958 ?v15 . ?v15
+    wdt:P7492 ?v16 . ?v16 wdt:P1385 ?v17 . ?v17 wdt:P12123 ?v18 . ?v18 wdt:P6141 ?v19
+    . ?v19 wdt:P10916 ?v20 . ?v20 wdt:P10761 ?v21 . ?v21 wdt:P6019 ?v22 . ?v22 wdt:P3322
+    ?v23 . ?v23 wdt:P12249 ?v24 . ?v24 wdt:P4433 ?v25 }'
+  runtime_info:
+    client_time: 3.208089590072632
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: optional-join-small-large
+  description: OPTIONAL JOIN of a small and a large predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s wdtn:P8024 ?o1 OPTIONAL { ?s schema:description ?o2 } }'
+  runtime_info:
+    client_time: 1.295349359512329
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"33878"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: optional-join-large-small
+  description: OPTIONAL JOIN of a large and a small predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 OPTIONAL { ?s wdtn:P8024 ?o2 } }'
+  runtime_info:
+    client_time: 20.90482521057129
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3288926299"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: optional-join-large-large
+  description: OPTIONAL JOIN of two large predicates
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s schema:description ?o1 OPTIONAL { ?s schema:name
+    ?o2 } }'
+  runtime_info:
+    client_time: 28.653626203536987
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"30861583234"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: optional-join-2-large-large-with-large-result
+  description: OPTIONAL JOIN of two large predicates with a reasonably large join
+    result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 . OPTIONAL { ?s wdt:P2093 ?o2 } }'
+  runtime_info:
+    client_time: 23.71234393119812
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"7711791051"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: optional-join-2-large-large-with-small-join-result-1
+  description: OPTIONAL JOIN of two large predicates with a small join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P50 ?o1 . OPTIONAL { ?s wdt:P478 ?o2
+    } }'
+  runtime_info:
+    client_time: 0.6095974445343018
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"34229377"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: optional-join-2-large-large-with-small-join-result-2
+  description: OPTIONAL JOIN of two large predicates with a small join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P478 ?o1 . OPTIONAL { ?s wdt:P50 ?o2
+    } }'
+  runtime_info:
+    client_time: 0.678600549697876
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"58364031"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: optional-join-3-star-1
+  description: OPTIONAL JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s schema:description ?o2
+    . OPTIONAL { ?s wdt:P31 ?o3 } }'
+  runtime_info:
+    client_time: 101.28674292564392
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3363524769"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: optional-join-3-star-2
+  description: OPTIONAL JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . OPTIONAL { ?s schema:description
+    ?o2 . ?s wdt:P31 ?o3 } }'
+  runtime_info:
+    client_time: 76.0806303024292
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3490800872"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: optional-join-3-chain-1
+  description: OPTIONAL JOIN chain of three large predicates with the largest sum
+    of join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . ?b wdt:P31 ?c . OPTIONAL { ?c schema:description ?d } }'
+  runtime_info:
+    client_time: 4.703864574432373
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"16258879291"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: optional-join-3-chain-2
+  description: OPTIONAL JOIN chain of three large predicates with the largest sum
+    of join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . OPTIONAL { ?b wdt:P31 ?c . ?c schema:description ?d } }'
+  runtime_info:
+    client_time: 262.71284794807434
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"16258890415"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: minus-join-small-large
+  description: MINUS JOIN of a small and a large predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s wdtn:P8024 ?o1 MINUS { ?s schema:description ?o2 } }'
+  runtime_info:
+    client_time: 1.305103063583374
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: minus-join-large-small
+  description: MINUS JOIN of a large and a small predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 MINUS { ?s wdtn:P8024 ?o2 } }'
+  runtime_info:
+    client_time: 23.113020181655884
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3288892421"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: minus-join-large-large
+  description: MINUS JOIN of two large predicates
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s schema:description ?o1 MINUS { ?s schema:name
+    ?o2 } }'
+  runtime_info:
+    client_time: 19.571978092193604
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"4710776"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: minus-join-2-large-large-with-large-result
+  description: MINUS JOIN of two large predicates with a reasonably large join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 . MINUS { ?s wdt:P2093 ?o2 } }'
+  runtime_info:
+    client_time: 20.81222438812256
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"1597435817"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: minus-join-2-large-large-with-small-join-result-1
+  description: MINUS JOIN of two large predicates with a small join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P50 ?o1 . MINUS { ?s wdt:P478 ?o2 }
+    }'
+  runtime_info:
+    client_time: 0.4896683692932129
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"4273300"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: minus-join-2-large-large-with-small-join-result-2
+  description: MINUS JOIN of two large predicates with a small join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P478 ?o1 . MINUS { ?s wdt:P50 ?o2 }
+    }'
+  runtime_info:
+    client_time: 0.6121466159820557
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"28407954"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: minus-join-3-star-1
+  description: MINUS JOIN star of three large predicates with the largest sum of join
+    sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s schema:description ?o2
+    . MINUS { ?s wdt:P31 ?o3 } }'
+  runtime_info:
+    client_time: 89.79450726509094
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"1518718"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: minus-join-3-star-2
+  description: MINUS JOIN star of three large predicates with the largest sum of join
+    sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . MINUS { ?s schema:description
+    ?o2 . ?s wdt:P31 ?o3 } }'
+  runtime_info:
+    client_time: 74.48276281356812
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"128794821"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: minus-join-3-chain-1
+  description: MINUS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . ?b wdt:P31 ?c . MINUS { ?c schema:description ?d } }'
+  runtime_info:
+    client_time: 2.985595941543579
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"939"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: minus-join-3-chain-2
+  description: MINUS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . MINUS { ?b wdt:P31 ?c . ?c schema:description ?d } }'
+  runtime_info:
+    client_time: 218.34709763526917
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"12063"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: exists-join-small-large
+  description: EXISTS JOIN of a small and a large predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s wdtn:P8024 ?o1 FILTER EXISTS { ?s schema:description ?o2 } }'
+  runtime_info:
+    client_time: 12.782750129699707
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"1000"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: exists-join-large-small
+  description: EXISTS JOIN of a large and a small predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX wdtn: <http://www.wikidata.org/prop/direct-normalized/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 FILTER EXISTS { ?s wdtn:P8024 ?o2 } }'
+  runtime_info:
+    client_time: 23.939138412475586
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"33878"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: exists-join-large-large
+  description: EXISTS JOIN of two large predicates
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s schema:description ?o1 FILTER EXISTS {
+    ?s schema:name ?o2 } }'
+  runtime_info:
+    client_time: 61.46014475822449
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3284215523"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: exists-join-2-large-large-with-large-result
+  description: EXISTS JOIN of two large predicates with a reasonably large join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?s schema:description ?o1 . FILTER EXISTS { ?s wdt:P2093 ?o2 } }'
+  runtime_info:
+    client_time: 45.47413682937622
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"1691490482"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: exists-join-2-large-large-with-small-join-result-1
+  description: EXISTS JOIN of two large predicates with a small join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P50 ?o1 . FILTER EXISTS { ?s wdt:P478
+    ?o2 } }'
+  runtime_info:
+    client_time: 1.011411190032959
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"29954103"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: exists-join-2-large-large-with-small-join-result-2
+  description: EXISTS JOIN of two large predicates with a small join result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P478 ?o1 . FILTER EXISTS { ?s wdt:P50
+    ?o2 } }'
+  runtime_info:
+    client_time: 0.7810463905334473
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"11656933"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: exists-join-3-star-1
+  description: EXISTS JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . ?s schema:description ?o2
+    . FILTER EXISTS { ?s wdt:P31 ?o3 } }'
+  runtime_info:
+    client_time: 20.532753467559814
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3288755959"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: exists-join-3-star-2
+  description: EXISTS JOIN star of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdf:type ?o1 . FILTER EXISTS { ?s schema:description
+    ?o2 . ?s wdt:P31 ?o3 } }'
+  runtime_info:
+    client_time: 86.11346817016602
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"108908469"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: exists-join-3-chain-1
+  description: EXISTS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . ?b wdt:P31 ?c . FILTER EXISTS { ?c schema:description ?d } }'
+  runtime_info:
+    client_time: 29.806519985198975
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"316743982"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: exists-join-3-chain-2
+  description: EXISTS JOIN chain of three large predicates with the largest sum of
+    join sizes
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    ?a wdt:P2860 ?b . FILTER EXISTS { ?b wdt:P31 ?c . ?c schema:description ?d } }'
+  runtime_info:
+    client_time: 300.4539339542389
+  headers: []
+  results: 'HTTP code: 429: { "exception": "Operation timed out. Last operation: Exists
+    Join", "query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema:
+    <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*)
+    AS ?count) WHERE { ?a wdt:P2860 ?b . FILTER EXISTS { ?b wdt:P31 ?c . ?c schema:description
+    ?d } }", "resultsize": 0, "runtimeInformation": { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [ { "cache_status": "computed", "children": [ { "cache_status": "computed",
+    "children": [], "column_names": [ "?b", "?a" ], "description": "IndexScan ?a <http://www.wikidata.org/prop/direct/P2860>
+    ?b", "details": null, "estimated_column_multiplicities": [ 14.653209686279297,
+    23.76618003845215 ], "estimated_operation_cost": 311200480, "estimated_size":
+    311200480, "estimated_total_cost": 311200480, "operation_time": 2731, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 311200480, "status":
+    "fully materialized", "total_time": 2731 }, { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [], "column_names": [ "?c", "?b" ], "description": "IndexScan ?b <http://www.wikidata.org/prop/direct/P31>
+    ?c", "details": null, "estimated_column_multiplicities": [ 1110.335693359375,
+    1.0422996282577515 ], "estimated_operation_cost": 118808138, "estimated_size":
+    118808138, "estimated_total_cost": 118808138, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 2, "result_rows": 0, "status": "not
+    started", "total_time": 0 }, { "cache_status": "computed", "children": [], "column_names":
+    [ "?c", "?d" ], "description": "IndexScan ?c <http://schema.org/description> ?d",
+    "details": null, "estimated_column_multiplicities": [ 30.04551887512207, 65.04935455322266
+    ], "estimated_operation_cost": 3288926299, "estimated_size": 3288926299, "estimated_total_cost":
+    3288926299, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 2, "result_rows": 0, "status": "not started", "total_time":
+    0 } ], "column_names": [ "?c", "?b", "?d" ], "description": "Join on ?c", "details":
+    { "time-for-filtering-blocks": 445 }, "estimated_column_multiplicities": [ 23352.427734375,
+    21.9215030670166, 1110.335693359375 ], "estimated_operation_cost": 5906491076,
+    "estimated_size": 2498756639, "estimated_total_cost": 9314225513, "operation_time":
+    55188, "original_operation_time": 55188, "original_total_time": 55188, "result_cols":
+    3, "result_rows": 5559132615, "status": "failed", "total_time": 55188 } ], "column_names":
+    [ "?c", "?b", "?d" ], "description": "Sort (internal order) on ?b", "details":
+    null, "estimated_column_multiplicities": [ 23352.427734375, 21.9215030670166,
+    1110.335693359375 ], "estimated_operation_cost": 77461455809, "estimated_size":
+    2498756639, "estimated_total_cost": 86775681322, "operation_time": 0, "original_operation_time":
+    0, "original_total_time": 0, "result_cols": 3, "result_rows": 0, "status": "optimized
+    out", "total_time": 0 } ], "column_names": [ "?b", "?a", "?ql_internal_exists_10"
+    ], "description": "Exists Join", "details": null, "estimated_column_multiplicities":
+    [ 14.653209686279297, 23.76618003845215, 1.0 ], "estimated_operation_cost": 2809957119,
+    "estimated_size": 311200480, "estimated_total_cost": 89896838921, "operation_time":
+    297679, "original_operation_time": 0, "original_total_time": 0, "result_cols":
+    3, "result_rows": 0, "status": "cancelled", "total_time": 300410 } ], "column_names":
+    [ "?b", "?a", "?ql_internal_exists_10" ], "description": "Filter EXISTS { ?b wdt:P31
+    ?c . ?c schema:description ?d }", "details": null, "estimated_column_multiplicities":
+    [ 14.653209686279297, 23.76618003845215, 1.0 ], "estimated_operation_cost": 311200480,
+    "estimated_size": 311200480, "estimated_total_cost": 90208039401, "operation_time":
+    1, "original_operation_time": 0, "original_total_time": 0, "result_cols": 3, "result_rows":
+    0, "status": "cancelled", "total_time": 300411 } ], "column_names": [], "description":
+    "Strip Columns", "details": null, "estimated_column_multiplicities": [], "estimated_operation_cost":
+    0, "estimated_size": 311200480, "estimated_total_cost": 90208039401, "operation_time":
+    0, "original_operation_time": 0, "original_total_time": 0, "result_cols": 0, "result_rows":
+    0, "status": "cancelled", "total_time": 300411 } ], "column_names": [ "?count
+    (U)" ], "description": "GroupBy (implicit)", "details": null, "estimated_column_multiplicities":
+    [ 1.0 ], "estimated_operation_cost": 0, "estimated_size": 1, "estimated_total_cost":
+    90208039401, "operation_time": 0, "original_operation_time": 0, "original_total_time":
+    0, "result_cols": 1, "result_rows": 0, "status": "cancelled", "total_time": 300411
+    }, "status": "ERROR", "time": { "computeResult": 300446, "total": 300446 } }'
+- name: union-no-constraint
+  description: UNION of two large predicates, no constraint
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s schema:description ?o } UNION { ?s schema:name
+    ?o } }'
+  runtime_info:
+    client_time: 2.1864142417907715
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"4007237225"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: union-constraint-from-star
+  description: UNION of two large predicates, constrained by a large predicate known
+    to have join partners
+  query: 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+    PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s rdf:type ?o1 } UNION { ?s schema:description
+    ?o1 } ?s wdt:P31 ?o2 }'
+  runtime_info:
+    client_time: 16.755571365356445
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3479182923"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: union-constraint-small-join
+  description: UNION of two large predicates, constrained by a join with a small result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT (COUNT(*) AS ?count)
+    WHERE { { ?s wdt:P50 ?o1 } UNION { ?s skos:prefLabel ?o1 } ?s wdt:P478 ?o2 }'
+  runtime_info:
+    client_time: 3.0213873386383057
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"112176816"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: union-constraint-large-join
+  description: UNION of two large predicates, constrained by a join with a large result
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) WHERE {
+    { ?s schema:description ?o1 } UNION { ?s schema:name ?o1 } ?s wdt:P2093 ?o2 }'
+  runtime_info:
+    client_time: 13.514525890350342
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"6418834997"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: union-constraint-filter-restrictive
+  description: UNION of two large predicates, constraint by restrictive FILTER
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { { ?s schema:description ?o } UNION { ?s schema:name
+    ?o } FILTER (?s = ?o) }'
+  runtime_info:
+    client_time: 29.477895498275757
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multicolumn-join-small
+  description: Multicolumn JOIN small
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s wdt:P921 ?o . ?s wdt:P31 ?o }'
+  runtime_info:
+    client_time: 2.9457898139953613
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"43184"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: multicolumn-join-large
+  description: Multicolumn JOIN large
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT (COUNT(*) AS ?count)
+    WHERE { ?s skos:prefLabel ?o . ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 90.4682149887085
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"718310926"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: group-by-count-object-high-multiplicity
+  description: GROUP BY with COUNT, for object with high multiplicity
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT ?object (COUNT(?subject) AS ?count) { ?subject wdt:P2548 ?object } GROUP
+    BY ?object ORDER BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 0.031664133071899414
+  result_size: 3
+  headers:
+  - object
+  - count
+  results:
+  - - <http://www.wikidata.org/entity/Q22809680>
+    - '"530762"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - - <http://www.wikidata.org/entity/Q22809711>
+    - '"527806"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - - <http://www.wikidata.org/entity/Q41329>
+    - '"1"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: group-by-count-object-low-multiplicity
+  description: GROUP BY with COUNT, for object with low multiplicity
+  query: 'PREFIX p: <http://www.wikidata.org/prop/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    SELECT ?object (COUNT(?subject) AS ?count) { ?subject skos:prefLabel ?object }
+    GROUP BY ?object ORDER BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 75.84036374092102
+  result_size: 10
+  headers:
+  - object
+  - count
+  results:
+  - - "\"\u09B8\u0982\u09B0\u0995\u09CD\u09B7\u09BF\u09A4 \u0989\u09AA\u09AA\u09CD\
+      \u09B0\u09AE\u09C7\u09AF\u09BC\u09AE\u09C2\u09B2\u0995 \u09AA\u09CD\u09B0\u09CB\
+      \u099F\u09BF\u09A8\"@bn"
+    - '"38274"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - - '"hypothetical protein, conserved"@en'
+    - '"38241"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - - "\"\u0989\u09AA\u09AA\u09CD\u09B0\u09AE\u09C7\u09AF\u09BC\u09AE\u09C2\u09B2\u0995\
+      \ \u09AA\u09CD\u09B0\u09CB\u099F\u09BF\u09A8\"@bn"
+    - '"35530"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - - '"hypothetical protein"@en'
+    - '"35521"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - - "\"\u09B8\u0982\u09B6\u09CB\u09A7\u09A8\"@bn"
+    - '"21874"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: group-by-count-object-wrong-sort-order
+  description: GROUP BY with COUNT, for object but not sorted by object
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT ?o1 (COUNT(?s) AS ?count) { ?s
+    wdt:P13046 ?o1 . ?s schema:description ?o2 } GROUP BY ?o1 ORDER BY DESC(?count)
+    LIMIT 10'
+  runtime_info:
+    client_time: 6.463333368301392
+  result_size: 10
+  headers:
+  - o1
+  - count
+  results:
+  - - <http://www.wikidata.org/entity/Q7318358>
+    - '"105768732"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - - <http://www.wikidata.org/entity/Q1504425>
+    - '"783211"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - - <http://www.wikidata.org/entity/Q591041>
+    - '"67024"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - - <http://www.wikidata.org/entity/Q121763407>
+    - '"24294"^^<http://www.w3.org/2001/XMLSchema#int>'
+  - - <http://www.wikidata.org/entity/Q2782326>
+    - '"4125"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: group-by-complex-aggregate
+  description: GROUP BY with COUNT and MIN and MAX and SAMPLE
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT ?o1 (COUNT(?s) AS ?count) (MIN(?s)
+    AS ?min) (MAX(?s) AS ?max) (SAMPLE(?s) AS ?sample) { ?s wdt:P13046 ?o1 . ?s schema:description
+    ?o2 } GROUP BY ?o1 ORDER BY DESC(?count) LIMIT 10'
+  runtime_info:
+    client_time: 10.620177507400513
+  result_size: 10
+  headers:
+  - o1
+  - count
+  - min
+  - max
+  - sample
+  results:
+  - - <http://www.wikidata.org/entity/Q7318358>
+    - '"105768732"^^<http://www.w3.org/2001/XMLSchema#int>'
+    - <http://www.wikidata.org/entity/Q100295053>
+    - <http://www.wikidata.org/entity/Q99731952>
+    - <http://www.wikidata.org/entity/Q100295053>
+  - - <http://www.wikidata.org/entity/Q1504425>
+    - '"783211"^^<http://www.w3.org/2001/XMLSchema#int>'
+    - <http://www.wikidata.org/entity/Q101138924>
+    - <http://www.wikidata.org/entity/Q99349321>
+    - <http://www.wikidata.org/entity/Q101138924>
+  - - <http://www.wikidata.org/entity/Q591041>
+    - '"67024"^^<http://www.w3.org/2001/XMLSchema#int>'
+    - <http://www.wikidata.org/entity/Q100000003>
+    - <http://www.wikidata.org/entity/Q99999992>
+    - <http://www.wikidata.org/entity/Q100000003>
+  - - <http://www.wikidata.org/entity/Q121763407>
+    - '"24294"^^<http://www.w3.org/2001/XMLSchema#int>'
+    - <http://www.wikidata.org/entity/Q100557747>
+    - <http://www.wikidata.org/entity/Q99974892>
+    - <http://www.wikidata.org/entity/Q100557747>
+  - - <http://www.wikidata.org/entity/Q2782326>
+    - '"4125"^^<http://www.w3.org/2001/XMLSchema#int>'
+    - <http://www.wikidata.org/entity/Q22330678>
+    - <http://www.wikidata.org/entity/Q99409711>
+    - <http://www.wikidata.org/entity/Q22330678>
+- name: group-by-implicit-numeric-baseline
+  description: Implicit GROUP BY with COUNT on numeric predicate as baseline
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?o) AS ?count) { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 0.01964426040649414
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"120995547"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: group-by-implicit-numeric-sum
+  description: Implicit GROUP BY with SUM on numeric predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(?o) AS ?sum) { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 1.1208951473236084
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244891557167194061"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: group-by-implicit-numeric-min
+  description: Implicit GROUP BY with MIN on numeric predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (MIN(?o) AS ?min) { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 1.0069358348846436
+  result_size: 1
+  headers:
+  - min
+  results:
+  - - '"984175"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: group-by-implicit-numeric-max
+  description: Implicit GROUP BY with MAX on numeric predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (MAX(?o) AS ?max) { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 0.9331459999084473
+  result_size: 1
+  headers:
+  - max
+  results:
+  - - '"2360504999"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: group-by-implicit-numeric-avg
+  description: Implicit GROUP BY with AVG on numeric predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (AVG(?o) AS ?avg) { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 1.104759931564331
+  result_size: 1
+  headers:
+  - avg
+  results:
+  - - '"2.02397e+09"^^<http://www.w3.org/2001/XMLSchema#decimal>'
+- name: group-by-implicit-string-baseline
+  description: Implicit GROUP BY with COUNT on string predicate as baseline
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?o) AS ?count) { ?s schema:description ?o }'
+  runtime_info:
+    client_time: 0.025832653045654297
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3288926299"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: group-by-implicit-string-min
+  description: Implicit GROUP BY with MIN on string predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (MIN(?o) AS ?min) { ?s schema:description ?o }'
+  runtime_info:
+    client_time: 26.665013313293457
+  result_size: 1
+  headers:
+  - min
+  results:
+  - - "\"\u200B\"@th"
+- name: group-by-implicit-string-max
+  description: Implicit GROUP BY with MAX on string predicate
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (MAX(?o) AS ?max) { ?s schema:description ?o }'
+  runtime_info:
+    client_time: 26.685372829437256
+  result_size: 1
+  headers:
+  - max
+  results:
+  - - "\"\U000F0854\uC870\uC120\uC2E0\uBCF4\U000F0855\uC758 \uBC30\uC77C\uC0AC\uC0C1\
+      \uC744 \uBCC0\uB860\uD558\uB294 \uB9D0\"@ko"
+- name: group-by-string-groupconcat
+  description: GROUP BY with GROUP_CONCAT on string predicate with high subject multiplicity
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(STRLEN(?cat)) AS ?sum) { { SELECT (GROUP_CONCAT(?o; SEPARATOR=" ")
+    AS ?cat) { ?s schema:description ?o } GROUP BY ?s } }'
+  runtime_info:
+    client_time: 301.6754333972931
+  headers: []
+  results: "HTTP code: 429: { \"exception\": \"Operation timed out.\", \"query\":\
+    \ \"PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>\
+    \ SELECT (SUM(STRLEN(?cat)) AS ?sum) { { SELECT (GROUP_CONCAT(?o; SEPARATOR=\\\
+    \" \\\") AS ?cat) { ?s schema:description ?o } GROUP BY ?s } }\", \"resultsize\"\
+    : 0, \"runtimeInformation\": { \"cache_status\": \"computed\", \"children\": [\
+    \ { \"cache_status\": \"computed\", \"children\": [ { \"cache_status\": \"computed\"\
+    , \"children\": [ { \"cache_status\": \"computed\", \"children\": [ { \"cache_status\"\
+    : \"computed\", \"children\": [], \"column_names\": [ \"?s\", \"?o\" ], \"description\"\
+    : \"IndexScan ?s <http://schema.org/description> ?o\", \"details\": null, \"estimated_column_multiplicities\"\
+    : [ 30.04551887512207, 65.04935455322266 ], \"estimated_operation_cost\": 3288926299,\
+    \ \"estimated_size\": 3288926299, \"estimated_total_cost\": 3288926299, \"operation_time\"\
+    : 169, \"original_operation_time\": 169, \"original_total_time\": 169, \"result_cols\"\
+    : 2, \"result_rows\": 1504031250, \"status\": \"failed\", \"total_time\": 169\
+    \ } ], \"column_names\": [ \"?s\", \"?cat (U)\" ], \"description\": \"GroupBy\
+    \ on ?s\", \"details\": { \"non-empty-local-vocabs\": \"48129 / 48129, \xD8 =\
+    \ 456.866, max = 10370\" }, \"estimated_column_multiplicities\": [ 1.0, 1.0 ],\
+    \ \"estimated_operation_cost\": 0, \"estimated_size\": 109464784, \"estimated_total_cost\"\
+    : 3288926299, \"operation_time\": 288191, \"original_operation_time\": 288191,\
+    \ \"original_total_time\": 288361, \"result_cols\": 2, \"result_rows\": 50993120,\
+    \ \"status\": \"failed\", \"total_time\": 288361 } ], \"column_names\": [ \"?cat\
+    \ (U)\" ], \"description\": \"Strip Columns\", \"details\": { \"non-empty-local-vocabs\"\
+    : \"48129 / 48129, \xD8 = 456.866, max = 10370\" }, \"estimated_column_multiplicities\"\
+    : [ 1.0 ], \"estimated_operation_cost\": 0, \"estimated_size\": 109464784, \"\
+    estimated_total_cost\": 3288926299, \"operation_time\": 291, \"original_operation_time\"\
+    : 291, \"original_total_time\": 288652, \"result_cols\": 1, \"result_rows\": 50993120,\
+    \ \"status\": \"failed\", \"total_time\": 288652 } ], \"column_names\": [ \"?cat\
+    \ (U)\" ], \"description\": \"Strip Columns\", \"details\": { \"non-empty-local-vocabs\"\
+    : \"48129 / 48129, \xD8 = 456.866, max = 10370\" }, \"estimated_column_multiplicities\"\
+    : [ 1.0 ], \"estimated_operation_cost\": 0, \"estimated_size\": 109464784, \"\
+    estimated_total_cost\": 3288926299, \"operation_time\": 202, \"original_operation_time\"\
+    : 202, \"original_total_time\": 288855, \"result_cols\": 1, \"result_rows\": 50993120,\
+    \ \"status\": \"failed\", \"total_time\": 288855 } ], \"column_names\": [ \"?sum\
+    \ (U)\" ], \"description\": \"GroupBy (implicit)\", \"details\": null, \"estimated_column_multiplicities\"\
+    : [ 1.0 ], \"estimated_operation_cost\": 0, \"estimated_size\": 1, \"estimated_total_cost\"\
+    : 3288926299, \"operation_time\": 0, \"original_operation_time\": 0, \"original_total_time\"\
+    : 0, \"result_cols\": 1, \"result_rows\": 0, \"status\": \"failed\", \"total_time\"\
+    : 0 }, \"status\": \"ERROR\", \"time\": { \"computeResult\": 301665, \"total\"\
+    : 301665 } }"
+- name: distinct-count-object-high-multiplicity
+  description: COUNT DISTINCT, for object with high multiplicity
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(DISTINCT ?object) AS ?count) { ?subject wdt:P2548 ?object }'
+  runtime_info:
+    client_time: 0.04966235160827637
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: distinct-count-object-low-multiplicity
+  description: COUNT DISTINCT, for object with low multiplicity
+  query: 'PREFIX p: <http://www.wikidata.org/prop/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    SELECT (COUNT(DISTINCT ?object) AS ?count) { ?subject skos:prefLabel ?object }'
+  runtime_info:
+    client_time: 267.56889128685
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"670882404"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: distinct-count-object-wrong-sort-order
+  description: COUNT DISTINCT, for object but not sorted by object
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX schema: <http://schema.org/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(DISTINCT ?o1) AS ?count)
+    { ?s wdt:P13046 ?o1 . ?s schema:description ?o2 }'
+  runtime_info:
+    client_time: 8.021141529083252
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"44"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: transitive-path-plus
+  description: Transitive path with plus
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) { ?s wdt:P2293+ ?o }'
+  runtime_info:
+    client_time: 2.3058788776397705
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"12972039"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: transitive-path-plus-fixed-subject
+  description: Transitive path with plus and a fixed subject
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) { wd:Q81867
+    wdt:P2293+ ?o }'
+  runtime_info:
+    client_time: 0.022185087203979492
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3519"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: transitive-path-large-join-and-plus
+  description: Transitive path with a large join and plus
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) { ?s wdt:P921/wdt:P2293+ ?o }'
+  runtime_info:
+    client_time: 300.0077030658722
+  headers: []
+  results: 'HTTP code: 429: { "exception": "Operation timed out. Last operation: GroupBy
+    (implicit)", "query": "PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX
+    p: <http://www.wikidata.org/prop/> SELECT (COUNT(*) AS ?count) { ?s wdt:P921/wdt:P2293+
+    ?o }", "resultsize": 0, "runtimeInformation": { "cache_status": "computed", "children":
+    [ { "cache_status": "computed", "children": [ { "cache_status": "computed", "children":
+    [ { "cache_status": "cached_not_pinned", "children": [], "column_names": [ "?_QLever_internal_variable_qp_0",
+    "?s" ], "description": "IndexScan ?s <http://www.wikidata.org/prop/direct/P921>
+    ?_QLever_internal_variable_qp_0", "details": null, "estimated_column_multiplicities":
+    [ 26.9406681060791, 1.6215747594833374 ], "estimated_operation_cost": 33092005,
+    "estimated_size": 33092005, "estimated_total_cost": 33092005, "operation_time":
+    0, "original_operation_time": 235, "original_total_time": 235, "result_cols":
+    2, "result_rows": 33092005, "status": "fully materialized", "total_time": 0 },
+    { "cache_status": "cached_not_pinned", "children": [], "column_names": [ "?_QLever_internal_variable_qp_2",
+    "?_QLever_internal_variable_qp_3" ], "description": "IndexScan ?_QLever_internal_variable_qp_2
+    <http://www.wikidata.org/prop/direct/P2293> ?_QLever_internal_variable_qp_3",
+    "details": null, "estimated_column_multiplicities": [ 1.7063279151916504, 1.791727900505066
+    ], "estimated_operation_cost": 8568, "estimated_size": 8568, "estimated_total_cost":
+    8568, "operation_time": 0, "original_operation_time": 1, "original_total_time":
+    1, "result_cols": 2, "result_rows": 14642, "status": "fully materialized", "total_time":
+    0 } ], "column_names": [ "?_QLever_internal_variable_qp_0", "?o", "?s" ], "description":
+    "TransitivePath ?_QLever_internal_variable_qp_0 <http://www.wikidata.org/prop/direct/P2293>
+    ?o", "details": { "Hull time": 260762, "IdTable fill time": 22710, "Initialization
+    time": 0 }, "estimated_column_multiplicities": [ 1.0, 1.0, 1.0 ], "estimated_operation_cost":
+    33092005, "estimated_size": 33092005, "estimated_total_cost": 66192578, "operation_time":
+    298892, "original_operation_time": 298892, "original_total_time": 298892, "result_cols":
+    3, "result_rows": 1754097090, "status": "failed", "total_time": 298892 } ], "column_names":
+    [], "description": "Strip Columns", "details": null, "estimated_column_multiplicities":
+    [], "estimated_operation_cost": 0, "estimated_size": 33092005, "estimated_total_cost":
+    66192578, "operation_time": 530, "original_operation_time": 530, "original_total_time":
+    299423, "result_cols": 0, "result_rows": 1754097090, "status": "failed", "total_time":
+    299423 } ], "column_names": [ "?count (U)" ], "description": "GroupBy (implicit)",
+    "details": null, "estimated_column_multiplicities": [ 1.0 ], "estimated_operation_cost":
+    0, "estimated_size": 1, "estimated_total_cost": 66192578, "operation_time": 561,
+    "original_operation_time": 0, "original_total_time": 0, "result_cols": 1, "result_rows":
+    0, "status": "cancelled", "total_time": 299985 }, "status": "ERROR", "time": {
+    "computeResult": 300000, "total": 300000 } }'
+- name: transitive-path-small-join-and-plus
+  description: Transitive path with a small join and plus
+  query: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) { ?s wdt:P1911/wdt:P2293+ ?o }'
+  runtime_info:
+    client_time: 0.0952303409576416
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"159948"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: regex-3-contains
+  description: CONTAINS filter with fixed string of length 3
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER CONTAINS(?o, "com")
+    }'
+  runtime_info:
+    client_time: 156.06669425964355
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"8973356"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: regex-3-fixed
+  description: REGEX filter with fixed string of length 3
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER REGEX(?o, "com") }'
+  runtime_info:
+    client_time: 183.19682550430298
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"8973356"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: regex-3
+  description: REGEX filter with expression of length 3
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER REGEX(?o, "c.m") }'
+  runtime_info:
+    client_time: 178.71720385551453
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"15928173"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: regex-prefix-1
+  description: REGEX filter with prefix of length 1
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?o FILTER REGEX(?o, "^C") }'
+  runtime_info:
+    client_time: 0.23527812957763672
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"52607184"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: regex-prefix-2
+  description: REGEX filter with prefix of length 2
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?object FILTER REGEX(?object,
+    "^Co") }'
+  runtime_info:
+    client_time: 0.06171703338623047
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"9842926"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: regex-prefix-3
+  description: REGEX filter with prefix of length 3
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(*) AS ?count) WHERE { ?s rdfs:label ?object FILTER REGEX(?object,
+    "^Com") }'
+  runtime_info:
+    client_time: 0.030283212661743164
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"1891055"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: strlen
+  description: String length for large string predicate
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(STRLEN(?o)) AS ?checksum) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 154.0348355770111
+  result_size: 1
+  headers:
+  - checksum
+  results:
+  - - '"17138074074"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: strbefore
+  description: STRBEFORE string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(STRLEN(STRBEFORE(?o, "a"))) AS ?checksum) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 215.3160400390625
+  result_size: 1
+  headers:
+  - checksum
+  results:
+  - - '"2941846996"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: strafter
+  description: STRAFTER string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(STRLEN(STRAFTER(?o, "a"))) AS ?checksum) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 213.93280291557312
+  result_size: 1
+  headers:
+  - checksum
+  results:
+  - - '"10942319822"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: strstarts
+  description: STRSTARTS string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (SUM(xsd:integer(STRSTARTS(?o,
+    "a"))) AS ?count) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 155.97669410705566
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"592941"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: strends
+  description: STRENDS string function
+  query: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+    PREFIX p: <http://www.wikidata.org/prop/> SELECT (SUM(xsd:integer(STRENDS(?o,
+    "a"))) AS ?count) { ?s rdfs:label ?o }'
+  runtime_info:
+    client_time: 158.7611072063446
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"83482482"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: result-size-tiny
+  description: Export 10 tuples
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT ?s ?o WHERE { ?s schema:description ?o } LIMIT 10'
+  runtime_info:
+    client_time: 0.04608798027038574
+  result_size: 10
+  headers:
+  - s
+  - o
+  results:
+  - - <http://www.wikidata.org/entity/P10>
+    - "\"aiheeseen liittyv\xE4 videotiedosto\"@fi"
+  - - <http://www.wikidata.org/entity/P10>
+    - '"archivo de video en Commons"@es'
+  - - <http://www.wikidata.org/entity/P10>
+    - '"archivu de vidiu en Commons"@ext'
+  - - <http://www.wikidata.org/entity/P10>
+    - "\"arquivo de v\xEDdeo do Commons\"@pt-br"
+  - - <http://www.wikidata.org/entity/P10>
+    - '"elementga mos keladigan Wikimedia omboridan video"@uz'
+- name: result-size-small
+  description: Export 1000 tuples
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT ?s ?o WHERE { ?s schema:description ?o } LIMIT 1000'
+  runtime_info:
+    client_time: 0.042214155197143555
+  result_size: 1000
+  headers:
+  - s
+  - o
+  results:
+  - - <http://www.wikidata.org/entity/P10>
+    - "\"aiheeseen liittyv\xE4 videotiedosto\"@fi"
+  - - <http://www.wikidata.org/entity/P10>
+    - '"archivo de video en Commons"@es'
+  - - <http://www.wikidata.org/entity/P10>
+    - '"archivu de vidiu en Commons"@ext'
+  - - <http://www.wikidata.org/entity/P10>
+    - "\"arquivo de v\xEDdeo do Commons\"@pt-br"
+  - - <http://www.wikidata.org/entity/P10>
+    - '"elementga mos keladigan Wikimedia omboridan video"@uz'
+- name: result-size-medium
+  description: Export 100K tuples
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT ?s ?o WHERE { ?s schema:description ?o } LIMIT 100000'
+  runtime_info:
+    client_time: 0.28075361251831055
+  result_size: 100000
+  headers:
+  - s
+  - o
+  results:
+  - - <http://www.wikidata.org/entity/P10>
+    - "\"aiheeseen liittyv\xE4 videotiedosto\"@fi"
+  - - <http://www.wikidata.org/entity/P10>
+    - '"archivo de video en Commons"@es'
+  - - <http://www.wikidata.org/entity/P10>
+    - '"archivu de vidiu en Commons"@ext'
+  - - <http://www.wikidata.org/entity/P10>
+    - "\"arquivo de v\xEDdeo do Commons\"@pt-br"
+  - - <http://www.wikidata.org/entity/P10>
+    - '"elementga mos keladigan Wikimedia omboridan video"@uz'
+- name: result-size-large
+  description: Export 1M tuples
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT ?s ?o WHERE { ?s schema:description ?o } LIMIT 1000000'
+  runtime_info:
+    client_time: 1.941460132598877
+  result_size: 1000000
+  headers:
+  - s
+  - o
+  results:
+  - - <http://www.wikidata.org/entity/P10>
+    - "\"aiheeseen liittyv\xE4 videotiedosto\"@fi"
+  - - <http://www.wikidata.org/entity/P10>
+    - '"archivo de video en Commons"@es'
+  - - <http://www.wikidata.org/entity/P10>
+    - '"archivu de vidiu en Commons"@ext'
+  - - <http://www.wikidata.org/entity/P10>
+    - "\"arquivo de v\xEDdeo do Commons\"@pt-br"
+  - - <http://www.wikidata.org/entity/P10>
+    - '"elementga mos keladigan Wikimedia omboridan video"@uz'
+- name: result-size-xlarge
+  description: Export 10M tuples
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT ?s ?o WHERE { ?s schema:description ?o } LIMIT 10000000'
+  runtime_info:
+    client_time: 18.58330798149109
+  result_size: 10000000
+  headers:
+  - s
+  - o
+  results:
+  - - <http://www.wikidata.org/entity/P10>
+    - "\"aiheeseen liittyv\xE4 videotiedosto\"@fi"
+  - - <http://www.wikidata.org/entity/P10>
+    - '"archivo de video en Commons"@es'
+  - - <http://www.wikidata.org/entity/P10>
+    - '"archivu de vidiu en Commons"@ext'
+  - - <http://www.wikidata.org/entity/P10>
+    - "\"arquivo de v\xEDdeo do Commons\"@pt-br"
+  - - <http://www.wikidata.org/entity/P10>
+    - '"elementga mos keladigan Wikimedia omboridan video"@uz'
+- name: numeric-baseline
+  description: Baseline for numeric queries
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(?o) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 0.01558065414428711
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244891557167194061"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: numeric-abs
+  description: ABS function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(ABS(?o)) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 2.1516711711883545
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244891557167194061"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: numeric-ceil
+  description: CEIL function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(CEIL(?o)) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 2.138434648513794
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244891557167194061"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: numeric-floor
+  description: FLOOR function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(FLOOR(?o)) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 2.1764869689941406
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244891557167194061"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: numeric-round
+  description: ROUND function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(ROUND(?o)) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 2.206758975982666
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244891557167194061"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: numeric-add
+  description: Addition
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(?o + ?o) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 3.0452799797058105
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"489783114334388122"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: numeric-greater
+  description: Greater than
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(?o > 0) AS ?sum) WHERE { ?s schema:version ?o }'
+  runtime_info:
+    client_time: 1.8900365829467773
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"120995547"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: numeric-filter-bin-search-fifty-fifty
+  description: Numeric FILTER that filters out 50 percent of the values
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?s) AS ?count) { ?s schema:version ?o . FILTER (?o >= 2147882675)
+    }'
+  runtime_info:
+    client_time: 0.28411340713500977
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"64045480"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: numeric-filter-bin-search-seventy-thirty
+  description: Numeric FILTER that filters out 70 percent of the values
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?s) AS ?count) { ?s schema:version ?o . FILTER (?o >= 2241500354)
+    }'
+  runtime_info:
+    client_time: 0.20898032188415527
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"41650541"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: numeric-filter-bin-search-ninetyfive-five
+  description: Numeric FILTER that filters out 95 percent of the values
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?s) AS ?count) { ?s schema:version ?o . FILTER (?o >= 2325672138)
+    }'
+  runtime_info:
+    client_time: 0.07892251014709473
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"14281637"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: filter-few-results
+  description: FILTER that filters out most rows and has few results
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?s) AS ?count) { ?s schema:description ?o . FILTER (?s = ?o) }'
+  runtime_info:
+    client_time: 24.267096281051636
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"0"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: filter-many-results
+  description: FILTER that filters out few rows and has many results
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?s) AS ?count) { ?s schema:description ?o . FILTER (?s != ?o) }'
+  runtime_info:
+    client_time: 51.79547643661499
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"3288926299"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: filter-language-en
+  description: FILTER on string predicate for only English literals
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (COUNT(?s) AS ?count) { ?s schema:description ?o . FILTER(LANG(?o) = "en")
+    }'
+  runtime_info:
+    client_time: 0.02256488800048828
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"98426423"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: date-year
+  description: YEAR function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(YEAR(?o)) AS ?sum) WHERE { ?s schema:dateModified ?o }'
+  runtime_info:
+    client_time: 2.184257984161377
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"244826830075"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: date-month
+  description: MONTH function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(MONTH(?o)) AS ?sum) WHERE { ?s schema:dateModified ?o }'
+  runtime_info:
+    client_time: 2.989043951034546
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"739595518"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: date-day
+  description: DAY function
+  query: 'PREFIX schema: <http://schema.org/> PREFIX p: <http://www.wikidata.org/prop/>
+    SELECT (SUM(DAY(?o)) AS ?sum) WHERE { ?s schema:dateModified ?o }'
+  runtime_info:
+    client_time: 2.92732834815979
+  result_size: 1
+  headers:
+  - sum
+  results:
+  - - '"1862581270"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: number-of-triples
+  description: Total number of triples
+  query: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 0.06634688377380371
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"7969161598"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: number-of-subjects
+  description: Total number of distinct subjects
+  query: SELECT (COUNT(DISTINCT ?s) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 0.06555986404418945
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"242159167"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: number-of-predicates
+  description: Total number of distinct predicates
+  query: SELECT (COUNT(DISTINCT ?p) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 0.057273149490356445
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"12511"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: number-of-objects
+  description: Total number of distinct objects
+  query: SELECT (COUNT(DISTINCT ?o) AS ?count) WHERE { ?s ?p ?o }
+  runtime_info:
+    client_time: 0.05509185791015625
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"1613937770"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: number-of-literals
+  description: Total number of literals
+  query: SELECT (COUNT(?o) AS ?count) WHERE { ?s ?p ?o FILTER ISLITERAL(?o) }
+  runtime_info:
+    client_time: 126.01716876029968
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"6642598523"^^<http://www.w3.org/2001/XMLSchema#int>'
+- name: number-of-blank-nodes
+  description: Total number of blank nodes
+  query: SELECT (COUNT(?s) AS ?count) WHERE { ?s ?p ?o FILTER ISBLANK(?s) }
+  runtime_info:
+    client_time: 0.0899808406829834
+  result_size: 1
+  headers:
+  - count
+  results:
+  - - '"38154"^^<http://www.w3.org/2001/XMLSchema#int>'
+title: Sparqloscope Wikidata-truthy Evaluation (~8B triples)
+description: Sparqloscope benchmark for Wikidata-truthy RDF dump, data from https://dumps.wikimedia.org/wikidatawiki/entities/
+  (13.06.2025), ~8 billion triples. Sparqloscope at https://github.com/ad-freiburg/sparqloscope
+timeout: 300
+name: Sparqloscope Wikidata-truthy (~8B triples)
+scale: 8000000000
