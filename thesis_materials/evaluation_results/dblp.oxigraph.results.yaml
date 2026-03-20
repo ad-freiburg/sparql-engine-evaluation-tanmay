@@ -1,3 +1,5 @@
+index_time: 798
+index_size: 80000000000
 title: Sparqloscope DBLP Evaluation (~525M triples)
 description: Sparqloscope benchmark for DBLP computer science bibliography, data from
   https://dblp.org/rdf (01.09.2025), ~525 million triples. Sparqloscope at https://github.com/ad-freiburg/sparqloscope

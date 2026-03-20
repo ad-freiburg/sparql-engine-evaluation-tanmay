@@ -1,3 +1,5 @@
+index_time: 12600
+index_size: 149400000000
 queries:
 - name: c2rpqs_query_12
   description: WDBench/Queries/c2rpqs.txt Query 12

@@ -1,3 +1,5 @@
+index_time: 411
+index_size: 4500000000
 queries:
 - name: test1_query_1
   description: Randomly selected query 1 from watdiv test 1

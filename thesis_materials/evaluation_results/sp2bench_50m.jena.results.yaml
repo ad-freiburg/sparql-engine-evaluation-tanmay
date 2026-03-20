@@ -1,3 +1,5 @@
+index_time: 398
+index_size: 6900000000
 queries:
 - name: Q1 year of journal
   description: Return the year of publication of 'Journal 1 (1940)'.

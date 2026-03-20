@@ -1,3 +1,5 @@
+index_time: 398
+index_size: 6900000000
 queries:
 - name: join-2-small-large
   description: JOIN of a small and a large predicate
